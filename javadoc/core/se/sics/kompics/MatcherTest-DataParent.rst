@@ -1,0 +1,49 @@
+.. java:import:: java.util.concurrent BlockingQueue
+
+.. java:import:: java.util.concurrent LinkedBlockingQueue
+
+.. java:import:: java.util.concurrent TimeUnit
+
+.. java:import:: org.junit Assert
+
+.. java:import:: org.junit Test
+
+.. java:import:: org.junit.runner RunWith
+
+.. java:import:: org.junit.runners JUnit4
+
+.. java:import:: org.slf4j Logger
+
+.. java:import:: org.slf4j LoggerFactory
+
+MatcherTest.DataParent
+======================
+
+.. java:package:: se.sics.kompics
+   :noindex:
+
+.. java:type:: public static class DataParent extends ComponentDefinition
+   :outertype: MatcherTest
+
+Fields
+------
+dataHandler
+^^^^^^^^^^^
+
+.. java:field::  ClassMatchedHandler<Data, DataContainer> dataHandler
+   :outertype: MatcherTest.DataParent
+
+dp
+^^
+
+.. java:field::  Positive<DataPort> dp
+   :outertype: MatcherTest.DataParent
+
+Constructors
+------------
+DataParent
+^^^^^^^^^^
+
+.. java:constructor:: public DataParent()
+   :outertype: MatcherTest.DataParent
+
