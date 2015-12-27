@@ -1,6 +1,5 @@
-#####################
-Kompics Documentation
-#####################
+
+# Kompics Documentation
 
 Build HTML version with:
 
