@@ -170,6 +170,7 @@ You will see that there is no ``Ping`` amplification anymore as we saw in the la
 
 As always the code until here can be downloaded :download:`here <pingpong-distributed.zip>`.
 
+.. _netcleanup:
 
 Cleanup: Config files, ClassMatchers, and Assembly
 --------------------------------------------------

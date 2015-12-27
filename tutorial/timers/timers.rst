@@ -10,6 +10,7 @@ However, Kompics provides its own abstraction for scheduled or periodic events. 
 
 This section introduces the default Kompics timer facilities and the concept of request-response-type events.
 
+.. _reqrespevents:
 
 Request-Response Events
 -----------------------
@@ -17,11 +18,7 @@ In the previous section we described how Kompics events are broadcasted along al
 
 .. note::
 
-	If the first type behaviour is not desired then *Channel Selectors* might provide a solution. See section ??? for details.
-
-.. todo::
-
-	Fix the section in the note above.
+	If the first type behaviour is not desired then :ref:`channelselectors` might provide a solution.
 
 In order to get around the second type of behaviour (two ``Pinger`` -- one ``Ponger``) where it is necessary, Kompics supports two types of request-response patterns: 
 

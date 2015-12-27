@@ -291,6 +291,7 @@ texinfo_documents = [
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
 
+# ---- Other Stuff ------------------------------------------------------
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'https://docs.python.org/': None}
@@ -298,3 +299,11 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 javadoc_url_map = {
     'io.netty' : ('http://netty.io/5.0/api/', 'javadoc')
 }
+
+rst_prolog = """
+.. |vnode| replace:: :abbr:`vnode (virtual node)`
+.. |p2p| replace:: :abbr:`P2P (peer-to-peer)`
+.. |dht| replace:: :abbr:`DHT (distributed hash table)`
+.. |jvm| replace:: :abbr:`JVM (Java Virtual Machine)` 
+.. |pid| replace:: :abbr:`PID (process identifier)`
+"""
