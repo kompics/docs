@@ -187,7 +187,7 @@ Configuration
 -------------
 We will now change the code to :ref:`netcleanup` version and try to run it in simulation. The configuration now containes two types of parameters: 
 
-	#. Node-specific parameters (like addresses) and 
+	#. node-specific parameters (like addresses)
 	#. system-parameters (like timeout) that do not change with each node.
 	
 In simulation we will have one :file:`reference.conf` config file with system-parameters, and we will tell the simulator to add the node-specific parameters.
@@ -210,7 +210,7 @@ We now want to tell the simulator to add the *self* and *ponger* addresses to th
 		return config;
 	}
 
-Or we can add the ``TAddress`` object into the config and modifiy the ``TAddressConverter`` to know how to interpret such an object:
+Or we can add the ``TAddress`` object into the config directly:
 
 .. code-block:: java
 
@@ -221,8 +221,6 @@ Or we can add the ``TAddress`` object into the config and modifiy the ``TAddress
 		config.put("pingpong.pinger.pongeraddr", pongerAdr);
 		return config;
 	}
-
-.. literalinclude:: sim-pingpong-cleaner/src/main/java/se/sics/test/TAddressConverter.java
 
 In this simulation scenario we have overriden the config method.
 

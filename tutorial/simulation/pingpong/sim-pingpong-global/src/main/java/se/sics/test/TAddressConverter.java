@@ -30,9 +30,6 @@ public class TAddressConverter implements Converter<TAddress> {
                 return null;
             }
         }
-        if(o instanceof TAddress) {
-            return (TAddress)o;
-        }
         return null;
     }
 
