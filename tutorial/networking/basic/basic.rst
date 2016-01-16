@@ -141,6 +141,8 @@ All that is left is now is to register the new ``Serializer``\s and map the righ
 		Serializers.register(Pong.class, "ppS");
 	}
 
+.. _distributedpingpong:
+
 Distributed PingPong
 --------------------
 Now we are prepared for a true distributed deployment of our *PingPong* example. There are a number of changes we need to make to the way we set up the component hierarchy. First of all, we want to deploy ``Pinger`` and ``Ponger`` separately, and they also need different parameters. The ``Ponger`` is purely reactive and it only needs to know its own *self* address. The ``Pinger`` on the other hand needs to know both its own address and a ``Ponger``'s. We are going to make use of that distinction in the ``Main`` class to decide which one to start. If we see two commandline arguments (1 IP and 1 port), we are going to start a ``Ponger``. If, however, we see four commandline arguments (2 IPs and 2 ports), we are going to start a ``Pinger``. Since our application classes now need different setup, we are also going to split the ``Parent`` into a ``PingerParent`` and a ``PongerParent``. Note that it is always a good idea to have a class wihout any business logic that sets up the ``Network`` and ``Timer`` connections, as you will see in the section on :ref:`simulation`.
