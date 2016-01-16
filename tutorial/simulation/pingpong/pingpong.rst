@@ -2,7 +2,7 @@
 
 Introduction to Simulation
 ==========================
-First, we have to include the simulator dependency in our pom file. The simulator version is the same as kompics, in this case 0.9.1-SNAPSHOT :
+First, we have to include the simulator dependency in our pom file. The simulator version is the same as kompics, in this case ``0.9.1-SNAPSHOT``:
 
 .. code-block:: xml
 
@@ -14,7 +14,7 @@ First, we have to include the simulator dependency in our pom file. The simulato
 
 Next we write the simulation scenario. A scenario is a parallel and/or sequential composition of stochastic processes. We call a stochastic process, a finite random sequence of events, with a specified distribution of inter-arrival times. In other words, stochastic processes define series of events that occur in simulation.
 
-The following snippet of code creates one stochastic process that will generate 1000 events of type SimpleEvent with an inter-arrival time of 2000ms(2s)(simulated time).
+The following snippet of code creates one stochastic process that will generate 1000 events of type ``SimpleEvent`` with an inter-arrival time of 2000ms(2s)(simulated time).
 
 .. code-block:: java
 
@@ -57,7 +57,7 @@ The new events generated have a parameter that takes uniform long random values 
 
 There are several types of operations Operation(,1,2,3,4,5) that can be interpreted by the simulator and they differ in the number of parameters they take to customize the generated events. The parameters are given as distributions. There are a number of distributions provided by the simulator, or you can write your own distribution by extending :java:ref:`se.sics.kompics.simulator.adaptor.distributions.Distribution`. 
 
-In order to start the stochastic processes and to define the iterative/parallel behaviour, the :java:ref:`se.sics.kompics.simulator.SimulationScenario.StochasticProcess` has a number of methods like ``start...`` and ``terminate...``.
+In order to start the stochastic processes and to define the iterative/parallel behaviour, the :java:ref:`se.sics.kompics.simulator.SimulationScenario.StochasticProcess` has a number of start/terminate methods.
 
 If we want to start the two stochastic process above, a possible example would be:
 
@@ -67,7 +67,7 @@ If we want to start the two stochastic process above, a possible example would b
 	p2.startAfterTerminationOf(1000, p1);
 	terminateAfterTerminationOf(2000, p2);
 
-The above example would start the stochastic process `p1` at the beginning of the simulation. After all 1000 events defined in p1 are generated, the simulation waits another 1000ms of simulated time and starts the second stochastic process p2. After generating all 500 p2 defined events and waiting another 2000ms of simulated time, the simulation will end.
+The above example would start the stochastic process *p1* at the beginning of the simulation. After all 1000 events defined in *p1* are generated, the simulation waits another 1000ms of simulated time and starts the second stochastic process *p2*. After generating all 500 *p2* defined events and waiting another 2000ms of simulated time, the simulation will end.
 
 The stochastic processes created and their order will be defined within the SimulationScenario:
 
@@ -131,14 +131,14 @@ In order to run the simulation scenario, the following code is required:
 		simpleBootScenario.simulate(LauncherComp.class);
 	}
 
-In the above code, we set the simulation scenario seed(more about this seed in later sections), we construct the simulation scenario and we give it to the :java:ref:`se.sics.kompics.simulator.run.LauncherComp` to execute it.
+In the above code, we set the simulation scenario seed (more about this seed in later sections), we construct the simulation scenario and we give it to the :java:ref:`se.sics.kompics.simulator.run.LauncherComp` to execute it.
 
 
 PingPong Simulation
 -------------------
 Starting from the :ref:`distributedpingpong`, in this section we will see how we can run the pinger/ponger configuration as a simulation. As stated in the previous section, do not forget to include the simulator dependency in your pom file.
 
-First change we want to do in order to be able to use the deploy code in simulation(with minimal changes), is use a ``Parent`` and ``Host`` division. The ``Parent`` will typically connect all subcomponents of the system between themselves and to a ``Network`` and ``Timer`` port. 
+First change we want to do in order to be able to use the deploy code in simulation (with minimal changes), is use a ``Parent`` and ``Host`` division. The ``Parent`` will typically connect all subcomponents of the system between themselves and to a ``Network`` and ``Timer`` port. 
 
 In deployment, the ``Host`` will create the ``Timer`` and ``Network`` instances and connect them to the ``Parent``, while in simulation, the Simulator will provide the ``Timer`` and ``Network`` and will connect them to the ``Parent``.
 
@@ -148,7 +148,7 @@ In deployment, the ``Host`` will create the ``Timer`` and ``Network`` instances 
 .. literalinclude:: sim-pingpong-distributed/src/main/java/se/sics/test/system/PongerHost.java
 
 In the simulation scenario we define two types of ``StartNodeEvent`` events for `Ponger` and `Pinger`. The methods required to be overridden are very simple as they are getter methods for the ``Parent`` ``ComponentDefinition``, ``Init`` and the node ``Address``.
-The scenario is set to start 5 ponger nodes and 5 pinger nodes. The sequential distributions will give ips ending in: 1,2,3,4,5 to the pongers and ips ending in: 6,7,8,9,10 to pingers and the <pinger,ponger> relation is: {<1,6>, <2, 7>, <3,8>, <4,9>, <5,10>}
+The scenario is set to start 5 ponger nodes and 5 pinger nodes. The sequential distributions will give IPs ending in: :math:`x=\{1,2,3,4,5\}` to the pongers and IPs ending in: :math:`y=\{6,7,8,9,10\}` to pingers and the <x,y> relation is: {<1,6>, <2, 7>, <3,8>, <4,9>, <5,10>} (or :math:`y = x+5`).
 
 .. literalinclude:: sim-pingpong-distributed/src/main/java/se/sics/test/sim/ScenarioGen.java
 .. literalinclude:: sim-pingpong-distributed/src/main/java/se/sics/test/sim/ScenarioLauncher.java
@@ -185,13 +185,18 @@ The code until here can be downloaded :download:`here <sim-pingpong-distributed.
 
 Configuration
 -------------
-We will now change the code to :ref:`netcleanup` version and try to run it in simulation. The configuration now containes two types of parameters - node-specific parameters(like addresses) and system-parameters(like timeout) that do not change with each node. In simulation we will have one `reference.conf` config file with system-parameters, and we will tell the simulator to add the node-specific parameters.
+We will now change the code to :ref:`netcleanup` version and try to run it in simulation. The configuration now containes two types of parameters: 
+
+	#. Node-specific parameters (like addresses) and 
+	#. system-parameters (like timeout) that do not change with each node.
+	
+In simulation we will have one :file:`reference.conf` config file with system-parameters, and we will tell the simulator to add the node-specific parameters.
 
 Thus the configuration file now contains only the timeout.
 
 .. literalinclude:: sim-pingpong-cleaner/src/main/resources/reference.conf
 
-We now want to tell the simulator to add the `self` and `ponger` addresses to the config of each individual node. For this we will need to override the :java:ref:`se.sics.kompics.simulator.events.system.StartNodeEvent.initConfigUpdate()` method. The default implementation of this method returns an empty Map which coresponds to no change to the config. The returned Map is of type <config-key, config-value>. We can add the the addresses to the config in two ways. We ca add the components of the address:
+We now want to tell the simulator to add the *self* and *ponger* addresses to the config of each individual node. For this we will need to override the :java:ref:`se.sics.kompics.simulator.events.system.StartNodeEvent.initConfigUpdate()` method. The default implementation of this method returns an empty Map which coresponds to no change to the config. The returned Map is of type <config-key, config-value>. We can add the the addresses to the config in two ways. We can add the components of the address:
 
 .. code-block:: java
 
@@ -232,9 +237,10 @@ The ``Host`` and ``Parent`` are also changed to use the config.
 
 The code until here can be downloaded :download:`here <sim-pingpong-distributed.zip>`.
 
+
 Global View
 -----------
-Sometimes you might want to observe some state and do something special(like stop the simulation) in case the state matches a special case that you have considered. With this in mind the simulator offers a :java:ref:`se.sics.kompics.simulator.util.GlobalView`. The ``GlobalView`` allows you to do three things:
+Sometimes you might want to observe some state and do something special (like stop the simulation) in case the state matches a special case that you have considered. With this in mind the simulator offers a :java:ref:`se.sics.kompics.simulator.util.GlobalView`. The ``GlobalView`` allows you to do three things:
 
 	#. check which nodes are dead or alive 
 	#. set/get <key,values> shared globally
@@ -324,9 +330,9 @@ We also want to be able to kill nodes, specifically pongers, so we write a :java
 		}
 	};
 
-We modify now the old scenario - `simplePing`, that starts 5 pongers and 5 pingers and we expect the ``SimulationObserver`` to terminate it early, when at least 100 pongs have been received. In case our observer's termination conditions are not met due to bugs, the simulation might not stop and run forever, so we still want to keep the scenario termination time(a very high one) as a safety net. In this case we added a 10.000s termination time, but the ``SimulationObserver`` should terminate the simulation within a couple of tens of seconds of simulated time.
+We modify now the old scenario ``simplePing``, that starts 5 pongers and 5 pingers and we expect the ``SimulationObserver`` to terminate it early, when at least 100 pongs have been received. In case our observer's termination conditions are not met due to bugs, the simulation might not stop and run forever, so we still want to keep the scenario termination time (a very high one) as a safety net. In this case we added a 10.000s termination time, but the ``SimulationObserver`` should terminate the simulation within a couple of tens of seconds of simulated time.
 
-The second scenario - `killPongers` will start killing the pongers, which the observer should notice and then stop the simulation. In this case both conditions: number of pings and number of dead nodes, can be met, but for the given code (seed, timing conditidions) the number of dead nodes will be met first.
+The second scenario ``killPongers`` will start killing the pongers, which the observer should notice and then stop the simulation. In this case both conditions -- number of pings and number of dead nodes -- can be met, but for the given code (seed, timing conditidions) the number of dead nodes will be met first.
 
 .. literalinclude:: sim-pingpong-global/src/main/java/se/sics/test/sim/ScenarioGen.java
 .. literalinclude:: sim-pingpong-global/src/main/java/se/sics/test/sim/SimplePingLauncher.java

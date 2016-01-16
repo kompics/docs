@@ -1,7 +1,7 @@
 .. _scenarios:
 
-Simulation Scenarios
-====================
+Simulation Scenarios Reference
+==============================
 
 Simulation Events
 -----------------

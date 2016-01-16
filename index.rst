@@ -7,6 +7,8 @@
 Welcome to Kompics's documentation!
 ###################################
 
+.. image:: _static/kompicslogo.png
+
 Contents:
 
 .. toctree::

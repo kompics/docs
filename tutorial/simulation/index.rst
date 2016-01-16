@@ -14,7 +14,7 @@ Possible sources of randomness include:
 	#. network e.g. latency, packet loss
 	#. input/output sources
 
-A simulation experiment is specified as a SimulationScenario class that describes the occurence of events such as starting/stopping a node, changing the parameters of the network, or terminating the simulation. Such a SimulationScenario is then executed by the P2pSimulator in a single-threaded, deterministic fashion
+A simulation experiment is specified as a ``SimulationScenario`` class that describes the occurence of events such as starting/stopping a node, changing the parameters of the network, or terminating the simulation. Such a ``SimulationScenario`` is then executed by the ``P2pSimulator`` in a single-threaded, deterministic fashion.
 
 .. toctree::
    :maxdepth: 3
