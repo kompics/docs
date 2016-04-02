@@ -50,7 +50,7 @@ Kompics snapshots are hosted at `<http://kompics.sics.se/maven/snapshotrepositor
 These :code:`SNAPSHOT` releases are not nightly builds, but manually deployed artifacts, that are tested to work with the maintainer's code at least, before release. They should be the default to include as dependencies for projects using Kompics.
 
 Maven/SBT Definition of the Snapshot Repository
-"""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""
 Make sure that you add the repository to the maven repositories in :file:`pom.xml`:
 
 .. code-block:: xml
