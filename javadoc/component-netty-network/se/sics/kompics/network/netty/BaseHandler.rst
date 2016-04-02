@@ -1,3 +1,5 @@
+.. java:import:: com.google.common.base Optional
+
 .. java:import:: io.netty.channel Channel
 
 .. java:import:: io.netty.channel ChannelHandler
@@ -9,6 +11,8 @@
 .. java:import:: java.net InetSocketAddress
 
 .. java:import:: java.net SocketAddress
+
+.. java:import:: se.sics.kompics.network Address
 
 .. java:import:: se.sics.kompics.network NetworkException
 

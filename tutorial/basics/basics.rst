@@ -83,9 +83,10 @@ We also want to add the ports to the two components such that ``Pinger`` sends `
 		Negative<PingPongPort> ppp = provides(PingPongPort.class);
 	}
 
+.. _event_handlers:
 
-Handlers
---------
+Event Handlers
+--------------
 In order for components to actually get scheduled and process events, a *handler* for a specific event type must be *subscribed* to a port that spits out that kind of event. If an event arrives at a component's port and no handler is subscribed for its type, then the event is simply silently dropped.
 
 In Java terms the most common way of working with handlers is to assign an anonymous class that extends :java:ref:`se.sics.kompics.Handler` of the desired event type to either a class field or a block variable and then call ``subscribe`` with that variable and the target port.

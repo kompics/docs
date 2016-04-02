@@ -8,10 +8,16 @@ Transport
 
    The \ ``Transport``\  class.
 
-   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling
+   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>
 
 Enum Constants
 --------------
+DATA
+^^^^
+
+.. java:field:: public static final Transport DATA
+   :outertype: Transport
+
 LEDBAT
 ^^^^^^
 

@@ -22,16 +22,16 @@ ChannelSelectorSet
 
 Methods
 -------
-addChannelFilter
-^^^^^^^^^^^^^^^^
+addChannelSelector
+^^^^^^^^^^^^^^^^^^
 
-.. java:method:: @SuppressWarnings public void addChannelFilter(ChannelCore<?> channel, ChannelSelector<?, ?> filter)
+.. java:method:: @SuppressWarnings public void addChannelSelector(ChannelCore<?> channel, ChannelSelector<?, ?> filter)
    :outertype: ChannelSelectorSet
 
 clear
 ^^^^^
 
-.. java:method::  void clear()
+.. java:method:: public void clear()
    :outertype: ChannelSelectorSet
 
 get

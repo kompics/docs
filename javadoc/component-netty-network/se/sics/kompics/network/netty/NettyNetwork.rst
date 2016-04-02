@@ -1,3 +1,5 @@
+.. java:import:: com.google.common.base Optional
+
 .. java:import:: io.netty.bootstrap Bootstrap
 
 .. java:import:: io.netty.bootstrap ServerBootstrap
@@ -9,8 +11,6 @@
 .. java:import:: io.netty.channel Channel
 
 .. java:import:: io.netty.channel ChannelFuture
-
-.. java:import:: io.netty.channel ChannelFutureListener
 
 .. java:import:: io.netty.channel ChannelOption
 
@@ -42,12 +42,6 @@
 
 .. java:import:: java.net InetSocketAddress
 
-.. java:import:: java.net UnknownHostException
-
-.. java:import:: java.util HashSet
-
-.. java:import:: java.util Iterator
-
 .. java:import:: java.util LinkedList
 
 .. java:import:: java.util List
@@ -71,6 +65,8 @@
 .. java:import:: se.sics.kompics Start
 
 .. java:import:: se.sics.kompics Stop
+
+.. java:import:: se.sics.kompics.network ConnectionStatus
 
 .. java:import:: se.sics.kompics.network MessageNotify
 
@@ -134,6 +130,18 @@ STREAM_MAX
 .. java:field:: public static final int STREAM_MAX
    :outertype: NettyNetwork
 
+bootstrapTCPClient
+^^^^^^^^^^^^^^^^^^
+
+.. java:field:: final Bootstrap bootstrapTCPClient
+   :outertype: NettyNetwork
+
+bootstrapUDTClient
+^^^^^^^^^^^^^^^^^^
+
+.. java:field:: final Bootstrap bootstrapUDTClient
+   :outertype: NettyNetwork
+
 boundUDTPort
 ^^^^^^^^^^^^
 
@@ -156,6 +164,12 @@ dropHandler
 ^^^^^^^^^^^
 
 .. java:field::  Handler<DropDelayed> dropHandler
+   :outertype: NettyNetwork
+
+messages
+^^^^^^^^
+
+.. java:field:: final MessageQueueManager messages
    :outertype: NettyNetwork
 
 msgHandler
@@ -234,6 +248,30 @@ networkException
 .. java:method:: protected void networkException(NetworkException networkException)
    :outertype: NettyNetwork
 
+networkStatus
+^^^^^^^^^^^^^
+
+.. java:method:: protected void networkStatus(ConnectionStatus status)
+   :outertype: NettyNetwork
+
+notify
+^^^^^^
+
+.. java:method::  void notify(MessageNotify.Req notify)
+   :outertype: NettyNetwork
+
+notify
+^^^^^^
+
+.. java:method::  void notify(MessageNotify.Req notify, MessageNotify.Resp response)
+   :outertype: NettyNetwork
+
+sendUdpMessage
+^^^^^^^^^^^^^^
+
+.. java:method::  ChannelFuture sendUdpMessage(MessageWrapper msgw)
+   :outertype: NettyNetwork
+
 tearDown
 ^^^^^^^^
 
@@ -243,6 +281,6 @@ tearDown
 trigger
 ^^^^^^^
 
-.. java:method:: public void trigger(KompicsEvent event)
+.. java:method::  void trigger(KompicsEvent event)
    :outertype: NettyNetwork
 

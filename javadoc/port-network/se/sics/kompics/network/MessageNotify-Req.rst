@@ -19,6 +19,12 @@ msg
 .. java:field:: public final Msg msg
    :outertype: MessageNotify.Req
 
+notifyOfDelivery
+^^^^^^^^^^^^^^^^
+
+.. java:field:: public final boolean notifyOfDelivery
+   :outertype: MessageNotify.Req
+
 Constructors
 ------------
 Req
@@ -27,8 +33,20 @@ Req
 .. java:constructor:: public Req(Msg msg)
    :outertype: MessageNotify.Req
 
+Req
+^^^
+
+.. java:constructor:: public Req(Msg msg, boolean notifyOfDelivery)
+   :outertype: MessageNotify.Req
+
 Methods
 -------
+deliveryResponse
+^^^^^^^^^^^^^^^^
+
+.. java:method:: public Resp deliveryResponse(long time, boolean success, long nanoEnd)
+   :outertype: MessageNotify.Req
+
 getMsgId
 ^^^^^^^^
 
@@ -38,12 +56,18 @@ getMsgId
 injectSize
 ^^^^^^^^^^
 
-.. java:method:: public void injectSize(int size)
+.. java:method:: public void injectSize(int size, long nanoStart)
    :outertype: MessageNotify.Req
 
 prepareResponse
 ^^^^^^^^^^^^^^^
 
-.. java:method:: public void prepareResponse(long time, boolean success)
+.. java:method:: public void prepareResponse(long time, boolean success, long nanoEnd)
+   :outertype: MessageNotify.Req
+
+toString
+^^^^^^^^
+
+.. java:method:: @Override public String toString()
    :outertype: MessageNotify.Req
 

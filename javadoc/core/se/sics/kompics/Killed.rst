@@ -21,6 +21,6 @@ Constructors
 Killed
 ^^^^^^
 
-.. java:constructor:: protected Killed(Component c)
+.. java:constructor:: public Killed(Component c)
    :outertype: Killed
 

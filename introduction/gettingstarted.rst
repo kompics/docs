@@ -17,6 +17,8 @@ The best way to include Kompics is to use a build tool like maven and add the re
 
 See :ref:`repos` for information on the maven dependencies.
 
+.. _gs_modules:
+
 Modules
 -------
 Kompics is very modular and consists of several JAR-files containing different features, ports, and components.

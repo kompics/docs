@@ -4,7 +4,17 @@
 
 .. java:import:: io.netty.buffer ByteBuf
 
-.. java:import:: se.sics.kompics.network.netty.serialization Serializer
+.. java:import:: io.netty.channel.socket DatagramPacket
+
+.. java:import:: java.util UUID
+
+.. java:import:: se.sics.kompics.network Msg
+
+.. java:import:: se.sics.kompics.network Transport
+
+.. java:import:: se.sics.kompics.network.netty.serialization DatagramSerializer
+
+.. java:import:: se.sics.kompics.network.netty.serialization Serializers
 
 .. java:import:: se.sics.kompics.network.netty.serialization SpecialSerializers
 
@@ -14,7 +24,7 @@ NettySerializer
 .. java:package:: se.sics.kompics.network.netty
    :noindex:
 
-.. java:type:: public class NettySerializer implements Serializer
+.. java:type:: public class NettySerializer implements DatagramSerializer
 
    :author: lkroll
 
@@ -24,6 +34,12 @@ fromBinary
 ^^^^^^^^^^
 
 .. java:method:: @Override public Object fromBinary(ByteBuf buf, Optional<Object> hint)
+   :outertype: NettySerializer
+
+fromBinary
+^^^^^^^^^^
+
+.. java:method:: @Override public Object fromBinary(ByteBuf buf, DatagramPacket datagram)
    :outertype: NettySerializer
 
 identifier

@@ -268,6 +268,10 @@ Additionally we also need register the new ``Converter`` in the static initialis
 	
 	Write another section *somewhere* describing the Config system in more detail including updates.
 
+
+
+.. _message_matching_handlers:
+
 Message Matching Handlers
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Another thing that feels awkward with our code is how we write network messages. Our ``TMessage`` class does almost nothing except define what kind of header we expect, and all actual network messages like ``Ping`` and ``Pong`` have to implement all these annoying constructors that ``TMessage`` requires instead of focusing on their business logic (which is trivially simple to non-existent^^). We would much rather have the ``TMessage`` act as a kind of container for *data* and then ``Ping`` and ``Pong`` would simply be payloads. But then how would the handlers of ``Pinger`` and ``Ponger`` know which messages are for them, i.e. are ``Ping`` and ``Pong`` respectively, and which are for other classes. They would have to match on ``TMessage`` and handle all network messages. That would be way too expensive in a large system. Under no circumstance do we want to schedule components unnecessarily. The solution to our problem can be found in :java:ref:`se.sics.kompics.ClassMatchedHandler` which provides a very simply form of *pattern matching* for Kompics. Instead of matching on a single event type, it matches on two event types: The *context* type, which we will define as ``TMessage``, and the *content* type which will be ``Ping`` and ``Pong`` respectively.

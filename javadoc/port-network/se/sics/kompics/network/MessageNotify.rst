@@ -20,3 +20,9 @@ create
 .. java:method:: public static Req create(Msg msg)
    :outertype: MessageNotify
 
+createWithDeliveryNotification
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:method:: public static Req createWithDeliveryNotification(Msg msg)
+   :outertype: MessageNotify
+

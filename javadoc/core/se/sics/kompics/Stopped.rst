@@ -21,6 +21,6 @@ Constructors
 Stopped
 ^^^^^^^
 
-.. java:constructor:: protected Stopped(Component c)
+.. java:constructor:: public Stopped(Component c)
    :outertype: Stopped
 

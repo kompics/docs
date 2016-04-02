@@ -13,12 +13,12 @@ Constructors
 KompicsException
 ^^^^^^^^^^^^^^^^
 
-.. java:constructor::  KompicsException(String msg)
+.. java:constructor:: public KompicsException(String msg)
    :outertype: KompicsException
 
 KompicsException
 ^^^^^^^^^^^^^^^^
 
-.. java:constructor::  KompicsException(String msg, Throwable cause)
+.. java:constructor:: public KompicsException(String msg, Throwable cause)
    :outertype: KompicsException
 

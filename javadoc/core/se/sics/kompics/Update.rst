@@ -8,7 +8,7 @@ Update
 .. java:package:: se.sics.kompics
    :noindex:
 
-.. java:type::  class Update implements KompicsEvent
+.. java:type:: public class Update implements KompicsEvent
 
    :author: lkroll
 
@@ -31,6 +31,6 @@ Constructors
 Update
 ^^^^^^
 
-.. java:constructor::  Update(ConfigUpdate update, UUID forwarder)
+.. java:constructor:: public Update(ConfigUpdate update, UUID forwarder)
    :outertype: Update
 

@@ -24,5 +24,5 @@ Started
 .. java:constructor:: public Started(Component c)
    :outertype: Started
 
-   Instantiates a new start event.
+   Instantiates a new started event.
 

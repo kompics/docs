@@ -16,6 +16,7 @@ Contents:
 
    introduction/index
    tutorial/index
+   scala/index
    project/index
    javadoc/modules
 

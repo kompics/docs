@@ -27,43 +27,43 @@ DEFAULT
 downMapper
 ^^^^^^^^^^
 
-.. java:field:: final Mapper downMapper
+.. java:field:: public final Mapper downMapper
    :outertype: UpdateAction
 
 downStrategy
 ^^^^^^^^^^^^
 
-.. java:field:: final Propagation downStrategy
+.. java:field:: public final Propagation downStrategy
    :outertype: UpdateAction
 
 merger
 ^^^^^^
 
-.. java:field:: final Optional<ValueMerger> merger
+.. java:field:: public final Optional<ValueMerger> merger
    :outertype: UpdateAction
 
 selfMapper
 ^^^^^^^^^^
 
-.. java:field:: final Mapper selfMapper
+.. java:field:: public final Mapper selfMapper
    :outertype: UpdateAction
 
 selfStrategy
 ^^^^^^^^^^^^
 
-.. java:field:: final Propagation selfStrategy
+.. java:field:: public final Propagation selfStrategy
    :outertype: UpdateAction
 
 upMapper
 ^^^^^^^^
 
-.. java:field:: final Mapper upMapper
+.. java:field:: public final Mapper upMapper
    :outertype: UpdateAction
 
 upStrategy
 ^^^^^^^^^^
 
-.. java:field:: final Propagation upStrategy
+.. java:field:: public final Propagation upStrategy
    :outertype: UpdateAction
 
 Methods

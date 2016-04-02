@@ -127,7 +127,13 @@ createPositivePort
 destroyTree
 ^^^^^^^^^^^
 
-.. java:method::  void destroyTree(ComponentCore child)
+.. java:method:: protected void destroyTree(ComponentCore child)
+   :outertype: ComponentCore
+
+destroyTreeAtParentOf
+^^^^^^^^^^^^^^^^^^^^^
+
+.. java:method:: protected void destroyTreeAtParentOf(ComponentCore source)
    :outertype: ComponentCore
 
 doConfigUpdate
@@ -151,13 +157,19 @@ doCreate
 doDestroy
 ^^^^^^^^^
 
-.. java:method::  void doDestroy(Component component)
+.. java:method:: protected void doDestroy(Component component)
    :outertype: ComponentCore
 
 equals
 ^^^^^^
 
 .. java:method:: @Override public boolean equals(Object obj)
+   :outertype: ComponentCore
+
+escalateFaultToKompics
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:method:: protected void escalateFaultToKompics(Fault fault)
    :outertype: ComponentCore
 
 eventReceived
@@ -193,7 +205,13 @@ id
 markSubtreeAs
 ^^^^^^^^^^^^^
 
-.. java:method::  void markSubtreeAs(State s)
+.. java:method:: protected void markSubtreeAs(State s)
+   :outertype: ComponentCore
+
+markSubtreeAtAs
+^^^^^^^^^^^^^^^
+
+.. java:method:: protected void markSubtreeAtAs(ComponentCore source, State s)
    :outertype: ComponentCore
 
 setInactive

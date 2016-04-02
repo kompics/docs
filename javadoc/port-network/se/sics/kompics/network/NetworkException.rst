@@ -1,6 +1,6 @@
-.. java:import:: java.net InetSocketAddress
+.. java:import:: com.google.common.base Optional
 
-.. java:import:: se.sics.kompics Event
+.. java:import:: se.sics.kompics KompicsEvent
 
 NetworkException
 ================
@@ -8,43 +8,49 @@ NetworkException
 .. java:package:: se.sics.kompics.network
    :noindex:
 
-.. java:type:: public final class NetworkException extends Event
+.. java:type:: public final class NetworkException implements KompicsEvent
 
    The \ ``NetworkException``\  class.
 
-   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling
+   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>, Lars Kroll <lkroll@kth.se>
+
+Fields
+------
+cause
+^^^^^
+
+.. java:field:: public final Optional<Throwable> cause
+   :outertype: NetworkException
+
+message
+^^^^^^^
+
+.. java:field:: public final String message
+   :outertype: NetworkException
+
+peer
+^^^^
+
+.. java:field:: public final Address peer
+   :outertype: NetworkException
+
+protocol
+^^^^^^^^
+
+.. java:field:: public final Transport protocol
+   :outertype: NetworkException
 
 Constructors
 ------------
 NetworkException
 ^^^^^^^^^^^^^^^^
 
-.. java:constructor:: public NetworkException(InetSocketAddress remoteAddress, Transport protocol)
+.. java:constructor:: public NetworkException(String message, Address peer, Transport protocol)
    :outertype: NetworkException
 
-   Instantiates a new network exception.
-
-   :param remoteAddress: the remote address
-
-Methods
--------
-getProtocol
-^^^^^^^^^^^
-
-.. java:method:: public final Transport getProtocol()
-   :outertype: NetworkException
-
-   Gets the protocol
-
-   :return: the protocol
-
-getRemoteAddress
+NetworkException
 ^^^^^^^^^^^^^^^^
 
-.. java:method:: public final InetSocketAddress getRemoteAddress()
+.. java:constructor:: public NetworkException(String message, Address peer, Transport protocol, Optional<Throwable> cause)
    :outertype: NetworkException
-
-   Gets the remote address.
-
-   :return: the remote address
 

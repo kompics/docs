@@ -26,6 +26,8 @@
 
 .. java:import:: org.slf4j LoggerFactory
 
+.. java:import:: se.sics.kompics.network.netty AckRequestMsg
+
 .. java:import:: se.sics.kompics.network.netty DirectMessage
 
 .. java:import:: se.sics.kompics.network.netty NettyAddress

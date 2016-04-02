@@ -16,6 +16,8 @@
 
 .. java:import:: java.util Map
 
+.. java:import:: java.util Map.Entry
+
 .. java:import:: java.util Random
 
 .. java:import:: java.util Set

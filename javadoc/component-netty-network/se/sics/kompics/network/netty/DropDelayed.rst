@@ -1,6 +1,6 @@
-.. java:import:: java.net InetSocketAddress
-
 .. java:import:: se.sics.kompics KompicsEvent
+
+.. java:import:: se.sics.kompics.network Address
 
 .. java:import:: se.sics.kompics.network Transport
 
@@ -16,10 +16,10 @@ DropDelayed
 
 Fields
 ------
-isa
-^^^
+peer
+^^^^
 
-.. java:field:: public final InetSocketAddress isa
+.. java:field:: public final Address peer
    :outertype: DropDelayed
 
 protocol
@@ -33,6 +33,6 @@ Constructors
 DropDelayed
 ^^^^^^^^^^^
 
-.. java:constructor:: public DropDelayed(InetSocketAddress isa, Transport protocol)
+.. java:constructor:: public DropDelayed(Address peer, Transport protocol)
    :outertype: DropDelayed
 

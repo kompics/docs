@@ -11,6 +11,8 @@ Kompics
 	The main Kompics repository can be found at `<http://github.com/kompics/kompics>`_
 Kompics Simulator
 	The Kompics simulator repository can be found at `<http://github.com/kompics/kompics-simulator>`_
+Kompics Scala
+	The Scala DSL repoistory is located at `<http://github.com/kompics/kompics-scala>`_
 
 Release Repository
 ^^^^^^^^^^^^^^^^^^
@@ -32,6 +34,12 @@ Make sure that you add the repository to the maven repositories in :file:`pom.xm
 	 	</snapshots>
 	</repository>
 
+Or in SBT in your build file with:
+
+.. code-block:: scala
+
+	resolvers += "Kompics Releases" at "http://kompics.sics.se/maven/repository/"
+
 .. note:: 
 
 	Since Kompics is research software, releases are extremely rare. It is common to simply work with snapshot releases. 
@@ -41,7 +49,7 @@ Snapshot Repository
 Kompics snapshots are hosted at `<http://kompics.sics.se/maven/snapshotrepository/se/sics/kompics/>`_.
 These :code:`SNAPSHOT` releases are not nightly builds, but manually deployed artifacts, that are tested to work with the maintainer's code at least, before release. They should be the default to include as dependencies for projects using Kompics.
 
-Maven Definition of the Snapshot Repository
+Maven/SBT Definition of the Snapshot Repository
 """""""""""""""""""""""""""""""""""""""""""
 Make sure that you add the repository to the maven repositories in :file:`pom.xml`:
 
@@ -58,6 +66,12 @@ Make sure that you add the repository to the maven repositories in :file:`pom.xm
 			<enabled>true</enabled>
 		</snapshots>
 	</repository>
+
+Or in SBT in your build file with:
+
+.. code-block:: scala
+
+	resolvers += "Kompics Snapshots" at "http://kompics.sics.se/maven/snapshotrepository/"
 
 Define the library dependencies with the timestamp or :code:`SNAPSHOT` as version. For example:
 

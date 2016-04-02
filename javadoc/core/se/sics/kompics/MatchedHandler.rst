@@ -4,11 +4,12 @@ MatchedHandler
 .. java:package:: se.sics.kompics
    :noindex:
 
-.. java:type:: public abstract class MatchedHandler<P, V, E extends KompicsEvent & PatternExtractor<P, V>>
+.. java:type:: public abstract class MatchedHandler<P, V, E extends KompicsEvent & PatternExtractor<P, ? super V>>
 
    :author: lkroll
-   :param <Matched>:
-   :param <E>:
+   :param <P>: The type of the pattern to match against
+   :param <V>: The type of the content value
+   :param <E>: The type of context event
 
 Fields
 ------

@@ -8,6 +8,8 @@
 
 .. java:import:: java.net InetAddress
 
+.. java:import:: java.net InetSocketAddress
+
 .. java:import:: java.net UnknownHostException
 
 .. java:import:: java.util ArrayList
@@ -15,6 +17,8 @@
 .. java:import:: java.util Arrays
 
 .. java:import:: java.util UUID
+
+.. java:import:: se.sics.kompics.network Address
 
 .. java:import:: se.sics.kompics.network Transport
 

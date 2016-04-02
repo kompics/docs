@@ -53,7 +53,7 @@ addChannel
 addChannel
 ^^^^^^^^^^
 
-.. java:method:: @Override public void addChannel(ChannelCore<P> channel, ChannelSelector<?, ?> filter)
+.. java:method:: @Override public void addChannel(ChannelCore<P> channel, ChannelSelector<?, ?> selector)
    :outertype: JavaPort
 
 cleanChannels

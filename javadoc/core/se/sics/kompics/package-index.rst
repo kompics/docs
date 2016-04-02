@@ -80,11 +80,13 @@ se.sics.kompics
    LoopbackTest-TestPort
    MatchedHandler
    MatcherTest
+   MatcherTest-CData
    MatcherTest-Data
    MatcherTest-DataChild
    MatcherTest-DataContainer
    MatcherTest-DataParent
    MatcherTest-DataPort
+   MatcherTest-FData
    Negative
    PatternExtractor
    Port

@@ -54,6 +54,12 @@ maxNumOfExecutedEvents
 
 Methods
 -------
+asyncShutdown
+^^^^^^^^^^^^^
+
+.. java:method:: public static void asyncShutdown()
+   :outertype: Kompics
+
 createAndStart
 ^^^^^^^^^^^^^^
 

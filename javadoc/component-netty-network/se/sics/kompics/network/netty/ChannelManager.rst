@@ -26,6 +26,8 @@
 
 .. java:import:: java.net SocketAddress
 
+.. java:import:: java.util Collections
+
 .. java:import:: java.util HashMap
 
 .. java:import:: java.util LinkedList
@@ -44,6 +46,8 @@
 
 .. java:import:: se.sics.kompics.network Address
 
+.. java:import:: se.sics.kompics.network ConnectionStatus
+
 .. java:import:: se.sics.kompics.network MessageNotify
 
 .. java:import:: se.sics.kompics.network Msg
@@ -58,7 +62,7 @@ ChannelManager
 .. java:package:: se.sics.kompics.network.netty
    :noindex:
 
-.. java:type:: public class ChannelManager
+.. java:type::  class ChannelManager
 
    :author: lkroll
 

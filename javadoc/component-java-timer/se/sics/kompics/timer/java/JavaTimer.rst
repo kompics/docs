@@ -96,6 +96,12 @@ periodicTimeout
 
    :param timeout: the timeout
 
+tearDown
+^^^^^^^^
+
+.. java:method:: @Override public void tearDown()
+   :outertype: JavaTimer
+
 timeout
 ^^^^^^^
 

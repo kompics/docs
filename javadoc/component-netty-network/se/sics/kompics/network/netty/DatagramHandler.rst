@@ -1,3 +1,5 @@
+.. java:import:: io.netty.buffer ByteBuf
+
 .. java:import:: io.netty.buffer ByteBufUtil
 
 .. java:import:: io.netty.channel ChannelHandler

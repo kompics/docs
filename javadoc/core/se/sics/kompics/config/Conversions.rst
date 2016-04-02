@@ -1,5 +1,9 @@
 .. java:import:: com.google.common.collect HashMultimap
 
+.. java:import:: java.net InetAddress
+
+.. java:import:: java.net UnknownHostException
+
 Conversions
 ===========
 

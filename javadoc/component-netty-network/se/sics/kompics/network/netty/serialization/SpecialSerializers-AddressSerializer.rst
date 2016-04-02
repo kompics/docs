@@ -8,6 +8,8 @@
 
 .. java:import:: java.net InetAddress
 
+.. java:import:: java.net InetSocketAddress
+
 .. java:import:: java.net UnknownHostException
 
 .. java:import:: java.util ArrayList
@@ -15,6 +17,8 @@
 .. java:import:: java.util Arrays
 
 .. java:import:: java.util UUID
+
+.. java:import:: se.sics.kompics.network Address
 
 .. java:import:: se.sics.kompics.network Transport
 
@@ -63,6 +67,18 @@ identifier
 ^^^^^^^^^^
 
 .. java:method:: @Override public int identifier()
+   :outertype: SpecialSerializers.AddressSerializer
+
+socketFromBinary
+^^^^^^^^^^^^^^^^
+
+.. java:method:: public InetSocketAddress socketFromBinary(ByteBuf buf)
+   :outertype: SpecialSerializers.AddressSerializer
+
+socketToBinary
+^^^^^^^^^^^^^^
+
+.. java:method:: public void socketToBinary(InetSocketAddress isa, ByteBuf buf)
    :outertype: SpecialSerializers.AddressSerializer
 
 toBinary

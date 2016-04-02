@@ -6,6 +6,7 @@ se.sics.kompics.network.netty
 .. toctree::
    :maxdepth: 1
 
+   AckRequestMsg
    BaseHandler
    ChannelClosed
    ChannelManager
@@ -18,13 +19,16 @@ se.sics.kompics.network.netty
    DropDelayed
    MessageDecoder
    MessageEncoder
+   MessageQueueManager
+   MessageQueueManager-NotifyListener
+   MessageWrapper
    NettyAddress
    NettyInit
    NettyInitializer
    NettyNetwork
-   NettyNetwork-NotifyListener
    NettySerializer
    NetworkTest
+   NotifyAck
    SendDelayed
    StreamHandler
    TCPServerHandler

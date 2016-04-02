@@ -7,10 +7,13 @@ se.sics.kompics.network
    :maxdepth: 1
 
    Address
+   ConnectionStatus
+   ConnectionStatus-State
    Header
    MessageNotify
    MessageNotify-Req
    MessageNotify-Resp
+   MessageNotify-State
    Msg
    Network
    NetworkControl

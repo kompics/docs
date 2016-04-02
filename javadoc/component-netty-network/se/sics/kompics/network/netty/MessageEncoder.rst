@@ -18,7 +18,7 @@ MessageEncoder
 .. java:package:: se.sics.kompics.network.netty
    :noindex:
 
-.. java:type:: public class MessageEncoder extends MessageToMessageEncoder<MessageNotify.Req>
+.. java:type:: public class MessageEncoder extends MessageToMessageEncoder<MessageWrapper>
 
    :author: Lars Kroll
 
@@ -35,6 +35,6 @@ Methods
 encode
 ^^^^^^
 
-.. java:method:: @Override protected void encode(ChannelHandlerContext ctx, MessageNotify.Req msgr, List<Object> outL) throws Exception
+.. java:method:: @Override protected void encode(ChannelHandlerContext ctx, MessageWrapper msgw, List<Object> outL) throws Exception
    :outertype: MessageEncoder
 

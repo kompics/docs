@@ -22,6 +22,6 @@ MatcherTest.Data
 .. java:package:: se.sics.kompics
    :noindex:
 
-.. java:type:: public static class Data
+.. java:type:: public interface Data
    :outertype: MatcherTest
 
