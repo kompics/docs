@@ -53,9 +53,9 @@ However, in the example above, all events are the same and there is no variation
 		}
 	};
 
-The new events generated have a parameter that takes uniform long random values between 1000 and 2000. Both the inter-arrival time and the event parameters are defined as :java:ref:`se.sics.kompics.simulator.adaptor.distributions.Distribution`, and the *costant* and *uniform* are just helper methods to generate these distributions. 
+The new events generated have a parameter that takes uniform long random values between 1000 and 2000. Both the inter-arrival time and the event parameters are defined as :java:ref:`se.sics.kompics.simulator.adaptor.distributions.Distribution`, and the *constant* and *uniform* are just helper methods to generate these distributions. 
 
-There are several types of operations Operation(,1,2,3,4,5) that can be interpreted by the simulator and they differ in the number of parameters they take to customize the generated events. The parameters are given as distributions. There are a number of distributions provided by the simulator, or you can write your own distribution by extending :java:ref:`se.sics.kompics.simulator.adaptor.distributions.Distribution`. 
+There are several types of operations Operation(_,1,2,...,5) that can be interpreted by the simulator and they differ in the number of parameters they take to customize the generated events. The parameters are given as distributions. There are a number of distributions provided by the simulator, or you can write your own distribution by extending :java:ref:`se.sics.kompics.simulator.adaptor.distributions.Distribution`. 
 
 In order to start the stochastic processes and to define the iterative/parallel behaviour, the :java:ref:`se.sics.kompics.simulator.SimulationScenario.StochasticProcess` has a number of start/terminate methods.
 
@@ -92,7 +92,7 @@ The stochastic processes created and their order will be defined within the Simu
 	public static SimulationScenario simpleSimulation() {
 		SimulationScenario scen = new SimulationScenario() {
 			{
-				StochasticProcess p2 = new StochasticProcess() { 
+				StochasticProcess p1 = new StochasticProcess() { 
 				{
 					eventInterArrivalTime(constant(2000));
 					raise(500, simpleEventGen, uniform(1000, 2000));
@@ -162,7 +162,7 @@ The scenario is set to start 5 ponger nodes and 5 pinger nodes. The sequential d
 		log4j:WARN No appenders could be found for logger (CodeInstrumentation).
 		log4j:WARN Please initialize the log4j system properly.
 
-	In the case you should check your `log4j.properties` files as it might be missing or missconfigured.
+	In the case you should check your `log4j.properties` files as it might be missing or miss-configured.
 
 
 Remember to set the following in your `log4j.properties` files, so that the logger output is manageable and related to your logs only.
@@ -185,7 +185,7 @@ The code until here can be downloaded :download:`here <sim-pingpong-distributed.
 
 Configuration
 -------------
-We will now change the code to :ref:`netcleanup` version and try to run it in simulation. The configuration now containes two types of parameters: 
+We will now change the code to :ref:`netcleanup` version and try to run it in simulation. The configuration now contains two types of parameters: 
 
 	#. node-specific parameters (like addresses)
 	#. system-parameters (like timeout) that do not change with each node.
@@ -196,7 +196,7 @@ Thus the configuration file now contains only the timeout.
 
 .. literalinclude:: sim-pingpong-cleaner/src/main/resources/reference.conf
 
-We now want to tell the simulator to add the *self* and *ponger* addresses to the config of each individual node. For this we will need to override the :java:ref:`se.sics.kompics.simulator.events.system.StartNodeEvent.initConfigUpdate()` method. The default implementation of this method returns an empty Map which coresponds to no change to the config. The returned Map is of type <config-key, config-value>. We can add the the addresses to the config in two ways. We can add the components of the address:
+We now want to tell the simulator to add the *self* and *ponger* addresses to the config of each individual node. For this we will need to override the :java:ref:`se.sics.kompics.simulator.events.system.StartNodeEvent.initConfigUpdate()` method. The default implementation of this method returns an empty Map which corresponds to no change to the config. The returned Map is of type <config-key, config-value>. We can add the the addresses to the config in two ways. We can add the components of the address:
 
 .. code-block:: java
 
@@ -222,7 +222,7 @@ Or we can add the ``TAddress`` object into the config directly:
 		return config;
 	}
 
-In this simulation scenario we have overriden the config method.
+In this simulation scenario we have overridden the config method.
 
 .. literalinclude:: sim-pingpong-cleaner/src/main/java/se/sics/test/sim/ScenarioGen.java
 
@@ -281,7 +281,7 @@ We also add a small bit of code to the ``Pinger`` to record their pongs.
 		gv.setValue("simulation.pongs", gv.getValue("simulation.pongs", Integer.class) + 1);
 	}
 
-Since we are using a custom <key, value> from the ``GlobalView``, we might want to initialize this value before. We can do this within the :java:ref:`se.sics.kompics.simulator.events.system.SetupEvent`, by overrinding the ``setupGlobalView`` method: 
+Since we are using a custom <key, value> from the ``GlobalView``, we might want to initialize this value before. We can do this within the :java:ref:`se.sics.kompics.simulator.events.system.SetupEvent`, by overriding the ``setupGlobalView`` method: 
 
 .. code-block:: java
 
@@ -330,7 +330,7 @@ We also want to be able to kill nodes, specifically pongers, so we write a :java
 
 We modify now the old scenario ``simplePing``, that starts 5 pongers and 5 pingers and we expect the ``SimulationObserver`` to terminate it early, when at least 100 pongs have been received. In case our observer's termination conditions are not met due to bugs, the simulation might not stop and run forever, so we still want to keep the scenario termination time (a very high one) as a safety net. In this case we added a 10.000s termination time, but the ``SimulationObserver`` should terminate the simulation within a couple of tens of seconds of simulated time.
 
-The second scenario ``killPongers`` will start killing the pongers, which the observer should notice and then stop the simulation. In this case both conditions -- number of pings and number of dead nodes -- can be met, but for the given code (seed, timing conditidions) the number of dead nodes will be met first.
+The second scenario ``killPongers`` will start killing the pongers, which the observer should notice and then stop the simulation. In this case both conditions -- number of pings and number of dead nodes -- can be met, but for the given code (seed, timing conditions) the number of dead nodes will be met first.
 
 .. literalinclude:: sim-pingpong-global/src/main/java/se/sics/test/sim/ScenarioGen.java
 .. literalinclude:: sim-pingpong-global/src/main/java/se/sics/test/sim/SimplePingLauncher.java
