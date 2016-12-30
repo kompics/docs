@@ -10,7 +10,7 @@ Components
 ----------
 A *component* in Kompics is a stateful object that can be scheduled and can access its own state without need for synchronisation. Typically components encapsulate some kind of functionality, providing certain services and possibly requiring others. Components can also have *child* components *created* within and these *parent*-*child* relations form a supervision hierarchy tree.
 
-In Java terms a component is class that extends :java:ref:`se.sics.kompics.ComponentDefinition`. If a component needs any additional parameters upon creation, a constructor that takes implementation of :java:ref:`se.sics.kompics.Init` can be used and the instance passed on creation. Otherwise simply pass ``Init.NONE``.
+In Java terms, a component is a class that extends :java:ref:`se.sics.kompics.ComponentDefinition`. If a component needs any additional parameters upon creation, a constructor that takes an implementation of :java:ref:`se.sics.kompics.Init` can be used and the instance passed on creation. Otherwise simply pass ``Init.NONE``.
 
 For this example we need three components, two to do the work, and a parent that handles setup:
 
@@ -41,9 +41,9 @@ The closest analogy to the Kompics terminology in this respect might be electric
 
 An alternativ analogy that is a bit more limited but usually easier to keep in mind is that of service providers and consumers. Consider a port *A* to be a service contract. A component that provides service *A* handles events that are specified as requests in *A* and sends out events that are specified as indications in *A*. Conversely a component that requires service *A* sends out events that are specified as requests in *A* and handles events that are specified as indications in *A* (thus are in a sense replies to its own requests).
 
-In Java terms an event is a class that implements :java:ref:`se.sics.kompics.KompicsEvent` (which is only a marker interface with no required methods) and a port type is a singleton that extends :java:ref:`se.sics.kompics.PortType` and registers its types on load. All port types are automatically instantiated when their classes get loaded. Port instances fall in the two categeories: Those that implement :java:ref:`se.sics.kompics.Positive` of the port type (the result of a call to ``requires``) and those that implement :java:ref:`se.sics.kompics.Negative` of the port type (the result of a call to ``provides``). Internally ports a binary linked with both a positive and a negative side.
+In Java terms an event is a class that implements :java:ref:`se.sics.kompics.KompicsEvent` (which is only a marker interface with no required methods) and a port type is a singleton that extends :java:ref:`se.sics.kompics.PortType` and registers its types on load. All port types are automatically instantiated when their classes get loaded. Port instances fall in the two categeories: Those that implement :java:ref:`se.sics.kompics.Positive` of the port type (the result of a call to ``requires``) and those that implement :java:ref:`se.sics.kompics.Negative` of the port type (the result of a call to ``provides``). Internally ports are binary linked with both a positive and a negative side.
 
-For the this example we need two events and one port type:
+For this example we need two events and one port type:
 
 .. code-block:: java
 
@@ -134,7 +134,7 @@ We also print something so we can see it working on the console.
 
 Channels
 --------
-Since normal in events in Kompics are not addressed, we need to tell the system somehow where a triggered event is supposed to go. The method for this is by connecting *channels*. A single channel connects exactly two ports of opposite polarity (or direction, if you prefer). You can connect both ports that are inside and outside of a component. The normal way is to connect the outside of a required port of a component *A* to the outside of a required port of another component *B*. In this setup *B* provides the port's service to *A*, so to speak. The alternative setup is to connect the inside of required port of *A* to the outside of a required port of *B* (remember that insides and outsides are of opposite types, so this actually works). This setup is called *chaining* and it has both *A* and *B* share the service of whatever component connects to the outside of *A*\s port. Alternatively, *A* (or its parent) could pass on the outside of the port that *A* is connected to directly to *B*. This has the same effect, but is a bit more efficient (fewer method invocations while travelling along channel chains). However, it might also break abstraction in some cases. The decision which method is appropriate under certain conditions is left up to the programmer.
+Since normal events in Kompics are not addressed, we need to tell the system somehow where a triggered event is supposed to go. The method for this is by connecting *channels*. A single channel connects exactly two ports of opposite polarity (or direction, if you prefer). You can connect both ports that are inside and outside of a component. The normal way is to connect the outside of a required port of a component *A* to the outside of a required port of another component *B*. In this setup *B* provides the port's service to *A*, so to speak. The alternative setup is to connect the inside of required port of *A* to the outside of a required port of *B* (remember that insides and outsides are of opposite types, so this actually works). This setup is called *chaining* and it has both *A* and *B* share the service of whatever component connects to the outside of *A*\s port. Alternatively, *A* (or its parent) could pass on the outside of the port that *A* is connected to directly to *B*. This has the same effect, but is a bit more efficient (fewer method invocations while travelling along channel chains). However, it might also break abstraction in some cases. The decision of which method is appropriate under certain conditions is left up to the programmer.
 
 In Java channels are created with the ``connect`` method.
 
@@ -145,7 +145,7 @@ In Java channels are created with the ``connect`` method.
 		Component ponger = create(Ponger.class, Init.NONE);
 
 		{
-			connect(pinger.getNegative(PingPongPort.class), ponger.getPositive(PingPongPort.clas));
+			connect(pinger.getNegative(PingPongPort.class), ponger.getPositive(PingPongPort.class));
 		}
 	}
 
@@ -181,7 +181,7 @@ To run the project from within maven::
 
 Component State
 ---------------
-So far the compics components we used haven't really used any state. To show a simple example we are going to introduce a ``counter`` variable in both ``Pinger`` and ``Pinger`` and print the sequence number of the current ``Ping`` or ``Pong`` to console. To show that this works correctly even in multi-threaded execution we'll also add as a second thread to the Kompics runtime. And since using ``System.out.println`` is not the nicest way, we'll introduce ``slf4j`` loggers into both components.
+So far the Kompics components we used haven't really used any state. To show a simple example we are going to introduce a ``counter`` variable in both ``Pinger`` and ``Pinger`` and print the sequence number of the current ``Ping`` or ``Pong`` to console. To show that this works correctly even in multi-threaded execution we'll also add a second thread to the Kompics runtime. And since using ``System.out.println`` is not the nicest way, we'll introduce ``slf4j`` loggers into both components.
 
 .. literalinclude:: pingpong/src/main/java/se/sics/test/Main.java
 

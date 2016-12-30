@@ -196,7 +196,7 @@ Thus the configuration file now contains only the timeout.
 
 .. literalinclude:: sim-pingpong-cleaner/src/main/resources/reference.conf
 
-We now want to tell the simulator to add the *self* and *ponger* addresses to the config of each individual node. For this we will need to override the :java:ref:`se.sics.kompics.simulator.events.system.StartNodeEvent.initConfigUpdate()` method. The default implementation of this method returns an empty Map which corresponds to no change to the config. The returned Map is of type <config-key, config-value>. We can add the the addresses to the config in two ways. We can add the components of the address:
+We now want to tell the simulator to add the *self* and *ponger* addresses to the config of each individual node. For this we will need to override the :java:ref:`se.sics.kompics.simulator.events.system.StartNodeEvent.initConfigUpdate()` method. The default implementation of this method returns an empty Map which corresponds to no change to the config. The returned Map is of type <config-key, config-value>. We can add the addresses to the config in two ways. We can add the components of the address:
 
 .. code-block:: java
 

@@ -26,7 +26,7 @@ The examples in this tutorial require two new dependencies in the :file:`pom.xml
 
 Messages, Addresses, and Headers
 --------------------------------
-The :java:ref:`se.sics.kompics.network.Network` only allows three kinds of events: :java:ref:`se.sics.kompics.network.Msg` may pass in both directions (indication and request), while :java:ref:`se.sics.kompics.network.MessageNotify.Req` is a request and :java:ref:`se.sics.kompics.network.MessageNotify.Resp` is an indication. The latter two can be used to ask the ``Network`` service for feedback about whether or not a specific message was send, how long it took, and how big the serialised version was. This is convenient for systems that need to keep statistics about their messages, or where resources should be freed as soon as a message crosses the wire.
+The :java:ref:`se.sics.kompics.network.Network` only allows three kinds of events: :java:ref:`se.sics.kompics.network.Msg` may pass in both directions (indication and request), while :java:ref:`se.sics.kompics.network.MessageNotify.Req` is a request and :java:ref:`se.sics.kompics.network.MessageNotify.Resp` is an indication. The latter two can be used to ask the ``Network`` service for feedback about whether or not a specific message was sent, how long it took, and how big the serialised version was. This is convenient for systems that need to keep statistics about their messages, or where resources should be freed as soon as a message crosses the wire.
 All messages that go over the network have to implement the ``Msg`` interface, which merely stipulates that a message has to have some kind of header (:java:ref:`se.sics.kompics.network.Header`). The deprecated methods still need to be implemented for backwards compatibility, but should simply forward fields from the ``Header``.
 The header itself requires three fields:
 	
@@ -43,7 +43,7 @@ The :java:ref:`se.sics.kompics.network.Address` interface has four required meth
 
 .. note::
 
-	None of the interface presented above make any requirements as to the (im-)mutability of their fields. It is typically recommended to make all of them immutable. However, certain setups will require things like mutable headers, for example routing might me implemented in such a way.
+	None of the interface presented above make any requirements as to the (im-)mutability of their fields. It is typically recommended to make all of them immutable. However, certain setups will require things like mutable headers, for example routing might be implemented in such a way.
 
 Since almost all application will need custom fields in addition to the fields in the ``Msg``, ``Header``, or ``Address`` interfaces, almost everyone will want to write their own implementations. However, if that should not be the case, a simple default implementation can be found in :java:ref:`se.sics.kompics.network.netty.DirectMessage`, :java:ref:`se.sics.kompics.network.netty.DirectHeader`, and :java:ref:`se.sics.kompics.network.netty.NettyAddress`. For the purpose of this tutorial however, we will write our own, which we will prefix with **T** (for *Tutorial*) to avoid naming conflicts, since Java lacks support for import aliases.
 
@@ -126,7 +126,7 @@ We also added some extra constructors to the messages, to make it easier to use 
 
 	The serialisation above code is not particularly space efficient, since that was not the purpose. To get an idea how to use bit-fields to get a significant space reduction on these kind of frequently used serialisation procedures, take a look at the source code of the ``SpecialSerializers`` class over on `Github <https://github.com/kompics/kompics/blob/master/basic/component-netty-network/src/main/java/se/sics/kompics/network/netty/serialization/SpecialSerializers.java>`_.
 
-All that is left is now is to register the new ``Serializer``\s and map the right types to them. We all the following to the ``Main`` class:
+All that is left is now is to register the new ``Serializer``\s and map the right types to them. We add the following to the ``Main`` class:
 
 .. code-block:: java
 
@@ -145,7 +145,7 @@ All that is left is now is to register the new ``Serializer``\s and map the righ
 
 Distributed PingPong
 --------------------
-Now we are prepared for a true distributed deployment of our *PingPong* example. There are a number of changes we need to make to the way we set up the component hierarchy. First of all, we want to deploy ``Pinger`` and ``Ponger`` separately, and they also need different parameters. The ``Ponger`` is purely reactive and it only needs to know its own *self* address. The ``Pinger`` on the other hand needs to know both its own address and a ``Ponger``'s. We are going to make use of that distinction in the ``Main`` class to decide which one to start. If we see two commandline arguments (1 IP and 1 port), we are going to start a ``Ponger``. If, however, we see four commandline arguments (2 IPs and 2 ports), we are going to start a ``Pinger``. Since our application classes now need different setup, we are also going to split the ``Parent`` into a ``PingerParent`` and a ``PongerParent``. Note that it is always a good idea to have a class wihout any business logic that sets up the ``Network`` and ``Timer`` connections, as you will see in the section on :ref:`simulation`.
+Now we are prepared for a true distributed deployment of our *PingPong* example. There are a number of changes we need to make to the way we set up the component hierarchy. First of all, we want to deploy ``Pinger`` and ``Ponger`` separately, and they also need different parameters. The ``Ponger`` is purely reactive and it only needs to know its own *self* address. The ``Pinger`` on the other hand needs to know both its own address and a ``Ponger``'s. We are going to make use of that distinction in the ``Main`` class to decide which one to start. If we see two commandline arguments (1 IP and 1 port), we are going to start a ``Ponger``. If, however, we see four commandline arguments (2 IPs and 2 ports), we are going to start a ``Pinger``. Since our application classes now need different setup, we are also going to split the ``Parent`` into a ``PingerParent`` and a ``PongerParent``. Note that it is always a good idea to have a class without any business logic that sets up the ``Network`` and ``Timer`` connections, as you will see in the section on :ref:`simulation`.
 
 .. literalinclude:: pingpong-distributed/src/main/java/se/sics/test/PingerParent.java
 
@@ -180,7 +180,7 @@ While our example from the previous section works, there are still a number of t
 
 Configuration Files
 ^^^^^^^^^^^^^^^^^^^
-First of all, you might have noticed that we have a lot of redundancy in the passing around of parameters between the different component ``Init`` objects. Furthermore, our reading from the commandline is not the safest. Sure, there are good libraries for commandline options, but this is not really what we want. What we want is to define a bunch a of values once and then be able to access them from anywhere within the code. The right solution for this problem is using a configuration file, where we write IPs and ports and such things, and a configuration library that knows how to give us access to the values in our code. Kompics has its own configuration library, which by default uses `Typesafe Config <https://github.com/typesafehub/config>`_ as a backend. 
+First of all, you might have noticed that we have a lot of redundancy in the passing around of parameters between the different component ``Init`` objects. Furthermore, our reading from the commandline is not the safest. Sure, there are good libraries for commandline options, but this is not really what we want. What we want is to define a bunch of values once and then be able to access them from anywhere within the code. The right solution for this problem is using a configuration file, where we write IPs and ports and such things, and a configuration library that knows how to give us access to the values in our code. Kompics has its own configuration library, which by default uses `Typesafe Config <https://github.com/typesafehub/config>`_ as a backend. 
 
 If you prefer a different configuration library, you may of course wrap it in an implementation of :java:ref:`se.sics.kompics.config.BaselineConfig` and pass it into :java:ref:`se.sics.kompics.config.Config.Factory` and then replace the default config with your custom one in ``Kompics.setConfig`` before starting the runtime. 
 
@@ -233,7 +233,7 @@ Now that we have a configuration file, we can simply throw away all the ``Init``
         }
     }
 
-However, since the ``NettyNetwork`` needs to know the *self* address as well, we are going to have to duplicate some this work in the ``PingerParent`` and ``PongerParent``. Alternatively we could continue to pass in the *self* address via the ``Pinger`` and ``Ponger`` ``Init`` classes and only construct it once in the respective parent class.
+However, since the ``NettyNetwork`` needs to know the *self* address as well, we are going to have to duplicate some of this work in the ``PingerParent`` and ``PongerParent``. Alternatively we could continue to pass in the *self* address via the ``Pinger`` and ``Ponger`` ``Init`` classes and only construct it once in the respective parent class.
 
 There is another solution, though, that gives a lot more concise code. Kompics' configuration system supports so called *conversions*, which are used to convert compatible types from the config values to the requested values. For example, it would be unnecessary to throw an exception when the user is asking for an instance of ``Long`` but the value is returned as ``Integer`` by Typesafe Config. Instead the config library will look through a number of :java:ref:`se.sics.kompics.config.Converter` instances that are registered at :java:ref:`se.sics.kompics.config.Conversions` (this is very similar to how the serialisation framework is used) and try to find one that can convert an ``Integer`` object to a ``Long`` object. Thus we can use this system to write ``Converter`` that takes the object at ``"pingpong.self"`` for example and converts it to a ``TAddress``. It turns out that the way we wrote the :file:`reference.conf` Typesafe Config will give us a ``Map`` with the subvalues as keys. In this case we can pull out the values, *convert* them to ``String`` and ``Integer`` instances respectively and then construct the ``TAddress`` as before. As an example, we are also going to support an alternative way to write a ``TAddress``, which is a single ``String`` in the following format: ``"127.0.0.1:34567"``.
 
@@ -241,7 +241,7 @@ There is another solution, though, that gives a lot more concise code. Kompics' 
 	:language: java
 	:caption: TAddressConverter.java
 
-Additionally we also need register the new ``Converter`` in the static initialisation block of the ``Main`` class and then we can get a ``TAddress`` by simply calling ``config().getValue("pingpong.self", TAddress.class);``, for example.
+Additionally we also need to register the new ``Converter`` in the static initialisation block of the ``Main`` class and then we can get a ``TAddress`` by simply calling ``config().getValue("pingpong.self", TAddress.class);``, for example.
 
 .. code-block:: java
     :caption: Main.java
@@ -274,7 +274,7 @@ Additionally we also need register the new ``Converter`` in the static initialis
 
 Message Matching Handlers
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-Another thing that feels awkward with our code is how we write network messages. Our ``TMessage`` class does almost nothing except define what kind of header we expect, and all actual network messages like ``Ping`` and ``Pong`` have to implement all these annoying constructors that ``TMessage`` requires instead of focusing on their business logic (which is trivially simple to non-existent^^). We would much rather have the ``TMessage`` act as a kind of container for *data* and then ``Ping`` and ``Pong`` would simply be payloads. But then how would the handlers of ``Pinger`` and ``Ponger`` know which messages are for them, i.e. are ``Ping`` and ``Pong`` respectively, and which are for other classes. They would have to match on ``TMessage`` and handle all network messages. That would be way too expensive in a large system. Under no circumstance do we want to schedule components unnecessarily. The solution to our problem can be found in :java:ref:`se.sics.kompics.ClassMatchedHandler` which provides a very simply form of *pattern matching* for Kompics. Instead of matching on a single event type, it matches on two event types: The *context* type, which we will define as ``TMessage``, and the *content* type which will be ``Ping`` and ``Pong`` respectively.
+Another thing that feels awkward with our code is how we write network messages. Our ``TMessage`` class does almost nothing except define what kind of header we expect, and all actual network messages like ``Ping`` and ``Pong`` have to implement all these annoying constructors that ``TMessage`` requires instead of focusing on their business logic (which is trivially simple to non-existent^^). We would much rather have the ``TMessage`` act as a kind of container for *data* and then ``Ping`` and ``Pong`` would simply be payloads. But then how would the handlers of ``Pinger`` and ``Ponger`` know which messages are for them, i.e. are ``Ping`` and ``Pong`` respectively, and which are for other classes. They would have to match on ``TMessage`` and handle all network messages. That would be way too expensive in a large system. Under no circumstance do we want to schedule components unnecessarily. The solution to our problem can be found in :java:ref:`se.sics.kompics.ClassMatchedHandler` which provides a very simple form of *pattern matching* for Kompics. Instead of matching on a single event type, it matches on two event types: The *context* type, which we will define as ``TMessage``, and the *content* type which will be ``Ping`` and ``Pong`` respectively.
 
 We shall rewrite ``TMessage`` to carry any kind of ``KompicsEvent`` as a payload, and to act as :java:ref:`se.sics.kompics.PatternExtractor` for the payload. We'll also move its serialisation logic into the ``NetSerializer`` leaving the ``PingPongSerializer`` rather trivial as a result.
 
@@ -296,7 +296,7 @@ And of course remember to register ``TMessage`` to the ``"netS"`` serialiser in 
 
 .. note::
 
-	The ``ClassMatchedHandler`` is in fact only a specialisation of the more general :java:ref:`se.sics.kompics.MatchedHandler` which can use any kind of pattern to select values, and not just ``Class`` instances. The advantage of the ``ClassMatchedHandler`` is that the pattern to match against can be automatically extracted from the signature of the ``handle`` method using Java's reflection API. For more general ``MatchedHandler`` usages the pattern would have to supplied manually by overriding the ``pattern`` method.
+	The ``ClassMatchedHandler`` is in fact only a specialisation of the more general :java:ref:`se.sics.kompics.MatchedHandler` which can use any kind of pattern to select values, and not just ``Class`` instances. The advantage of the ``ClassMatchedHandler`` is that the pattern to match against can be automatically extracted from the signature of the ``handle`` method using Java's reflection API. For more general ``MatchedHandler`` usages the pattern would have to be supplied manually by overriding the ``pattern`` method.
 
 Assembly
 ^^^^^^^^
