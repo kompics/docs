@@ -7,7 +7,7 @@ Prerequisites
 -------------
 Kompics requires that you have Java on your machine.
 
-For Kompics versions before :code:`0.8.2` only Java 6 is required. Newer version require Java 7.
+For Kompics versions before :code:`0.8.2` only Java 6 is required. Newer versions require Java 7.
 
 There also exists some Java 8 code in Kompics that is currently commented out for backwards compatibility reasons, but will be reintroduced in a different branch in the (near) future.
 
@@ -25,7 +25,7 @@ Kompics is very modular and consists of several JAR-files containing different f
 
 * ``kompics-core`` – Contains the runtime and the basic definitions. This is the minimum requirement.
 * ``kompics-port-timer`` and ``kompics-component-java-timer`` – Provide the definition and the implementation for a component that handles scheduled timeouts
-* ``kompics-port-network`` and ``kompics-component-netty-network`` – Provide the definition and a Netty based implementation for networking using TCP, UDP, and UDP.
+* ``kompics-port-network`` and ``kompics-component-netty-network`` – Provide the definition and a Netty based implementation for networking using TCP, UDP, and UDT.
 * ``kompics-port-virtual-network`` – Adds a few definitions to the network port to allow for usage of virtual nodes within the same Kompics instance.
 * ``kompics-simulator`` – Contains a DSL to describe experiment/test scenarios and a scheduler and base components to run them.
 
