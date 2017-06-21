@@ -13,6 +13,7 @@ The tutorial picks up where the :ref:`helloworld` example left off. You can eith
    timers/timers
    networking/index
    simulation/index
+   testing/index
 
 .. TODO
 .. ====
