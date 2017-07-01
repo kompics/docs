@@ -16,6 +16,12 @@ Conversions
 
 Methods
 -------
+asString
+^^^^^^^^
+
+.. java:method:: public static String asString()
+   :outertype: Conversions
+
 convert
 ^^^^^^^
 

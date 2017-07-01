@@ -7,9 +7,9 @@ se.sics.kompics.simulator.core.impl
    :maxdepth: 1
 
    FutureEventList
+   GlobalViewImpl
    P2pSimulator
    P2pSimulator-P2pSimulatorInit
-   SimulationContextImpl
    SimulatorMngrComp
    SimulatorMngrComp-SimulatorMngrInit
 

@@ -12,6 +12,18 @@ ComponentProxy
 
 Methods
 -------
+answer
+^^^^^^
+
+.. java:method:: public <P extends PortType> void answer(Direct.Request event)
+   :outertype: ComponentProxy
+
+answer
+^^^^^^
+
+.. java:method:: public <P extends PortType> void answer(Direct.Request req, Direct.Response resp)
+   :outertype: ComponentProxy
+
 connect
 ^^^^^^^
 

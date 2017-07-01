@@ -12,6 +12,10 @@
 
 .. java:import:: se.sics.kompics ComponentDefinition
 
+.. java:import:: se.sics.kompics Fault
+
+.. java:import:: se.sics.kompics Fault.ResolveAction
+
 .. java:import:: se.sics.kompics Handler
 
 .. java:import:: se.sics.kompics Init
@@ -28,6 +32,40 @@
 
 .. java:import:: se.sics.kompics.simulator SimulationScenario
 
+.. java:import:: se.sics.kompics.simulator.core Simulator
+
+.. java:import:: se.sics.kompics.simulator.core SimulatorComp
+
+.. java:import:: se.sics.kompics.simulator.core SimulatorControlPort
+
+.. java:import:: se.sics.kompics.simulator.core SimulatorPort
+
+.. java:import:: se.sics.kompics.simulator.core SimulatorSystem
+
+.. java:import:: se.sics.kompics.simulator.events TerminateExperiment
+
+.. java:import:: se.sics.kompics.simulator.events.system ChangeNetworkModelEvent
+
+.. java:import:: se.sics.kompics.simulator.network NetworkModel
+
+.. java:import:: se.sics.kompics.simulator.scheduler SimulationScheduler
+
+.. java:import:: se.sics.kompics.simulator.stochastic.events StochasticKompicsSimulatorEvent
+
+.. java:import:: se.sics.kompics.simulator.stochastic.events StochasticPeriodicSimulatorEvent
+
+.. java:import:: se.sics.kompics.simulator.stochastic.events StochasticProcessEvent
+
+.. java:import:: se.sics.kompics.simulator.stochastic.events StochasticProcessStartEvent
+
+.. java:import:: se.sics.kompics.simulator.stochastic.events StochasticProcessTerminatedEvent
+
+.. java:import:: se.sics.kompics.simulator.stochastic.events StochasticSimulationTerminatedEvent
+
+.. java:import:: se.sics.kompics.simulator.stochastic.events StochasticSimulatorEvent
+
+.. java:import:: se.sics.kompics.simulator.stochastic.events StochasticTakeSnapshotEvent
+
 .. java:import:: se.sics.kompics.timer CancelPeriodicTimeout
 
 .. java:import:: se.sics.kompics.timer CancelTimeout
@@ -39,40 +77,6 @@
 .. java:import:: se.sics.kompics.timer Timeout
 
 .. java:import:: se.sics.kompics.timer Timer
-
-.. java:import:: se.sics.kompics.simulator.scheduler SimulationScheduler
-
-.. java:import:: se.sics.kompics.simulator.core Simulator
-
-.. java:import:: se.sics.kompics.simulator.core SimulatorComp
-
-.. java:import:: se.sics.kompics.simulator.core SimulatorControlPort
-
-.. java:import:: se.sics.kompics.simulator.core SimulatorPort
-
-.. java:import:: se.sics.kompics.simulator.core SimulatorSystem
-
-.. java:import:: se.sics.kompics.simulator.events ChangeNetworkModelEvent
-
-.. java:import:: se.sics.kompics.simulator.events TerminateExperiment
-
-.. java:import:: se.sics.kompics.simulator.network NetworkModel
-
-.. java:import:: se.sics.kompics.simulator.stochastic.events StochasticKompicsSimulatorEvent
-
-.. java:import:: se.sics.kompics.simulator.stochastic.events StochasticPeriodicSimulatorEvent
-
-.. java:import:: se.sics.kompics.simulator.stochastic.events StochasticSimulationTerminatedEvent
-
-.. java:import:: se.sics.kompics.simulator.stochastic.events StochasticSimulatorEvent
-
-.. java:import:: se.sics.kompics.simulator.stochastic.events StochasticProcessEvent
-
-.. java:import:: se.sics.kompics.simulator.stochastic.events StochasticProcessStartEvent
-
-.. java:import:: se.sics.kompics.simulator.stochastic.events StochasticProcessTerminatedEvent
-
-.. java:import:: se.sics.kompics.simulator.stochastic.events StochasticTakeSnapshotEvent
 
 P2pSimulator.P2pSimulatorInit
 =============================

@@ -2,10 +2,6 @@
 
 .. java:import:: se.sics.kompics.network Msg
 
-.. java:import:: se.sics.kompics.simulator.network.identifier.impl SocketId
-
-.. java:import:: se.sics.kompics.simulator.network.identifier.impl SocketIdExtractor
-
 DestinationHostSelector
 =======================
 

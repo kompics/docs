@@ -6,6 +6,6 @@ se.sics.kompics.simulator.util
 .. toctree::
    :maxdepth: 1
 
+   GlobalView
    GlobalViewHandler
-   SimulationContext
 

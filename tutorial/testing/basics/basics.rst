@@ -210,7 +210,7 @@ Note that in this example we assumed that the ``Ping`` 8 event would be sent at 
 Our assumption is not entirely correct since we haven't taken into consideration any possible delays.
 For example, execution of the start handler of ``Pinger`` could be delayed so that the event actually arrives at ``Ponger`` later on when the framework executes statements in the ``repeat(3)`` block.
 This would cause our test case to fail since we have not explicitly *allowed* the ``Ping`` event (or its response) there.
-For the purpose of this illustration we erred on the side of naivety but to be sure, one would have to include the same ``allow`` statements in the second block as well.
+For the purpose of this illustration we erred on the side of naiveté, but to be sure one would have to include the same ``allow`` statements in the second block as well.
 
 Nesting Blocks
 ^^^^^^^^^^^^^^^^^^^

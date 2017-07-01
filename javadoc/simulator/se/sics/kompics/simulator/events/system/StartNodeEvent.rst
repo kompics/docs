@@ -1,5 +1,3 @@
-.. java:import:: java.nio.channels Selector
-
 .. java:import:: java.util HashMap
 
 .. java:import:: java.util Map
@@ -8,9 +6,9 @@
 
 .. java:import:: se.sics.kompics Init
 
-.. java:import:: se.sics.kompics.simulator.events SystemEvent
+.. java:import:: se.sics.kompics.network Address
 
-.. java:import:: se.sics.kompics.simulator.network.identifier Identifier
+.. java:import:: se.sics.kompics.simulator.events SystemEvent
 
 StartNodeEvent
 ==============
@@ -18,7 +16,7 @@ StartNodeEvent
 .. java:package:: se.sics.kompics.simulator.events.system
    :noindex:
 
-.. java:type:: public abstract class StartNodeEvent<E extends ComponentDefinition> extends SystemEvent
+.. java:type:: public abstract class StartNodeEvent extends SystemEvent
 
    :author: Alex Ormenisan
 
@@ -35,28 +33,20 @@ Methods
 getComponentDefinition
 ^^^^^^^^^^^^^^^^^^^^^^
 
-.. java:method:: public abstract Class<E> getComponentDefinition()
+.. java:method:: public abstract Class<? extends ComponentDefinition> getComponentDefinition()
    :outertype: StartNodeEvent
 
 getComponentInit
 ^^^^^^^^^^^^^^^^
 
-.. java:method:: public abstract Init<E> getComponentInit()
+.. java:method:: public abstract Init getComponentInit()
    :outertype: StartNodeEvent
 
-getHostTrafficSelector
-^^^^^^^^^^^^^^^^^^^^^^
+getNodeAddress
+^^^^^^^^^^^^^^
 
-.. java:method:: public abstract Selector getHostTrafficSelector()
+.. java:method:: public abstract Address getNodeAddress()
    :outertype: StartNodeEvent
-
-getNodeId
-^^^^^^^^^
-
-.. java:method:: public abstract Identifier getNodeId()
-   :outertype: StartNodeEvent
-
-   :return: an object that can uniquely identify this node instance (bijection object->node). Require equals and hash implementations
 
 initConfigUpdate
 ^^^^^^^^^^^^^^^^

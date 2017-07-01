@@ -13,6 +13,8 @@ Kompics Simulator
 	The Kompics simulator repository can be found at `<http://github.com/kompics/kompics-simulator>`_
 Kompics Scala
 	The Scala DSL repoistory is located at `<http://github.com/kompics/kompics-scala>`_
+Kompics Testing
+	The Testing DSL and framework is located at `<http://github.com/kompics/kompics-testing>`_
 
 Release Repository
 ^^^^^^^^^^^^^^^^^^

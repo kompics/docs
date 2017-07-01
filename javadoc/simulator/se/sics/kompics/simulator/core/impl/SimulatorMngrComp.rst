@@ -16,6 +16,8 @@
 
 .. java:import:: se.sics.kompics ComponentDefinition
 
+.. java:import:: se.sics.kompics Fault
+
 .. java:import:: se.sics.kompics Handler
 
 .. java:import:: se.sics.kompics Init
@@ -34,8 +36,6 @@
 
 .. java:import:: se.sics.kompics.config ConfigUpdate
 
-.. java:import:: se.sics.kompics.network Address
-
 .. java:import:: se.sics.kompics.network Msg
 
 .. java:import:: se.sics.kompics.network Network
@@ -48,9 +48,7 @@
 
 .. java:import:: se.sics.kompics.simulator.core SimulatorPort
 
-.. java:import:: se.sics.kompics.simulator.core.impl.selector SimTrafficSelector
-
-.. java:import:: se.sics.kompics.simulator.events SetupEvent
+.. java:import:: se.sics.kompics.simulator.events.system SetupEvent
 
 .. java:import:: se.sics.kompics.simulator.events TerminateExperiment
 
@@ -65,8 +63,6 @@
 .. java:import:: se.sics.kompics.simulator.network.identifier IdentifierExtractor
 
 .. java:import:: se.sics.kompics.simulator.network.identifier.impl SocketIdExtractor
-
-.. java:import:: se.sics.kompics.simulator.util GlobalViewHandler
 
 .. java:import:: se.sics.kompics.timer Timer
 
@@ -90,6 +86,12 @@ SimulatorMngrComp
 
 Methods
 -------
+handleFault
+^^^^^^^^^^^
+
+.. java:method:: @Override public Fault.ResolveAction handleFault(Fault fault)
+   :outertype: SimulatorMngrComp
+
 terminate
 ^^^^^^^^^
 

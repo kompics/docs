@@ -20,6 +20,8 @@
 
 .. java:import:: javassist Loader
 
+.. java:import:: javassist LoaderClassPath
+
 .. java:import:: javassist Translator
 
 .. java:import:: se.sics.kompics ComponentDefinition
@@ -70,6 +72,8 @@
 
 .. java:import:: se.sics.kompics.simulator.instrumentation InstrumentationHelper
 
+.. java:import:: se.sics.kompics.simulator.instrumentation JarURLFixClassLoader
+
 .. java:import:: se.sics.kompics.simulator.stochastic.events StochasticProcessEvent
 
 .. java:import:: se.sics.kompics.simulator.stochastic.events StochasticProcessStartEvent
@@ -90,6 +94,14 @@ SimulationScenario.StochasticProcess
 
 .. java:type:: protected abstract class StochasticProcess implements Serializable
    :outertype: SimulationScenario
+
+Fields
+------
+generators
+^^^^^^^^^^
+
+.. java:field:: protected final LinkedList<OperationGenerator> generators
+   :outertype: SimulationScenario.StochasticProcess
 
 Constructors
 ------------

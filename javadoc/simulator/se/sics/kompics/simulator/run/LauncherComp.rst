@@ -1,12 +1,12 @@
-.. java:import:: java.util HashSet
-
-.. java:import:: java.util Set
-
 .. java:import:: se.sics.kompics Channel
 
 .. java:import:: se.sics.kompics Component
 
 .. java:import:: se.sics.kompics ComponentDefinition
+
+.. java:import:: se.sics.kompics Fault
+
+.. java:import:: se.sics.kompics FaultHandler
 
 .. java:import:: se.sics.kompics Kompics
 
@@ -26,8 +26,6 @@
 
 .. java:import:: se.sics.kompics.simulator.scheduler BasicSimulationScheduler
 
-.. java:import:: se.sics.kompics.simulator.util GlobalViewHandler
-
 .. java:import:: se.sics.kompics.timer Timer
 
 LauncherComp
@@ -42,6 +40,12 @@ LauncherComp
 
 Fields
 ------
+NO_CRASH_HANDLER
+^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final FaultHandler NO_CRASH_HANDLER
+   :outertype: LauncherComp
+
 simulatorScheduler
 ^^^^^^^^^^^^^^^^^^
 

@@ -14,7 +14,7 @@
 
 .. java:import:: se.sics.kompics.simulator.adaptor.distributions.extra BasicIntSequentialDistribution
 
-.. java:import:: se.sics.kompics.simulator.events SetupEvent
+.. java:import:: se.sics.kompics.simulator.events.system SetupEvent
 
 .. java:import:: se.sics.kompics.simulator.events.system StartNodeEvent
 
@@ -30,7 +30,7 @@
 
 .. java:import:: se.sics.kompics.simulator.util GlobalViewHandler
 
-.. java:import:: se.sics.kompics.simulator.util SimulationContext
+.. java:import:: se.sics.kompics.simulator.util GlobalView
 
 ScenarioGen
 ===========

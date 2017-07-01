@@ -11,6 +11,5 @@ The Scala DSL for Kompics provides a more concise look for using Kompics, and ad
 
    gettingstarted
    helloworld
-   engine
    pingpong
    ports

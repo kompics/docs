@@ -10,7 +10,6 @@ Simulator
    se/sics/kompics/simulator/adaptor/distributions/extra/package-index
    se/sics/kompics/simulator/core/package-index
    se/sics/kompics/simulator/core/impl/package-index
-   se/sics/kompics/simulator/core/impl/selector/package-index
    se/sics/kompics/simulator/events/package-index
    se/sics/kompics/simulator/events/system/package-index
    se/sics/kompics/simulator/examples/basic/package-index

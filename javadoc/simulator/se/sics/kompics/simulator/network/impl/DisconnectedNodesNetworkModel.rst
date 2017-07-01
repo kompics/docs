@@ -1,7 +1,5 @@
 .. java:import:: java.util Set
 
-.. java:import:: se.sics.kompics.network Msg
-
 .. java:import:: se.sics.kompics.simulator.network NetworkModel
 
 .. java:import:: se.sics.kompics.simulator.network.identifier Identifier
@@ -14,7 +12,7 @@ DisconnectedNodesNetworkModel
 .. java:package:: se.sics.kompics.simulator.network.impl
    :noindex:
 
-.. java:type:: public class DisconnectedNodesNetworkModel implements NetworkModel
+.. java:type:: public class DisconnectedNodesNetworkModel extends BinaryNetworkModel
 
    :author: Alex Ormenisan
 
@@ -28,12 +26,6 @@ DisconnectedNodesNetworkModel
 
 Methods
 -------
-getLatencyMs
-^^^^^^^^^^^^
-
-.. java:method:: @Override public long getLatencyMs(Msg message)
-   :outertype: DisconnectedNodesNetworkModel
-
 toString
 ^^^^^^^^
 

@@ -10,4 +10,5 @@ se.sics.kompics.simulator.instrumentation
    CodeInstrumentation
    CodeInterceptor
    InstrumentationHelper
+   JarURLFixClassLoader
 

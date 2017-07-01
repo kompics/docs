@@ -1,5 +1,3 @@
-.. java:import:: se.sics.kompics.simulator.core SimulatorSystem
-
 .. java:import:: java.io File
 
 .. java:import:: java.io IOException
@@ -17,6 +15,8 @@
 .. java:import:: javassist Translator
 
 .. java:import:: org.slf4j Logger
+
+.. java:import:: se.sics.kompics.simulator.core SimulatorSystem
 
 CodeInterceptor
 ===============

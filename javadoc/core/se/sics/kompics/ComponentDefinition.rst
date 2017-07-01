@@ -281,7 +281,7 @@ negative
    Negative.
 
    :param portType: the port type
-   :return: the negative
+   :return: the negative < p>
 
 positive
 ^^^^^^^^
@@ -292,7 +292,7 @@ positive
    Positive.
 
    :param portType: the port type
-   :return: the positive
+   :return: the positive < p>
 
 postUpdate
 ^^^^^^^^^^

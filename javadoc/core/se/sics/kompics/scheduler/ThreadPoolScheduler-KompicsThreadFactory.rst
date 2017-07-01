@@ -1,4 +1,4 @@
-.. java:import:: java.util.concurrent SynchronousQueue
+.. java:import:: java.util.concurrent LinkedBlockingQueue
 
 .. java:import:: java.util.concurrent ThreadFactory
 
@@ -7,10 +7,6 @@
 .. java:import:: java.util.concurrent TimeUnit
 
 .. java:import:: java.util.concurrent.atomic AtomicInteger
-
-.. java:import:: java.util.logging Level
-
-.. java:import:: java.util.logging Logger
 
 .. java:import:: se.sics.kompics Component
 
@@ -54,6 +50,6 @@ Methods
 newThread
 ^^^^^^^^^
 
-.. java:method:: public Thread newThread(Runnable r)
+.. java:method:: @Override public Thread newThread(Runnable r)
    :outertype: ThreadPoolScheduler.KompicsThreadFactory
 

@@ -217,7 +217,7 @@ markSubtreeAtAs
 setInactive
 ^^^^^^^^^^^
 
-.. java:method:: abstract void setInactive(Component child)
+.. java:method:: protected abstract void setInactive(Component child)
    :outertype: ComponentCore
 
 setScheduler

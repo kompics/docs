@@ -1,8 +1,8 @@
 .. java:import:: se.sics.kompics PortType
 
-.. java:import:: se.sics.kompics.simulator.events ChangeNetworkModelEvent
+.. java:import:: se.sics.kompics.simulator.events.system ChangeNetworkModelEvent
 
-.. java:import:: se.sics.kompics.simulator.events SetupEvent
+.. java:import:: se.sics.kompics.simulator.events.system SetupEvent
 
 .. java:import:: se.sics.kompics.simulator.events SystemEvent
 

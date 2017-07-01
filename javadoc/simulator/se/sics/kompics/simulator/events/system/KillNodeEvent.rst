@@ -1,3 +1,5 @@
+.. java:import:: se.sics.kompics.network Address
+
 .. java:import:: se.sics.kompics.simulator.events SystemEvent
 
 KillNodeEvent
@@ -20,9 +22,9 @@ KillNodeEvent
 
 Methods
 -------
-getNodeId
-^^^^^^^^^
+getNodeAddress
+^^^^^^^^^^^^^^
 
-.. java:method:: public abstract Object getNodeId()
+.. java:method:: public abstract Address getNodeAddress()
    :outertype: KillNodeEvent
 

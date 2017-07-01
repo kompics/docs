@@ -213,6 +213,6 @@ required
 setInactive
 ^^^^^^^^^^^
 
-.. java:method:: @Override  void setInactive(Component child)
+.. java:method:: @Override protected void setInactive(Component child)
    :outertype: JavaComponent
 

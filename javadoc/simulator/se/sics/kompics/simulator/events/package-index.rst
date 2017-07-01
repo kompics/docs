@@ -6,8 +6,6 @@ se.sics.kompics.simulator.events
 .. toctree::
    :maxdepth: 1
 
-   ChangeNetworkModelEvent
-   SetupEvent
    SimulationEvent
    SystemEvent
    TakeSnapshot

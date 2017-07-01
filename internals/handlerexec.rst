@@ -1,13 +1,9 @@
 .. highlight:: scala
 
-.. _ksengine:
+.. _kihandlerxec:
 
-Kompics Scala Engine Changes
-============================
-
-There is really only a single change to Kompics' underlying execution engine in Kompics Scala, while everything else is merely cosmetical in nature. That difference concerns the way events are matched to handlers and then executed. 
-
-In order to understand the difference it is necessary to understand the Java execution first.
+Handler Execution in Java and Scala
+===========================================
 
 Java Handler Execution
 ----------------------

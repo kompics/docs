@@ -20,6 +20,8 @@
 
 .. java:import:: javassist Loader
 
+.. java:import:: javassist LoaderClassPath
+
 .. java:import:: javassist Translator
 
 .. java:import:: se.sics.kompics ComponentDefinition
@@ -69,6 +71,8 @@
 .. java:import:: se.sics.kompics.simulator.instrumentation CodeInterceptor
 
 .. java:import:: se.sics.kompics.simulator.instrumentation InstrumentationHelper
+
+.. java:import:: se.sics.kompics.simulator.instrumentation JarURLFixClassLoader
 
 .. java:import:: se.sics.kompics.simulator.stochastic.events StochasticProcessEvent
 

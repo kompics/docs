@@ -12,7 +12,7 @@ GlobalViewHandler
 .. java:package:: se.sics.kompics.simulator.util
    :noindex:
 
-.. java:type:: public abstract class GlobalViewHandler<E extends KompicsEvent, M extends Msg & PatternExtractor<Class<E>, E>> extends ClassMatchedHandler<E, M>
+.. java:type:: public abstract class GlobalViewHandler<E extends KompicsEvent, M extends Msg & PatternExtractor<Class, E>> extends ClassMatchedHandler<E, M>
 
    :author: Alex Ormenisan
 
@@ -27,12 +27,12 @@ handle
 handle
 ^^^^^^
 
-.. java:method:: public abstract void handle(E content, M container, SimulationContext simContext)
+.. java:method:: public abstract void handle(E content, M container, GlobalView simContext)
    :outertype: GlobalViewHandler
 
 setSimulationContext
 ^^^^^^^^^^^^^^^^^^^^
 
-.. java:method:: public void setSimulationContext(SimulationContext simContext)
+.. java:method:: public void setSimulationContext(GlobalView simContext)
    :outertype: GlobalViewHandler
 
