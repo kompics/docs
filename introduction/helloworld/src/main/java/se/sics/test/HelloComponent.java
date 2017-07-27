@@ -11,7 +11,7 @@ public class HelloComponent extends ComponentDefinition {
 			@Override
 			public void handle(Start event) {
 				System.out.println("Hello World!");
-				System.exit(0);
+				Kompics.asyncShutdown();
 			}
 		};
 		subscribe(startHandler, control);
