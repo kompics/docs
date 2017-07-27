@@ -8,7 +8,6 @@ import se.sics.kompics.timer.{ Timer, SchedulePeriodicTimeout, Timeout, CancelPe
 import se.sics.kompics.timer.java.JavaTimer
 import se.sics.kompics.Start
 
-import com.typesafe.scalalogging.StrictLogging
 import java.util.UUID
 
 class PingerParent extends ComponentDefinition {
@@ -25,7 +24,7 @@ class PingerParent extends ComponentDefinition {
 
 case class PingTimeout(spt: SchedulePeriodicTimeout) extends Timeout(spt)
 
-class Pinger(init: Init[Pinger]) extends ComponentDefinition with StrictLogging {
+class Pinger(init: Init[Pinger]) extends ComponentDefinition {
     val net = requires[Network];
     val timer = requires[Timer];
 
@@ -50,7 +49,7 @@ class Pinger(init: Init[Pinger]) extends ComponentDefinition with StrictLogging 
     net uponEvent {
         case context @ TMessage(_, Pong) => handle {
             counter += 1;
-            logger.info(s"Got Pong #$counter!");
+            logger.info("Got Pong #{}!", counter);
         }
     }
 

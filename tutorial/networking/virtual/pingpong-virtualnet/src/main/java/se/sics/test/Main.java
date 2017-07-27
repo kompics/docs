@@ -22,20 +22,23 @@ public class Main {
 
     public static void main(String[] args) {
         if (args.length == 1) {
-            if (args[0].equalsIgnoreCase("ponger")) {
-                Kompics.createAndStart(PongerParent.class, 2);
-                System.out.println("Starting Ponger");
-                // no shutdown this time...act like a server and keep running until externally exited
-            } else if (args[0].equalsIgnoreCase("pinger")) {
-                Kompics.createAndStart(PingerParent.class, 2);
-                System.out.println("Starting Pinger");
-                try {
+            try {
+                if (args[0].equalsIgnoreCase("ponger")) {
+                    Kompics.createAndStart(PongerParent.class, 2);
+                    System.out.println("Starting Ponger");
+                    Kompics.waitForTermination();
+                    // no shutdown this time...act like a server and keep running until externally exited
+                } else if (args[0].equalsIgnoreCase("pinger")) {
+                    Kompics.createAndStart(PingerParent.class, 2);
+                    System.out.println("Starting Pinger");
+                    
                     Thread.sleep(10000);
-                } catch (InterruptedException ex) {
-                    System.exit(1);
+                    
+                    Kompics.shutdown();
+                    System.exit(0);
                 }
-                Kompics.shutdown();
-                System.exit(0);
+            } catch (InterruptedException ex) {
+                System.exit(1);
             }
         } else {
             System.err.println("Invalid number of parameters");

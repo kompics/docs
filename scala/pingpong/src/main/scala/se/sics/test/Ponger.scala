@@ -6,8 +6,6 @@ import se.sics.kompics.Init
 import se.sics.kompics.network.{Network, Transport}
 import se.sics.kompics.network.netty.{ NettyNetwork, NettyInit }
 
-import com.typesafe.scalalogging.StrictLogging
-
 class PongerParent extends ComponentDefinition {
     val self = cfg.getValue[TAddress]("pingpong.self");
     val network = create(classOf[NettyNetwork], new NettyInit(self));
@@ -16,7 +14,7 @@ class PongerParent extends ComponentDefinition {
     connect[Network](network -> ponger);
 }
 
-class Ponger extends ComponentDefinition with StrictLogging {
+class Ponger extends ComponentDefinition {
 
     val net = requires[Network];
 
@@ -26,7 +24,7 @@ class Ponger extends ComponentDefinition with StrictLogging {
     net uponEvent {
         case context@TMessage(_, Ping) => handle {
             counter += 1;
-            logger.info(s"Got Ping #$counter!");
+            logger.info("Got Ping #{}!", counter);
             trigger (TMessage(THeader(self, context.getSource, Transport.TCP), Pong) -> net)
         }
     }

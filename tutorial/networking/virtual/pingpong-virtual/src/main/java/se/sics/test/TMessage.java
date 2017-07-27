@@ -5,7 +5,7 @@ import se.sics.kompics.PatternExtractor;
 import se.sics.kompics.network.Msg;
 import se.sics.kompics.network.Transport;
 
-public class TMessage implements Msg<TAddress, THeader>, PatternExtractor<Class, KompicsEvent> {
+public class TMessage implements Msg<TAddress, THeader>, PatternExtractor<Class<Object>, KompicsEvent> {
 
     public final THeader header;
     public final KompicsEvent payload;
@@ -41,8 +41,9 @@ public class TMessage implements Msg<TAddress, THeader>, PatternExtractor<Class,
     }
 
     @Override
-    public Class extractPattern() {
-        return (Class<Pong>) payload.getClass();
+    public Class<Object> extractPattern() {
+        Class c = payload.getClass();
+        return (Class<Object>) c;
     }
 
     @Override
