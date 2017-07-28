@@ -6,6 +6,8 @@
 
 .. java:import:: java.util List
 
+.. java:import:: org.slf4j MDC
+
 .. java:import:: se.sics.kompics.network MessageNotify
 
 .. java:import:: se.sics.kompics.network Msg

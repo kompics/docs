@@ -6,13 +6,21 @@
 
 .. java:import:: java.util HashSet
 
-.. java:import:: java.util List
+.. java:import:: java.util Map
 
 .. java:import:: java.util Objects
 
 .. java:import:: java.util Set
 
+.. java:import:: org.slf4j Logger
+
+.. java:import:: org.slf4j MDC
+
 .. java:import:: se.sics.kompics Fault.ResolveAction
+
+.. java:import:: se.sics.kompics HandlerStore.HandlerList
+
+.. java:import:: se.sics.kompics HandlerStore.MatchedHandlerList
 
 .. java:import:: se.sics.kompics.config Config
 
@@ -186,16 +194,34 @@ getNegative
 .. java:method:: @SuppressWarnings @Override public <P extends PortType> Negative<P> getNegative(Class<P> portType)
    :outertype: JavaComponent
 
+getNegativePorts
+^^^^^^^^^^^^^^^^
+
+.. java:method::  Map<Class<? extends PortType>, JavaPort<? extends PortType>> getNegativePorts()
+   :outertype: JavaComponent
+
 getPositive
 ^^^^^^^^^^^
 
 .. java:method:: @SuppressWarnings @Override public <P extends PortType> Positive<P> getPositive(Class<P> portType)
    :outertype: JavaComponent
 
+getPositivePorts
+^^^^^^^^^^^^^^^^
+
+.. java:method::  Map<Class<? extends PortType>, JavaPort<? extends PortType>> getPositivePorts()
+   :outertype: JavaComponent
+
 hashCode
 ^^^^^^^^
 
 .. java:method:: @Override public int hashCode()
+   :outertype: JavaComponent
+
+logger
+^^^^^^
+
+.. java:method:: @Override protected Logger logger()
    :outertype: JavaComponent
 
 provided

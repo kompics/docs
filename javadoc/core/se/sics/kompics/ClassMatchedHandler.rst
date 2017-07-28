@@ -4,21 +4,41 @@ ClassMatchedHandler
 .. java:package:: se.sics.kompics
    :noindex:
 
-.. java:type:: public abstract class ClassMatchedHandler<V, E extends KompicsEvent & PatternExtractor<Class, ? super V>> extends MatchedHandler<Class, V, E>
+.. java:type:: public abstract class ClassMatchedHandler<V, E extends KompicsEvent & PatternExtractor<Class<Object>, ? super V>> extends MatchedHandler<Class<Object>, V, E>
 
    :author: lkroll
+
+Constructors
+------------
+ClassMatchedHandler
+^^^^^^^^^^^^^^^^^^^
+
+.. java:constructor:: protected ClassMatchedHandler()
+   :outertype: ClassMatchedHandler
+
+ClassMatchedHandler
+^^^^^^^^^^^^^^^^^^^
+
+.. java:constructor:: protected ClassMatchedHandler(Class<?> matchType)
+   :outertype: ClassMatchedHandler
+
+ClassMatchedHandler
+^^^^^^^^^^^^^^^^^^^
+
+.. java:constructor:: protected ClassMatchedHandler(Class<E> cxtType, Class matchType)
+   :outertype: ClassMatchedHandler
 
 Methods
 -------
 pattern
 ^^^^^^^
 
-.. java:method:: @Override public Class pattern()
+.. java:method:: @Override public Class<Object> pattern()
    :outertype: ClassMatchedHandler
 
 setPattern
 ^^^^^^^^^^
 
-.. java:method::  void setPattern(Class matchType)
+.. java:method::  void setPattern(Class<Object> matchType)
    :outertype: ClassMatchedHandler
 

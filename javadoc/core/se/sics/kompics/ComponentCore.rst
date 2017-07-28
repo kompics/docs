@@ -4,9 +4,13 @@
 
 .. java:import:: java.util UUID
 
+.. java:import:: java.util.concurrent ForkJoinTask
+
 .. java:import:: java.util.concurrent.atomic AtomicInteger
 
 .. java:import:: java.util.concurrent.locks ReentrantReadWriteLock
+
+.. java:import:: org.slf4j Logger
 
 .. java:import:: se.sics.kompics.config Config
 
@@ -18,7 +22,7 @@ ComponentCore
 .. java:package:: se.sics.kompics
    :noindex:
 
-.. java:type:: public abstract class ComponentCore implements Component
+.. java:type:: public abstract class ComponentCore extends ForkJoinTask<Void> implements Component
 
    The \ ``ComponentCore``\  class.
 
@@ -178,6 +182,12 @@ eventReceived
 .. java:method:: public void eventReceived(PortCore<?> port, KompicsEvent event, int wid)
    :outertype: ComponentCore
 
+exec
+^^^^
+
+.. java:method:: @Override protected boolean exec()
+   :outertype: ComponentCore
+
 execute
 ^^^^^^^
 
@@ -188,6 +198,12 @@ getParent
 ^^^^^^^^^
 
 .. java:method:: public ComponentCore getParent()
+   :outertype: ComponentCore
+
+getRawResult
+^^^^^^^^^^^^
+
+.. java:method:: @Override public Void getRawResult()
    :outertype: ComponentCore
 
 hashCode
@@ -202,6 +218,12 @@ id
 .. java:method:: @Override public UUID id()
    :outertype: ComponentCore
 
+logger
+^^^^^^
+
+.. java:method:: protected abstract Logger logger()
+   :outertype: ComponentCore
+
 markSubtreeAs
 ^^^^^^^^^^^^^
 
@@ -214,10 +236,28 @@ markSubtreeAtAs
 .. java:method:: protected void markSubtreeAtAs(ComponentCore source, State s)
    :outertype: ComponentCore
 
+run
+^^^
+
+.. java:method:: @Override public void run()
+   :outertype: ComponentCore
+
+schedule
+^^^^^^^^
+
+.. java:method:: protected void schedule(int wid)
+   :outertype: ComponentCore
+
 setInactive
 ^^^^^^^^^^^
 
 .. java:method:: protected abstract void setInactive(Component child)
+   :outertype: ComponentCore
+
+setRawResult
+^^^^^^^^^^^^
+
+.. java:method:: @Override protected void setRawResult(Void value)
    :outertype: ComponentCore
 
 setScheduler

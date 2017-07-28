@@ -1,20 +1,18 @@
-.. java:import:: com.google.common.collect ArrayListMultimap
-
 .. java:import:: java.lang.reflect Method
 
 .. java:import:: java.util ArrayList
 
 .. java:import:: java.util Comparator
 
-.. java:import:: java.util HashMap
-
-.. java:import:: java.util LinkedList
-
 .. java:import:: java.util List
 
 .. java:import:: java.util TreeSet
 
 .. java:import:: java.util.concurrent.locks ReentrantReadWriteLock
+
+.. java:import:: se.sics.kompics HandlerStore.HandlerList
+
+.. java:import:: se.sics.kompics HandlerStore.MatchedHandlerList
 
 JavaPort
 ========
@@ -137,13 +135,13 @@ getPair
 getSubscribedHandlers
 ^^^^^^^^^^^^^^^^^^^^^
 
-.. java:method::  List<Handler<?>> getSubscribedHandlers(KompicsEvent event)
+.. java:method::  HandlerList getSubscribedHandlers(KompicsEvent event)
    :outertype: JavaPort
 
 getSubscribedMatchers
 ^^^^^^^^^^^^^^^^^^^^^
 
-.. java:method::  List<MatchedHandler> getSubscribedMatchers(PatternExtractor event)
+.. java:method::  MatchedHandlerList getSubscribedMatchers(PatternExtractor event)
    :outertype: JavaPort
 
 hasEvent

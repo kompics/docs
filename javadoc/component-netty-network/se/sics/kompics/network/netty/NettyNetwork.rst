@@ -42,9 +42,13 @@
 
 .. java:import:: java.net InetSocketAddress
 
+.. java:import:: java.util HashMap
+
 .. java:import:: java.util LinkedList
 
 .. java:import:: java.util List
+
+.. java:import:: java.util Map
 
 .. java:import:: java.util.concurrent Executor
 
@@ -52,7 +56,7 @@
 
 .. java:import:: org.slf4j Logger
 
-.. java:import:: org.slf4j LoggerFactory
+.. java:import:: org.slf4j MDC
 
 .. java:import:: se.sics.kompics ComponentDefinition
 
@@ -106,10 +110,22 @@ INITIAL_BUFFER_SIZE
 .. java:field:: static final int INITIAL_BUFFER_SIZE
    :outertype: NettyNetwork
 
-LOG
-^^^
+MDC_KEY_ALT_IF
+^^^^^^^^^^^^^^
 
-.. java:field:: public final Logger LOG
+.. java:field:: public static final String MDC_KEY_ALT_IF
+   :outertype: NettyNetwork
+
+MDC_KEY_IF
+^^^^^^^^^^
+
+.. java:field:: public static final String MDC_KEY_IF
+   :outertype: NettyNetwork
+
+MDC_KEY_PORT
+^^^^^^^^^^^^
+
+.. java:field:: public static final String MDC_KEY_PORT
    :outertype: NettyNetwork
 
 RECV_BUFFER_SIZE
@@ -164,6 +180,12 @@ dropHandler
 ^^^^^^^^^^^
 
 .. java:field::  Handler<DropDelayed> dropHandler
+   :outertype: NettyNetwork
+
+extLog
+^^^^^^
+
+.. java:field:: final Logger extLog
    :outertype: NettyNetwork
 
 messages
@@ -270,6 +292,12 @@ sendUdpMessage
 ^^^^^^^^^^^^^^
 
 .. java:method::  ChannelFuture sendUdpMessage(MessageWrapper msgw)
+   :outertype: NettyNetwork
+
+setCustomMDC
+^^^^^^^^^^^^
+
+.. java:method::  void setCustomMDC()
    :outertype: NettyNetwork
 
 tearDown

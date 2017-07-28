@@ -21,6 +21,14 @@ se.sics.kompics
    ChannelSelector
    ChannelSelectorSet
    ClassMatchedHandler
+   CollectionPerformanceTest
+   CollectionPerformanceTest-PerformanceTest
+   CollectionPerformanceTest-TestEvent
+   CollectionPerformanceTest-TestEvent2
+   CollectionPerformanceTest-TestEvent3
+   CollectionPerformanceTest-TestEvent4
+   CollectionPerformanceTest-TestEvent5
+   CollectionPerformanceTest-TimedTest
    Component
    Component-State
    ComponentCore
@@ -64,6 +72,9 @@ se.sics.kompics
    HandlerRequestResponseTest-TestRequest
    HandlerRequestResponseTest-TestResponse
    HandlerRequestResponseTest-TestRoot1
+   HandlerStore
+   HandlerStore-HandlerList
+   HandlerStore-MatchedHandlerList
    Init
    Init-None
    JavaComponent
@@ -73,6 +84,8 @@ se.sics.kompics
    Kompics
    KompicsEvent
    KompicsException
+   LoggingTest
+   LoggingTest-LoggingComponent
    LoopbackPort
    LoopbackTest
    LoopbackTest-TestComponent
@@ -116,6 +129,7 @@ se.sics.kompics
    UniDirectionalChannel
    UniDirectionalChannel-Direction
    UniDirectionalChannel-Factory
+   Unsafe
    Update
    UpdateAction
    UpdateAction-Builder

@@ -12,6 +12,8 @@
 
 .. java:import:: java.net SocketAddress
 
+.. java:import:: org.slf4j MDC
+
 .. java:import:: se.sics.kompics.network Address
 
 .. java:import:: se.sics.kompics.network NetworkException

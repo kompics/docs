@@ -7,4 +7,5 @@ Core
    se/sics/kompics/package-index
    se/sics/kompics/config/package-index
    se/sics/kompics/scheduler/package-index
+   se/sics/kompics/util/package-index
 

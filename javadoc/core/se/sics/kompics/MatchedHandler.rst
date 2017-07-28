@@ -4,7 +4,7 @@ MatchedHandler
 .. java:package:: se.sics.kompics
    :noindex:
 
-.. java:type:: public abstract class MatchedHandler<P, V, E extends KompicsEvent & PatternExtractor<P, ? super V>>
+.. java:type:: public abstract class MatchedHandler<P, V, E extends PatternExtractor<P, ? super V>>
 
    :author: lkroll
    :param <P>: The type of the pattern to match against
@@ -17,6 +17,20 @@ cxtType
 ^^^^^^^
 
 .. java:field::  Class<E> cxtType
+   :outertype: MatchedHandler
+
+Constructors
+------------
+MatchedHandler
+^^^^^^^^^^^^^^
+
+.. java:constructor:: protected MatchedHandler()
+   :outertype: MatchedHandler
+
+MatchedHandler
+^^^^^^^^^^^^^^
+
+.. java:constructor:: protected MatchedHandler(Class<E> cxtType)
    :outertype: MatchedHandler
 
 Methods

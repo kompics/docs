@@ -26,6 +26,12 @@ portTypeClass
 
 Methods
 -------
+getNegativeEvents
+^^^^^^^^^^^^^^^^^
+
+.. java:method::  Set<Class<? extends KompicsEvent>> getNegativeEvents()
+   :outertype: PortType
+
 getPortType
 ^^^^^^^^^^^
 
@@ -36,6 +42,12 @@ getPortType
 
    :param portTypeClass: the port type class
    :return: the port type
+
+getPositiveEvents
+^^^^^^^^^^^^^^^^^
+
+.. java:method::  Set<Class<? extends KompicsEvent>> getPositiveEvents()
+   :outertype: PortType
 
 hasEvent
 ^^^^^^^^

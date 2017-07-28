@@ -8,6 +8,8 @@
 
 .. java:import:: io.netty.channel.socket DatagramPacket
 
+.. java:import:: org.slf4j MDC
+
 .. java:import:: se.sics.kompics.network Msg
 
 .. java:import:: se.sics.kompics.network Transport

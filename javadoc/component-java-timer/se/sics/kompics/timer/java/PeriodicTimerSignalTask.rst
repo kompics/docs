@@ -1,9 +1,5 @@
 .. java:import:: java.util TimerTask
 
-.. java:import:: java.util.logging Level
-
-.. java:import:: java.util.logging Logger
-
 .. java:import:: se.sics.kompics.timer Timeout
 
 PeriodicTimerSignalTask

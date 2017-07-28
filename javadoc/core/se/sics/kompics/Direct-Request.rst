@@ -7,6 +7,14 @@ Direct.Request
 .. java:type:: public static class Request<R extends Response> implements KompicsEvent
    :outertype: Direct
 
+Fields
+------
+origin
+^^^^^^
+
+.. java:field::  Port origin
+   :outertype: Direct.Request
+
 Methods
 -------
 getOrigin

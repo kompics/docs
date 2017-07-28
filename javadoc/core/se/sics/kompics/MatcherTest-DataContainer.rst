@@ -22,7 +22,7 @@ MatcherTest.DataContainer
 .. java:package:: se.sics.kompics
    :noindex:
 
-.. java:type:: public static class DataContainer implements PatternExtractor<Class, Data>
+.. java:type:: public static class DataContainer implements PatternExtractor<Class<Object>, Data>
    :outertype: MatcherTest
 
 Constructors
@@ -38,7 +38,7 @@ Methods
 extractPattern
 ^^^^^^^^^^^^^^
 
-.. java:method:: @Override public Class extractPattern()
+.. java:method:: @Override public Class<Object> extractPattern()
    :outertype: MatcherTest.DataContainer
 
 extractValue

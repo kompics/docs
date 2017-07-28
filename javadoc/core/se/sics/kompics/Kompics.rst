@@ -16,7 +16,7 @@
 
 .. java:import:: se.sics.kompics.config TypesafeConfig
 
-.. java:import:: se.sics.kompics.scheduler ThreadPoolScheduler
+.. java:import:: se.sics.kompics.scheduler ForkJoinScheduler
 
 .. java:import:: se.sics.kompics.scheduler WorkStealingScheduler
 

@@ -82,6 +82,6 @@ Define the library dependencies with the timestamp or :code:`SNAPSHOT` as versio
 	<dependency>
 		<groupId>se.sics.kompics</groupId>
 		<artifactId>kompics-core</artifactId>
-		<version>0.9.1-SNAPSHOT</version>
+		<version>1.0.0-SNAPSHOT</version>
 		<scope>compile</scope>
 	</dependency>

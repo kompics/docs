@@ -330,7 +330,7 @@ Note the *executable* flag set on the bash scripts. Now write the following into
 
 .. literalinclude:: pingpong-cleaner/dist/application.conf
 	:caption: application.conf
-	:language: json
+	:language: yaml
 
 .. literalinclude:: pingpong-cleaner/dist/ponger.sh
 	:caption: ponger.sh

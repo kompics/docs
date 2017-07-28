@@ -6,7 +6,7 @@ Component
 .. java:package:: se.sics.kompics
    :noindex:
 
-.. java:type:: public interface Component
+.. java:type:: public interface Component extends Runnable
 
    The \ ``Component``\  class.
 

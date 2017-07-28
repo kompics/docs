@@ -120,6 +120,18 @@ id
 .. java:method:: public UUID id()
    :outertype: ComponentProxy
 
+provides
+^^^^^^^^
+
+.. java:method:: public <P extends PortType> Negative<P> provides(Class<P> portType)
+   :outertype: ComponentProxy
+
+requires
+^^^^^^^^
+
+.. java:method:: public <P extends PortType> Positive<P> requires(Class<P> portType)
+   :outertype: ComponentProxy
+
 subscribe
 ^^^^^^^^^
 

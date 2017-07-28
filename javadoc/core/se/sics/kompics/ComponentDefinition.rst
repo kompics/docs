@@ -1,8 +1,18 @@
 .. java:import:: java.lang.reflect Constructor
 
+.. java:import:: java.util HashMap
+
 .. java:import:: java.util List
 
+.. java:import:: java.util Map
+
 .. java:import:: java.util UUID
+
+.. java:import:: org.slf4j Logger
+
+.. java:import:: org.slf4j LoggerFactory
+
+.. java:import:: org.slf4j MDC
 
 .. java:import:: se.sics.kompics Fault.ResolveAction
 
@@ -24,11 +34,35 @@ ComponentDefinition
 
 Fields
 ------
+MDC_KEY_CID
+^^^^^^^^^^^
+
+.. java:field:: public static final String MDC_KEY_CID
+   :outertype: ComponentDefinition
+
+   Pre-configured MDC key for the unique component id. See \ `the logback manuel <https://logback.qos.ch/manual/mdc.html>`_\  for how to use this with logback.
+
+MDC_KEY_CSTATE
+^^^^^^^^^^^^^^
+
+.. java:field:: public static final String MDC_KEY_CSTATE
+   :outertype: ComponentDefinition
+
+   Pre-configured MDC key for the current component lifecycle state. See \ `the logback manuel <https://logback.qos.ch/manual/mdc.html>`_\  for how to use this with logback.
+
 control
 ^^^^^^^
 
 .. java:field:: protected Negative<ControlPort> control
    :outertype: ComponentDefinition
+
+logger
+^^^^^^
+
+.. java:field:: protected final Logger logger
+   :outertype: ComponentDefinition
+
+   Kompics provided slf4j logger with managed diagnostic context. See \ `the logback manuel <https://logback.qos.ch/manual/mdc.html>`_\  for how to use this with logback.
 
 loopback
 ^^^^^^^^
@@ -272,6 +306,57 @@ id
 .. java:method:: public final UUID id()
    :outertype: ComponentDefinition
 
+loggingCtxGet
+^^^^^^^^^^^^^
+
+.. java:method:: protected String loggingCtxGet(String key)
+   :outertype: ComponentDefinition
+
+   Get the value associated with key in the current logging diagnostic context.
+
+   :param key:
+   :return: the value associated with key
+
+loggingCtxPut
+^^^^^^^^^^^^^
+
+.. java:method:: protected void loggingCtxPut(String key, String value)
+   :outertype: ComponentDefinition
+
+   Associate key with value in the logging diagnostic context. See \ `the logback manuel <https://logback.qos.ch/manual/mdc.html>`_\  for how to use this with logback.
+
+   :param key:
+   :param value:
+
+loggingCtxPutAlways
+^^^^^^^^^^^^^^^^^^^
+
+.. java:method:: protected void loggingCtxPutAlways(String key, String value)
+   :outertype: ComponentDefinition
+
+   Associate key permanently with value in the logging diagnostic context. Keys set in this way are not removed by \ :java:ref:`loggingCtxReset()`\  or \ :java:ref:`loggingCtxRemove()`\ . See \ `the logback manuel <https://logback.qos.ch/manual/mdc.html>`_\  for how to use this with logback.
+
+   :param key:
+   :param value:
+
+loggingCtxRemove
+^^^^^^^^^^^^^^^^
+
+.. java:method:: protected void loggingCtxRemove(String key)
+   :outertype: ComponentDefinition
+
+   Disassociate any value with the key in the logging diagnostic context.
+
+   :param key:
+
+loggingCtxReset
+^^^^^^^^^^^^^^^
+
+.. java:method:: protected void loggingCtxReset()
+   :outertype: ComponentDefinition
+
+   Reset the current logging diagnostic context. Removes all items added to context by the user that weren't set with \ :java:ref:`loggingCtxPutAlways(String,String)`\
+
 negative
 ^^^^^^^^
 
@@ -331,6 +416,14 @@ separateConfigId
 
    :return: Whether to create a new config id line for this component (default: \ ``true``\ )
 
+setMDC
+^^^^^^
+
+.. java:method:: protected void setMDC()
+   :outertype: ComponentDefinition
+
+   Should not be necessary to call usually, as ComponentCore will do it. Protected mainly for use by Kompics Scala. Can also be used to set component MDC when executing related off-kompics work (check for concurrency issues, though!).
+
 subscribe
 ^^^^^^^^^
 
@@ -346,7 +439,7 @@ subscribe
 subscribe
 ^^^^^^^^^
 
-.. java:method:: protected final void subscribe(MatchedHandler handler, Port port)
+.. java:method:: protected final void subscribe(MatchedHandler<?, ?, ?> handler, Port port)
    :outertype: ComponentDefinition
 
 suicide
@@ -377,7 +470,7 @@ trigger
 unsubscribe
 ^^^^^^^^^^^
 
-.. java:method:: protected final void unsubscribe(MatchedHandler handler, Port port)
+.. java:method:: protected final void unsubscribe(MatchedHandler<?, ?, ?> handler, Port port)
    :outertype: ComponentDefinition
 
 unsubscribe

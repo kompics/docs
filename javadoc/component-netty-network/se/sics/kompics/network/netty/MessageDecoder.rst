@@ -6,6 +6,8 @@
 
 .. java:import:: io.netty.handler.codec LengthFieldBasedFrameDecoder
 
+.. java:import:: org.slf4j MDC
+
 .. java:import:: se.sics.kompics.network Msg
 
 .. java:import:: se.sics.kompics.network.netty.serialization Serializers

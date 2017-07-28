@@ -44,6 +44,8 @@
 
 .. java:import:: java.util.concurrent ConcurrentMap
 
+.. java:import:: org.slf4j MDC
+
 .. java:import:: se.sics.kompics.network Address
 
 .. java:import:: se.sics.kompics.network ConnectionStatus

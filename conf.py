@@ -34,7 +34,8 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
-    'javasphinx'
+    'javasphinx',
+    'sphinxcontrib.tikz'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -210,6 +211,9 @@ html_static_path = ['_static']
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'Kompicsdoc'
 
+tikz_proc_suite = 'Netpbm'
+tikz_transparent = True
+
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
@@ -224,6 +228,7 @@ latex_elements = {
 
 # Latex figure (float) alignment
 #'figure_align': 'htbp',
+'preamble': '\\usepackage{tikz}'
 }
 
 # Grouping the document tree into LaTeX files. List of tuples

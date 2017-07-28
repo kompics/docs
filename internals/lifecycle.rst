@@ -3,9 +3,11 @@
 Kompics Lifecycle
 =================
 
-.. todo::
+.. figure:: kompics_life_cycle.png
+    :scale: 50 %
+    :alt: kompics life cycle
 
-    Add lifecycle diagram.
+    Kompics Lifecycle Overview.
 
 Every Kompics component has a lifecycle of 5 specific states it can be in, which controls what kind of events it will execute and when it will be deallocated (and thus allowed to be garbage collected eventually).
 

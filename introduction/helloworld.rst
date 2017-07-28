@@ -47,11 +47,15 @@ This is all. Say hello to Kompics ;)
 
 Logging
 -------
-You might notice that if you used only the code from above ``log4j`` complains that is improperly configured. To fix that you can add a simple :file:`src/main/resources/log4j.properties` file to the project to configure the logging system:
+Kompics has built-in logging support, which adds context information to the logging output, such as what state the component is in and what its unique id is. You can access the provided `SLF4J <https://www.slf4j.org/>`_ logger via the ``logger`` field.
 
-.. literalinclude:: helloworld/src/main/resources/log4j.properties
+In order to make use of these features, a mapped diagnostic context (MDC) capable logging backend is required, such as `Logback Classic <https://logback.qos.ch/manual/mdc.html>`_, for example, which is imported in the :download:`pom.xml <helloworld/pom.xml>` file.
 
-If you run it again the ``log4j`` warnings should have disappeared.
+Logback requires a configuration file to work. Adding a simple :file:`src/main/resources/logback.xml` file to the project will configure the logging system, in this case such that all MDC information is printed:
+
+.. literalinclude:: helloworld/src/main/resources/logback.xml
+
+It is also possible to add custom context information to a particular component, by using either :java:ref:`ComponentDefinition.loggingCtxPut(String, String)` for potentially transient values, or :java:ref:`ComponentDefinition.loggingCtxPutAlways(String, String)` for context values that definitely span the life-time of the component.
 
 Download
 --------

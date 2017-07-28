@@ -4,8 +4,6 @@
 
 .. java:import:: org.slf4j Logger
 
-.. java:import:: org.slf4j LoggerFactory
-
 .. java:import:: se.sics.kompics ComponentDefinition
 
 .. java:import:: se.sics.kompics Handler
@@ -38,6 +36,12 @@ JavaTimer
 
 Fields
 ------
+extLogger
+^^^^^^^^^
+
+.. java:field:: final Logger extLogger
+   :outertype: JavaTimer
+
 handleCPT
 ^^^^^^^^^
 
@@ -60,12 +64,6 @@ handleST
 ^^^^^^^^
 
 .. java:field::  Handler<ScheduleTimeout> handleST
-   :outertype: JavaTimer
-
-logger
-^^^^^^
-
-.. java:field:: static final Logger logger
    :outertype: JavaTimer
 
 timer
