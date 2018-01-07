@@ -255,6 +255,10 @@ The following example utilizes nested blocks and shadows headers.
     assertEquals(7, Pinger.pongsReceived);
   }
 
+.. note::
+
+  In addition to shadowing headers within nested blocks, you may also specify multiple header statements within the same block that end up matching the same event at runtime. The framework's uses a last-statement-wins policy for such cases - choosing the matching statement that was declared last in that block's specification.
+
 Finally, each statement must belong to some block.
 The ``TestContext`` instance is created with an implicit block ``repeat(1)`` within which all statements and explicitly created blocks are nested and the entire test case is run.
 The calls to ``repeat`` and ``end`` for this block are handled by the framework itself. However the ``body()`` must be called to denote its body.
