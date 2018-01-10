@@ -1,16 +1,8 @@
-.. java:import:: java.util Set
-
-.. java:import:: org.javatuples Pair
-
-.. java:import:: se.sics.kompics.network Address
-
 .. java:import:: se.sics.kompics.simulator.events SimulationEvent
 
 .. java:import:: se.sics.kompics.simulator.network.identifier IdentifierExtractor
 
 .. java:import:: se.sics.kompics.simulator.network.identifier.impl SocketIdExtractor
-
-.. java:import:: se.sics.kompics.simulator.util GlobalViewHandler
 
 .. java:import:: se.sics.kompics.simulator.util GlobalView
 

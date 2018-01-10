@@ -12,7 +12,7 @@ GlobalViewHandler
 .. java:package:: se.sics.kompics.simulator.util
    :noindex:
 
-.. java:type:: public abstract class GlobalViewHandler<E extends KompicsEvent, M extends Msg & PatternExtractor<Class, E>> extends ClassMatchedHandler<E, M>
+.. java:type:: public abstract class GlobalViewHandler<E extends KompicsEvent, M extends Msg & PatternExtractor<Class<Object>, E>> extends ClassMatchedHandler<E, M>
 
    :author: Alex Ormenisan
 

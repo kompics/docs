@@ -13,6 +13,12 @@ HandlerRequestResponseTest.TestRoot1
 
 Fields
 ------
+startHandler
+^^^^^^^^^^^^
+
+.. java:field::  Handler<Start> startHandler
+   :outertype: HandlerRequestResponseTest.TestRoot1
+
 testResponse
 ^^^^^^^^^^^^
 

@@ -23,6 +23,7 @@ Simulator
    se/sics/kompics/simulator/network/identifier/package-index
    se/sics/kompics/simulator/network/identifier/impl/package-index
    se/sics/kompics/simulator/network/impl/package-index
+   se/sics/kompics/simulator/result/package-index
    se/sics/kompics/simulator/run/package-index
    se/sics/kompics/simulator/scheduler/package-index
    se/sics/kompics/simulator/stochastic/events/package-index

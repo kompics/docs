@@ -1,3 +1,5 @@
+.. java:import:: com.google.common.base Optional
+
 .. java:import:: java.lang.reflect Constructor
 
 .. java:import:: java.lang.reflect InvocationTargetException
@@ -149,13 +151,13 @@ doConfigUpdate
 doCreate
 ^^^^^^^^
 
-.. java:method:: @Override public <T extends ComponentDefinition> Component doCreate(Class<T> definition, Init<T> initEvent)
+.. java:method:: @Override public <T extends ComponentDefinition> Component doCreate(Class<T> definition, Optional<Init<T>> initEvent)
    :outertype: JavaComponent
 
 doCreate
 ^^^^^^^^
 
-.. java:method:: @Override public <T extends ComponentDefinition> Component doCreate(Class<T> definition, Init<T> initEvent, ConfigUpdate update)
+.. java:method:: @Override public <T extends ComponentDefinition> Component doCreate(Class<T> definition, Optional<Init<T>> initEvent, Optional<ConfigUpdate> update)
    :outertype: JavaComponent
 
 equals

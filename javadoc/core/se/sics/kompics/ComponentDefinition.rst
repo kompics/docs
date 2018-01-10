@@ -1,3 +1,5 @@
+.. java:import:: com.google.common.base Optional
+
 .. java:import:: java.lang.reflect Constructor
 
 .. java:import:: java.util HashMap
@@ -40,7 +42,9 @@ MDC_KEY_CID
 .. java:field:: public static final String MDC_KEY_CID
    :outertype: ComponentDefinition
 
-   Pre-configured MDC key for the unique component id. See \ `the logback manuel <https://logback.qos.ch/manual/mdc.html>`_\  for how to use this with logback.
+   Pre-configured MDC key for the unique component id.
+
+   See \ `the logback manuel <https://logback.qos.ch/manual/mdc.html>`_\  for how to use this with logback.
 
 MDC_KEY_CSTATE
 ^^^^^^^^^^^^^^
@@ -48,7 +52,9 @@ MDC_KEY_CSTATE
 .. java:field:: public static final String MDC_KEY_CSTATE
    :outertype: ComponentDefinition
 
-   Pre-configured MDC key for the current component lifecycle state. See \ `the logback manuel <https://logback.qos.ch/manual/mdc.html>`_\  for how to use this with logback.
+   Pre-configured MDC key for the current component lifecycle state.
+
+   See \ `the logback manuel <https://logback.qos.ch/manual/mdc.html>`_\  for how to use this with logback.
 
 control
 ^^^^^^^
@@ -62,7 +68,9 @@ logger
 .. java:field:: protected final Logger logger
    :outertype: ComponentDefinition
 
-   Kompics provided slf4j logger with managed diagnostic context. See \ `the logback manuel <https://logback.qos.ch/manual/mdc.html>`_\  for how to use this with logback.
+   Kompics provided slf4j logger with managed diagnostic context.
+
+   See \ `the logback manuel <https://logback.qos.ch/manual/mdc.html>`_\  for how to use this with logback.
 
 loopback
 ^^^^^^^^
@@ -323,7 +331,9 @@ loggingCtxPut
 .. java:method:: protected void loggingCtxPut(String key, String value)
    :outertype: ComponentDefinition
 
-   Associate key with value in the logging diagnostic context. See \ `the logback manuel <https://logback.qos.ch/manual/mdc.html>`_\  for how to use this with logback.
+   Associate key with value in the logging diagnostic context.
+
+   See \ `the logback manuel <https://logback.qos.ch/manual/mdc.html>`_\  for how to use this with logback.
 
    :param key:
    :param value:
@@ -334,7 +344,11 @@ loggingCtxPutAlways
 .. java:method:: protected void loggingCtxPutAlways(String key, String value)
    :outertype: ComponentDefinition
 
-   Associate key permanently with value in the logging diagnostic context. Keys set in this way are not removed by \ :java:ref:`loggingCtxReset()`\  or \ :java:ref:`loggingCtxRemove()`\ . See \ `the logback manuel <https://logback.qos.ch/manual/mdc.html>`_\  for how to use this with logback.
+   Associate key permanently with value in the logging diagnostic context.
+
+   Keys set in this way are not removed by \ :java:ref:`loggingCtxReset()`\  or \ :java:ref:`loggingCtxRemove()`\ .
+
+   See \ `the logback manuel <https://logback.qos.ch/manual/mdc.html>`_\  for how to use this with logback.
 
    :param key:
    :param value:
@@ -355,7 +369,9 @@ loggingCtxReset
 .. java:method:: protected void loggingCtxReset()
    :outertype: ComponentDefinition
 
-   Reset the current logging diagnostic context. Removes all items added to context by the user that weren't set with \ :java:ref:`loggingCtxPutAlways(String,String)`\
+   Reset the current logging diagnostic context.
+
+   Removes all items added to context by the user that weren't set with \ :java:ref:`loggingCtxPutAlways(String,String)`\
 
 negative
 ^^^^^^^^
@@ -422,7 +438,11 @@ setMDC
 .. java:method:: protected void setMDC()
    :outertype: ComponentDefinition
 
-   Should not be necessary to call usually, as ComponentCore will do it. Protected mainly for use by Kompics Scala. Can also be used to set component MDC when executing related off-kompics work (check for concurrency issues, though!).
+   Should not be necessary to call usually, as ComponentCore will do it.
+
+   Protected mainly for use by Kompics Scala.
+
+   Can also be used to set component MDC when executing related off-kompics work (check for concurrency issues, though!).
 
 subscribe
 ^^^^^^^^^

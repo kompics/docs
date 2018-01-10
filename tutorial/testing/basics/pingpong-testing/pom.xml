@@ -27,7 +27,7 @@
         <dependency>
             <groupId>se.sics.kompics.testing</groupId>
             <artifactId>kompics-testing</artifactId>
-            <version>${kompics.version}</version>
+            <version>0.3.0</version>
             <scope>compile</scope>
         </dependency>
     <dependency>

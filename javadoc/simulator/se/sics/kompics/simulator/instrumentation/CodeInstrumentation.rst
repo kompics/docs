@@ -1,5 +1,3 @@
-.. java:import:: com.google.common.collect Iterables
-
 .. java:import:: com.typesafe.config Config
 
 .. java:import:: com.typesafe.config ConfigException

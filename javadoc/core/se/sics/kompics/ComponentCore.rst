@@ -1,3 +1,5 @@
+.. java:import:: com.google.common.base Optional
+
 .. java:import:: java.util LinkedList
 
 .. java:import:: java.util List
@@ -33,7 +35,7 @@ Fields
 childUpdate
 ^^^^^^^^^^^
 
-.. java:field:: public static ThreadLocal<ConfigUpdate> childUpdate
+.. java:field:: public static final ThreadLocal<Optional<ConfigUpdate>> childUpdate
    :outertype: ComponentCore
 
 children
@@ -63,7 +65,7 @@ parent
 parentThreadLocal
 ^^^^^^^^^^^^^^^^^
 
-.. java:field:: public static ThreadLocal<ComponentCore> parentThreadLocal
+.. java:field:: public static final ThreadLocal<ComponentCore> parentThreadLocal
    :outertype: ComponentCore
 
 readyPorts
@@ -149,13 +151,13 @@ doConfigUpdate
 doCreate
 ^^^^^^^^
 
-.. java:method:: public abstract <T extends ComponentDefinition> Component doCreate(Class<T> definition, Init<T> initEvent)
+.. java:method:: public abstract <T extends ComponentDefinition> Component doCreate(Class<T> definition, Optional<Init<T>> initEvent)
    :outertype: ComponentCore
 
 doCreate
 ^^^^^^^^
 
-.. java:method:: public abstract <T extends ComponentDefinition> Component doCreate(Class<T> definition, Init<T> initEvent, ConfigUpdate update)
+.. java:method:: public abstract <T extends ComponentDefinition> Component doCreate(Class<T> definition, Optional<Init<T>> initEvent, Optional<ConfigUpdate> update)
    :outertype: ComponentCore
 
 doDestroy

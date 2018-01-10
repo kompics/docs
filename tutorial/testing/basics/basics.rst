@@ -10,7 +10,7 @@ You can think of a *behavior* simply as a sequence of events while a test case d
 The framework executes an instance of the CUT, observing the events that actually occur at runtime and matching them against the next expected event according to the test case.
 If a match is unsuccessful then the test case fails immediately.
 Kompics allows you to test your component either in a realistic environment, complete isolation and anywhere in between.
-A test case may also inject events into the environment or inspect the internal state of the CUT at desired points within its execution.
+A test case may also inject events into the environment.
 
 The ``TestContext`` class implements the DSL for writing test cases in this manner.
 
@@ -320,7 +320,7 @@ Ambiguous Testcases
 In order to correctly verify the behavior of a component, the provided test case should be unambiguous.
 Unfortunately, the addition of some constructs like :ref:`Kleene blocks <kleeneBlocks>` and :ref:`Conditionals <conditionals>`, while powerful, make it possible to write test cases whose intention can not be accurately inferred by the framework. 
 
-Consider a scenario where a ``trigger`` or ``inspect`` is the first statement of a :ref:`Kleene block <kleeneBlocks>`.
+Consider a scenario where a ``trigger`` is the first statement of a :ref:`Kleene block <kleeneBlocks>`.
 The following code snippet shows a minimal example.
 
 .. code-block:: java
@@ -331,7 +331,7 @@ The following code snippet shows a minimal example.
 
 It is not possible to infer how many times the ``trigger`` statement should be executed - since such a statement always succeeds, the framework would not know when to exit the block.
 
-The second scenario uses the ``trigger`` or ``inspect`` statement as the first statement in both branches of a :ref:`conditional <conditionals>` as shown in the following example.
+The second scenario uses the ``trigger`` statement as the first statement in both branches of a :ref:`conditional <conditionals>` as shown in the following example.
 Again, it is unclear which of the ``Ping`` events to trigger since the choice of what branch to execute depends on successfully matching events but none of the branches here expect to match an event.
 
 .. code-block:: java
@@ -454,38 +454,6 @@ Change the implementation of handlePing8 (e.g so that the event is dropped) and 
     tc.setDefaultAction(Ping.class, handlePing8);
     // setup done
     tc.body()
-            .expect(new Pong(8), pongerPort, Direction.OUT);
-    assertTrue(tc.check());
-  }
-
-Performing State Inspections
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-In addition to verifying the events that go in and out of the CUT, you can also inspect its internal state using the ``inspect`` statement.
-This statement provides a :java:ref:`com.google.common.base.Predicate\<T\>` instance where ``T`` is the ``ComponentDefinition`` of the CUT.
-Placing this statement at any position within the body of a block causes the framework to call that predicate with the testing ``ComponentDefinition`` instance at that point in the execution.
-Within the predicate, assertions and checks can be made against the component's state, logging activites may be carried out and so on as desired.
-A return value of ``false`` causes the test case to fail immediately.
-No handlers of the component are executed while this predicate is being run so the Kompics guarantee of avoiding internal synchronization also applies here.
-The following code shows the ``Ponger`` component being inspected after handling the first ``Ping``.
-
-
-.. code-block:: java
-
-  Predicate<Ponger> pingReceived = new Predicate<Ponger> () {
-          public boolean apply(Ponger ponger) {
-                  int i = ponger.pingsReceived;
-                  System.out.println("ponger received " + i + " ping(s)");
-                  return i == 1;
-          }
-  };
-
-  public static void main(String[] args) { // inspectExample
-    // ... setup code as in basicsExample ...
-    // setup done
-    tc.body()
-            .expect(new Ping(8), pongerPort, Direction.IN)
-            .inspect(pingReceived) // verify ping count is 1
             .expect(new Pong(8), pongerPort, Direction.OUT);
     assertTrue(tc.check());
   }

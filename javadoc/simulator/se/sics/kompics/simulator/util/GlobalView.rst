@@ -1,7 +1,5 @@
 .. java:import:: java.util Map
 
-.. java:import:: java.util Set
-
 .. java:import:: se.sics.kompics.network Address
 
 .. java:import:: se.sics.kompics.simulator.network.identifier Identifier

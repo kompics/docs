@@ -13,6 +13,12 @@ ChannelRequestResponseTest.TestRoot1
 
 Fields
 ------
+startHandler
+^^^^^^^^^^^^
+
+.. java:field::  Handler<Start> startHandler
+   :outertype: ChannelRequestResponseTest.TestRoot1
+
 testResponse
 ^^^^^^^^^^^^
 
