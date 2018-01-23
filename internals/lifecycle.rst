@@ -9,9 +9,9 @@ Kompics Lifecycle
 
     Kompics Lifecycle Overview.
 
-Every Kompics component has a lifecycle of 5 specific states it can be in, which controls what kind of events it will execute and when it will be deallocated (and thus allowed to be garbage collected eventually).
+Every Kompics component has a lifecycle of 6 specific states it can be in, which controls what kind of events it will execute and when it will be deallocated (and thus allowed to be garbage collected eventually).
 
-These 5 states are 
+These 6 states are
 
 .. hlist::
     :columns: 2
