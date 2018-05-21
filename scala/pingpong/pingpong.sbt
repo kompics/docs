@@ -10,8 +10,8 @@ resolvers += Resolver.mavenLocal
 
 val kompicsVersion = "1.0.0"
 
-//resolvers += "Kompics Releases" at "http://kompics.sics.se/maven/repository/"
-//resolvers += "Kompics Snapshots" at "http://kompics.sics.se/maven/snapshotrepository/"
+resolvers += "Kompics Releases" at "http://kompics.sics.se/maven/repository/"
+resolvers += "Kompics Snapshots" at "http://kompics.sics.se/maven/snapshotrepository/"
 
 libraryDependencies += "se.sics.kompics" %% "kompics-scala" % kompicsVersion
 libraryDependencies += "se.sics.kompics.basic" % "kompics-component-netty-network" % kompicsVersion
