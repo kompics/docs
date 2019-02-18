@@ -2,18 +2,16 @@ name := "Ping Pong"
 
 organization := "se.sics.test"
 
-version := "1.0"
+version := "1.1"
 
-scalaVersion := "2.11.11"
-
-resolvers += Resolver.mavenLocal
+scalaVersion := "2.11.12"
 
 val kompicsVersion = "1.0.0"
+val kompicsScalaVersion = "1.0.1"
 
-resolvers += "Kompics Releases" at "http://kompics.sics.se/maven/repository/"
-resolvers += "Kompics Snapshots" at "http://kompics.sics.se/maven/snapshotrepository/"
+resolvers += Resolver.bintrayRepo("kompics", "Maven")
 
-libraryDependencies += "se.sics.kompics" %% "kompics-scala" % kompicsVersion
+libraryDependencies += "se.sics.kompics" %% "kompics-scala" % kompicsScalaVersion
 libraryDependencies += "se.sics.kompics.basic" % "kompics-component-netty-network" % kompicsVersion
 libraryDependencies += "se.sics.kompics.basic" % "kompics-component-java-timer" % kompicsVersion
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3"

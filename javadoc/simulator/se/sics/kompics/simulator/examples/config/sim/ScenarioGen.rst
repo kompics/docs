@@ -14,12 +14,6 @@
 
 .. java:import:: se.sics.kompics.simulator.examples.config ConfigReadingComp
 
-.. java:import:: se.sics.kompics.simutil.identifiable Identifiable
-
-.. java:import:: se.sics.kompics.simutil.identifiable Identifier
-
-.. java:import:: se.sics.kompics.simutil.identifiable.impl IntIdentifier
-
 ScenarioGen
 ===========
 

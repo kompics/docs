@@ -69,3 +69,17 @@ TWO
 .. java:field:: public static final Serializers.IdBytes TWO
    :outertype: Serializers.IdBytes
 
+Methods
+-------
+getBytes
+^^^^^^^^
+
+.. java:method:: public int getBytes()
+   :outertype: Serializers.IdBytes
+
+getValues
+^^^^^^^^^
+
+.. java:method:: public int getValues()
+   :outertype: Serializers.IdBytes
+

@@ -17,7 +17,7 @@ When a ``Channel`` is connected it can optionally be given an instance of :java:
 We will update our *PingPong* example such that we start a configurable number of ``Pinger``\s per host. We stick to a single ``Ponger`` for now, since otherwise we'd have to figure out how to load-balance across them. We shall add a ``byte[]`` id field to ``TAddress`` that we will use as a selection key. However, when creating those ids we shall be a bit lazy and simply use ascending integers in their ``byte[]`` representation. You will see later why we picked ``byte[]`` and not ``int`` directly. Of course, we'll also have to update the ``NetSerializer``, which we won't show again here, since it's pretty big by now and not quite relevant to the point.
 
 .. literalinclude:: pingpong-virtual/src/main/resources/reference.conf
-	:language: yaml
+	:language: JSON
 	:caption: reference.conf
 
 .. literalinclude:: pingpong-virtual/src/main/java/se/sics/test/TAddress.java

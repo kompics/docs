@@ -1,7 +1,3 @@
-.. java:import:: org.slf4j Logger
-
-.. java:import:: org.slf4j LoggerFactory
-
 .. java:import:: se.sics.kompics ComponentDefinition
 
 .. java:import:: se.sics.kompics Handler
@@ -25,6 +21,14 @@ ConfigReadingComp
 .. java:type:: public class ConfigReadingComp extends ComponentDefinition
 
    :author: Alex Ormenisan
+
+Fields
+------
+handleStart
+^^^^^^^^^^^
+
+.. java:field::  Handler handleStart
+   :outertype: ConfigReadingComp
 
 Constructors
 ------------

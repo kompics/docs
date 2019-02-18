@@ -10,10 +10,6 @@
 
 .. java:import:: se.sics.kompics.simulator.examples.basic BasicPingComp
 
-.. java:import:: se.sics.kompics.simutil.identifiable Identifiable
-
-.. java:import:: se.sics.kompics.simutil.identifiable Identifier
-
 ScenarioGen
 ===========
 

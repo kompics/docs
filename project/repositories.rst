@@ -18,70 +18,34 @@ Kompics Testing
 
 Release Repository
 ^^^^^^^^^^^^^^^^^^
-Kompics released are hosted at `<http://kompics.sics.se/maven/repository/se/sics/kompics/>`_.
+Kompics released are hosted at `<https://dl.bintray.com/kompics/Maven>`_.
 
-Make sure that you add the repository to the maven repositories in :file:`pom.xml`:
+Make sure that you add the repository to the maven repositories in :file:`pom.xml` or your global :file:`settings.xml`:
 
 .. code-block:: xml
 
-	<repository>
-	 	<id>sics-release</id>
-	 	<name>SICS Release Repository</name>
-	 	<url>http://kompics.sics.se/maven/repository</url>
-	 	<releases>
-	  		<enabled>true</enabled>
-	 	</releases>
-	 	<snapshots>
-	  		<enabled>false</enabled>
-	 	</snapshots>
-	</repository>
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>false
+            </enabled>
+            </snapshots>
+            <id>bintray-kompics-Maven
+          </id>
+            <name>bintray
+          </name>
+            <url>https://dl.bintray.com/kompics/Maven
+          </url>
+        </repository>
+    </repositories>
 
 Or in SBT in your build file with:
 
 .. code-block:: scala
 
-	resolvers += "Kompics Releases" at "http://kompics.sics.se/maven/repository/"
+	resolvers += Resolver.bintrayRepo("kompics", "Maven")
 
 .. note:: 
 
-	Since Kompics is research software, releases are extremely rare. It is common to simply work with snapshot releases. 
+	Kompics snapshots are not published anymore, since moving to bintray.
 
-Snapshot Repository
-^^^^^^^^^^^^^^^^^^^
-Kompics snapshots are hosted at `<http://kompics.sics.se/maven/snapshotrepository/se/sics/kompics/>`_.
-These :code:`SNAPSHOT` releases are not nightly builds, but manually deployed artifacts, that are tested to work with the maintainer's code at least, before release. They should be the default to include as dependencies for projects using Kompics.
-
-Maven/SBT Definition of the Snapshot Repository
-"""""""""""""""""""""""""""""""""""""""""""""""
-Make sure that you add the repository to the maven repositories in :file:`pom.xml`:
-
-.. code-block:: xml
-
-	<repository>
-		<id>sics-snapshot</id>
-		<name>SICS Snapshot Repository</name>
-		<url>http://kompics.sics.se/maven/snapshotrepository</url>
-		<releases>
-			<enabled>false</enabled>
-		</releases>
-		<snapshots>
-			<enabled>true</enabled>
-		</snapshots>
-	</repository>
-
-Or in SBT in your build file with:
-
-.. code-block:: scala
-
-	resolvers += "Kompics Snapshots" at "http://kompics.sics.se/maven/snapshotrepository/"
-
-Define the library dependencies with the timestamp or :code:`SNAPSHOT` as version. For example:
-
-.. code-block:: xml
-
-	<dependency>
-		<groupId>se.sics.kompics</groupId>
-		<artifactId>kompics-core</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
-		<scope>compile</scope>
-	</dependency>

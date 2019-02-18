@@ -187,7 +187,7 @@ If you prefer a different configuration library, you may of course wrap it in an
 For the tutorial we are going to stick to Typesafe Config as a baseline. We are thus going to add a :file:`src/main/resources/reference.conf` file, where we describe default values for all our config options. This is not strictly speaking necessary, but it is generally a good idea to have one place your users can look at where all possible config values are outlined. While we are at it, we also make the timeout period configurable.
 
 .. literalinclude:: pingpong-cleaner/src/main/resources/reference.conf
-	:language: yaml
+	:language: JSON
 	:caption: reference.conf
 
 Now that we have a configuration file, we can simply throw away all the ``Init`` classes we created before, and pull out the desired values from the config in the ``Pinger`` and ``Ponger`` constructors.

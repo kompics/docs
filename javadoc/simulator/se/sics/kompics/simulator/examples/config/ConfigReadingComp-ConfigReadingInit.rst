@@ -1,7 +1,3 @@
-.. java:import:: org.slf4j Logger
-
-.. java:import:: org.slf4j LoggerFactory
-
 .. java:import:: se.sics.kompics ComponentDefinition
 
 .. java:import:: se.sics.kompics Handler

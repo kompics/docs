@@ -8,9 +8,7 @@
 
 .. java:import:: se.sics.kompics.network Address
 
-.. java:import:: se.sics.kompics.simutil.identifiable.impl IntIdentifier
-
-.. java:import:: se.sics.kompics.simutil.msg.impl BasicAddress
+.. java:import:: se.sics.kompics.simulator.examples.util BasicAddress
 
 ScenarioSetup
 =============

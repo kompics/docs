@@ -10,28 +10,6 @@
 
 .. java:import:: org.slf4j LoggerFactory
 
-.. java:import:: se.sics.kompics Channel
-
-.. java:import:: se.sics.kompics Component
-
-.. java:import:: se.sics.kompics ComponentDefinition
-
-.. java:import:: se.sics.kompics Fault
-
-.. java:import:: se.sics.kompics Handler
-
-.. java:import:: se.sics.kompics Init
-
-.. java:import:: se.sics.kompics Kill
-
-.. java:import:: se.sics.kompics Kompics
-
-.. java:import:: se.sics.kompics Negative
-
-.. java:import:: se.sics.kompics Positive
-
-.. java:import:: se.sics.kompics Start
-
 .. java:import:: se.sics.kompics.config Config
 
 .. java:import:: se.sics.kompics.config ConfigUpdate

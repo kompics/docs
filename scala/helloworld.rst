@@ -17,7 +17,7 @@ The resulting :download:`helloworld.sbt <helloworld/helloworld.sbt>` might look 
 
 Hello World Component
 ---------------------
-As in the Java version we only have a very simple component ``HelloWorldC`` whose sole handler reacts to ``Start`` events on the control port (which is called ``ctrl`` in Scala). Notice however, that now the event type ``Start`` is simply pattern matched and the actual handle function starts afterwards. Kompics Scala's pattern matching handlers will be described in detail in the next section (:ref:`ksengine`).
+As in the Java version we only have a very simple component ``HelloWorldC`` whose sole handler reacts to ``Start`` events on the control port (which is called ``ctrl`` in Scala). Notice however, that now the event type ``Start`` is simply pattern matched and the actual handle function starts afterwards. Kompics Scala's pattern matching handlers will be described in detail in section (:ref:`kihandlerxec`).
 The ``HelloWorld`` object acts as the *Main Class* for our project and simply starts Kompics in the usual way with the the component as its only argument.
 
 .. literalinclude:: helloworld/src/main/scala/se/sics/test/HelloWorld.scala
