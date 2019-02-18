@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Kompics Lifecycle &mdash; Kompics 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Handler Execution in Java and Scala" href="handlerexec.html" />
+    <link rel="prev" title="Kompics Internals" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Kompics Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scala/index.html">Kompics Scala</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Kompics Internals</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Kompics Lifecycle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#typical-lifecycle">Typical Lifecycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exception-lifecycle">Exception Lifecycle</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="handlerexec.html">Handler Execution in Java and Scala</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../project/index.html">Project Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javadoc/modules.html">Javadoc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Kompics Internals</a> &raquo;</li>
+        
+      <li>Kompics Lifecycle</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/internals/lifecycle.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="kompics-lifecycle">
+<span id="kilifecycle"></span><h1>Kompics Lifecycle<a class="headerlink" href="#kompics-lifecycle" title="Permalink to this headline">¶</a></h1>
+<div class="figure" id="id1">
+<a class="reference internal image-reference" href="../_images/kompics_life_cycle.png"><img alt="kompics life cycle" src="../_images/kompics_life_cycle.png" style="width: 631.5px; height: 347.0px;" /></a>
+<p class="caption"><span class="caption-text">Kompics Lifecycle Overview.</span></p>
+</div>
+<p>Every Kompics component has a lifecycle of 6 specific states it can be in, which controls what kind of events it will execute and when it will be deallocated (and thus allowed to be garbage collected eventually).</p>
+<p>These 6 states are</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">PASSIVE</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">STARTING</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">ACTIVE</span></code></li>
+</ul>
+</td><td><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">STOPPING</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">FAULTY</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">DESTROYED</span></code></li>
+</ul>
+</td></tr></table>
+<p>and are defined in <a class="reference internal" href="../javadoc/core/se/sics/kompics/Component-State.html#se.sics.kompics.Component.State" title="se.sics.kompics.Component.State"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Component.State</span></code></a>.</p>
+<p>The transitions between these states happen via the following events on the <a class="reference internal" href="../javadoc/core/se/sics/kompics/ControlPort.html#se.sics.kompics.ControlPort" title="se.sics.kompics.ControlPort"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ControlPort</span></code></a> or a fault (an exception being thrown) in one of the component’s handlers, or the method <a class="reference internal" href="../javadoc/core/se/sics/kompics/ComponentCore.html#se.sics.kompics.ComponentCore.markSubtreeAs(State)" title="se.sics.kompics.ComponentCore.markSubtreeAs(State)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ComponentCore.markSubtreeAs(State)</span></code></a> (during fault handling):</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><a class="reference internal" href="../javadoc/core/se/sics/kompics/Start.html#se.sics.kompics.Start" title="se.sics.kompics.Start"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Start</span></code></a></li>
+<li><a class="reference internal" href="../javadoc/core/se/sics/kompics/Started.html#se.sics.kompics.Started" title="se.sics.kompics.Started"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Started</span></code></a></li>
+<li><a class="reference internal" href="../javadoc/core/se/sics/kompics/Stop.html#se.sics.kompics.Stop" title="se.sics.kompics.Stop"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Stop</span></code></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference internal" href="../javadoc/core/se/sics/kompics/Stopped.html#se.sics.kompics.Stopped" title="se.sics.kompics.Stopped"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Stopped</span></code></a></li>
+<li><a class="reference internal" href="../javadoc/core/se/sics/kompics/Kill.html#se.sics.kompics.Kill" title="se.sics.kompics.Kill"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Kill</span></code></a></li>
+<li><a class="reference internal" href="../javadoc/core/se/sics/kompics/Killed.html#se.sics.kompics.Killed" title="se.sics.kompics.Killed"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Killed</span></code></a></li>
+</ul>
+</td></tr></table>
+<div class="section" id="typical-lifecycle">
+<h2>Typical Lifecycle<a class="headerlink" href="#typical-lifecycle" title="Permalink to this headline">¶</a></h2>
+<p>Every component <em>C</em> begins in <code class="docutils literal notranslate"><span class="pre">PASSIVE</span></code> after creation. In this mode no events are handled except lifecycle events, all other events are simply queued up on their respective ports.</p>
+<p>The handling of a <a class="reference internal" href="../javadoc/core/se/sics/kompics/Start.html#se.sics.kompics.Start" title="se.sics.kompics.Start"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Start</span></code></a> event moves <em>C</em> into the <code class="docutils literal notranslate"><span class="pre">STARTING</span></code> state, where it still won’t handle anything but lifecycle events. <em>C</em> automatically forwards the <a class="reference internal" href="../javadoc/core/se/sics/kompics/Start.html#se.sics.kompics.Start" title="se.sics.kompics.Start"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Start</span></code></a> event to all its children und waits for them to reply with <a class="reference internal" href="../javadoc/core/se/sics/kompics/Started.html#se.sics.kompics.Started" title="se.sics.kompics.Started"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Started</span></code></a>. Once all children have done so, <em>C</em> moves into the <code class="docutils literal notranslate"><span class="pre">ACTIVE</span></code> state and replies to its parent component with <a class="reference internal" href="../javadoc/core/se/sics/kompics/Started.html#se.sics.kompics.Started" title="se.sics.kompics.Started"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Started</span></code></a>. The <code class="docutils literal notranslate"><span class="pre">ACTIVE</span></code> state is the normal operating state of a component, where it handles all events as described previously during the <a class="reference internal" href="../tutorial/index.html#tutorial"><span class="std std-ref">Kompics Tutorial</span></a>.</p>
+<p>The handling of a <a class="reference internal" href="../javadoc/core/se/sics/kompics/Stop.html#se.sics.kompics.Stop" title="se.sics.kompics.Stop"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Stop</span></code></a> or <a class="reference internal" href="../javadoc/core/se/sics/kompics/Kill.html#se.sics.kompics.Kill" title="se.sics.kompics.Kill"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Kill</span></code></a> events changes <em>C</em>’s state to <code class="docutils literal notranslate"><span class="pre">STOPPING</span></code>. As before, it forwards the respective event to all its children and waits for <a class="reference internal" href="../javadoc/core/se/sics/kompics/Stopped.html#se.sics.kompics.Stopped" title="se.sics.kompics.Stopped"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Stopped</span></code></a> or <a class="reference internal" href="../javadoc/core/se/sics/kompics/Killed.html#se.sics.kompics.Killed" title="se.sics.kompics.Killed"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Killed</span></code></a> messages from all of them before proceeding. However, a <code class="docutils literal notranslate"><span class="pre">STOPPING</span></code> component handles events on other ports normally. Once all replies are received the component moves into the <code class="docutils literal notranslate"><span class="pre">PASSIVE</span></code> state and sends <a class="reference internal" href="../javadoc/core/se/sics/kompics/Stopped.html#se.sics.kompics.Stopped" title="se.sics.kompics.Stopped"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Stopped</span></code></a> or <a class="reference internal" href="../javadoc/core/se/sics/kompics/Killed.html#se.sics.kompics.Killed" title="se.sics.kompics.Killed"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Killed</span></code></a> to its parent component. If the original event was <a class="reference internal" href="../javadoc/core/se/sics/kompics/Stop.html#se.sics.kompics.Stop" title="se.sics.kompics.Stop"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Stop</span></code></a> it simply remains there until restarted as above. If the original event was <a class="reference internal" href="../javadoc/core/se/sics/kompics/Kill.html#se.sics.kompics.Kill" title="se.sics.kompics.Kill"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Kill</span></code></a> the component will run <a class="reference internal" href="../javadoc/core/se/sics/kompics/ComponentCore.html#se.sics.kompics.ComponentCore.destroyTree(ComponentCore)" title="se.sics.kompics.ComponentCore.destroyTree(ComponentCore)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ComponentCore.destroyTree(ComponentCore)</span></code></a> to sever all its connections and set its whole subtree to <code class="docutils literal notranslate"><span class="pre">DESTROYED</span></code>. From here it can not be restarted and parent components should take care to clean up any remaining references to the component, so that it will be garbage collected eventually.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is possible to inspect a component’s current state via <a class="reference internal" href="../javadoc/core/se/sics/kompics/Component.html#se.sics.kompics.Component.state()" title="se.sics.kompics.Component.state()"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Component.state()</span></code></a>, for example to judge during handler execution if a component is already <code class="docutils literal notranslate"><span class="pre">STOPPING</span></code>. However, it should be noted that calls to this method are not synchronised in any way, and may return inconsistent results due to concurrent modification. They should thus be regarded as a mere indicatior of state, not a guarantee.</p>
+</div>
+</div>
+<div class="section" id="exception-lifecycle">
+<h2>Exception Lifecycle<a class="headerlink" href="#exception-lifecycle" title="Permalink to this headline">¶</a></h2>
+<p>If a fault occurs during the execution of a handle in component <em>C</em>, its whole subtree will be set to <code class="docutils literal notranslate"><span class="pre">FAULTY</span></code> immediately (not interrupting running handlers in its children, but preventing handling of further events). Consequently the parent component <em>P</em>’s <a class="reference internal" href="../javadoc/core/se/sics/kompics/ComponentDefinition.html#se.sics.kompics.ComponentDefinition.handleFault(Fault)" title="se.sics.kompics.ComponentDefinition.handleFault(Fault)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ComponentDefinition.handleFault(Fault)</span></code></a> method will be consulted to resolve the issue. If not overriden, the fault is simply escalated from level to level, until eventually the root fault handler causes resolution (for example, via either system shutdown or a complete restart of the hierarchy). Other choices of <a class="reference internal" href="../javadoc/core/se/sics/kompics/Fault-ResolveAction.html#se.sics.kompics.Fault.ResolveAction" title="se.sics.kompics.Fault.ResolveAction"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Fault.ResolveAction</span></code></a> besides <code class="docutils literal notranslate"><span class="pre">ESCALATE</span></code> are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">RESOLVED</span></code>, which causes no further within the Kompics systems, the assumption being that the user somehow resolved the issue</li>
+<li><code class="docutils literal notranslate"><span class="pre">IGNORE</span></code>, which causes resumption of <em>C</em> and its subtree, by setting it to <code class="docutils literal notranslate"><span class="pre">PASSIVE</span></code> and triggering a <a class="reference internal" href="../javadoc/core/se/sics/kompics/Start.html#se.sics.kompics.Start" title="se.sics.kompics.Start"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Start</span></code></a> event.</li>
+<li><code class="docutils literal notranslate"><span class="pre">DESTROY</span></code>, causing the whole subtree of <em>C</em> to be scrapped immediately.</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="handlerexec.html" class="btn btn-neutral float-right" title="Handler Execution in Java and Scala" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Kompics Internals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

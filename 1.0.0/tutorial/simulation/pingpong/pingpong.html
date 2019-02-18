@@ -1,0 +1,1449 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introduction to Simulation &mdash; Kompics 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Sources of Randomness" href="../randsources/randsources.html" />
+    <link rel="prev" title="Simulation" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../../../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Kompics Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basics/basics.html">Kompics Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../timers/timers.html">Timers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../networking/index.html">Networking</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Simulation</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Introduction to Simulation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pingpong-simulation">PingPong Simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#global-view">Global View</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../randsources/randsources.html">Sources of Randomness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenarios/scenarios.html">Simulation Scenarios Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../testing/index.html">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scala/index.html">Kompics Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../internals/index.html">Kompics Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../project/index.html">Project Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../javadoc/modules.html">Javadoc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Kompics Tutorial</a> &raquo;</li>
+        
+          <li><a href="../index.html">Simulation</a> &raquo;</li>
+        
+      <li>Introduction to Simulation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/tutorial/simulation/pingpong/pingpong.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction-to-simulation">
+<span id="pingpong"></span><h1>Introduction to Simulation<a class="headerlink" href="#introduction-to-simulation" title="Permalink to this headline">¶</a></h1>
+<p>First, we have to include the simulator dependency in our pom file. The simulator version is the same as kompics, in this case <code class="docutils literal notranslate"><span class="pre">0.9.1-SNAPSHOT</span></code>:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>se.sics.kompics.simulator<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>core<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>${kompics.version}<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</pre></div>
+</div>
+<p>Next we write the simulation scenario. A scenario is a parallel and/or sequential composition of stochastic processes. We call a stochastic process, a finite random sequence of events, with a specified distribution of inter-arrival times. In other words, stochastic processes define series of events that occur in simulation.</p>
+<p>The following snippet of code creates one stochastic process that will generate 1000 events of type <code class="docutils literal notranslate"><span class="pre">SimpleEvent</span></code> with an inter-arrival time of 2000ms(2s)(simulated time).</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">static</span> <span class="n">Operation</span> <span class="n">simpleEvent1Gen</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Operation</span><span class="o">&lt;</span><span class="n">SimpleEvent</span><span class="o">&gt;()</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">SimpleEvent1</span> <span class="nf">generate</span><span class="o">()</span> <span class="o">{</span>
+                <span class="k">new</span> <span class="n">SimpleEvent1</span><span class="o">();</span>
+        <span class="o">}</span>
+<span class="o">};</span>
+<span class="o">...</span>
+<span class="n">StochasticProcess</span> <span class="n">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StochasticProcess</span><span class="o">()</span> <span class="o">{</span>
+        <span class="o">{</span>
+                <span class="n">eventInterArrivalTime</span><span class="o">(</span><span class="n">constant</span><span class="o">(</span><span class="mi">2000</span><span class="o">));</span>
+                <span class="n">raise</span><span class="o">(</span><span class="mi">1000</span><span class="o">,</span> <span class="n">simpleEventGen</span><span class="o">);</span>
+        <span class="o">}</span>
+<span class="o">};</span>
+</pre></div>
+</div>
+<p>However, in the example above, all events are the same and there is no variation to the 1000 events generated. We can generate events that differ slightly, by having the event take an integer parameter and generating this parameter randomly.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">static</span> <span class="n">Operation1</span> <span class="n">simpleEvent2Gen</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Operation1</span><span class="o">&lt;</span><span class="n">SimpleEvent</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;()</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">SimpleEvent2</span> <span class="nf">generate</span><span class="o">(</span><span class="n">Long</span> <span class="n">param</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">new</span> <span class="n">SimpleEvent2</span><span class="o">(</span><span class="n">param</span><span class="o">);</span>
+        <span class="o">}</span>
+<span class="o">};</span>
+<span class="o">...</span>
+<span class="n">StochasticProcess</span> <span class="n">p2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StochasticProcess</span><span class="o">()</span> <span class="o">{</span>
+        <span class="o">{</span>
+                <span class="n">eventInterArrivalTime</span><span class="o">(</span><span class="n">constant</span><span class="o">(</span><span class="mi">2000</span><span class="o">));</span>
+                <span class="n">raise</span><span class="o">(</span><span class="mi">500</span><span class="o">,</span> <span class="n">simpleEventGen</span><span class="o">,</span> <span class="n">uniform</span><span class="o">(</span><span class="mi">1000</span><span class="o">,</span> <span class="mi">2000</span><span class="o">));</span>
+        <span class="o">}</span>
+<span class="o">};</span>
+</pre></div>
+</div>
+<p>The new events generated have a parameter that takes uniform long random values between 1000 and 2000. Both the inter-arrival time and the event parameters are defined as <a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.distributions.Distribution</span></code></a>, and the <em>constant</em> and <em>uniform</em> are just helper methods to generate these distributions.</p>
+<p>There are several types of operations Operation(_,1,2,…,5) that can be interpreted by the simulator and they differ in the number of parameters they take to customize the generated events. The parameters are given as distributions. There are a number of distributions provided by the simulator, or you can write your own distribution by extending <a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.distributions.Distribution</span></code></a>.</p>
+<p>In order to start the stochastic processes and to define the iterative/parallel behaviour, the <a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/SimulationScenario-StochasticProcess.html#se.sics.kompics.simulator.SimulationScenario.StochasticProcess" title="se.sics.kompics.simulator.SimulationScenario.StochasticProcess"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.SimulationScenario.StochasticProcess</span></code></a> has a number of start/terminate methods.</p>
+<p>If we want to start the two stochastic process above, a possible example would be:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+<span class="n">p2</span><span class="o">.</span><span class="na">startAfterTerminationOf</span><span class="o">(</span><span class="mi">1000</span><span class="o">,</span> <span class="n">p1</span><span class="o">);</span>
+<span class="n">terminateAfterTerminationOf</span><span class="o">(</span><span class="mi">2000</span><span class="o">,</span> <span class="n">p2</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>The above example would start the stochastic process <em>p1</em> at the beginning of the simulation. After all 1000 events defined in <em>p1</em> are generated, the simulation waits another 1000ms of simulated time and starts the second stochastic process <em>p2</em>. After generating all 500 <em>p2</em> defined events and waiting another 2000ms of simulated time, the simulation will end.</p>
+<p>The stochastic processes created and their order will be defined within the SimulationScenario:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">static</span> <span class="n">Operation</span> <span class="n">simpleEvent1Gen</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Operation</span><span class="o">&lt;</span><span class="n">SimpleEvent</span><span class="o">&gt;()</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">SimpleEvent1</span> <span class="nf">generate</span><span class="o">()</span> <span class="o">{</span>
+                <span class="k">new</span> <span class="n">SimpleEvent1</span><span class="o">();</span>
+        <span class="o">}</span>
+<span class="o">};</span>
+
+<span class="kd">static</span> <span class="n">Operation1</span> <span class="n">simpleEvent2Gen</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Operation1</span><span class="o">&lt;</span><span class="n">SimpleEvent</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;()</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">SimpleEvent2</span> <span class="nf">generate</span><span class="o">(</span><span class="n">Long</span> <span class="n">param</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">new</span> <span class="n">SimpleEvent2</span><span class="o">(</span><span class="n">param</span><span class="o">);</span>
+        <span class="o">}</span>
+<span class="o">};</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="n">SimulationScenario</span> <span class="nf">simpleSimulation</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">SimulationScenario</span> <span class="n">scen</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimulationScenario</span><span class="o">()</span> <span class="o">{</span>
+                <span class="o">{</span>
+                        <span class="n">StochasticProcess</span> <span class="n">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StochasticProcess</span><span class="o">()</span> <span class="o">{</span>
+                        <span class="o">{</span>
+                                <span class="n">eventInterArrivalTime</span><span class="o">(</span><span class="n">constant</span><span class="o">(</span><span class="mi">2000</span><span class="o">));</span>
+                                <span class="n">raise</span><span class="o">(</span><span class="mi">500</span><span class="o">,</span> <span class="n">simpleEventGen</span><span class="o">,</span> <span class="n">uniform</span><span class="o">(</span><span class="mi">1000</span><span class="o">,</span> <span class="mi">2000</span><span class="o">));</span>
+                        <span class="o">};</span>
+
+                        <span class="n">StochasticProcess</span> <span class="n">p2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StochasticProcess</span><span class="o">()</span> <span class="o">{</span>
+                        <span class="o">{</span>
+                                <span class="n">eventInterArrivalTime</span><span class="o">(</span><span class="n">constant</span><span class="o">(</span><span class="mi">2000</span><span class="o">));</span>
+                                <span class="n">raise</span><span class="o">(</span><span class="mi">500</span><span class="o">,</span> <span class="n">simpleEventGen</span><span class="o">,</span> <span class="n">uniform</span><span class="o">(</span><span class="mi">1000</span><span class="o">,</span> <span class="mi">2000</span><span class="o">));</span>
+                        <span class="o">};</span>
+
+                        <span class="n">p1</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+                        <span class="n">p2</span><span class="o">.</span><span class="na">startAfterTerminationOf</span><span class="o">(</span><span class="mi">1000</span><span class="o">,</span> <span class="n">p1</span><span class="o">);</span>
+                        <span class="n">terminateAfterTerminationOf</span><span class="o">(</span><span class="mi">2000</span><span class="o">,</span> <span class="n">p2</span><span class="o">);</span>
+                <span class="o">}</span>
+        <span class="o">};</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Events that can be generated by stochastic processes and interpreted by the simulator are:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>SetupEvent</li>
+<li>StartNodeEvent</li>
+<li>KillNodeEvent</li>
+<li>TerminateExperiment</li>
+</ol>
+</div></blockquote>
+<p>You can read more about Operations, Distributions and StochasticProcesses in <a class="reference internal" href="../scenarios/scenarios.html#scenarios"><span class="std std-ref">Simulation Scenarios Reference</span></a>.</p>
+<p>In order to run the simulation scenario, the following code is required:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">long</span> <span class="n">seed</span> <span class="o">=</span> <span class="mi">123</span><span class="o">;</span>
+        <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">setSeed</span><span class="o">(</span><span class="n">seed</span><span class="o">);</span>
+        <span class="n">SimulationScenario</span> <span class="n">simpleBootScenario</span> <span class="o">=</span> <span class="n">simpleSimulation</span><span class="o">();</span>
+        <span class="n">simpleBootScenario</span><span class="o">.</span><span class="na">simulate</span><span class="o">(</span><span class="n">LauncherComp</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>In the above code, we set the simulation scenario seed (more about this seed in later sections), we construct the simulation scenario and we give it to the <a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/run/LauncherComp.html#se.sics.kompics.simulator.run.LauncherComp" title="se.sics.kompics.simulator.run.LauncherComp"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.run.LauncherComp</span></code></a> to execute it.</p>
+<div class="section" id="pingpong-simulation">
+<h2>PingPong Simulation<a class="headerlink" href="#pingpong-simulation" title="Permalink to this headline">¶</a></h2>
+<p>Starting from the <a class="reference internal" href="../../networking/basic/basic.html#distributedpingpong"><span class="std std-ref">Distributed PingPong</span></a>, in this section we will see how we can run the pinger/ponger configuration as a simulation. As stated in the previous section, do not forget to include the simulator dependency in your pom file.</p>
+<p>First change we want to do in order to be able to use the deploy code in simulation (with minimal changes), is use a <code class="docutils literal notranslate"><span class="pre">Parent</span></code> and <code class="docutils literal notranslate"><span class="pre">Host</span></code> division. The <code class="docutils literal notranslate"><span class="pre">Parent</span></code> will typically connect all subcomponents of the system between themselves and to a <code class="docutils literal notranslate"><span class="pre">Network</span></code> and <code class="docutils literal notranslate"><span class="pre">Timer</span></code> port.</p>
+<p>In deployment, the <code class="docutils literal notranslate"><span class="pre">Host</span></code> will create the <code class="docutils literal notranslate"><span class="pre">Timer</span></code> and <code class="docutils literal notranslate"><span class="pre">Network</span></code> instances and connect them to the <code class="docutils literal notranslate"><span class="pre">Parent</span></code>, while in simulation, the Simulator will provide the <code class="docutils literal notranslate"><span class="pre">Timer</span></code> and <code class="docutils literal notranslate"><span class="pre">Network</span></code> and will connect them to the <code class="docutils literal notranslate"><span class="pre">Parent</span></code>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test.system</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Channel</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Component</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.ComponentDefinition</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Positive</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.Network</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.timer.Timer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.test.Pinger</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.test.TAddress</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PingerParent</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+
+    <span class="n">Positive</span><span class="o">&lt;</span><span class="n">Network</span><span class="o">&gt;</span> <span class="n">network</span> <span class="o">=</span> <span class="n">requires</span><span class="o">(</span><span class="n">Network</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="n">Positive</span><span class="o">&lt;</span><span class="n">Timer</span><span class="o">&gt;</span> <span class="n">timer</span> <span class="o">=</span> <span class="n">requires</span><span class="o">(</span><span class="n">Timer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+    <span class="kd">public</span> <span class="nf">PingerParent</span><span class="o">(</span><span class="n">Init</span> <span class="n">init</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//create and connect all components except timer and network</span>
+        <span class="n">Component</span> <span class="n">pinger</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">Pinger</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="k">new</span> <span class="n">Pinger</span><span class="o">.</span><span class="na">Init</span><span class="o">(</span><span class="n">init</span><span class="o">.</span><span class="na">self</span><span class="o">,</span> <span class="n">init</span><span class="o">.</span><span class="na">ponger</span><span class="o">));</span>
+
+        <span class="c1">//connect required internal components to network and timer</span>
+        <span class="n">connect</span><span class="o">(</span><span class="n">pinger</span><span class="o">.</span><span class="na">getNegative</span><span class="o">(</span><span class="n">Network</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">network</span><span class="o">,</span> <span class="n">Channel</span><span class="o">.</span><span class="na">TWO_WAY</span><span class="o">);</span>
+        <span class="n">connect</span><span class="o">(</span><span class="n">pinger</span><span class="o">.</span><span class="na">getNegative</span><span class="o">(</span><span class="n">Timer</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">timer</span><span class="o">,</span> <span class="n">Channel</span><span class="o">.</span><span class="na">TWO_WAY</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Init</span> <span class="kd">extends</span> <span class="n">se</span><span class="o">.</span><span class="na">sics</span><span class="o">.</span><span class="na">kompics</span><span class="o">.</span><span class="na">Init</span><span class="o">&lt;</span><span class="n">PingerParent</span><span class="o">&gt;</span> <span class="o">{</span>
+
+        <span class="kd">public</span> <span class="kd">final</span> <span class="n">TAddress</span> <span class="n">self</span><span class="o">;</span>
+        <span class="kd">public</span> <span class="kd">final</span> <span class="n">TAddress</span> <span class="n">ponger</span><span class="o">;</span>
+
+        <span class="kd">public</span> <span class="nf">Init</span><span class="o">(</span><span class="n">TAddress</span> <span class="n">self</span><span class="o">,</span> <span class="n">TAddress</span> <span class="n">ponger</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">self</span> <span class="o">=</span> <span class="n">self</span><span class="o">;</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">ponger</span> <span class="o">=</span> <span class="n">ponger</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test.system</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Channel</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Component</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.ComponentDefinition</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.Network</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.netty.NettyInit</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.netty.NettyNetwork</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.timer.Timer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.timer.java.JavaTimer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.test.TAddress</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PingerHost</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">PingerHost</span><span class="o">(</span><span class="n">Init</span> <span class="n">init</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Component</span> <span class="n">network</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">NettyNetwork</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="k">new</span> <span class="n">NettyInit</span><span class="o">(</span><span class="n">init</span><span class="o">.</span><span class="na">self</span><span class="o">));</span>
+        <span class="n">Component</span> <span class="n">timer</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">JavaTimer</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Init</span><span class="o">.</span><span class="na">NONE</span><span class="o">);</span>
+        <span class="n">Component</span> <span class="n">pingerParent</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">PingerParent</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="k">new</span> <span class="n">PingerParent</span><span class="o">.</span><span class="na">Init</span><span class="o">(</span><span class="n">init</span><span class="o">.</span><span class="na">self</span><span class="o">,</span> <span class="n">init</span><span class="o">.</span><span class="na">ponger</span><span class="o">));</span>
+        
+        <span class="n">connect</span><span class="o">(</span><span class="n">pingerParent</span><span class="o">.</span><span class="na">getNegative</span><span class="o">(</span><span class="n">Network</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">network</span><span class="o">.</span><span class="na">getPositive</span><span class="o">(</span><span class="n">Network</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">Channel</span><span class="o">.</span><span class="na">TWO_WAY</span><span class="o">);</span>
+        <span class="n">connect</span><span class="o">(</span><span class="n">pingerParent</span><span class="o">.</span><span class="na">getNegative</span><span class="o">(</span><span class="n">Timer</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">timer</span><span class="o">.</span><span class="na">getPositive</span><span class="o">(</span><span class="n">Timer</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">Channel</span><span class="o">.</span><span class="na">TWO_WAY</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Init</span> <span class="kd">extends</span> <span class="n">se</span><span class="o">.</span><span class="na">sics</span><span class="o">.</span><span class="na">kompics</span><span class="o">.</span><span class="na">Init</span><span class="o">&lt;</span><span class="n">PingerHost</span><span class="o">&gt;</span> <span class="o">{</span>
+
+        <span class="kd">public</span> <span class="kd">final</span> <span class="n">TAddress</span> <span class="n">self</span><span class="o">;</span>
+        <span class="kd">public</span> <span class="kd">final</span> <span class="n">TAddress</span> <span class="n">ponger</span><span class="o">;</span>
+
+        <span class="kd">public</span> <span class="nf">Init</span><span class="o">(</span><span class="n">TAddress</span> <span class="n">self</span><span class="o">,</span> <span class="n">TAddress</span> <span class="n">ponger</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">self</span> <span class="o">=</span> <span class="n">self</span><span class="o">;</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">ponger</span> <span class="o">=</span> <span class="n">ponger</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test.system</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Channel</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Component</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.ComponentDefinition</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Positive</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.Network</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.timer.Timer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.test.Ponger</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.test.TAddress</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PongerParent</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+
+    <span class="n">Positive</span><span class="o">&lt;</span><span class="n">Network</span><span class="o">&gt;</span> <span class="n">network</span> <span class="o">=</span> <span class="n">requires</span><span class="o">(</span><span class="n">Network</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="n">Positive</span><span class="o">&lt;</span><span class="n">Timer</span><span class="o">&gt;</span> <span class="n">timer</span> <span class="o">=</span> <span class="n">requires</span><span class="o">(</span><span class="n">Timer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    
+    <span class="kd">public</span> <span class="nf">PongerParent</span><span class="o">(</span><span class="n">Init</span> <span class="n">init</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//create and connect all components except timer and network</span>
+        <span class="n">Component</span> <span class="n">ponger</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">Ponger</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="k">new</span> <span class="n">Ponger</span><span class="o">.</span><span class="na">Init</span><span class="o">(</span><span class="n">init</span><span class="o">.</span><span class="na">self</span><span class="o">));</span>
+
+        <span class="c1">//connect required internal components to network and timer</span>
+        <span class="n">connect</span><span class="o">(</span><span class="n">ponger</span><span class="o">.</span><span class="na">getNegative</span><span class="o">(</span><span class="n">Network</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">network</span><span class="o">,</span> <span class="n">Channel</span><span class="o">.</span><span class="na">TWO_WAY</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Init</span> <span class="kd">extends</span> <span class="n">se</span><span class="o">.</span><span class="na">sics</span><span class="o">.</span><span class="na">kompics</span><span class="o">.</span><span class="na">Init</span><span class="o">&lt;</span><span class="n">PongerParent</span><span class="o">&gt;</span> <span class="o">{</span>
+
+        <span class="kd">public</span> <span class="kd">final</span> <span class="n">TAddress</span> <span class="n">self</span><span class="o">;</span>
+
+        <span class="kd">public</span> <span class="nf">Init</span><span class="o">(</span><span class="n">TAddress</span> <span class="n">self</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">self</span> <span class="o">=</span> <span class="n">self</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test.system</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Channel</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Component</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.ComponentDefinition</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.Network</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.netty.NettyInit</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.netty.NettyNetwork</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.timer.Timer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.timer.java.JavaTimer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.test.TAddress</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PongerHost</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+    
+    <span class="kd">public</span> <span class="nf">PongerHost</span><span class="o">(</span><span class="n">Init</span> <span class="n">init</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Component</span> <span class="n">network</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">NettyNetwork</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="k">new</span> <span class="n">NettyInit</span><span class="o">(</span><span class="n">init</span><span class="o">.</span><span class="na">self</span><span class="o">));</span>
+        <span class="n">Component</span> <span class="n">timer</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">JavaTimer</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Init</span><span class="o">.</span><span class="na">NONE</span><span class="o">);</span>
+        <span class="n">Component</span> <span class="n">pongerParent</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">PongerParent</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="k">new</span> <span class="n">PongerParent</span><span class="o">.</span><span class="na">Init</span><span class="o">(</span><span class="n">init</span><span class="o">.</span><span class="na">self</span><span class="o">));</span>
+        
+        <span class="n">connect</span><span class="o">(</span><span class="n">pongerParent</span><span class="o">.</span><span class="na">getNegative</span><span class="o">(</span><span class="n">Network</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">network</span><span class="o">.</span><span class="na">getPositive</span><span class="o">(</span><span class="n">Network</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">Channel</span><span class="o">.</span><span class="na">TWO_WAY</span><span class="o">);</span>
+        <span class="n">connect</span><span class="o">(</span><span class="n">pongerParent</span><span class="o">.</span><span class="na">getNegative</span><span class="o">(</span><span class="n">Timer</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">timer</span><span class="o">.</span><span class="na">getPositive</span><span class="o">(</span><span class="n">Timer</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">Channel</span><span class="o">.</span><span class="na">TWO_WAY</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Init</span> <span class="kd">extends</span> <span class="n">se</span><span class="o">.</span><span class="na">sics</span><span class="o">.</span><span class="na">kompics</span><span class="o">.</span><span class="na">Init</span><span class="o">&lt;</span><span class="n">PongerHost</span><span class="o">&gt;</span> <span class="o">{</span>
+
+        <span class="kd">public</span> <span class="kd">final</span> <span class="n">TAddress</span> <span class="n">self</span><span class="o">;</span>
+
+        <span class="kd">public</span> <span class="nf">Init</span><span class="o">(</span><span class="n">TAddress</span> <span class="n">self</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">self</span> <span class="o">=</span> <span class="n">self</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>In the simulation scenario we define two types of <code class="docutils literal notranslate"><span class="pre">StartNodeEvent</span></code> events for <cite>Ponger</cite> and <cite>Pinger</cite>. The methods required to be overridden are very simple as they are getter methods for the <code class="docutils literal notranslate"><span class="pre">Parent</span></code> <code class="docutils literal notranslate"><span class="pre">ComponentDefinition</span></code>, <code class="docutils literal notranslate"><span class="pre">Init</span></code> and the node <code class="docutils literal notranslate"><span class="pre">Address</span></code>.
+The scenario is set to start 5 ponger nodes and 5 pinger nodes. The sequential distributions will give IPs ending in: <span class="math notranslate nohighlight">\(x=\{1,2,3,4,5\}\)</span> to the pongers and IPs ending in: <span class="math notranslate nohighlight">\(y=\{6,7,8,9,10\}\)</span> to pingers and the &lt;x,y&gt; relation is: {&lt;1,6&gt;, &lt;2, 7&gt;, &lt;3,8&gt;, &lt;4,9&gt;, &lt;5,10&gt;} (or <span class="math notranslate nohighlight">\(y = x+5\)</span>).</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test.sim</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.net.InetAddress</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.UnknownHostException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Init</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.Address</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.SimulationScenario</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.adaptor.Operation1</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.adaptor.Operation2</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.adaptor.distributions.extra.BasicIntSequentialDistribution</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.events.system.StartNodeEvent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.test.TAddress</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.test.system.PingerParent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.test.system.PongerParent</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ScenarioGen</span> <span class="o">{</span>
+
+    <span class="kd">static</span> <span class="n">Operation1</span> <span class="n">startPongerOp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Operation1</span><span class="o">&lt;</span><span class="n">StartNodeEvent</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;()</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">StartNodeEvent</span> <span class="nf">generate</span><span class="o">(</span><span class="kd">final</span> <span class="n">Integer</span> <span class="n">self</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="n">StartNodeEvent</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">TAddress</span> <span class="n">selfAdr</span><span class="o">;</span>
+
+                <span class="o">{</span>
+                    <span class="k">try</span> <span class="o">{</span>
+                        <span class="n">selfAdr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TAddress</span><span class="o">(</span><span class="n">InetAddress</span><span class="o">.</span><span class="na">getByName</span><span class="o">(</span><span class="s">&quot;192.193.0.&quot;</span> <span class="o">+</span> <span class="n">self</span><span class="o">),</span> <span class="mi">10000</span><span class="o">);</span>
+                    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">UnknownHostException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="n">ex</span><span class="o">);</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Address</span> <span class="nf">getNodeAddress</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="n">selfAdr</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Class</span> <span class="nf">getComponentDefinition</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="n">PongerParent</span><span class="o">.</span><span class="na">class</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Init</span> <span class="nf">getComponentInit</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="k">new</span> <span class="n">PongerParent</span><span class="o">.</span><span class="na">Init</span><span class="o">(</span><span class="n">selfAdr</span><span class="o">);</span>
+                <span class="o">}</span>
+                
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="s">&quot;StartPonger&lt;&quot;</span> <span class="o">+</span> <span class="n">selfAdr</span><span class="o">.</span><span class="na">toString</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;&gt;&quot;</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">};</span>
+        <span class="o">}</span>
+    <span class="o">};</span>
+    
+    <span class="kd">static</span> <span class="n">Operation2</span> <span class="n">startPingerOp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Operation2</span><span class="o">&lt;</span><span class="n">StartNodeEvent</span><span class="o">,</span> <span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;()</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">StartNodeEvent</span> <span class="nf">generate</span><span class="o">(</span><span class="kd">final</span> <span class="n">Integer</span> <span class="n">self</span><span class="o">,</span> <span class="kd">final</span> <span class="n">Integer</span> <span class="n">ponger</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="n">StartNodeEvent</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">TAddress</span> <span class="n">selfAdr</span><span class="o">;</span>
+                <span class="n">TAddress</span> <span class="n">pongerAdr</span><span class="o">;</span>
+
+                <span class="o">{</span>
+                    <span class="k">try</span> <span class="o">{</span>
+                        <span class="n">selfAdr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TAddress</span><span class="o">(</span><span class="n">InetAddress</span><span class="o">.</span><span class="na">getByName</span><span class="o">(</span><span class="s">&quot;192.193.0.&quot;</span> <span class="o">+</span> <span class="n">self</span><span class="o">),</span> <span class="mi">10000</span><span class="o">);</span>
+                        <span class="n">pongerAdr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TAddress</span><span class="o">(</span><span class="n">InetAddress</span><span class="o">.</span><span class="na">getByName</span><span class="o">(</span><span class="s">&quot;192.193.0.&quot;</span> <span class="o">+</span> <span class="n">ponger</span><span class="o">),</span> <span class="mi">10000</span><span class="o">);</span>
+                    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">UnknownHostException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="n">ex</span><span class="o">);</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Address</span> <span class="nf">getNodeAddress</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="n">selfAdr</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Class</span> <span class="nf">getComponentDefinition</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="n">PingerParent</span><span class="o">.</span><span class="na">class</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Init</span> <span class="nf">getComponentInit</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="k">new</span> <span class="n">PingerParent</span><span class="o">.</span><span class="na">Init</span><span class="o">(</span><span class="n">selfAdr</span><span class="o">,</span> <span class="n">pongerAdr</span><span class="o">);</span>
+                <span class="o">}</span>
+                
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="s">&quot;StartPinger&lt;&quot;</span> <span class="o">+</span> <span class="n">selfAdr</span><span class="o">.</span><span class="na">toString</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;&gt;&quot;</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">};</span>
+        <span class="o">}</span>
+    <span class="o">};</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">SimulationScenario</span> <span class="nf">simplePing</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">SimulationScenario</span> <span class="n">scen</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimulationScenario</span><span class="o">()</span> <span class="o">{</span>
+            <span class="o">{</span>
+                <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span> <span class="n">ponger</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="o">{</span>
+                        <span class="n">eventInterArrivalTime</span><span class="o">(</span><span class="n">constant</span><span class="o">(</span><span class="mi">1000</span><span class="o">));</span>
+                        <span class="n">raise</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="n">startPongerOp</span><span class="o">,</span> <span class="k">new</span> <span class="n">BasicIntSequentialDistribution</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+                    <span class="o">}</span>
+                <span class="o">};</span>
+                
+                <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span> <span class="n">pinger</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="o">{</span>
+                        <span class="n">eventInterArrivalTime</span><span class="o">(</span><span class="n">constant</span><span class="o">(</span><span class="mi">1000</span><span class="o">));</span>
+                        <span class="n">raise</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="n">startPingerOp</span><span class="o">,</span> <span class="k">new</span> <span class="n">BasicIntSequentialDistribution</span><span class="o">(</span><span class="mi">6</span><span class="o">),</span> <span class="k">new</span> <span class="n">BasicIntSequentialDistribution</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+                    <span class="o">}</span>
+                <span class="o">};</span>
+
+                <span class="n">ponger</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+                <span class="n">pinger</span><span class="o">.</span><span class="na">startAfterTerminationOf</span><span class="o">(</span><span class="mi">1000</span><span class="o">,</span> <span class="n">ponger</span><span class="o">);</span>
+                <span class="n">terminateAfterTerminationOf</span><span class="o">(</span><span class="mi">10000</span><span class="o">,</span> <span class="n">pinger</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">};</span>
+
+        <span class="k">return</span> <span class="n">scen</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test.sim</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.SimulationScenario</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.run.LauncherComp</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ScenarioLauncher</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">long</span> <span class="n">seed</span> <span class="o">=</span> <span class="mi">123</span><span class="o">;</span>
+        <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">setSeed</span><span class="o">(</span><span class="n">seed</span><span class="o">);</span>
+        <span class="n">SimulationScenario</span> <span class="n">simpleBootScenario</span> <span class="o">=</span> <span class="n">ScenarioGen</span><span class="o">.</span><span class="na">simplePing</span><span class="o">();</span>
+        <span class="n">simpleBootScenario</span><span class="o">.</span><span class="na">simulate</span><span class="o">(</span><span class="n">LauncherComp</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>In some cases, you might start the simulation and the only output you get are some warnings from log4j, including:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>log4j:WARN No appenders could be found for logger (CodeInstrumentation).
+log4j:WARN Please initialize the log4j system properly.
+</pre></div>
+</div>
+<p class="last">In the case you should check your <cite>log4j.properties</cite> files as it might be missing or miss-configured.</p>
+</div>
+<p>Remember to set the following in your <cite>log4j.properties</cite> files, so that the logger output is manageable and related to your logs only.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>log4j.logger.Kompics=WARN
+log4j.logger.se.sics.kompics.simulator.core.impl.P2pSimulator=WARN
+log4j.logger.se.sics.kompics.simulator.core.impl.SimulatorMngrComp=WARN
+log4j.logger.CodeInstrumentation=WARN
+</pre></div>
+</div>
+<p>When debugging, if the source of error is not clear, you might want to turn the loggers above to TRACE. The order should be:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>SimulatorMngrComp - to see if the stochastic process generated events order is as expected.</li>
+<li>P2pSimulator - to see if network messages and timeouts occur as expected</li>
+<li>Kompics - mostly <cite>Component</cite> control events</li>
+<li>CodeInstrumentation - only if you declared instrumentation exceptions(advanced).</li>
+</ol>
+</div></blockquote>
+<p>The code until here can be downloaded <a class="reference download internal" download="" href="../../../_downloads/10e9aa624798f4ee096f987865b48df7/sim-pingpong-distributed.zip"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>We will now change the code to <a class="reference internal" href="../../networking/basic/basic.html#netcleanup"><span class="std std-ref">Cleanup: Config files, ClassMatchers, and Assembly</span></a> version and try to run it in simulation. The configuration now contains two types of parameters:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>node-specific parameters (like addresses)</li>
+<li>system-parameters (like timeout) that do not change with each node.</li>
+</ol>
+</div></blockquote>
+<p>In simulation we will have one <code class="file docutils literal notranslate"><span class="pre">reference.conf</span></code> config file with system-parameters, and we will tell the simulator to add the node-specific parameters.</p>
+<p>Thus the configuration file now contains only the timeout.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">pingpong</span><span class="o">.</span><span class="na">pinger</span><span class="o">.</span><span class="na">timeout</span> <span class="o">=</span> <span class="mi">1000</span>
+</pre></div>
+</div>
+<p>We now want to tell the simulator to add the <em>self</em> and <em>ponger</em> addresses to the config of each individual node. For this we will need to override the <a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/events/system/StartNodeEvent.html#se.sics.kompics.simulator.events.system.StartNodeEvent.initConfigUpdate()" title="se.sics.kompics.simulator.events.system.StartNodeEvent.initConfigUpdate()"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.events.system.StartNodeEvent.initConfigUpdate()</span></code></a> method. The default implementation of this method returns an empty Map which corresponds to no change to the config. The returned Map is of type &lt;config-key, config-value&gt;. We can add the addresses to the config in two ways. We can add the components of the address:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="nf">initConfigUpdate</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="n">config</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;pingpong.self.host&quot;</span><span class="o">,</span> <span class="n">selfAdr</span><span class="o">.</span><span class="na">getIp</span><span class="o">().</span><span class="na">getHostName</span><span class="o">());</span>
+        <span class="n">config</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;pingpong.self.port&quot;</span><span class="o">,</span> <span class="n">selfAdr</span><span class="o">.</span><span class="na">getPort</span><span class="o">());</span>
+        <span class="n">config</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;pingpong.pinger.pongeraddr.host&quot;</span><span class="o">,</span> <span class="n">pongerAdr</span><span class="o">.</span><span class="na">getIp</span><span class="o">().</span><span class="na">getHostName</span><span class="o">());</span>
+        <span class="n">config</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;pingpong.pinger.pongeraddr.port&quot;</span><span class="o">,</span> <span class="n">pongerAdr</span><span class="o">.</span><span class="na">getPort</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">config</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Or we can add the <code class="docutils literal notranslate"><span class="pre">TAddress</span></code> object into the config directly:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="nf">initConfigUpdate</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="n">config</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;pingpong.self&quot;</span><span class="o">,</span> <span class="n">selfAdr</span><span class="o">);</span>
+        <span class="n">config</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;pingpong.pinger.pongeraddr&quot;</span><span class="o">,</span> <span class="n">pongerAdr</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">config</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>In this simulation scenario we have overridden the config method.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test.sim</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.net.InetAddress</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.UnknownHostException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Init</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.Address</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.SimulationScenario</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.adaptor.Operation1</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.adaptor.Operation2</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.adaptor.distributions.extra.BasicIntSequentialDistribution</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.events.system.StartNodeEvent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.test.TAddress</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.test.system.PingerParent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.test.system.PongerParent</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ScenarioGen</span> <span class="o">{</span>
+
+    <span class="kd">static</span> <span class="n">Operation1</span> <span class="n">startPongerOp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Operation1</span><span class="o">&lt;</span><span class="n">StartNodeEvent</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;()</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">StartNodeEvent</span> <span class="nf">generate</span><span class="o">(</span><span class="kd">final</span> <span class="n">Integer</span> <span class="n">self</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="n">StartNodeEvent</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">TAddress</span> <span class="n">selfAdr</span><span class="o">;</span>
+
+                <span class="o">{</span>
+                    <span class="k">try</span> <span class="o">{</span>
+                        <span class="n">selfAdr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TAddress</span><span class="o">(</span><span class="n">InetAddress</span><span class="o">.</span><span class="na">getByName</span><span class="o">(</span><span class="s">&quot;192.193.0.&quot;</span> <span class="o">+</span> <span class="n">self</span><span class="o">),</span> <span class="mi">10000</span><span class="o">);</span>
+                    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">UnknownHostException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="n">ex</span><span class="o">);</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="nf">initConfigUpdate</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+                    <span class="n">config</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;pingpong.self&quot;</span><span class="o">,</span> <span class="n">selfAdr</span><span class="o">);</span>
+                    <span class="k">return</span> <span class="n">config</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Address</span> <span class="nf">getNodeAddress</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="n">selfAdr</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Class</span> <span class="nf">getComponentDefinition</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="n">PongerParent</span><span class="o">.</span><span class="na">class</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Init</span> <span class="nf">getComponentInit</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="n">Init</span><span class="o">.</span><span class="na">NONE</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="s">&quot;StartPonger&lt;&quot;</span> <span class="o">+</span> <span class="n">selfAdr</span><span class="o">.</span><span class="na">toString</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;&gt;&quot;</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">};</span>
+        <span class="o">}</span>
+    <span class="o">};</span>
+
+    <span class="kd">static</span> <span class="n">Operation2</span> <span class="n">startPingerOp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Operation2</span><span class="o">&lt;</span><span class="n">StartNodeEvent</span><span class="o">,</span> <span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;()</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">StartNodeEvent</span> <span class="nf">generate</span><span class="o">(</span><span class="kd">final</span> <span class="n">Integer</span> <span class="n">self</span><span class="o">,</span> <span class="kd">final</span> <span class="n">Integer</span> <span class="n">ponger</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="n">StartNodeEvent</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">TAddress</span> <span class="n">selfAdr</span><span class="o">;</span>
+                <span class="n">TAddress</span> <span class="n">pongerAdr</span><span class="o">;</span>
+
+                <span class="o">{</span>
+                    <span class="k">try</span> <span class="o">{</span>
+                        <span class="n">selfAdr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TAddress</span><span class="o">(</span><span class="n">InetAddress</span><span class="o">.</span><span class="na">getByName</span><span class="o">(</span><span class="s">&quot;192.193.0.&quot;</span> <span class="o">+</span> <span class="n">self</span><span class="o">),</span> <span class="mi">10000</span><span class="o">);</span>
+                        <span class="n">pongerAdr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TAddress</span><span class="o">(</span><span class="n">InetAddress</span><span class="o">.</span><span class="na">getByName</span><span class="o">(</span><span class="s">&quot;192.193.0.&quot;</span> <span class="o">+</span> <span class="n">ponger</span><span class="o">),</span> <span class="mi">10000</span><span class="o">);</span>
+                    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">UnknownHostException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="n">ex</span><span class="o">);</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+                
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="nf">initConfigUpdate</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+                    <span class="n">config</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;pingpong.self&quot;</span><span class="o">,</span> <span class="n">selfAdr</span><span class="o">);</span>
+                    <span class="n">config</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;pingpong.pinger.pongeraddr&quot;</span><span class="o">,</span> <span class="n">pongerAdr</span><span class="o">);</span>
+                    <span class="k">return</span> <span class="n">config</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Address</span> <span class="nf">getNodeAddress</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="n">selfAdr</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Class</span> <span class="nf">getComponentDefinition</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="n">PingerParent</span><span class="o">.</span><span class="na">class</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Init</span> <span class="nf">getComponentInit</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="n">Init</span><span class="o">.</span><span class="na">NONE</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="s">&quot;StartPinger&lt;&quot;</span> <span class="o">+</span> <span class="n">selfAdr</span><span class="o">.</span><span class="na">toString</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;&gt;&quot;</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">};</span>
+        <span class="o">}</span>
+    <span class="o">};</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">SimulationScenario</span> <span class="nf">simplePing</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">SimulationScenario</span> <span class="n">scen</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimulationScenario</span><span class="o">()</span> <span class="o">{</span>
+            <span class="o">{</span>
+                <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span> <span class="n">ponger</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="o">{</span>
+                        <span class="n">eventInterArrivalTime</span><span class="o">(</span><span class="n">constant</span><span class="o">(</span><span class="mi">1000</span><span class="o">));</span>
+                        <span class="n">raise</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="n">startPongerOp</span><span class="o">,</span> <span class="k">new</span> <span class="n">BasicIntSequentialDistribution</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+                    <span class="o">}</span>
+                <span class="o">};</span>
+
+                <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span> <span class="n">pinger</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="o">{</span>
+                        <span class="n">eventInterArrivalTime</span><span class="o">(</span><span class="n">constant</span><span class="o">(</span><span class="mi">1000</span><span class="o">));</span>
+                        <span class="n">raise</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="n">startPingerOp</span><span class="o">,</span> <span class="k">new</span> <span class="n">BasicIntSequentialDistribution</span><span class="o">(</span><span class="mi">6</span><span class="o">),</span> <span class="k">new</span> <span class="n">BasicIntSequentialDistribution</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+                    <span class="o">}</span>
+                <span class="o">};</span>
+
+                <span class="n">ponger</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+                <span class="n">pinger</span><span class="o">.</span><span class="na">startAfterTerminationOf</span><span class="o">(</span><span class="mi">1000</span><span class="o">,</span> <span class="n">ponger</span><span class="o">);</span>
+                <span class="n">terminateAfterTerminationOf</span><span class="o">(</span><span class="mi">10000</span><span class="o">,</span> <span class="n">pinger</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">};</span>
+
+        <span class="k">return</span> <span class="n">scen</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Host</span></code> and <code class="docutils literal notranslate"><span class="pre">Parent</span></code> are also changed to use the config.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test.system</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Channel</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Component</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.ComponentDefinition</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Init</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Positive</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.Network</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.timer.Timer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.test.Pinger</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.test.TAddress</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PingerParent</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+
+    <span class="n">Positive</span><span class="o">&lt;</span><span class="n">Network</span><span class="o">&gt;</span> <span class="n">network</span> <span class="o">=</span> <span class="n">requires</span><span class="o">(</span><span class="n">Network</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="n">Positive</span><span class="o">&lt;</span><span class="n">Timer</span><span class="o">&gt;</span> <span class="n">timer</span> <span class="o">=</span> <span class="n">requires</span><span class="o">(</span><span class="n">Timer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+    <span class="kd">public</span> <span class="nf">PingerParent</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">//create and connect all components except timer and network</span>
+        <span class="n">Class</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span><span class="o">&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Pinger</span><span class="o">.</span><span class="na">class</span><span class="o">;</span>
+        <span class="n">Component</span> <span class="n">pinger</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">p</span><span class="o">,</span> <span class="n">Init</span><span class="o">.</span><span class="na">NONE</span><span class="o">);</span>
+
+        <span class="c1">//connect required internal components to network and timer</span>
+        <span class="n">connect</span><span class="o">(</span><span class="n">pinger</span><span class="o">.</span><span class="na">getNegative</span><span class="o">(</span><span class="n">Network</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">network</span><span class="o">,</span> <span class="n">Channel</span><span class="o">.</span><span class="na">TWO_WAY</span><span class="o">);</span>
+        <span class="n">connect</span><span class="o">(</span><span class="n">pinger</span><span class="o">.</span><span class="na">getNegative</span><span class="o">(</span><span class="n">Timer</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">timer</span><span class="o">,</span> <span class="n">Channel</span><span class="o">.</span><span class="na">TWO_WAY</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test.system</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Channel</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Component</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.ComponentDefinition</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Init</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.Network</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.netty.NettyInit</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.netty.NettyNetwork</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.timer.Timer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.timer.java.JavaTimer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.test.TAddress</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PingerHost</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">PingerHost</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">TAddress</span> <span class="n">self</span> <span class="o">=</span> <span class="n">config</span><span class="o">().</span><span class="na">getValue</span><span class="o">(</span><span class="s">&quot;pingpong.self&quot;</span><span class="o">,</span> <span class="n">TAddress</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+        
+        <span class="n">Component</span> <span class="n">network</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">NettyNetwork</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="k">new</span> <span class="n">NettyInit</span><span class="o">(</span><span class="n">self</span><span class="o">));</span>
+        <span class="n">Component</span> <span class="n">timer</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">JavaTimer</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Init</span><span class="o">.</span><span class="na">NONE</span><span class="o">);</span>
+        <span class="n">Component</span> <span class="n">pingerParent</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">PingerParent</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Init</span><span class="o">.</span><span class="na">NONE</span><span class="o">);</span>
+        
+        <span class="n">connect</span><span class="o">(</span><span class="n">pingerParent</span><span class="o">.</span><span class="na">getNegative</span><span class="o">(</span><span class="n">Network</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">network</span><span class="o">.</span><span class="na">getPositive</span><span class="o">(</span><span class="n">Network</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">Channel</span><span class="o">.</span><span class="na">TWO_WAY</span><span class="o">);</span>
+        <span class="n">connect</span><span class="o">(</span><span class="n">pingerParent</span><span class="o">.</span><span class="na">getNegative</span><span class="o">(</span><span class="n">Timer</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">timer</span><span class="o">.</span><span class="na">getPositive</span><span class="o">(</span><span class="n">Timer</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">Channel</span><span class="o">.</span><span class="na">TWO_WAY</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test.system</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Channel</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Component</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.ComponentDefinition</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Init</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Positive</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.Network</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.timer.Timer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.test.Ponger</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.test.TAddress</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PongerParent</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+
+    <span class="n">Positive</span><span class="o">&lt;</span><span class="n">Network</span><span class="o">&gt;</span> <span class="n">network</span> <span class="o">=</span> <span class="n">requires</span><span class="o">(</span><span class="n">Network</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="n">Positive</span><span class="o">&lt;</span><span class="n">Timer</span><span class="o">&gt;</span> <span class="n">timer</span> <span class="o">=</span> <span class="n">requires</span><span class="o">(</span><span class="n">Timer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    
+    <span class="kd">public</span> <span class="nf">PongerParent</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">//create and connect all components except timer and network</span>
+        <span class="n">Component</span> <span class="n">ponger</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">Ponger</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Init</span><span class="o">.</span><span class="na">NONE</span><span class="o">);</span>
+
+        <span class="c1">//connect required internal components to network and timer</span>
+        <span class="n">connect</span><span class="o">(</span><span class="n">ponger</span><span class="o">.</span><span class="na">getNegative</span><span class="o">(</span><span class="n">Network</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">network</span><span class="o">,</span> <span class="n">Channel</span><span class="o">.</span><span class="na">TWO_WAY</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test.system</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Channel</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Component</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.ComponentDefinition</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Init</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.Network</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.netty.NettyInit</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.netty.NettyNetwork</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.timer.Timer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.timer.java.JavaTimer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.test.TAddress</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PongerHost</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+    
+    <span class="kd">public</span> <span class="nf">PongerHost</span><span class="o">(</span><span class="n">Init</span> <span class="n">init</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">TAddress</span> <span class="n">self</span> <span class="o">=</span> <span class="n">config</span><span class="o">().</span><span class="na">getValue</span><span class="o">(</span><span class="s">&quot;pingpong.self&quot;</span><span class="o">,</span> <span class="n">TAddress</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+        
+        <span class="n">Component</span> <span class="n">network</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">NettyNetwork</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="k">new</span> <span class="n">NettyInit</span><span class="o">(</span><span class="n">self</span><span class="o">));</span>
+        <span class="n">Component</span> <span class="n">timer</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">JavaTimer</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Init</span><span class="o">.</span><span class="na">NONE</span><span class="o">);</span>
+        <span class="n">Component</span> <span class="n">pongerParent</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">PongerParent</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Init</span><span class="o">.</span><span class="na">NONE</span><span class="o">);</span>
+        
+        <span class="n">connect</span><span class="o">(</span><span class="n">pongerParent</span><span class="o">.</span><span class="na">getNegative</span><span class="o">(</span><span class="n">Network</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">network</span><span class="o">.</span><span class="na">getPositive</span><span class="o">(</span><span class="n">Network</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">Channel</span><span class="o">.</span><span class="na">TWO_WAY</span><span class="o">);</span>
+        <span class="n">connect</span><span class="o">(</span><span class="n">pongerParent</span><span class="o">.</span><span class="na">getNegative</span><span class="o">(</span><span class="n">Timer</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">timer</span><span class="o">.</span><span class="na">getPositive</span><span class="o">(</span><span class="n">Timer</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">Channel</span><span class="o">.</span><span class="na">TWO_WAY</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>The code until here can be downloaded <a class="reference download internal" download="" href="../../../_downloads/10e9aa624798f4ee096f987865b48df7/sim-pingpong-distributed.zip"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
+</div>
+<div class="section" id="global-view">
+<h2>Global View<a class="headerlink" href="#global-view" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes you might want to observe some state and do something special (like stop the simulation) in case the state matches a special case that you have considered. With this in mind the simulator offers a <a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/util/GlobalView.html#se.sics.kompics.simulator.util.GlobalView" title="se.sics.kompics.simulator.util.GlobalView"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.util.GlobalView</span></code></a>. The <code class="docutils literal notranslate"><span class="pre">GlobalView</span></code> allows you to do three things:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>check which nodes are dead or alive</li>
+<li>set/get &lt;key,values&gt; shared globally</li>
+<li>tell the simulator to terminate this simulation</li>
+</ol>
+</div></blockquote>
+<p>You can access the <code class="docutils literal notranslate"><span class="pre">GlobalView</span></code> from your config, using the key “simulation.globalview”:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">GlobalView</span> <span class="n">gv</span> <span class="o">=</span> <span class="n">config</span><span class="o">().</span><span class="na">getValue</span><span class="o">(</span><span class="s">&quot;simulation.globalview&quot;</span><span class="o">,</span> <span class="n">GlobalView</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>The simulation scenarios before terminated at a specific time:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">terminateAfterTerminationOf</span><span class="o">(</span><span class="mi">10000</span><span class="o">,</span> <span class="n">pinger</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>This time we want to check for certain conditions and terminate when one such condition occurs. In this section we want to terminate the current simulation when at least 100 pongs have been received by the pingers or when at least 3 nodes have died.</p>
+<p>We write an observer that will check periodically on the global state and verify if any conditions have been met.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test.sim</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.UUID</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.ComponentDefinition</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Handler</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Positive</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Start</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.Network</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.util.GlobalView</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.timer.CancelPeriodicTimeout</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.timer.SchedulePeriodicTimeout</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.timer.Timeout</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.timer.Timer</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SimulationObserver</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">SimulationObserver</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    
+    <span class="n">Positive</span><span class="o">&lt;</span><span class="n">Timer</span><span class="o">&gt;</span> <span class="n">timer</span> <span class="o">=</span> <span class="n">requires</span><span class="o">(</span><span class="n">Timer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="n">Positive</span><span class="o">&lt;</span><span class="n">Network</span><span class="o">&gt;</span> <span class="n">network</span> <span class="o">=</span> <span class="n">requires</span><span class="o">(</span><span class="n">Network</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">minPings</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">minDeadNodes</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">UUID</span> <span class="n">timerId</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">SimulationObserver</span><span class="o">(</span><span class="n">Init</span> <span class="n">init</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">minPings</span> <span class="o">=</span> <span class="n">init</span><span class="o">.</span><span class="na">minPings</span><span class="o">;</span>
+        <span class="n">minDeadNodes</span> <span class="o">=</span> <span class="n">init</span><span class="o">.</span><span class="na">minDeadNodes</span><span class="o">;</span>
+
+        <span class="n">subscribe</span><span class="o">(</span><span class="n">handleStart</span><span class="o">,</span> <span class="n">control</span><span class="o">);</span>
+        <span class="n">subscribe</span><span class="o">(</span><span class="n">handleCheck</span><span class="o">,</span> <span class="n">timer</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="n">Handler</span><span class="o">&lt;</span><span class="n">Start</span><span class="o">&gt;</span> <span class="n">handleStart</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Handler</span><span class="o">&lt;</span><span class="n">Start</span><span class="o">&gt;()</span> <span class="o">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handle</span><span class="o">(</span><span class="n">Start</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">schedulePeriodicCheck</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">};</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">tearDown</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">trigger</span><span class="o">(</span><span class="k">new</span> <span class="n">CancelPeriodicTimeout</span><span class="o">(</span><span class="n">timerId</span><span class="o">),</span> <span class="n">timer</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="n">Handler</span><span class="o">&lt;</span><span class="n">CheckTimeout</span><span class="o">&gt;</span> <span class="n">handleCheck</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Handler</span><span class="o">&lt;</span><span class="n">CheckTimeout</span><span class="o">&gt;()</span> <span class="o">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handle</span><span class="o">(</span><span class="n">CheckTimeout</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">GlobalView</span> <span class="n">gv</span> <span class="o">=</span> <span class="n">config</span><span class="o">().</span><span class="na">getValue</span><span class="o">(</span><span class="s">&quot;simulation.globalview&quot;</span><span class="o">,</span> <span class="n">GlobalView</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+            
+            <span class="k">if</span><span class="o">(</span><span class="n">gv</span><span class="o">.</span><span class="na">getValue</span><span class="o">(</span><span class="s">&quot;simulation.pongs&quot;</span><span class="o">,</span> <span class="n">Integer</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">&gt;</span> <span class="n">minPings</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&quot;Terminating simulation as the minimum pings:{} is achieved&quot;</span><span class="o">,</span> <span class="n">minPings</span><span class="o">);</span>
+                <span class="n">gv</span><span class="o">.</span><span class="na">terminate</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">gv</span><span class="o">.</span><span class="na">getDeadNodes</span><span class="o">().</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">minDeadNodes</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&quot;Terminating simulation as the min dead nodes:{} is achieved&quot;</span><span class="o">,</span> <span class="n">minDeadNodes</span><span class="o">);</span>
+                <span class="n">gv</span><span class="o">.</span><span class="na">terminate</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">};</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Init</span> <span class="kd">extends</span> <span class="n">se</span><span class="o">.</span><span class="na">sics</span><span class="o">.</span><span class="na">kompics</span><span class="o">.</span><span class="na">Init</span><span class="o">&lt;</span><span class="n">SimulationObserver</span><span class="o">&gt;</span> <span class="o">{</span>
+
+        <span class="kd">public</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">minPings</span><span class="o">;</span>
+        <span class="kd">public</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">minDeadNodes</span><span class="o">;</span>
+
+        <span class="kd">public</span> <span class="nf">Init</span><span class="o">(</span><span class="kt">int</span> <span class="n">minPings</span><span class="o">,</span> <span class="kt">int</span> <span class="n">minDeadNodes</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">minPings</span> <span class="o">=</span> <span class="n">minPings</span><span class="o">;</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">minDeadNodes</span> <span class="o">=</span> <span class="n">minDeadNodes</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">schedulePeriodicCheck</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kt">long</span> <span class="n">period</span> <span class="o">=</span> <span class="n">config</span><span class="o">().</span><span class="na">getValue</span><span class="o">(</span><span class="s">&quot;pingpong.simulation.checktimeout&quot;</span><span class="o">,</span> <span class="n">Long</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+        <span class="n">SchedulePeriodicTimeout</span> <span class="n">spt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SchedulePeriodicTimeout</span><span class="o">(</span><span class="n">period</span><span class="o">,</span> <span class="n">period</span><span class="o">);</span>
+        <span class="n">CheckTimeout</span> <span class="n">timeout</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CheckTimeout</span><span class="o">(</span><span class="n">spt</span><span class="o">);</span>
+        <span class="n">spt</span><span class="o">.</span><span class="na">setTimeoutEvent</span><span class="o">(</span><span class="n">timeout</span><span class="o">);</span>
+        <span class="n">trigger</span><span class="o">(</span><span class="n">spt</span><span class="o">,</span> <span class="n">timer</span><span class="o">);</span>
+        <span class="n">timerId</span> <span class="o">=</span> <span class="n">timeout</span><span class="o">.</span><span class="na">getTimeoutId</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">CheckTimeout</span> <span class="kd">extends</span> <span class="n">Timeout</span> <span class="o">{</span>
+
+        <span class="kd">public</span> <span class="nf">CheckTimeout</span><span class="o">(</span><span class="n">SchedulePeriodicTimeout</span> <span class="n">spt</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">super</span><span class="o">(</span><span class="n">spt</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>We also add a small bit of code to the <code class="docutils literal notranslate"><span class="pre">Pinger</span></code> to record their pongs.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ClassMatchedHandler</span><span class="o">&lt;</span><span class="n">Pong</span><span class="o">,</span> <span class="n">TMessage</span><span class="o">&gt;</span> <span class="n">pongHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ClassMatchedHandler</span><span class="o">&lt;</span><span class="n">Pong</span><span class="o">,</span> <span class="n">TMessage</span><span class="o">&gt;()</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handle</span><span class="o">(</span><span class="n">Pong</span> <span class="n">content</span><span class="o">,</span> <span class="n">TMessage</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">counter</span><span class="o">++;</span>
+                <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&quot;{} Got Pong #{}! from:{}&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">Object</span><span class="o">[]{</span><span class="n">self</span><span class="o">,</span> <span class="n">counter</span><span class="o">,</span> <span class="n">context</span><span class="o">.</span><span class="na">header</span><span class="o">.</span><span class="na">src</span><span class="o">});</span>
+                <span class="n">ponged</span><span class="o">();</span>
+        <span class="o">}</span>
+<span class="o">};</span>
+
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">ponged</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">GlobalView</span> <span class="n">gv</span> <span class="o">=</span> <span class="n">config</span><span class="o">().</span><span class="na">getValue</span><span class="o">(</span><span class="s">&quot;simulation.globalview&quot;</span><span class="o">,</span> <span class="n">GlobalView</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+        <span class="n">gv</span><span class="o">.</span><span class="na">setValue</span><span class="o">(</span><span class="s">&quot;simulation.pongs&quot;</span><span class="o">,</span> <span class="n">gv</span><span class="o">.</span><span class="na">getValue</span><span class="o">(</span><span class="s">&quot;simulation.pongs&quot;</span><span class="o">,</span> <span class="n">Integer</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Since we are using a custom &lt;key, value&gt; from the <code class="docutils literal notranslate"><span class="pre">GlobalView</span></code>, we might want to initialize this value before. We can do this within the <a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/events/system/SetupEvent.html#se.sics.kompics.simulator.events.system.SetupEvent" title="se.sics.kompics.simulator.events.system.SetupEvent"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.events.system.SetupEvent</span></code></a>, by overriding the <code class="docutils literal notranslate"><span class="pre">setupGlobalView</span></code> method:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">static</span> <span class="n">Operation</span> <span class="n">setupOp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Operation</span><span class="o">&lt;</span><span class="n">SetupEvent</span><span class="o">&gt;()</span> <span class="o">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">SetupEvent</span> <span class="nf">generate</span><span class="o">()</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="k">new</span> <span class="n">SetupEvent</span><span class="o">()</span> <span class="o">{</span>
+                        <span class="nd">@Override</span>
+                        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setupGlobalView</span><span class="o">(</span><span class="n">GlobalView</span> <span class="n">gv</span><span class="o">)</span> <span class="o">{</span>
+                                <span class="n">gv</span><span class="o">.</span><span class="na">setValue</span><span class="o">(</span><span class="s">&quot;simulation.pongs&quot;</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+                        <span class="o">}</span>
+                <span class="o">};</span>
+        <span class="o">}</span>
+<span class="o">};</span>
+</pre></div>
+</div>
+<p>We also want to be able to kill nodes, specifically pongers, so we write a <a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/events/system/KillNodeEvent.html#se.sics.kompics.simulator.events.system.KillNodeEvent" title="se.sics.kompics.simulator.events.system.KillNodeEvent"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.events.system.KillNodeEvent</span></code></a>, which requires overriding only the <code class="docutils literal notranslate"><span class="pre">getNodeAddress</span></code> method to identify the node we want to kill:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">static</span> <span class="n">Operation1</span> <span class="n">killPongerOp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Operation1</span><span class="o">&lt;</span><span class="n">KillNodeEvent</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;()</span> <span class="o">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">KillNodeEvent</span> <span class="nf">generate</span><span class="o">(</span><span class="kd">final</span> <span class="n">Integer</span> <span class="n">self</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="k">new</span> <span class="n">KillNodeEvent</span><span class="o">()</span> <span class="o">{</span>
+                        <span class="n">TAddress</span> <span class="n">selfAdr</span><span class="o">;</span>
+
+                        <span class="o">{</span>
+                                <span class="k">try</span> <span class="o">{</span>
+                                        <span class="n">selfAdr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TAddress</span><span class="o">(</span><span class="n">InetAddress</span><span class="o">.</span><span class="na">getByName</span><span class="o">(</span><span class="s">&quot;192.193.0.&quot;</span> <span class="o">+</span> <span class="n">self</span><span class="o">),</span> <span class="mi">10000</span><span class="o">);</span>
+                                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">UnknownHostException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+                                        <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="n">ex</span><span class="o">);</span>
+                                <span class="o">}</span>
+                        <span class="o">}</span>
+
+                        <span class="nd">@Override</span>
+                        <span class="kd">public</span> <span class="n">Address</span> <span class="nf">getNodeAddress</span><span class="o">()</span> <span class="o">{</span>
+                                <span class="k">return</span> <span class="n">selfAdr</span><span class="o">;</span>
+                        <span class="o">}</span>
+
+                        <span class="nd">@Override</span>
+                        <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+                                <span class="k">return</span> <span class="s">&quot;KillPonger&lt;&quot;</span> <span class="o">+</span> <span class="n">selfAdr</span><span class="o">.</span><span class="na">toString</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;&gt;&quot;</span><span class="o">;</span>
+                        <span class="o">}</span>
+                <span class="o">};</span>
+        <span class="o">}</span>
+<span class="o">};</span>
+</pre></div>
+</div>
+<p>We modify now the old scenario <code class="docutils literal notranslate"><span class="pre">simplePing</span></code>, that starts 5 pongers and 5 pingers and we expect the <code class="docutils literal notranslate"><span class="pre">SimulationObserver</span></code> to terminate it early, when at least 100 pongs have been received. In case our observer’s termination conditions are not met due to bugs, the simulation might not stop and run forever, so we still want to keep the scenario termination time (a very high one) as a safety net. In this case we added a 10.000s termination time, but the <code class="docutils literal notranslate"><span class="pre">SimulationObserver</span></code> should terminate the simulation within a couple of tens of seconds of simulated time.</p>
+<p>The second scenario <code class="docutils literal notranslate"><span class="pre">killPongers</span></code> will start killing the pongers, which the observer should notice and then stop the simulation. In this case both conditions – number of pings and number of dead nodes – can be met, but for the given code (seed, timing conditions) the number of dead nodes will be met first.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test.sim</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.net.InetAddress</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.UnknownHostException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.ComponentDefinition</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Init</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.Address</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.SimulationScenario</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.adaptor.Operation</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.adaptor.Operation1</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.adaptor.Operation2</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.adaptor.distributions.extra.BasicIntSequentialDistribution</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.events.system.SetupEvent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.events.system.KillNodeEvent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.events.system.StartNodeEvent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.util.GlobalView</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.test.TAddress</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.test.system.PingerParent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.test.system.PongerParent</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ScenarioGen</span> <span class="o">{</span>
+
+    <span class="kd">static</span> <span class="n">Operation</span> <span class="n">setupOp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Operation</span><span class="o">&lt;</span><span class="n">SetupEvent</span><span class="o">&gt;()</span> <span class="o">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">SetupEvent</span> <span class="nf">generate</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="n">SetupEvent</span><span class="o">()</span> <span class="o">{</span>
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setupGlobalView</span><span class="o">(</span><span class="n">GlobalView</span> <span class="n">gv</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">gv</span><span class="o">.</span><span class="na">setValue</span><span class="o">(</span><span class="s">&quot;simulation.pongs&quot;</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">};</span>
+        <span class="o">}</span>
+    <span class="o">};</span>
+
+    <span class="kd">static</span> <span class="n">Operation</span> <span class="n">startObserverOp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Operation</span><span class="o">&lt;</span><span class="n">StartNodeEvent</span><span class="o">&gt;()</span> <span class="o">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">StartNodeEvent</span> <span class="nf">generate</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="n">StartNodeEvent</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">TAddress</span> <span class="n">selfAdr</span><span class="o">;</span>
+
+                <span class="o">{</span>
+                    <span class="k">try</span> <span class="o">{</span>
+                        <span class="n">selfAdr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TAddress</span><span class="o">(</span><span class="n">InetAddress</span><span class="o">.</span><span class="na">getByName</span><span class="o">(</span><span class="s">&quot;0.0.0.0&quot;</span><span class="o">),</span> <span class="mi">0</span><span class="o">);</span>
+                    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">UnknownHostException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="n">ex</span><span class="o">);</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="nf">initConfigUpdate</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+                    <span class="n">config</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;pingpong.simulation.checktimeout&quot;</span><span class="o">,</span> <span class="mi">2000</span><span class="o">);</span>
+                    <span class="k">return</span> <span class="n">config</span><span class="o">;</span>
+                <span class="o">}</span>
+                
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Address</span> <span class="nf">getNodeAddress</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="n">selfAdr</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Class</span> <span class="nf">getComponentDefinition</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="n">SimulationObserver</span><span class="o">.</span><span class="na">class</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Init</span> <span class="nf">getComponentInit</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="k">new</span> <span class="n">SimulationObserver</span><span class="o">.</span><span class="na">Init</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">};</span>
+        <span class="o">}</span>
+    <span class="o">};</span>
+
+    <span class="kd">static</span> <span class="n">Operation1</span> <span class="n">startPongerOp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Operation1</span><span class="o">&lt;</span><span class="n">StartNodeEvent</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;()</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">StartNodeEvent</span> <span class="nf">generate</span><span class="o">(</span><span class="kd">final</span> <span class="n">Integer</span> <span class="n">self</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="n">StartNodeEvent</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">TAddress</span> <span class="n">selfAdr</span><span class="o">;</span>
+
+                <span class="o">{</span>
+                    <span class="k">try</span> <span class="o">{</span>
+                        <span class="n">selfAdr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TAddress</span><span class="o">(</span><span class="n">InetAddress</span><span class="o">.</span><span class="na">getByName</span><span class="o">(</span><span class="s">&quot;192.193.0.&quot;</span> <span class="o">+</span> <span class="n">self</span><span class="o">),</span> <span class="mi">10000</span><span class="o">);</span>
+                    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">UnknownHostException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="n">ex</span><span class="o">);</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="nf">initConfigUpdate</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+                    <span class="n">config</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;pingpong.self&quot;</span><span class="o">,</span> <span class="n">selfAdr</span><span class="o">);</span>
+                    <span class="k">return</span> <span class="n">config</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Address</span> <span class="nf">getNodeAddress</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="n">selfAdr</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Class</span> <span class="nf">getComponentDefinition</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="n">PongerParent</span><span class="o">.</span><span class="na">class</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Init</span> <span class="nf">getComponentInit</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="n">Init</span><span class="o">.</span><span class="na">NONE</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="s">&quot;StartPonger&lt;&quot;</span> <span class="o">+</span> <span class="n">selfAdr</span><span class="o">.</span><span class="na">toString</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;&gt;&quot;</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">};</span>
+        <span class="o">}</span>
+    <span class="o">};</span>
+    
+    <span class="kd">static</span> <span class="n">Operation1</span> <span class="n">killPongerOp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Operation1</span><span class="o">&lt;</span><span class="n">KillNodeEvent</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;()</span> <span class="o">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">KillNodeEvent</span> <span class="nf">generate</span><span class="o">(</span><span class="kd">final</span> <span class="n">Integer</span> <span class="n">self</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="n">KillNodeEvent</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">TAddress</span> <span class="n">selfAdr</span><span class="o">;</span>
+
+                <span class="o">{</span>
+                    <span class="k">try</span> <span class="o">{</span>
+                        <span class="n">selfAdr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TAddress</span><span class="o">(</span><span class="n">InetAddress</span><span class="o">.</span><span class="na">getByName</span><span class="o">(</span><span class="s">&quot;192.193.0.&quot;</span> <span class="o">+</span> <span class="n">self</span><span class="o">),</span> <span class="mi">10000</span><span class="o">);</span>
+                    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">UnknownHostException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="n">ex</span><span class="o">);</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+                
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Address</span> <span class="nf">getNodeAddress</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="n">selfAdr</span><span class="o">;</span>
+                <span class="o">}</span>
+                
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="s">&quot;KillPonger&lt;&quot;</span> <span class="o">+</span> <span class="n">selfAdr</span><span class="o">.</span><span class="na">toString</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;&gt;&quot;</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">};</span>
+        <span class="o">}</span>
+    <span class="o">};</span>
+
+    <span class="kd">static</span> <span class="n">Operation2</span> <span class="n">startPingerOp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Operation2</span><span class="o">&lt;</span><span class="n">StartNodeEvent</span><span class="o">,</span> <span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;()</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">StartNodeEvent</span> <span class="nf">generate</span><span class="o">(</span><span class="kd">final</span> <span class="n">Integer</span> <span class="n">self</span><span class="o">,</span> <span class="kd">final</span> <span class="n">Integer</span> <span class="n">ponger</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="n">StartNodeEvent</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">TAddress</span> <span class="n">selfAdr</span><span class="o">;</span>
+                <span class="n">TAddress</span> <span class="n">pongerAdr</span><span class="o">;</span>
+
+                <span class="o">{</span>
+                    <span class="k">try</span> <span class="o">{</span>
+                        <span class="n">selfAdr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TAddress</span><span class="o">(</span><span class="n">InetAddress</span><span class="o">.</span><span class="na">getByName</span><span class="o">(</span><span class="s">&quot;192.193.0.&quot;</span> <span class="o">+</span> <span class="n">self</span><span class="o">),</span> <span class="mi">10000</span><span class="o">);</span>
+                        <span class="n">pongerAdr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TAddress</span><span class="o">(</span><span class="n">InetAddress</span><span class="o">.</span><span class="na">getByName</span><span class="o">(</span><span class="s">&quot;192.193.0.&quot;</span> <span class="o">+</span> <span class="n">ponger</span><span class="o">),</span> <span class="mi">10000</span><span class="o">);</span>
+                    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">UnknownHostException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="n">ex</span><span class="o">);</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="nf">initConfigUpdate</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+                    <span class="n">config</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;pingpong.self&quot;</span><span class="o">,</span> <span class="n">selfAdr</span><span class="o">);</span>
+                    <span class="n">config</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;pingpong.pinger.pongeraddr&quot;</span><span class="o">,</span> <span class="n">pongerAdr</span><span class="o">);</span>
+                    <span class="k">return</span> <span class="n">config</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Address</span> <span class="nf">getNodeAddress</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="n">selfAdr</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Class</span> <span class="nf">getComponentDefinition</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="n">PingerParent</span><span class="o">.</span><span class="na">class</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">Init</span> <span class="nf">getComponentInit</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="n">Init</span><span class="o">.</span><span class="na">NONE</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="s">&quot;StartPinger&lt;&quot;</span> <span class="o">+</span> <span class="n">selfAdr</span><span class="o">.</span><span class="na">toString</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;&gt;&quot;</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">};</span>
+        <span class="o">}</span>
+    <span class="o">};</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">SimulationScenario</span> <span class="nf">simplePing</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">SimulationScenario</span> <span class="n">scen</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimulationScenario</span><span class="o">()</span> <span class="o">{</span>
+            <span class="o">{</span>
+                <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span> <span class="n">setup</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="o">{</span>
+                        <span class="n">raise</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">setupOp</span><span class="o">);</span>
+                    <span class="o">}</span>
+                <span class="o">};</span>
+
+                <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span> <span class="n">observer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="o">{</span>
+                        <span class="n">raise</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">startObserverOp</span><span class="o">);</span>
+                    <span class="o">}</span>
+                <span class="o">};</span>
+
+                <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span> <span class="n">ponger</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="o">{</span>
+                        <span class="n">eventInterArrivalTime</span><span class="o">(</span><span class="n">constant</span><span class="o">(</span><span class="mi">1000</span><span class="o">));</span>
+                        <span class="n">raise</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="n">startPongerOp</span><span class="o">,</span> <span class="k">new</span> <span class="n">BasicIntSequentialDistribution</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+                    <span class="o">}</span>
+                <span class="o">};</span>
+
+                <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span> <span class="n">pinger</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="o">{</span>
+                        <span class="n">eventInterArrivalTime</span><span class="o">(</span><span class="n">constant</span><span class="o">(</span><span class="mi">1000</span><span class="o">));</span>
+                        <span class="n">raise</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="n">startPingerOp</span><span class="o">,</span> <span class="k">new</span> <span class="n">BasicIntSequentialDistribution</span><span class="o">(</span><span class="mi">6</span><span class="o">),</span> <span class="k">new</span> <span class="n">BasicIntSequentialDistribution</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+                    <span class="o">}</span>
+                <span class="o">};</span>
+
+                <span class="n">setup</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+                <span class="n">observer</span><span class="o">.</span><span class="na">startAfterTerminationOf</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">setup</span><span class="o">);</span>
+                <span class="n">ponger</span><span class="o">.</span><span class="na">startAfterTerminationOf</span><span class="o">(</span><span class="mi">1000</span><span class="o">,</span> <span class="n">observer</span><span class="o">);</span>
+                <span class="n">pinger</span><span class="o">.</span><span class="na">startAfterTerminationOf</span><span class="o">(</span><span class="mi">1000</span><span class="o">,</span> <span class="n">ponger</span><span class="o">);</span>
+                <span class="n">terminateAfterTerminationOf</span><span class="o">(</span><span class="mi">1000</span><span class="o">*</span><span class="mi">10000</span><span class="o">,</span> <span class="n">pinger</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">};</span>
+
+        <span class="k">return</span> <span class="n">scen</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">SimulationScenario</span> <span class="nf">killPongers</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">SimulationScenario</span> <span class="n">scen</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimulationScenario</span><span class="o">()</span> <span class="o">{</span>
+            <span class="o">{</span>
+                <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span> <span class="n">setup</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="o">{</span>
+                        <span class="n">raise</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">setupOp</span><span class="o">);</span>
+                    <span class="o">}</span>
+                <span class="o">};</span>
+
+                <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span> <span class="n">observer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="o">{</span>
+                        <span class="n">raise</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">startObserverOp</span><span class="o">);</span>
+                    <span class="o">}</span>
+                <span class="o">};</span>
+
+                <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span> <span class="n">ponger</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="o">{</span>
+                        <span class="n">eventInterArrivalTime</span><span class="o">(</span><span class="n">constant</span><span class="o">(</span><span class="mi">1000</span><span class="o">));</span>
+                        <span class="n">raise</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="n">startPongerOp</span><span class="o">,</span> <span class="k">new</span> <span class="n">BasicIntSequentialDistribution</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+                    <span class="o">}</span>
+                <span class="o">};</span>
+
+                <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span> <span class="n">pinger</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="o">{</span>
+                        <span class="n">eventInterArrivalTime</span><span class="o">(</span><span class="n">constant</span><span class="o">(</span><span class="mi">1000</span><span class="o">));</span>
+                        <span class="n">raise</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="n">startPingerOp</span><span class="o">,</span> <span class="k">new</span> <span class="n">BasicIntSequentialDistribution</span><span class="o">(</span><span class="mi">6</span><span class="o">),</span> <span class="k">new</span> <span class="n">BasicIntSequentialDistribution</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+                    <span class="o">}</span>
+                <span class="o">};</span>
+                
+                <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span> <span class="n">killPonger</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">StochasticProcess</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="o">{</span>
+                        <span class="n">eventInterArrivalTime</span><span class="o">(</span><span class="n">constant</span><span class="o">(</span><span class="mi">0</span><span class="o">));</span>
+                        <span class="n">raise</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="n">killPongerOp</span><span class="o">,</span> <span class="k">new</span> <span class="n">BasicIntSequentialDistribution</span><span class="o">((</span><span class="mi">1</span><span class="o">)));</span>
+                    <span class="o">}</span>  
+                <span class="o">};</span>
+
+                <span class="n">setup</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+                <span class="n">observer</span><span class="o">.</span><span class="na">startAfterTerminationOf</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">setup</span><span class="o">);</span>
+                <span class="n">ponger</span><span class="o">.</span><span class="na">startAfterTerminationOf</span><span class="o">(</span><span class="mi">1000</span><span class="o">,</span> <span class="n">observer</span><span class="o">);</span>
+                <span class="n">pinger</span><span class="o">.</span><span class="na">startAfterTerminationOf</span><span class="o">(</span><span class="mi">1000</span><span class="o">,</span> <span class="n">ponger</span><span class="o">);</span>
+                <span class="n">killPonger</span><span class="o">.</span><span class="na">startAfterTerminationOf</span><span class="o">(</span><span class="mi">1000</span><span class="o">,</span> <span class="n">pinger</span><span class="o">);</span>
+                <span class="n">terminateAfterTerminationOf</span><span class="o">(</span><span class="mi">1000</span><span class="o">*</span><span class="mi">10000</span><span class="o">,</span> <span class="n">pinger</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">};</span>
+
+        <span class="k">return</span> <span class="n">scen</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test.sim</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.SimulationScenario</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.run.LauncherComp</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SimplePingLauncher</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">long</span> <span class="n">seed</span> <span class="o">=</span> <span class="mi">123</span><span class="o">;</span>
+        <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">setSeed</span><span class="o">(</span><span class="n">seed</span><span class="o">);</span>
+        <span class="n">SimulationScenario</span> <span class="n">simpleBootScenario</span> <span class="o">=</span> <span class="n">ScenarioGen</span><span class="o">.</span><span class="na">simplePing</span><span class="o">();</span>
+        <span class="n">simpleBootScenario</span><span class="o">.</span><span class="na">simulate</span><span class="o">(</span><span class="n">LauncherComp</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test.sim</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.SimulationScenario</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.simulator.run.LauncherComp</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">KillPongersLauncher</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">long</span> <span class="n">seed</span> <span class="o">=</span> <span class="mi">123</span><span class="o">;</span>
+        <span class="n">SimulationScenario</span><span class="o">.</span><span class="na">setSeed</span><span class="o">(</span><span class="n">seed</span><span class="o">);</span>
+        <span class="n">SimulationScenario</span> <span class="n">killPongersScenario</span> <span class="o">=</span> <span class="n">ScenarioGen</span><span class="o">.</span><span class="na">killPongers</span><span class="o">();</span>
+        <span class="n">killPongersScenario</span><span class="o">.</span><span class="na">simulate</span><span class="o">(</span><span class="n">LauncherComp</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>The code until here can be downloaded <a class="reference download internal" download="" href="../../../_downloads/352bbb9bc1225f051d1f62232b742b12/sim-pingpong-global.zip"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../randsources/randsources.html" class="btn btn-neutral float-right" title="Sources of Randomness" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="Simulation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,448 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>P2pSimulator &mdash; Kompics 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../../../../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../../../../" src="../../../../../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../../../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../../../search.html" />
+    <link rel="next" title="P2pSimulator.P2pSimulatorInit" href="P2pSimulator-P2pSimulatorInit.html" />
+    <link rel="prev" title="GlobalViewImpl" href="GlobalViewImpl.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../../../../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../../../../../../../../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../tutorial/index.html">Kompics Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../scala/index.html">Kompics Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../internals/index.html">Kompics Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../project/index.html">Project Information</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../../../modules.html">Javadoc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../core/packages.html">Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../port-timer/packages.html">Timer Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../port-network/packages.html">Network Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../port-virtual-network/packages.html">Virtual Network Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../component-java-timer/packages.html">Java Timer Component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../component-netty-network/packages.html">Netty Network</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../../../packages.html">Simulator</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../package-index.html">se.sics.kompics.simulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../adaptor/package-index.html">se.sics.kompics.simulator.adaptor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../adaptor/distributions/package-index.html">se.sics.kompics.simulator.adaptor.distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../adaptor/distributions/extra/package-index.html">se.sics.kompics.simulator.adaptor.distributions.extra</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../package-index.html">se.sics.kompics.simulator.core</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="package-index.html">se.sics.kompics.simulator.core.impl</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="FutureEventList.html">FutureEventList</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GlobalViewImpl.html">GlobalViewImpl</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">P2pSimulator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="P2pSimulator-P2pSimulatorInit.html">P2pSimulator.P2pSimulatorInit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimulatorMngrComp.html">SimulatorMngrComp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimulatorMngrComp-SimulatorMngrInit.html">SimulatorMngrComp.SimulatorMngrInit</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../events/package-index.html">se.sics.kompics.simulator.events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../events/system/package-index.html">se.sics.kompics.simulator.events.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../examples/basic/package-index.html">se.sics.kompics.simulator.examples.basic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../examples/basic/sim/package-index.html">se.sics.kompics.simulator.examples.basic.sim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../examples/config/package-index.html">se.sics.kompics.simulator.examples.config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../examples/config/sim/package-index.html">se.sics.kompics.simulator.examples.config.sim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../examples/util/package-index.html">se.sics.kompics.simulator.examples.util</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../instrumentation/package-index.html">se.sics.kompics.simulator.instrumentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../network/package-index.html">se.sics.kompics.simulator.network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../network/identifier/package-index.html">se.sics.kompics.simulator.network.identifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../network/identifier/impl/package-index.html">se.sics.kompics.simulator.network.identifier.impl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../network/impl/package-index.html">se.sics.kompics.simulator.network.impl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../result/package-index.html">se.sics.kompics.simulator.result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../run/package-index.html">se.sics.kompics.simulator.run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../scheduler/package-index.html">se.sics.kompics.simulator.scheduler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../stochastic/events/package-index.html">se.sics.kompics.simulator.stochastic.events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../util/package-index.html">se.sics.kompics.simulator.util</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../../../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../../../../modules.html">Javadoc</a> &raquo;</li>
+        
+          <li><a href="../../../../../../packages.html">Simulator</a> &raquo;</li>
+        
+          <li><a href="package-index.html">se.sics.kompics.simulator.core.impl</a> &raquo;</li>
+        
+      <li>P2pSimulator</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../../../../../_sources/javadoc/simulator/se/sics/kompics/simulator/core/impl/P2pSimulator.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="p2psimulator">
+<h1>P2pSimulator<a class="headerlink" href="#p2psimulator" title="Permalink to this headline">¶</a></h1>
+<dl class="type">
+<dt id="se.sics.kompics.simulator.core.impl.P2pSimulator">
+public final class <code class="descname">P2pSimulator</code> extends <a class="reference internal" href="../../../../../../../core/se/sics/kompics/ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition">ComponentDefinition</a> implements <a class="reference internal" href="../Simulator.html#se.sics.kompics.simulator.core.Simulator" title="se.sics.kompics.simulator.core.Simulator">Simulator</a>, <a class="reference internal" href="../SimulatorComp.html#se.sics.kompics.simulator.core.SimulatorComp" title="se.sics.kompics.simulator.core.SimulatorComp">SimulatorComp</a><a class="headerlink" href="#se.sics.kompics.simulator.core.impl.P2pSimulator" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">P2pSimulator</span></code> class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Cosmin Arad</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="handlecpt">
+<h3>handleCPT<a class="headerlink" href="#handlecpt" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.simulator.core.impl.P2pSimulator.handleCPT">
+ <a class="reference internal" href="../../../../../../../core/se/sics/kompics/Handler.html#se.sics.kompics.Handler" title="se.sics.kompics.Handler">Handler</a> <code class="descname">handleCPT</code><a class="headerlink" href="#se.sics.kompics.simulator.core.impl.P2pSimulator.handleCPT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="handlect">
+<h3>handleCT<a class="headerlink" href="#handlect" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.simulator.core.impl.P2pSimulator.handleCT">
+ <a class="reference internal" href="../../../../../../../core/se/sics/kompics/Handler.html#se.sics.kompics.Handler" title="se.sics.kompics.Handler">Handler</a> <code class="descname">handleCT</code><a class="headerlink" href="#se.sics.kompics.simulator.core.impl.P2pSimulator.handleCT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="handlemsg">
+<h3>handleMsg<a class="headerlink" href="#handlemsg" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.simulator.core.impl.P2pSimulator.handleMsg">
+ <a class="reference internal" href="../../../../../../../core/se/sics/kompics/Handler.html#se.sics.kompics.Handler" title="se.sics.kompics.Handler">Handler</a> <code class="descname">handleMsg</code><a class="headerlink" href="#se.sics.kompics.simulator.core.impl.P2pSimulator.handleMsg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="handlespt">
+<h3>handleSPT<a class="headerlink" href="#handlespt" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.simulator.core.impl.P2pSimulator.handleSPT">
+ <a class="reference internal" href="../../../../../../../core/se/sics/kompics/Handler.html#se.sics.kompics.Handler" title="se.sics.kompics.Handler">Handler</a> <code class="descname">handleSPT</code><a class="headerlink" href="#se.sics.kompics.simulator.core.impl.P2pSimulator.handleSPT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="handlest">
+<h3>handleST<a class="headerlink" href="#handlest" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.simulator.core.impl.P2pSimulator.handleST">
+ <a class="reference internal" href="../../../../../../../core/se/sics/kompics/Handler.html#se.sics.kompics.Handler" title="se.sics.kompics.Handler">Handler</a> <code class="descname">handleST</code><a class="headerlink" href="#se.sics.kompics.simulator.core.impl.P2pSimulator.handleST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="handlestart">
+<h3>handleStart<a class="headerlink" href="#handlestart" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.simulator.core.impl.P2pSimulator.handleStart">
+ <a class="reference internal" href="../../../../../../../core/se/sics/kompics/Handler.html#se.sics.kompics.Handler" title="se.sics.kompics.Handler">Handler</a> <code class="descname">handleStart</code><a class="headerlink" href="#se.sics.kompics.simulator.core.impl.P2pSimulator.handleStart" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="handleterminate">
+<h3>handleTerminate<a class="headerlink" href="#handleterminate" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.simulator.core.impl.P2pSimulator.handleTerminate">
+ <a class="reference internal" href="../../../../../../../core/se/sics/kompics/Handler.html#se.sics.kompics.Handler" title="se.sics.kompics.Handler">Handler</a> <code class="descname">handleTerminate</code><a class="headerlink" href="#se.sics.kompics.simulator.core.impl.P2pSimulator.handleTerminate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="network">
+<h3>network<a class="headerlink" href="#network" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.simulator.core.impl.P2pSimulator.network">
+ <a class="reference internal" href="../../../../../../../core/se/sics/kompics/Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a> <code class="descname">network</code><a class="headerlink" href="#se.sics.kompics.simulator.core.impl.P2pSimulator.network" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="simcontrolport">
+<h3>simControlPort<a class="headerlink" href="#simcontrolport" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.simulator.core.impl.P2pSimulator.simControlPort">
+ <a class="reference internal" href="../../../../../../../core/se/sics/kompics/Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a> <code class="descname">simControlPort</code><a class="headerlink" href="#se.sics.kompics.simulator.core.impl.P2pSimulator.simControlPort" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="simport">
+<h3>simPort<a class="headerlink" href="#simport" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.simulator.core.impl.P2pSimulator.simPort">
+ <a class="reference internal" href="../../../../../../../core/se/sics/kompics/Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a> <code class="descname">simPort</code><a class="headerlink" href="#se.sics.kompics.simulator.core.impl.P2pSimulator.simPort" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="timer">
+<h3>timer<a class="headerlink" href="#timer" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.simulator.core.impl.P2pSimulator.timer">
+ <a class="reference internal" href="../../../../../../../core/se/sics/kompics/Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a> <code class="descname">timer</code><a class="headerlink" href="#se.sics.kompics.simulator.core.impl.P2pSimulator.timer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>P2pSimulator<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<dl class="constructor">
+<dt id="se.sics.kompics.simulator.core.impl.P2pSimulator.P2pSimulator(P2pSimulatorInit)">
+public <code class="descname">P2pSimulator</code><span class="sig-paren">(</span><a class="reference internal" href="P2pSimulator-P2pSimulatorInit.html#se.sics.kompics.simulator.core.impl.P2pSimulator.P2pSimulatorInit" title="se.sics.kompics.simulator.core.impl.P2pSimulator.P2pSimulatorInit">P2pSimulatorInit</a><em> init</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.core.impl.P2pSimulator.P2pSimulator(P2pSimulatorInit)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="advancesimulation">
+<h3>advanceSimulation<a class="headerlink" href="#advancesimulation" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.core.impl.P2pSimulator.advanceSimulation()">
+public boolean <code class="descname">advanceSimulation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.core.impl.P2pSimulator.advanceSimulation()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="durationtostring">
+<h3>durationToString<a class="headerlink" href="#durationtostring" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.core.impl.P2pSimulator.durationToString(long)">
+public static final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a> <code class="descname">durationToString</code><span class="sig-paren">(</span>long<em> duration</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.core.impl.P2pSimulator.durationToString(long)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="handlefault">
+<h3>handleFault<a class="headerlink" href="#handlefault" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.core.impl.P2pSimulator.handleFault(Fault)">
+public <a class="reference internal" href="../../../../../../../core/se/sics/kompics/Fault-ResolveAction.html#se.sics.kompics.Fault.ResolveAction" title="se.sics.kompics.Fault.ResolveAction">ResolveAction</a> <code class="descname">handleFault</code><span class="sig-paren">(</span><a class="reference internal" href="../../../../../../../core/se/sics/kompics/Fault.html#se.sics.kompics.Fault" title="se.sics.kompics.Fault">Fault</a><em> fault</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.core.impl.P2pSimulator.handleFault(Fault)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="java-lang-system-currenttimemillis">
+<h3>java_lang_System_currentTimeMillis<a class="headerlink" href="#java-lang-system-currenttimemillis" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.core.impl.P2pSimulator.java_lang_System_currentTimeMillis()">
+public long <code class="descname">java_lang_System_currentTimeMillis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.core.impl.P2pSimulator.java_lang_System_currentTimeMillis()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="java-lang-system-nanotime">
+<h3>java_lang_System_nanoTime<a class="headerlink" href="#java-lang-system-nanotime" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.core.impl.P2pSimulator.java_lang_System_nanoTime()">
+public long <code class="descname">java_lang_System_nanoTime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.core.impl.P2pSimulator.java_lang_System_nanoTime()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="java-lang-thread-sleep">
+<h3>java_lang_Thread_sleep<a class="headerlink" href="#java-lang-thread-sleep" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.core.impl.P2pSimulator.java_lang_Thread_sleep(long)">
+public void <code class="descname">java_lang_Thread_sleep</code><span class="sig-paren">(</span>long<em> millis</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.core.impl.P2pSimulator.java_lang_Thread_sleep(long)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h3>java_lang_Thread_sleep<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.core.impl.P2pSimulator.java_lang_Thread_sleep(long, int)">
+public void <code class="descname">java_lang_Thread_sleep</code><span class="sig-paren">(</span>long<em> millis</em>, int<em> nanos</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.core.impl.P2pSimulator.java_lang_Thread_sleep(long, int)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="java-lang-thread-start">
+<h3>java_lang_Thread_start<a class="headerlink" href="#java-lang-thread-start" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.core.impl.P2pSimulator.java_lang_Thread_start()">
+public void <code class="descname">java_lang_Thread_start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.core.impl.P2pSimulator.java_lang_Thread_start()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="P2pSimulator-P2pSimulatorInit.html" class="btn btn-neutral float-right" title="P2pSimulator.P2pSimulatorInit" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="GlobalViewImpl.html" class="btn btn-neutral float-left" title="GlobalViewImpl" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

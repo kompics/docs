@@ -1,0 +1,623 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Kompics &mdash; Kompics 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="KompicsEvent" href="KompicsEvent.html" />
+    <link rel="prev" title="Killed" href="Killed.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../../../../../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tutorial/index.html">Kompics Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../scala/index.html">Kompics Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../internals/index.html">Kompics Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../project/index.html">Project Information</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../modules.html">Javadoc</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../packages.html">Core</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="package-index.html">se.sics.kompics</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="BiDirectionalChannel.html">BiDirectionalChannel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BiDirectionalChannel-Factory.html">BiDirectionalChannel.Factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Channel.html">Channel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelCore.html">ChannelCore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelFactory.html">ChannelFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelRequestResponseTest.html">ChannelRequestResponseTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelRequestResponseTest-TestComponent1.html">ChannelRequestResponseTest.TestComponent1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelRequestResponseTest-TestComponent2.html">ChannelRequestResponseTest.TestComponent2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelRequestResponseTest-TestPort.html">ChannelRequestResponseTest.TestPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelRequestResponseTest-TestRequest.html">ChannelRequestResponseTest.TestRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelRequestResponseTest-TestResponse.html">ChannelRequestResponseTest.TestResponse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelRequestResponseTest-TestRoot1.html">ChannelRequestResponseTest.TestRoot1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelSelector.html">ChannelSelector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelSelectorSet.html">ChannelSelectorSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ClassMatchedHandler.html">ClassMatchedHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest.html">CollectionPerformanceTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest-PerformanceTest.html">CollectionPerformanceTest.PerformanceTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest-TestEvent.html">CollectionPerformanceTest.TestEvent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest-TestEvent2.html">CollectionPerformanceTest.TestEvent2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest-TestEvent3.html">CollectionPerformanceTest.TestEvent3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest-TestEvent4.html">CollectionPerformanceTest.TestEvent4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest-TestEvent5.html">CollectionPerformanceTest.TestEvent5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest-TimedTest.html">CollectionPerformanceTest.TimedTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Component.html">Component</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Component-State.html">Component.State</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ComponentCore.html">ComponentCore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ComponentDefinition.html">ComponentDefinition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ComponentProxy.html">ComponentProxy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConfigUpdateTest.html">ConfigUpdateTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConfigUpdateTest-Child.html">ConfigUpdateTest.Child</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConfigUpdateTest-Parent.html">ConfigUpdateTest.Parent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConfigUpdateTest-Updater.html">ConfigUpdateTest.Updater</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConfigurationException.html">ConfigurationException</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlPort.html">ControlPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CreateAndStartTest.html">CreateAndStartTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Direct.html">Direct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Direct-Request.html">Direct.Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Direct-Response.html">Direct.Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest.html">DirectRequestResponseTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest-Down.html">DirectRequestResponseTest.Down</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest-PPPort.html">DirectRequestResponseTest.PPPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest-Parent.html">DirectRequestResponseTest.Parent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest-Pinger.html">DirectRequestResponseTest.Pinger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest-Ponger.html">DirectRequestResponseTest.Ponger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest-Starver.html">DirectRequestResponseTest.Starver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest-Up.html">DirectRequestResponseTest.Up</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Event.html">Event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Fault.html">Fault</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Fault-ResolveAction.html">Fault.ResolveAction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultHandler.html">FaultHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest.html">FaultTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest-ChildComponent.html">FaultTest.ChildComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest-FailingParent.html">FaultTest.FailingParent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest-GrandChildComponent.html">FaultTest.GrandChildComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest-ParentComponent.html">FaultTest.ParentComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest-TestError.html">FaultTest.TestError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest-TestEvent.html">FaultTest.TestEvent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest-TestPort.html">FaultTest.TestPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Handler.html">Handler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerRequestResponseTest.html">HandlerRequestResponseTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerRequestResponseTest-TestComponent1.html">HandlerRequestResponseTest.TestComponent1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerRequestResponseTest-TestComponent2.html">HandlerRequestResponseTest.TestComponent2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerRequestResponseTest-TestPort.html">HandlerRequestResponseTest.TestPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerRequestResponseTest-TestRequest.html">HandlerRequestResponseTest.TestRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerRequestResponseTest-TestResponse.html">HandlerRequestResponseTest.TestResponse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerRequestResponseTest-TestRoot1.html">HandlerRequestResponseTest.TestRoot1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerStore.html">HandlerStore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerStore-HandlerList.html">HandlerStore.HandlerList</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerStore-MatchedHandlerList.html">HandlerStore.MatchedHandlerList</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Init.html">Init</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Init-None.html">Init.None</a></li>
+<li class="toctree-l4"><a class="reference internal" href="JavaComponent.html">JavaComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="JavaPort.html">JavaPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Kill.html">Kill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Killed.html">Killed</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Kompics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="KompicsEvent.html">KompicsEvent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="KompicsException.html">KompicsException</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoggingTest.html">LoggingTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoggingTest-LoggingComponent.html">LoggingTest.LoggingComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoopbackPort.html">LoopbackPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoopbackTest.html">LoopbackTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoopbackTest-TestComponent.html">LoopbackTest.TestComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoopbackTest-TestEvent.html">LoopbackTest.TestEvent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoopbackTest-TestPort.html">LoopbackTest.TestPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatchedHandler.html">MatchedHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest.html">MatcherTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest-CData.html">MatcherTest.CData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest-Data.html">MatcherTest.Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest-DataChild.html">MatcherTest.DataChild</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest-DataContainer.html">MatcherTest.DataContainer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest-DataParent.html">MatcherTest.DataParent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest-DataPort.html">MatcherTest.DataPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest-FData.html">MatcherTest.FData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Negative.html">Negative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PatternExtractor.html">PatternExtractor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Port.html">Port</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PortCore.html">PortCore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PortType.html">PortType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Positive.html">Positive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Request.html">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RequestPathElement.html">RequestPathElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Response.html">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Scheduler.html">Scheduler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimpleChannel.html">SimpleChannel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SpinlockQueue.html">SpinlockQueue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Start.html">Start</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StartStopTest.html">StartStopTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StartStopTest-ForwarderComponent.html">StartStopTest.ForwarderComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StartStopTest-ResponderComponent.html">StartStopTest.ResponderComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StartStopTest-RootComponent.html">StartStopTest.RootComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StartStopTest-TestPort.html">StartStopTest.TestPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StartStopTest-TestReply.html">StartStopTest.TestReply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StartStopTest-TestRequest.html">StartStopTest.TestRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Started.html">Started</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Stop.html">Stop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Stopped.html">Stopped</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SubscribeTest.html">SubscribeTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SubscribeTest-TestEvent.html">SubscribeTest.TestEvent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SubscribeTest-TestPort.html">SubscribeTest.TestPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UniDirectionalChannel.html">UniDirectionalChannel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UniDirectionalChannel-Direction.html">UniDirectionalChannel.Direction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UniDirectionalChannel-Factory.html">UniDirectionalChannel.Factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Unsafe.html">Unsafe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Update.html">Update</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UpdateAction.html">UpdateAction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UpdateAction-Builder.html">UpdateAction.Builder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UpdateAction-Mapper.html">UpdateAction.Mapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UpdateAction-Propagation.html">UpdateAction.Propagation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="config/package-index.html">se.sics.kompics.config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scheduler/package-index.html">se.sics.kompics.scheduler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="util/package-index.html">se.sics.kompics.util</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../port-timer/packages.html">Timer Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../port-network/packages.html">Network Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../port-virtual-network/packages.html">Virtual Network Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../component-java-timer/packages.html">Java Timer Component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../component-netty-network/packages.html">Netty Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../simulator/packages.html">Simulator</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../modules.html">Javadoc</a> &raquo;</li>
+        
+          <li><a href="../../../packages.html">Core</a> &raquo;</li>
+        
+          <li><a href="package-index.html">se.sics.kompics</a> &raquo;</li>
+        
+      <li>Kompics</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../../_sources/javadoc/core/se/sics/kompics/Kompics.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="kompics">
+<h1>Kompics<a class="headerlink" href="#kompics" title="Permalink to this headline">¶</a></h1>
+<dl class="type">
+<dt id="se.sics.kompics.Kompics">
+public final class <code class="descname">Kompics</code><a class="headerlink" href="#se.sics.kompics.Kompics" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">Kompics</span></code> class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Cosmin Arad &lt;<a class="reference external" href="mailto:cosmin&#37;&#52;&#48;sics&#46;se">cosmin<span>&#64;</span>sics<span>&#46;</span>se</a>&gt;, Jim Dowling &lt;<a class="reference external" href="mailto:jdowling&#37;&#52;&#48;sics&#46;se">jdowling<span>&#64;</span>sics<span>&#46;</span>se</a>&gt;</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="shutdown-timeout">
+<h3>SHUTDOWN_TIMEOUT<a class="headerlink" href="#shutdown-timeout" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.Kompics.SHUTDOWN_TIMEOUT">
+public static final long <code class="descname">SHUTDOWN_TIMEOUT</code><a class="headerlink" href="#se.sics.kompics.Kompics.SHUTDOWN_TIMEOUT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="logger">
+<h3>logger<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.Kompics.logger">
+public static Logger <code class="descname">logger</code><a class="headerlink" href="#se.sics.kompics.Kompics.logger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="maxnumofexecutedevents">
+<h3>maxNumOfExecutedEvents<a class="headerlink" href="#maxnumofexecutedevents" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.Kompics.maxNumOfExecutedEvents">
+public static <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/atomic/AtomicInteger.html" title="java.util.concurrent.atomic.AtomicInteger">AtomicInteger</a> <code class="descname">maxNumOfExecutedEvents</code><a class="headerlink" href="#se.sics.kompics.Kompics.maxNumOfExecutedEvents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="asyncshutdown">
+<h3>asyncShutdown<a class="headerlink" href="#asyncshutdown" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.Kompics.asyncShutdown()">
+public static void <code class="descname">asyncShutdown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.Kompics.asyncShutdown()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="createandstart">
+<h3>createAndStart<a class="headerlink" href="#createandstart" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.Kompics.createAndStart(Class)">
+public static void <code class="descname">createAndStart</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;? extends <a class="reference internal" href="ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition">ComponentDefinition</a>&gt;<em> main</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.Kompics.createAndStart(Class)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the and start.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>main</strong> – the main</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id1">
+<h3>createAndStart<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.Kompics.createAndStart(Class, Init)">
+public static void <code class="descname">createAndStart</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;? extends <a class="reference internal" href="ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition">ComponentDefinition</a>&gt;<em> main</em>, <a class="reference internal" href="Init.html#se.sics.kompics.Init" title="se.sics.kompics.Init">Init</a><em> initEvent</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.Kompics.createAndStart(Class, Init)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h3>createAndStart<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.Kompics.createAndStart(Class, int)">
+public static void <code class="descname">createAndStart</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;? extends <a class="reference internal" href="ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition">ComponentDefinition</a>&gt;<em> main</em>, int<em> workers</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.Kompics.createAndStart(Class, int)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the and start.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>main</strong> – the main</li>
+<li><strong>workers</strong> – the workers</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h3>createAndStart<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.Kompics.createAndStart(Class, Init, int)">
+public static void <code class="descname">createAndStart</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;? extends <a class="reference internal" href="ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition">ComponentDefinition</a>&gt;<em> main</em>, <a class="reference internal" href="Init.html#se.sics.kompics.Init" title="se.sics.kompics.Init">Init</a><em> initEvent</em>, int<em> workers</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.Kompics.createAndStart(Class, Init, int)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id4">
+<h3>createAndStart<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.Kompics.createAndStart(Class, int, int)">
+public static void <code class="descname">createAndStart</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;? extends <a class="reference internal" href="ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition">ComponentDefinition</a>&gt;<em> main</em>, int<em> workers</em>, int<em> maxEventExecuteNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.Kompics.createAndStart(Class, int, int)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id5">
+<h3>createAndStart<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.Kompics.createAndStart(Class, Init, int, int)">
+public static &lt;T extends ComponentDefinition&gt; void <code class="descname">createAndStart</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;T&gt;<em> main</em>, <a class="reference internal" href="Init.html#se.sics.kompics.Init" title="se.sics.kompics.Init">Init</a><em> initEvent</em>, int<em> workers</em>, int<em> maxEventExecuteNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.Kompics.createAndStart(Class, Init, int, int)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the main component and starts it.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>&lt;T&gt;</strong> – </li>
+<li><strong>main</strong> – the main</li>
+<li><strong>initEvent</strong> – </li>
+<li><strong>workers</strong> – the workers</li>
+<li><strong>maxEventExecuteNumber</strong> – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="forceshutdown">
+<h3>forceShutdown<a class="headerlink" href="#forceshutdown" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.Kompics.forceShutdown()">
+public static void <code class="descname">forceShutdown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.Kompics.forceShutdown()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="getconfig">
+<h3>getConfig<a class="headerlink" href="#getconfig" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.Kompics.getConfig()">
+public static <a class="reference internal" href="config/Config.html#se.sics.kompics.config.Config" title="se.sics.kompics.config.Config">Config</a> <code class="descname">getConfig</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.Kompics.getConfig()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="getfaulthandler">
+<h3>getFaultHandler<a class="headerlink" href="#getfaulthandler" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.Kompics.getFaultHandler()">
+public static <a class="reference internal" href="FaultHandler.html#se.sics.kompics.FaultHandler" title="se.sics.kompics.FaultHandler">FaultHandler</a> <code class="descname">getFaultHandler</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.Kompics.getFaultHandler()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="getscheduler">
+<h3>getScheduler<a class="headerlink" href="#getscheduler" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.Kompics.getScheduler()">
+public static <a class="reference internal" href="Scheduler.html#se.sics.kompics.Scheduler" title="se.sics.kompics.Scheduler">Scheduler</a> <code class="descname">getScheduler</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.Kompics.getScheduler()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="handlefault">
+<h3>handleFault<a class="headerlink" href="#handlefault" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.Kompics.handleFault(Fault)">
+static void <code class="descname">handleFault</code><span class="sig-paren">(</span><a class="reference internal" href="Fault.html#se.sics.kompics.Fault" title="se.sics.kompics.Fault">Fault</a><em> f</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.Kompics.handleFault(Fault)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="ison">
+<h3>isOn<a class="headerlink" href="#ison" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.Kompics.isOn()">
+public static boolean <code class="descname">isOn</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.Kompics.isOn()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="logstats">
+<h3>logStats<a class="headerlink" href="#logstats" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.Kompics.logStats()">
+public static void <code class="descname">logStats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.Kompics.logStats()" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log stats.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="resetconfig">
+<h3>resetConfig<a class="headerlink" href="#resetconfig" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.Kompics.resetConfig()">
+public static void <code class="descname">resetConfig</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.Kompics.resetConfig()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="resetfaulthandler">
+<h3>resetFaultHandler<a class="headerlink" href="#resetfaulthandler" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.Kompics.resetFaultHandler()">
+public static void <code class="descname">resetFaultHandler</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.Kompics.resetFaultHandler()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="setconfig">
+<h3>setConfig<a class="headerlink" href="#setconfig" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.Kompics.setConfig(Config)">
+public static void <code class="descname">setConfig</code><span class="sig-paren">(</span><a class="reference internal" href="config/Config.html#se.sics.kompics.config.Config" title="se.sics.kompics.config.Config">Config</a><em> conf</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.Kompics.setConfig(Config)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="setfaulthandler">
+<h3>setFaultHandler<a class="headerlink" href="#setfaulthandler" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.Kompics.setFaultHandler(FaultHandler)">
+public static void <code class="descname">setFaultHandler</code><span class="sig-paren">(</span><a class="reference internal" href="FaultHandler.html#se.sics.kompics.FaultHandler" title="se.sics.kompics.FaultHandler">FaultHandler</a><em> fh</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.Kompics.setFaultHandler(FaultHandler)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="setscheduler">
+<h3>setScheduler<a class="headerlink" href="#setscheduler" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.Kompics.setScheduler(Scheduler)">
+public static void <code class="descname">setScheduler</code><span class="sig-paren">(</span><a class="reference internal" href="Scheduler.html#se.sics.kompics.Scheduler" title="se.sics.kompics.Scheduler">Scheduler</a><em> sched</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.Kompics.setScheduler(Scheduler)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="shutdown">
+<h3>shutdown<a class="headerlink" href="#shutdown" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.Kompics.shutdown()">
+public static void <code class="descname">shutdown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.Kompics.shutdown()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="waitfortermination">
+<h3>waitForTermination<a class="headerlink" href="#waitfortermination" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.Kompics.waitForTermination()">
+public static void <code class="descname">waitForTermination</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.Kompics.waitForTermination()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="KompicsEvent.html" class="btn btn-neutral float-right" title="KompicsEvent" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Killed.html" class="btn btn-neutral float-left" title="Killed" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

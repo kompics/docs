@@ -1,0 +1,1157 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ComponentDefinition &mdash; Kompics 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="ComponentProxy" href="ComponentProxy.html" />
+    <link rel="prev" title="ComponentCore" href="ComponentCore.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../../../../../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tutorial/index.html">Kompics Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../scala/index.html">Kompics Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../internals/index.html">Kompics Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../project/index.html">Project Information</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../modules.html">Javadoc</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../packages.html">Core</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="package-index.html">se.sics.kompics</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="BiDirectionalChannel.html">BiDirectionalChannel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BiDirectionalChannel-Factory.html">BiDirectionalChannel.Factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Channel.html">Channel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelCore.html">ChannelCore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelFactory.html">ChannelFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelRequestResponseTest.html">ChannelRequestResponseTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelRequestResponseTest-TestComponent1.html">ChannelRequestResponseTest.TestComponent1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelRequestResponseTest-TestComponent2.html">ChannelRequestResponseTest.TestComponent2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelRequestResponseTest-TestPort.html">ChannelRequestResponseTest.TestPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelRequestResponseTest-TestRequest.html">ChannelRequestResponseTest.TestRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelRequestResponseTest-TestResponse.html">ChannelRequestResponseTest.TestResponse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelRequestResponseTest-TestRoot1.html">ChannelRequestResponseTest.TestRoot1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelSelector.html">ChannelSelector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelSelectorSet.html">ChannelSelectorSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ClassMatchedHandler.html">ClassMatchedHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest.html">CollectionPerformanceTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest-PerformanceTest.html">CollectionPerformanceTest.PerformanceTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest-TestEvent.html">CollectionPerformanceTest.TestEvent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest-TestEvent2.html">CollectionPerformanceTest.TestEvent2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest-TestEvent3.html">CollectionPerformanceTest.TestEvent3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest-TestEvent4.html">CollectionPerformanceTest.TestEvent4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest-TestEvent5.html">CollectionPerformanceTest.TestEvent5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest-TimedTest.html">CollectionPerformanceTest.TimedTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Component.html">Component</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Component-State.html">Component.State</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ComponentCore.html">ComponentCore</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ComponentDefinition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ComponentProxy.html">ComponentProxy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConfigUpdateTest.html">ConfigUpdateTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConfigUpdateTest-Child.html">ConfigUpdateTest.Child</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConfigUpdateTest-Parent.html">ConfigUpdateTest.Parent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConfigUpdateTest-Updater.html">ConfigUpdateTest.Updater</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConfigurationException.html">ConfigurationException</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlPort.html">ControlPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CreateAndStartTest.html">CreateAndStartTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Direct.html">Direct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Direct-Request.html">Direct.Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Direct-Response.html">Direct.Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest.html">DirectRequestResponseTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest-Down.html">DirectRequestResponseTest.Down</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest-PPPort.html">DirectRequestResponseTest.PPPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest-Parent.html">DirectRequestResponseTest.Parent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest-Pinger.html">DirectRequestResponseTest.Pinger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest-Ponger.html">DirectRequestResponseTest.Ponger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest-Starver.html">DirectRequestResponseTest.Starver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest-Up.html">DirectRequestResponseTest.Up</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Event.html">Event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Fault.html">Fault</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Fault-ResolveAction.html">Fault.ResolveAction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultHandler.html">FaultHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest.html">FaultTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest-ChildComponent.html">FaultTest.ChildComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest-FailingParent.html">FaultTest.FailingParent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest-GrandChildComponent.html">FaultTest.GrandChildComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest-ParentComponent.html">FaultTest.ParentComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest-TestError.html">FaultTest.TestError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest-TestEvent.html">FaultTest.TestEvent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest-TestPort.html">FaultTest.TestPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Handler.html">Handler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerRequestResponseTest.html">HandlerRequestResponseTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerRequestResponseTest-TestComponent1.html">HandlerRequestResponseTest.TestComponent1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerRequestResponseTest-TestComponent2.html">HandlerRequestResponseTest.TestComponent2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerRequestResponseTest-TestPort.html">HandlerRequestResponseTest.TestPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerRequestResponseTest-TestRequest.html">HandlerRequestResponseTest.TestRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerRequestResponseTest-TestResponse.html">HandlerRequestResponseTest.TestResponse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerRequestResponseTest-TestRoot1.html">HandlerRequestResponseTest.TestRoot1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerStore.html">HandlerStore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerStore-HandlerList.html">HandlerStore.HandlerList</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerStore-MatchedHandlerList.html">HandlerStore.MatchedHandlerList</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Init.html">Init</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Init-None.html">Init.None</a></li>
+<li class="toctree-l4"><a class="reference internal" href="JavaComponent.html">JavaComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="JavaPort.html">JavaPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Kill.html">Kill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Killed.html">Killed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Kompics.html">Kompics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="KompicsEvent.html">KompicsEvent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="KompicsException.html">KompicsException</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoggingTest.html">LoggingTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoggingTest-LoggingComponent.html">LoggingTest.LoggingComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoopbackPort.html">LoopbackPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoopbackTest.html">LoopbackTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoopbackTest-TestComponent.html">LoopbackTest.TestComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoopbackTest-TestEvent.html">LoopbackTest.TestEvent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoopbackTest-TestPort.html">LoopbackTest.TestPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatchedHandler.html">MatchedHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest.html">MatcherTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest-CData.html">MatcherTest.CData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest-Data.html">MatcherTest.Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest-DataChild.html">MatcherTest.DataChild</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest-DataContainer.html">MatcherTest.DataContainer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest-DataParent.html">MatcherTest.DataParent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest-DataPort.html">MatcherTest.DataPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest-FData.html">MatcherTest.FData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Negative.html">Negative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PatternExtractor.html">PatternExtractor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Port.html">Port</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PortCore.html">PortCore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PortType.html">PortType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Positive.html">Positive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Request.html">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RequestPathElement.html">RequestPathElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Response.html">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Scheduler.html">Scheduler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimpleChannel.html">SimpleChannel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SpinlockQueue.html">SpinlockQueue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Start.html">Start</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StartStopTest.html">StartStopTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StartStopTest-ForwarderComponent.html">StartStopTest.ForwarderComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StartStopTest-ResponderComponent.html">StartStopTest.ResponderComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StartStopTest-RootComponent.html">StartStopTest.RootComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StartStopTest-TestPort.html">StartStopTest.TestPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StartStopTest-TestReply.html">StartStopTest.TestReply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StartStopTest-TestRequest.html">StartStopTest.TestRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Started.html">Started</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Stop.html">Stop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Stopped.html">Stopped</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SubscribeTest.html">SubscribeTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SubscribeTest-TestEvent.html">SubscribeTest.TestEvent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SubscribeTest-TestPort.html">SubscribeTest.TestPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UniDirectionalChannel.html">UniDirectionalChannel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UniDirectionalChannel-Direction.html">UniDirectionalChannel.Direction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UniDirectionalChannel-Factory.html">UniDirectionalChannel.Factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Unsafe.html">Unsafe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Update.html">Update</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UpdateAction.html">UpdateAction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UpdateAction-Builder.html">UpdateAction.Builder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UpdateAction-Mapper.html">UpdateAction.Mapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UpdateAction-Propagation.html">UpdateAction.Propagation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="config/package-index.html">se.sics.kompics.config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scheduler/package-index.html">se.sics.kompics.scheduler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="util/package-index.html">se.sics.kompics.util</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../port-timer/packages.html">Timer Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../port-network/packages.html">Network Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../port-virtual-network/packages.html">Virtual Network Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../component-java-timer/packages.html">Java Timer Component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../component-netty-network/packages.html">Netty Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../simulator/packages.html">Simulator</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../modules.html">Javadoc</a> &raquo;</li>
+        
+          <li><a href="../../../packages.html">Core</a> &raquo;</li>
+        
+          <li><a href="package-index.html">se.sics.kompics</a> &raquo;</li>
+        
+      <li>ComponentDefinition</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../../_sources/javadoc/core/se/sics/kompics/ComponentDefinition.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="componentdefinition">
+<h1>ComponentDefinition<a class="headerlink" href="#componentdefinition" title="Permalink to this headline">¶</a></h1>
+<dl class="type">
+<dt id="se.sics.kompics.ComponentDefinition">
+public abstract class <code class="descname">ComponentDefinition</code><a class="headerlink" href="#se.sics.kompics.ComponentDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">ComponentDefinition</span></code> class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Cosmin Arad &lt;<a class="reference external" href="mailto:cosmin&#37;&#52;&#48;sics&#46;se">cosmin<span>&#64;</span>sics<span>&#46;</span>se</a>&gt;, Jim Dowling &lt;<a class="reference external" href="mailto:jdowling&#37;&#52;&#48;sics&#46;se">jdowling<span>&#64;</span>sics<span>&#46;</span>se</a>&gt;</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mdc-key-cid">
+<h3>MDC_KEY_CID<a class="headerlink" href="#mdc-key-cid" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.ComponentDefinition.MDC_KEY_CID">
+public static final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a> <code class="descname">MDC_KEY_CID</code><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.MDC_KEY_CID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pre-configured MDC key for the unique component id.</p>
+<p>See <a class="reference external" href="https://logback.qos.ch/manual/mdc.html">the logback manuel</a> for how to use this with logback.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="mdc-key-cstate">
+<h3>MDC_KEY_CSTATE<a class="headerlink" href="#mdc-key-cstate" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.ComponentDefinition.MDC_KEY_CSTATE">
+public static final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a> <code class="descname">MDC_KEY_CSTATE</code><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.MDC_KEY_CSTATE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pre-configured MDC key for the current component lifecycle state.</p>
+<p>See <a class="reference external" href="https://logback.qos.ch/manual/mdc.html">the logback manuel</a> for how to use this with logback.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="control">
+<h3>control<a class="headerlink" href="#control" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.ComponentDefinition.control">
+protected <a class="reference internal" href="Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a>&lt;<a class="reference internal" href="ControlPort.html#se.sics.kompics.ControlPort" title="se.sics.kompics.ControlPort">ControlPort</a>&gt; <code class="descname">control</code><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.control" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="logger">
+<h3>logger<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.ComponentDefinition.logger">
+protected final Logger <code class="descname">logger</code><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Kompics provided slf4j logger with managed diagnostic context.</p>
+<p>See <a class="reference external" href="https://logback.qos.ch/manual/mdc.html">the logback manuel</a> for how to use this with logback.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="loopback">
+<h3>loopback<a class="headerlink" href="#loopback" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.ComponentDefinition.loopback">
+protected <a class="reference internal" href="Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a>&lt;<a class="reference internal" href="LoopbackPort.html#se.sics.kompics.LoopbackPort" title="se.sics.kompics.LoopbackPort">LoopbackPort</a>&gt; <code class="descname">loopback</code><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.loopback" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="onself">
+<h3>onSelf<a class="headerlink" href="#onself" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.ComponentDefinition.onSelf">
+protected <a class="reference internal" href="Positive.html#se.sics.kompics.Positive" title="se.sics.kompics.Positive">Positive</a>&lt;<a class="reference internal" href="LoopbackPort.html#se.sics.kompics.LoopbackPort" title="se.sics.kompics.LoopbackPort">LoopbackPort</a>&gt; <code class="descname">onSelf</code><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.onSelf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="proxy">
+<h3>proxy<a class="headerlink" href="#proxy" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.ComponentDefinition.proxy">
+public final <a class="reference internal" href="ComponentProxy.html#se.sics.kompics.ComponentProxy" title="se.sics.kompics.ComponentProxy">ComponentProxy</a> <code class="descname">proxy</code><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.proxy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>ComponentDefinition<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<dl class="constructor">
+<dt id="se.sics.kompics.ComponentDefinition.ComponentDefinition()">
+protected <code class="descname">ComponentDefinition</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.ComponentDefinition()" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiates a new component definition.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id4">
+<h3>ComponentDefinition<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<dl class="constructor">
+<dt id="se.sics.kompics.ComponentDefinition.ComponentDefinition(Class)">
+protected <code class="descname">ComponentDefinition</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;? extends <a class="reference internal" href="ComponentCore.html#se.sics.kompics.ComponentCore" title="se.sics.kompics.ComponentCore">ComponentCore</a>&gt;<em> coreClass</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.ComponentDefinition(Class)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="answer">
+<h3>answer<a class="headerlink" href="#answer" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.answer(Direct.Request)">
+protected final &lt;P extends PortType&gt; void <code class="descname">answer</code><span class="sig-paren">(</span><a class="reference internal" href="Direct.html#se.sics.kompics.Direct" title="se.sics.kompics.Direct">Direct</a>.<a class="reference internal" href="Direct-Request.html#se.sics.kompics.Direct.Request" title="se.sics.kompics.Direct.Request">Request</a><em> event</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.answer(Direct.Request)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id5">
+<h3>answer<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.answer(Direct.Request, Direct.Response)">
+protected final &lt;P extends PortType&gt; void <code class="descname">answer</code><span class="sig-paren">(</span><a class="reference internal" href="Direct.html#se.sics.kompics.Direct" title="se.sics.kompics.Direct">Direct</a>.<a class="reference internal" href="Direct-Request.html#se.sics.kompics.Direct.Request" title="se.sics.kompics.Direct.Request">Request</a><em> req</em>, <a class="reference internal" href="Direct.html#se.sics.kompics.Direct" title="se.sics.kompics.Direct">Direct</a>.<a class="reference internal" href="Direct-Response.html#se.sics.kompics.Direct.Response" title="se.sics.kompics.Direct.Response">Response</a><em> resp</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.answer(Direct.Request, Direct.Response)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="config">
+<h3>config<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.config()">
+public final <a class="reference internal" href="config/Config.html#se.sics.kompics.config.Config" title="se.sics.kompics.config.Config">Config</a> <code class="descname">config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.config()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="connect">
+<h3>connect<a class="headerlink" href="#connect" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.connect(Positive, Negative)">
+protected final &lt;P extends PortType&gt; <a class="reference internal" href="Channel.html#se.sics.kompics.Channel" title="se.sics.kompics.Channel">Channel</a>&lt;P&gt; <code class="descname">connect</code><span class="sig-paren">(</span><a class="reference internal" href="Positive.html#se.sics.kompics.Positive" title="se.sics.kompics.Positive">Positive</a>&lt;P&gt;<em> positive</em>, <a class="reference internal" href="Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a>&lt;P&gt;<em> negative</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.connect(Positive, Negative)" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>&lt;P&gt;</strong> – </li>
+<li><strong>negative</strong> – </li>
+<li><strong>positive</strong> – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id6">
+<h3>connect<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.connect(Negative, Positive)">
+protected final &lt;P extends PortType&gt; <a class="reference internal" href="Channel.html#se.sics.kompics.Channel" title="se.sics.kompics.Channel">Channel</a>&lt;P&gt; <code class="descname">connect</code><span class="sig-paren">(</span><a class="reference internal" href="Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a>&lt;P&gt;<em> negative</em>, <a class="reference internal" href="Positive.html#se.sics.kompics.Positive" title="se.sics.kompics.Positive">Positive</a>&lt;P&gt;<em> positive</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.connect(Negative, Positive)" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>&lt;P&gt;</strong> – </li>
+<li><strong>negative</strong> – </li>
+<li><strong>positive</strong> – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id7">
+<h3>connect<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.connect(Positive, Negative, ChannelSelector)">
+protected &lt;P extends PortType&gt; <a class="reference internal" href="Channel.html#se.sics.kompics.Channel" title="se.sics.kompics.Channel">Channel</a>&lt;P&gt; <code class="descname">connect</code><span class="sig-paren">(</span><a class="reference internal" href="Positive.html#se.sics.kompics.Positive" title="se.sics.kompics.Positive">Positive</a>&lt;P&gt;<em> positive</em>, <a class="reference internal" href="Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a>&lt;P&gt;<em> negative</em>, <a class="reference internal" href="ChannelSelector.html#se.sics.kompics.ChannelSelector" title="se.sics.kompics.ChannelSelector">ChannelSelector</a>&lt;?, ?&gt;<em> selector</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.connect(Positive, Negative, ChannelSelector)" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>&lt;P&gt;</strong> – </li>
+<li><strong>negative</strong> – </li>
+<li><strong>positive</strong> – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id8">
+<h3>connect<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.connect(Negative, Positive, ChannelSelector)">
+protected &lt;P extends PortType&gt; <a class="reference internal" href="Channel.html#se.sics.kompics.Channel" title="se.sics.kompics.Channel">Channel</a>&lt;P&gt; <code class="descname">connect</code><span class="sig-paren">(</span><a class="reference internal" href="Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a>&lt;P&gt;<em> negative</em>, <a class="reference internal" href="Positive.html#se.sics.kompics.Positive" title="se.sics.kompics.Positive">Positive</a>&lt;P&gt;<em> positive</em>, <a class="reference internal" href="ChannelSelector.html#se.sics.kompics.ChannelSelector" title="se.sics.kompics.ChannelSelector">ChannelSelector</a>&lt;?, ?&gt;<em> selector</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.connect(Negative, Positive, ChannelSelector)" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>&lt;P&gt;</strong> – </li>
+<li><strong>negative</strong> – </li>
+<li><strong>positive</strong> – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id9">
+<h3>connect<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.connect(Negative, Positive, ChannelSelector, ChannelFactory)">
+protected &lt;P extends PortType&gt; <a class="reference internal" href="Channel.html#se.sics.kompics.Channel" title="se.sics.kompics.Channel">Channel</a>&lt;P&gt; <code class="descname">connect</code><span class="sig-paren">(</span><a class="reference internal" href="Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a>&lt;P&gt;<em> negative</em>, <a class="reference internal" href="Positive.html#se.sics.kompics.Positive" title="se.sics.kompics.Positive">Positive</a>&lt;P&gt;<em> positive</em>, <a class="reference internal" href="ChannelSelector.html#se.sics.kompics.ChannelSelector" title="se.sics.kompics.ChannelSelector">ChannelSelector</a>&lt;?, ?&gt;<em> selector</em>, <a class="reference internal" href="ChannelFactory.html#se.sics.kompics.ChannelFactory" title="se.sics.kompics.ChannelFactory">ChannelFactory</a><em> factory</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.connect(Negative, Positive, ChannelSelector, ChannelFactory)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id10">
+<h3>connect<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.connect(Positive, Negative, ChannelSelector, ChannelFactory)">
+protected &lt;P extends PortType&gt; <a class="reference internal" href="Channel.html#se.sics.kompics.Channel" title="se.sics.kompics.Channel">Channel</a>&lt;P&gt; <code class="descname">connect</code><span class="sig-paren">(</span><a class="reference internal" href="Positive.html#se.sics.kompics.Positive" title="se.sics.kompics.Positive">Positive</a>&lt;P&gt;<em> positive</em>, <a class="reference internal" href="Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a>&lt;P&gt;<em> negative</em>, <a class="reference internal" href="ChannelSelector.html#se.sics.kompics.ChannelSelector" title="se.sics.kompics.ChannelSelector">ChannelSelector</a>&lt;?, ?&gt;<em> selector</em>, <a class="reference internal" href="ChannelFactory.html#se.sics.kompics.ChannelFactory" title="se.sics.kompics.ChannelFactory">ChannelFactory</a><em> factory</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.connect(Positive, Negative, ChannelSelector, ChannelFactory)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id11">
+<h3>connect<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.connect(Negative, Positive, ChannelFactory)">
+protected &lt;P extends PortType&gt; <a class="reference internal" href="Channel.html#se.sics.kompics.Channel" title="se.sics.kompics.Channel">Channel</a>&lt;P&gt; <code class="descname">connect</code><span class="sig-paren">(</span><a class="reference internal" href="Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a>&lt;P&gt;<em> negative</em>, <a class="reference internal" href="Positive.html#se.sics.kompics.Positive" title="se.sics.kompics.Positive">Positive</a>&lt;P&gt;<em> positive</em>, <a class="reference internal" href="ChannelFactory.html#se.sics.kompics.ChannelFactory" title="se.sics.kompics.ChannelFactory">ChannelFactory</a><em> factory</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.connect(Negative, Positive, ChannelFactory)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id12">
+<h3>connect<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.connect(Positive, Negative, ChannelFactory)">
+protected &lt;P extends PortType&gt; <a class="reference internal" href="Channel.html#se.sics.kompics.Channel" title="se.sics.kompics.Channel">Channel</a>&lt;P&gt; <code class="descname">connect</code><span class="sig-paren">(</span><a class="reference internal" href="Positive.html#se.sics.kompics.Positive" title="se.sics.kompics.Positive">Positive</a>&lt;P&gt;<em> positive</em>, <a class="reference internal" href="Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a>&lt;P&gt;<em> negative</em>, <a class="reference internal" href="ChannelFactory.html#se.sics.kompics.ChannelFactory" title="se.sics.kompics.ChannelFactory">ChannelFactory</a><em> factory</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.connect(Positive, Negative, ChannelFactory)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="create">
+<h3>create<a class="headerlink" href="#create" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.create(Class, Init)">
+protected final &lt;T extends ComponentDefinition&gt; <a class="reference internal" href="Component.html#se.sics.kompics.Component" title="se.sics.kompics.Component">Component</a> <code class="descname">create</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;T&gt;<em> definition</em>, <a class="reference internal" href="Init.html#se.sics.kompics.Init" title="se.sics.kompics.Init">Init</a>&lt;T&gt;<em> initEvent</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.create(Class, Init)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>definition</strong> – the definition</li>
+<li><strong>initEvent</strong> – init event to be passed to constructor</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the component</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id13">
+<h3>create<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.create(Class, Init.None)">
+protected final &lt;T extends ComponentDefinition&gt; <a class="reference internal" href="Component.html#se.sics.kompics.Component" title="se.sics.kompics.Component">Component</a> <code class="descname">create</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;T&gt;<em> definition</em>, <a class="reference internal" href="Init.html#se.sics.kompics.Init" title="se.sics.kompics.Init">Init</a>.<a class="reference internal" href="Init-None.html#se.sics.kompics.Init.None" title="se.sics.kompics.Init.None">None</a><em> initEvent</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.create(Class, Init.None)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>definition</strong> – the definition</li>
+<li><strong>initEvent</strong> – none</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the component</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id14">
+<h3>create<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.create(Class, Init, ConfigUpdate)">
+protected final &lt;T extends ComponentDefinition&gt; <a class="reference internal" href="Component.html#se.sics.kompics.Component" title="se.sics.kompics.Component">Component</a> <code class="descname">create</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;T&gt;<em> definition</em>, <a class="reference internal" href="Init.html#se.sics.kompics.Init" title="se.sics.kompics.Init">Init</a>&lt;T&gt;<em> initEvent</em>, <a class="reference internal" href="config/ConfigUpdate.html#se.sics.kompics.config.ConfigUpdate" title="se.sics.kompics.config.ConfigUpdate">ConfigUpdate</a><em> update</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.create(Class, Init, ConfigUpdate)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>definition</strong> – the definition</li>
+<li><strong>initEvent</strong> – init event to be passed to constructor</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the component</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id15">
+<h3>create<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.create(Class, Init.None, ConfigUpdate)">
+protected final &lt;T extends ComponentDefinition&gt; <a class="reference internal" href="Component.html#se.sics.kompics.Component" title="se.sics.kompics.Component">Component</a> <code class="descname">create</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;T&gt;<em> definition</em>, <a class="reference internal" href="Init.html#se.sics.kompics.Init" title="se.sics.kompics.Init">Init</a>.<a class="reference internal" href="Init-None.html#se.sics.kompics.Init.None" title="se.sics.kompics.Init.None">None</a><em> initEvent</em>, <a class="reference internal" href="config/ConfigUpdate.html#se.sics.kompics.config.ConfigUpdate" title="se.sics.kompics.config.ConfigUpdate">ConfigUpdate</a><em> update</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.create(Class, Init.None, ConfigUpdate)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>definition</strong> – the definition</li>
+<li><strong>initEvent</strong> – none</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the component</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="destroy">
+<h3>destroy<a class="headerlink" href="#destroy" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.destroy(Component)">
+protected final void <code class="descname">destroy</code><span class="sig-paren">(</span><a class="reference internal" href="Component.html#se.sics.kompics.Component" title="se.sics.kompics.Component">Component</a><em> component</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.destroy(Component)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="disconnect">
+<h3>disconnect<a class="headerlink" href="#disconnect" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.disconnect(Negative, Positive)">
+protected final &lt;P extends PortType&gt; void <code class="descname">disconnect</code><span class="sig-paren">(</span><a class="reference internal" href="Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a>&lt;P&gt;<em> negative</em>, <a class="reference internal" href="Positive.html#se.sics.kompics.Positive" title="se.sics.kompics.Positive">Positive</a>&lt;P&gt;<em> positive</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.disconnect(Negative, Positive)" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>&lt;P&gt;</strong> – </li>
+<li><strong>negative</strong> – </li>
+<li><strong>positive</strong> – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id16">
+<h3>disconnect<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.disconnect(Positive, Negative)">
+protected final &lt;P extends PortType&gt; void <code class="descname">disconnect</code><span class="sig-paren">(</span><a class="reference internal" href="Positive.html#se.sics.kompics.Positive" title="se.sics.kompics.Positive">Positive</a>&lt;P&gt;<em> positive</em>, <a class="reference internal" href="Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a>&lt;P&gt;<em> negative</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.disconnect(Positive, Negative)" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>&lt;P&gt;</strong> – </li>
+<li><strong>negative</strong> – </li>
+<li><strong>positive</strong> – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id17">
+<h3>disconnect<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.disconnect(Channel)">
+protected final &lt;P extends PortType&gt; void <code class="descname">disconnect</code><span class="sig-paren">(</span><a class="reference internal" href="Channel.html#se.sics.kompics.Channel" title="se.sics.kompics.Channel">Channel</a>&lt;P&gt;<em> c</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.disconnect(Channel)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="getcomponentcore">
+<h3>getComponentCore<a class="headerlink" href="#getcomponentcore" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.getComponentCore()">
+public final <a class="reference internal" href="ComponentCore.html#se.sics.kompics.ComponentCore" title="se.sics.kompics.ComponentCore">ComponentCore</a> <code class="descname">getComponentCore</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.getComponentCore()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="getcontrolport">
+<h3>getControlPort<a class="headerlink" href="#getcontrolport" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.getControlPort()">
+public final <a class="reference internal" href="Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a>&lt;<a class="reference internal" href="ControlPort.html#se.sics.kompics.ControlPort" title="se.sics.kompics.ControlPort">ControlPort</a>&gt; <code class="descname">getControlPort</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.getControlPort()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="handlefault">
+<h3>handleFault<a class="headerlink" href="#handlefault" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.handleFault(Fault)">
+public <a class="reference internal" href="Fault-ResolveAction.html#se.sics.kompics.Fault.ResolveAction" title="se.sics.kompics.Fault.ResolveAction">ResolveAction</a> <code class="descname">handleFault</code><span class="sig-paren">(</span><a class="reference internal" href="Fault.html#se.sics.kompics.Fault" title="se.sics.kompics.Fault">Fault</a><em> fault</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.handleFault(Fault)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override for custom error handling.</p>
+<p>Default action is ESCALATE.</p>
+<p>ESCALATE -&gt; Forward fault to parent. IGNORE -&gt; Drop fault. Resume component as if nothing happened. RESOLVED -&gt; Fault has been handled by user. Don’t do anything else.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fault</strong> – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="handleupdate">
+<h3>handleUpdate<a class="headerlink" href="#handleupdate" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.handleUpdate(ConfigUpdate)">
+public <a class="reference internal" href="UpdateAction.html#se.sics.kompics.UpdateAction" title="se.sics.kompics.UpdateAction">UpdateAction</a> <code class="descname">handleUpdate</code><span class="sig-paren">(</span><a class="reference internal" href="config/ConfigUpdate.html#se.sics.kompics.config.ConfigUpdate" title="se.sics.kompics.config.ConfigUpdate">ConfigUpdate</a><em> update</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.handleUpdate(ConfigUpdate)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override for custom update handling.</p>
+<p>Default action is to propagate the original everywhere and apply to self.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>update</strong> – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id">
+<h3>id<a class="headerlink" href="#id" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.id()">
+public final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/UUID.html" title="java.util.UUID">UUID</a> <code class="descname">id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.id()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="loggingctxget">
+<h3>loggingCtxGet<a class="headerlink" href="#loggingctxget" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.loggingCtxGet(String)">
+protected <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a> <code class="descname">loggingCtxGet</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> key</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.loggingCtxGet(String)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value associated with key in the current logging diagnostic context.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>key</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the value associated with key</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="loggingctxput">
+<h3>loggingCtxPut<a class="headerlink" href="#loggingctxput" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.loggingCtxPut(String, String)">
+protected void <code class="descname">loggingCtxPut</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> key</em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> value</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.loggingCtxPut(String, String)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Associate key with value in the logging diagnostic context.</p>
+<p>See <a class="reference external" href="https://logback.qos.ch/manual/mdc.html">the logback manuel</a> for how to use this with logback.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>key</strong> – </li>
+<li><strong>value</strong> – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="loggingctxputalways">
+<h3>loggingCtxPutAlways<a class="headerlink" href="#loggingctxputalways" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.loggingCtxPutAlways(String, String)">
+protected void <code class="descname">loggingCtxPutAlways</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> key</em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> value</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.loggingCtxPutAlways(String, String)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Associate key permanently with value in the logging diagnostic context.</p>
+<p>Keys set in this way are not removed by <a class="reference internal" href="#se.sics.kompics.ComponentDefinition.loggingCtxReset()" title="se.sics.kompics.ComponentDefinition.loggingCtxReset()"><code class="xref java java-ref docutils literal notranslate"><span class="pre">loggingCtxReset()</span></code></a> or <a class="reference internal" href="#se.sics.kompics.ComponentDefinition.loggingCtxRemove(String)" title="se.sics.kompics.ComponentDefinition.loggingCtxRemove(String)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">loggingCtxRemove()</span></code></a>.</p>
+<p>See <a class="reference external" href="https://logback.qos.ch/manual/mdc.html">the logback manuel</a> for how to use this with logback.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>key</strong> – </li>
+<li><strong>value</strong> – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="loggingctxremove">
+<h3>loggingCtxRemove<a class="headerlink" href="#loggingctxremove" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.loggingCtxRemove(String)">
+protected void <code class="descname">loggingCtxRemove</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> key</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.loggingCtxRemove(String)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disassociate any value with the key in the logging diagnostic context.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>key</strong> – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="loggingctxreset">
+<h3>loggingCtxReset<a class="headerlink" href="#loggingctxreset" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.loggingCtxReset()">
+protected void <code class="descname">loggingCtxReset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.loggingCtxReset()" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the current logging diagnostic context.</p>
+<p>Removes all items added to context by the user that weren’t set with <a class="reference internal" href="#se.sics.kompics.ComponentDefinition.loggingCtxPutAlways(String, String)" title="se.sics.kompics.ComponentDefinition.loggingCtxPutAlways(String, String)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">loggingCtxPutAlways(String,String)</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="negative">
+<h3>negative<a class="headerlink" href="#negative" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.negative(Class)">
+protected final &lt;P extends PortType&gt; <a class="reference internal" href="Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a>&lt;P&gt; <code class="descname">negative</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;P&gt;<em> portType</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.negative(Class)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Negative.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>portType</strong> – the port type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the negative &lt; p&gt;</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="positive">
+<h3>positive<a class="headerlink" href="#positive" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.positive(Class)">
+protected final &lt;P extends PortType&gt; <a class="reference internal" href="Positive.html#se.sics.kompics.Positive" title="se.sics.kompics.Positive">Positive</a>&lt;P&gt; <code class="descname">positive</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;P&gt;<em> portType</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.positive(Class)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Positive.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>portType</strong> – the port type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the positive &lt; p&gt;</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="postupdate">
+<h3>postUpdate<a class="headerlink" href="#postupdate" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.postUpdate()">
+public void <code class="descname">postUpdate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.postUpdate()" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override to perform actions after a ConfigUpdate was applied and forwarded.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="provides">
+<h3>provides<a class="headerlink" href="#provides" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.provides(Class)">
+protected final &lt;P extends PortType&gt; <a class="reference internal" href="Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a>&lt;P&gt; <code class="descname">provides</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;P&gt;<em> portType</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.provides(Class)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="requires">
+<h3>requires<a class="headerlink" href="#requires" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.requires(Class)">
+protected final &lt;P extends PortType&gt; <a class="reference internal" href="Positive.html#se.sics.kompics.Positive" title="se.sics.kompics.Positive">Positive</a>&lt;P&gt; <code class="descname">requires</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;P&gt;<em> portType</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.requires(Class)" title="Permalink to this definition">¶</a></dt>
+<dd><p>specifies that this component requires a port of type <code class="docutils literal notranslate"><span class="pre">portType</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>&lt;P&gt;</strong> – </li>
+<li><strong>portType</strong> – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="separateconfigid">
+<h3>separateConfigId<a class="headerlink" href="#separateconfigid" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.separateConfigId()">
+public boolean <code class="descname">separateConfigId</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.separateConfigId()" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override to allow components of this type to start their own independent <a class="reference internal" href="config/Config.html#se.sics.kompics.config.Config" title="se.sics.kompics.config.Config"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.config.Config</span></code></a> id lines.</p>
+<p>This is helpful in simulation, when simulating multiple independent nodes. Make sure that no <code class="docutils literal notranslate"><span class="pre">ConfigUpdate</span></code>s are passed to siblings or parents of such nodes! (Override <a class="reference internal" href="ConfigUpdateTest-Parent.html#se.sics.kompics.ConfigUpdateTest.Parent.handleUpdate(ConfigUpdate)" title="se.sics.kompics.ConfigUpdateTest.Parent.handleUpdate(ConfigUpdate)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">handleUpdate(se.sics.kompics.config.ConfigUpdate)</span></code></a>)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Whether to create a new config id line for this component (default: <code class="docutils literal notranslate"><span class="pre">true</span></code>)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="setmdc">
+<h3>setMDC<a class="headerlink" href="#setmdc" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.setMDC()">
+protected void <code class="descname">setMDC</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.setMDC()" title="Permalink to this definition">¶</a></dt>
+<dd><p>Should not be necessary to call usually, as ComponentCore will do it.</p>
+<p>Protected mainly for use by Kompics Scala.</p>
+<p>Can also be used to set component MDC when executing related off-kompics work (check for concurrency issues, though!).</p>
+</dd></dl>
+
+</div>
+<div class="section" id="subscribe">
+<h3>subscribe<a class="headerlink" href="#subscribe" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.subscribe(Handler, Port)">
+protected final &lt;E extends KompicsEvent, P extends PortType&gt; void <code class="descname">subscribe</code><span class="sig-paren">(</span><a class="reference internal" href="Handler.html#se.sics.kompics.Handler" title="se.sics.kompics.Handler">Handler</a>&lt;E&gt;<em> handler</em>, <a class="reference internal" href="Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;P&gt;<em> port</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.subscribe(Handler, Port)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>handler</strong> – the handler</li>
+<li><strong>port</strong> – the port</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Throws:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference internal" href="ConfigurationException.html#se.sics.kompics.ConfigurationException" title="se.sics.kompics.ConfigurationException"><strong>ConfigurationException</strong></a> – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id20">
+<h3>subscribe<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.subscribe(MatchedHandler, Port)">
+protected final void <code class="descname">subscribe</code><span class="sig-paren">(</span><a class="reference internal" href="MatchedHandler.html#se.sics.kompics.MatchedHandler" title="se.sics.kompics.MatchedHandler">MatchedHandler</a>&lt;?, ?, ?&gt;<em> handler</em>, <a class="reference internal" href="Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a><em> port</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.subscribe(MatchedHandler, Port)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="suicide">
+<h3>suicide<a class="headerlink" href="#suicide" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.suicide()">
+public final void <code class="descname">suicide</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.suicide()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="teardown">
+<h3>tearDown<a class="headerlink" href="#teardown" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.tearDown()">
+public void <code class="descname">tearDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.tearDown()" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use for custom cleanup. Will be called after all child components have stopped, but before sending a Stopped message to the parent.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="trigger">
+<h3>trigger<a class="headerlink" href="#trigger" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.trigger(KompicsEvent, Port)">
+protected final &lt;P extends PortType&gt; void <code class="descname">trigger</code><span class="sig-paren">(</span><a class="reference internal" href="KompicsEvent.html#se.sics.kompics.KompicsEvent" title="se.sics.kompics.KompicsEvent">KompicsEvent</a><em> event</em>, <a class="reference internal" href="Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;P&gt;<em> port</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.trigger(KompicsEvent, Port)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trigger.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>event</strong> – the event</li>
+<li><strong>port</strong> – the port</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="unsubscribe">
+<h3>unsubscribe<a class="headerlink" href="#unsubscribe" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.unsubscribe(MatchedHandler, Port)">
+protected final void <code class="descname">unsubscribe</code><span class="sig-paren">(</span><a class="reference internal" href="MatchedHandler.html#se.sics.kompics.MatchedHandler" title="se.sics.kompics.MatchedHandler">MatchedHandler</a>&lt;?, ?, ?&gt;<em> handler</em>, <a class="reference internal" href="Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a><em> port</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.unsubscribe(MatchedHandler, Port)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id21">
+<h3>unsubscribe<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.unsubscribe(Handler, Port)">
+protected final &lt;E extends KompicsEvent, P extends PortType&gt; void <code class="descname">unsubscribe</code><span class="sig-paren">(</span><a class="reference internal" href="Handler.html#se.sics.kompics.Handler" title="se.sics.kompics.Handler">Handler</a>&lt;E&gt;<em> handler</em>, <a class="reference internal" href="Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;P&gt;<em> port</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.unsubscribe(Handler, Port)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsubscribe.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>handler</strong> – the handler</li>
+<li><strong>port</strong> – the port</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Throws:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference internal" href="ConfigurationException.html#se.sics.kompics.ConfigurationException" title="se.sics.kompics.ConfigurationException"><strong>ConfigurationException</strong></a> – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="updateconfig">
+<h3>updateConfig<a class="headerlink" href="#updateconfig" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.ComponentDefinition.updateConfig(ConfigUpdate)">
+public final void <code class="descname">updateConfig</code><span class="sig-paren">(</span><a class="reference internal" href="config/ConfigUpdate.html#se.sics.kompics.config.ConfigUpdate" title="se.sics.kompics.config.ConfigUpdate">ConfigUpdate</a><em> update</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.ComponentDefinition.updateConfig(ConfigUpdate)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ComponentProxy.html" class="btn btn-neutral float-right" title="ComponentProxy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ComponentCore.html" class="btn btn-neutral float-left" title="ComponentCore" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

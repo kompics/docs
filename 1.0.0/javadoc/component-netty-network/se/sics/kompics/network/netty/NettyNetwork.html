@@ -1,0 +1,567 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>NettyNetwork &mdash; Kompics 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../../../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../../../" src="../../../../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../../search.html" />
+    <link rel="next" title="NettySerializer" href="NettySerializer.html" />
+    <link rel="prev" title="NettyInitializer" href="NettyInitializer.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../../../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../../../../../../../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../tutorial/index.html">Kompics Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../scala/index.html">Kompics Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../internals/index.html">Kompics Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../project/index.html">Project Information</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../../modules.html">Javadoc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../core/packages.html">Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../port-timer/packages.html">Timer Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../port-network/packages.html">Network Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../port-virtual-network/packages.html">Virtual Network Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../component-java-timer/packages.html">Java Timer Component</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../../packages.html">Netty Network</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="package-index.html">se.sics.kompics.network.netty</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="AckRequestMsg.html">AckRequestMsg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BaseHandler.html">BaseHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelClosed.html">ChannelClosed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelManager.html">ChannelManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CheckChannelActive.html">CheckChannelActive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CloseChannel.html">CloseChannel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DatagramHandler.html">DatagramHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectHeader.html">DirectHeader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectMessage.html">DirectMessage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DisambiguateConnection.html">DisambiguateConnection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DropDelayed.html">DropDelayed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MessageDecoder.html">MessageDecoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MessageEncoder.html">MessageEncoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MessageQueueManager.html">MessageQueueManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MessageQueueManager-NotifyListener.html">MessageQueueManager.NotifyListener</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MessageWrapper.html">MessageWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NettyAddress.html">NettyAddress</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NettyInit.html">NettyInit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NettyInitializer.html">NettyInitializer</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">NettyNetwork</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NettySerializer.html">NettySerializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NetworkTest.html">NetworkTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NotifyAck.html">NotifyAck</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SendDelayed.html">SendDelayed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StreamHandler.html">StreamHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TCPServerHandler.html">TCPServerHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UDTServerHandler.html">UDTServerHandler</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="serialization/package-index.html">se.sics.kompics.network.netty.serialization</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../simulator/packages.html">Simulator</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../../../modules.html">Javadoc</a> &raquo;</li>
+        
+          <li><a href="../../../../../packages.html">Netty Network</a> &raquo;</li>
+        
+          <li><a href="package-index.html">se.sics.kompics.network.netty</a> &raquo;</li>
+        
+      <li>NettyNetwork</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../../../../_sources/javadoc/component-netty-network/se/sics/kompics/network/netty/NettyNetwork.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="nettynetwork">
+<h1>NettyNetwork<a class="headerlink" href="#nettynetwork" title="Permalink to this headline">¶</a></h1>
+<dl class="type">
+<dt id="se.sics.kompics.network.netty.NettyNetwork">
+public class <code class="descname">NettyNetwork</code> extends <a class="reference internal" href="../../../../../../core/se/sics/kompics/ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition">ComponentDefinition</a><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Lars Kroll</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="datagram-max">
+<h3>DATAGRAM_MAX<a class="headerlink" href="#datagram-max" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.DATAGRAM_MAX">
+public static final int <code class="descname">DATAGRAM_MAX</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.DATAGRAM_MAX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="initial-buffer-size">
+<h3>INITIAL_BUFFER_SIZE<a class="headerlink" href="#initial-buffer-size" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.INITIAL_BUFFER_SIZE">
+static final int <code class="descname">INITIAL_BUFFER_SIZE</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.INITIAL_BUFFER_SIZE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="mdc-key-alt-if">
+<h3>MDC_KEY_ALT_IF<a class="headerlink" href="#mdc-key-alt-if" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.MDC_KEY_ALT_IF">
+public static final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a> <code class="descname">MDC_KEY_ALT_IF</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.MDC_KEY_ALT_IF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="mdc-key-if">
+<h3>MDC_KEY_IF<a class="headerlink" href="#mdc-key-if" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.MDC_KEY_IF">
+public static final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a> <code class="descname">MDC_KEY_IF</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.MDC_KEY_IF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="mdc-key-port">
+<h3>MDC_KEY_PORT<a class="headerlink" href="#mdc-key-port" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.MDC_KEY_PORT">
+public static final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a> <code class="descname">MDC_KEY_PORT</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.MDC_KEY_PORT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="recv-buffer-size">
+<h3>RECV_BUFFER_SIZE<a class="headerlink" href="#recv-buffer-size" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.RECV_BUFFER_SIZE">
+static final int <code class="descname">RECV_BUFFER_SIZE</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.RECV_BUFFER_SIZE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="send-buffer-size">
+<h3>SEND_BUFFER_SIZE<a class="headerlink" href="#send-buffer-size" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.SEND_BUFFER_SIZE">
+static final int <code class="descname">SEND_BUFFER_SIZE</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.SEND_BUFFER_SIZE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="stream-max">
+<h3>STREAM_MAX<a class="headerlink" href="#stream-max" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.STREAM_MAX">
+public static final int <code class="descname">STREAM_MAX</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.STREAM_MAX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="bootstraptcpclient">
+<h3>bootstrapTCPClient<a class="headerlink" href="#bootstraptcpclient" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.bootstrapTCPClient">
+final <a class="reference external" href="http://netty.io/5.0/api/io/netty/bootstrap/Bootstrap.html" title="io.netty.bootstrap.Bootstrap">Bootstrap</a> <code class="descname">bootstrapTCPClient</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.bootstrapTCPClient" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="bootstrapudtclient">
+<h3>bootstrapUDTClient<a class="headerlink" href="#bootstrapudtclient" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.bootstrapUDTClient">
+final <a class="reference external" href="http://netty.io/5.0/api/io/netty/bootstrap/Bootstrap.html" title="io.netty.bootstrap.Bootstrap">Bootstrap</a> <code class="descname">bootstrapUDTClient</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.bootstrapUDTClient" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="boundudtport">
+<h3>boundUDTPort<a class="headerlink" href="#boundudtport" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.boundUDTPort">
+volatile int <code class="descname">boundUDTPort</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.boundUDTPort" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="channels">
+<h3>channels<a class="headerlink" href="#channels" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.channels">
+final <a class="reference internal" href="ChannelManager.html#se.sics.kompics.network.netty.ChannelManager" title="se.sics.kompics.network.netty.ChannelManager">ChannelManager</a> <code class="descname">channels</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.channels" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="delayedhandler">
+<h3>delayedHandler<a class="headerlink" href="#delayedhandler" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.delayedHandler">
+ <a class="reference internal" href="../../../../../../core/se/sics/kompics/Handler.html#se.sics.kompics.Handler" title="se.sics.kompics.Handler">Handler</a>&lt;<a class="reference internal" href="SendDelayed.html#se.sics.kompics.network.netty.SendDelayed" title="se.sics.kompics.network.netty.SendDelayed">SendDelayed</a>&gt; <code class="descname">delayedHandler</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.delayedHandler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="drophandler">
+<h3>dropHandler<a class="headerlink" href="#drophandler" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.dropHandler">
+ <a class="reference internal" href="../../../../../../core/se/sics/kompics/Handler.html#se.sics.kompics.Handler" title="se.sics.kompics.Handler">Handler</a>&lt;<a class="reference internal" href="DropDelayed.html#se.sics.kompics.network.netty.DropDelayed" title="se.sics.kompics.network.netty.DropDelayed">DropDelayed</a>&gt; <code class="descname">dropHandler</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.dropHandler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="extlog">
+<h3>extLog<a class="headerlink" href="#extlog" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.extLog">
+final Logger <code class="descname">extLog</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.extLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="messages">
+<h3>messages<a class="headerlink" href="#messages" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.messages">
+final <a class="reference internal" href="MessageQueueManager.html#se.sics.kompics.network.netty.MessageQueueManager" title="se.sics.kompics.network.netty.MessageQueueManager">MessageQueueManager</a> <code class="descname">messages</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.messages" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="msghandler">
+<h3>msgHandler<a class="headerlink" href="#msghandler" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.msgHandler">
+ <a class="reference internal" href="../../../../../../core/se/sics/kompics/Handler.html#se.sics.kompics.Handler" title="se.sics.kompics.Handler">Handler</a>&lt;<a class="reference internal" href="../../../../../../port-network/se/sics/kompics/network/Msg.html#se.sics.kompics.network.Msg" title="se.sics.kompics.network.Msg">Msg</a>&gt; <code class="descname">msgHandler</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.msgHandler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="net">
+<h3>net<a class="headerlink" href="#net" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.net">
+ <a class="reference internal" href="../../../../../../core/se/sics/kompics/Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a>&lt;<a class="reference internal" href="../../../../../../port-network/se/sics/kompics/network/Network.html#se.sics.kompics.network.Network" title="se.sics.kompics.network.Network">Network</a>&gt; <code class="descname">net</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.net" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="netc">
+<h3>netC<a class="headerlink" href="#netc" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.netC">
+ <a class="reference internal" href="../../../../../../core/se/sics/kompics/Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a>&lt;<a class="reference internal" href="../../../../../../port-network/se/sics/kompics/network/NetworkControl.html#se.sics.kompics.network.NetworkControl" title="se.sics.kompics.network.NetworkControl">NetworkControl</a>&gt; <code class="descname">netC</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.netC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notifyhandler">
+<h3>notifyHandler<a class="headerlink" href="#notifyhandler" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.notifyHandler">
+ <a class="reference internal" href="../../../../../../core/se/sics/kompics/Handler.html#se.sics.kompics.Handler" title="se.sics.kompics.Handler">Handler</a>&lt;<a class="reference internal" href="../../../../../../port-network/se/sics/kompics/network/MessageNotify.html#se.sics.kompics.network.MessageNotify" title="se.sics.kompics.network.MessageNotify">MessageNotify</a>.<a class="reference internal" href="../../../../../../port-network/se/sics/kompics/network/MessageNotify-Req.html#se.sics.kompics.network.MessageNotify.Req" title="se.sics.kompics.network.MessageNotify.Req">Req</a>&gt; <code class="descname">notifyHandler</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.notifyHandler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="self">
+<h3>self<a class="headerlink" href="#self" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.self">
+final <a class="reference internal" href="NettyAddress.html#se.sics.kompics.network.netty.NettyAddress" title="se.sics.kompics.network.netty.NettyAddress">NettyAddress</a> <code class="descname">self</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.self" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="starthandler">
+<h3>startHandler<a class="headerlink" href="#starthandler" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.startHandler">
+ <a class="reference internal" href="../../../../../../core/se/sics/kompics/Handler.html#se.sics.kompics.Handler" title="se.sics.kompics.Handler">Handler</a>&lt;<a class="reference internal" href="../../../../../../core/se/sics/kompics/Start.html#se.sics.kompics.Start" title="se.sics.kompics.Start">Start</a>&gt; <code class="descname">startHandler</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.startHandler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="stophandler">
+<h3>stopHandler<a class="headerlink" href="#stophandler" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.stopHandler">
+ <a class="reference internal" href="../../../../../../core/se/sics/kompics/Handler.html#se.sics.kompics.Handler" title="se.sics.kompics.Handler">Handler</a>&lt;<a class="reference internal" href="../../../../../../core/se/sics/kompics/Stop.html#se.sics.kompics.Stop" title="se.sics.kompics.Stop">Stop</a>&gt; <code class="descname">stopHandler</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.stopHandler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="udtbuffersizes">
+<h3>udtBufferSizes<a class="headerlink" href="#udtbuffersizes" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.udtBufferSizes">
+final int <code class="descname">udtBufferSizes</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.udtBufferSizes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="udtmss">
+<h3>udtMSS<a class="headerlink" href="#udtmss" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.udtMSS">
+final int <code class="descname">udtMSS</code><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.udtMSS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>NettyNetwork<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<dl class="constructor">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.NettyNetwork(NettyInit)">
+public <code class="descname">NettyNetwork</code><span class="sig-paren">(</span><a class="reference internal" href="NettyInit.html#se.sics.kompics.network.netty.NettyInit" title="se.sics.kompics.network.netty.NettyInit">NettyInit</a><em> init</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.NettyNetwork(NettyInit)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="delivermessage">
+<h3>deliverMessage<a class="headerlink" href="#delivermessage" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.deliverMessage(Msg, Channel)">
+protected void <code class="descname">deliverMessage</code><span class="sig-paren">(</span><a class="reference internal" href="../../../../../../port-network/se/sics/kompics/network/Msg.html#se.sics.kompics.network.Msg" title="se.sics.kompics.network.Msg">Msg</a><em> message</em>, <a class="reference internal" href="../../../../../../core/se/sics/kompics/Channel.html#se.sics.kompics.Channel" title="se.sics.kompics.Channel">Channel</a><em> c</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.deliverMessage(Msg, Channel)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="networkexception">
+<h3>networkException<a class="headerlink" href="#networkexception" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.networkException(NetworkException)">
+protected void <code class="descname">networkException</code><span class="sig-paren">(</span><a class="reference internal" href="../../../../../../port-network/se/sics/kompics/network/NetworkException.html#se.sics.kompics.network.NetworkException" title="se.sics.kompics.network.NetworkException">NetworkException</a><em> networkException</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.networkException(NetworkException)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="networkstatus">
+<h3>networkStatus<a class="headerlink" href="#networkstatus" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.networkStatus(ConnectionStatus)">
+protected void <code class="descname">networkStatus</code><span class="sig-paren">(</span><a class="reference internal" href="../../../../../../port-network/se/sics/kompics/network/ConnectionStatus.html#se.sics.kompics.network.ConnectionStatus" title="se.sics.kompics.network.ConnectionStatus">ConnectionStatus</a><em> status</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.networkStatus(ConnectionStatus)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="notify">
+<h3>notify<a class="headerlink" href="#notify" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.notify(MessageNotify.Req)">
+ void <code class="descname">notify</code><span class="sig-paren">(</span><a class="reference internal" href="../../../../../../port-network/se/sics/kompics/network/MessageNotify.html#se.sics.kompics.network.MessageNotify" title="se.sics.kompics.network.MessageNotify">MessageNotify</a>.<a class="reference internal" href="../../../../../../port-network/se/sics/kompics/network/MessageNotify-Req.html#se.sics.kompics.network.MessageNotify.Req" title="se.sics.kompics.network.MessageNotify.Req">Req</a><em> notify</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.notify(MessageNotify.Req)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h3>notify<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.notify(MessageNotify.Req, MessageNotify.Resp)">
+ void <code class="descname">notify</code><span class="sig-paren">(</span><a class="reference internal" href="../../../../../../port-network/se/sics/kompics/network/MessageNotify.html#se.sics.kompics.network.MessageNotify" title="se.sics.kompics.network.MessageNotify">MessageNotify</a>.<a class="reference internal" href="../../../../../../port-network/se/sics/kompics/network/MessageNotify-Req.html#se.sics.kompics.network.MessageNotify.Req" title="se.sics.kompics.network.MessageNotify.Req">Req</a><em> notify</em>, <a class="reference internal" href="../../../../../../port-network/se/sics/kompics/network/MessageNotify.html#se.sics.kompics.network.MessageNotify" title="se.sics.kompics.network.MessageNotify">MessageNotify</a>.<a class="reference internal" href="../../../../../../port-network/se/sics/kompics/network/MessageNotify-Resp.html#se.sics.kompics.network.MessageNotify.Resp" title="se.sics.kompics.network.MessageNotify.Resp">Resp</a><em> response</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.notify(MessageNotify.Req, MessageNotify.Resp)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="sendudpmessage">
+<h3>sendUdpMessage<a class="headerlink" href="#sendudpmessage" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.sendUdpMessage(MessageWrapper)">
+ <a class="reference external" href="http://netty.io/5.0/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel.ChannelFuture">ChannelFuture</a> <code class="descname">sendUdpMessage</code><span class="sig-paren">(</span><a class="reference internal" href="MessageWrapper.html#se.sics.kompics.network.netty.MessageWrapper" title="se.sics.kompics.network.netty.MessageWrapper">MessageWrapper</a><em> msgw</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.sendUdpMessage(MessageWrapper)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="setcustommdc">
+<h3>setCustomMDC<a class="headerlink" href="#setcustommdc" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.setCustomMDC()">
+ void <code class="descname">setCustomMDC</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.setCustomMDC()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="teardown">
+<h3>tearDown<a class="headerlink" href="#teardown" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.tearDown()">
+public void <code class="descname">tearDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.tearDown()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="trigger">
+<h3>trigger<a class="headerlink" href="#trigger" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.network.netty.NettyNetwork.trigger(KompicsEvent)">
+ void <code class="descname">trigger</code><span class="sig-paren">(</span><a class="reference internal" href="../../../../../../core/se/sics/kompics/KompicsEvent.html#se.sics.kompics.KompicsEvent" title="se.sics.kompics.KompicsEvent">KompicsEvent</a><em> event</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.network.netty.NettyNetwork.trigger(KompicsEvent)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="NettySerializer.html" class="btn btn-neutral float-right" title="NettySerializer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="NettyInitializer.html" class="btn btn-neutral float-left" title="NettyInitializer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

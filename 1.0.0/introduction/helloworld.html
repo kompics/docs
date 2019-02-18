@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hello World in Kompics &mdash; Kompics 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Kompics Tutorial" href="../tutorial/index.html" />
+    <link rel="prev" title="Getting Started" href="gettingstarted.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Introduction</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="whatiskompics.html">What is Kompics?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Hello World in Kompics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#maven-setup">Maven Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hello-world-component">Hello World Component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#main">Main</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compiling-and-running">Compiling and Running</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logging">Logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#download">Download</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Kompics Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scala/index.html">Kompics Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internals/index.html">Kompics Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/index.html">Project Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javadoc/modules.html">Javadoc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Introduction</a> &raquo;</li>
+        
+      <li>Hello World in Kompics</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/introduction/helloworld.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hello-world-in-kompics">
+<span id="helloworld"></span><h1>Hello World in Kompics<a class="headerlink" href="#hello-world-in-kompics" title="Permalink to this headline">¶</a></h1>
+<p>This section describes the simplest possible Kompics program, the well-known <em>Hello World</em>.</p>
+<p>A proper introduction can be found in the <a class="reference internal" href="../tutorial/index.html#tutorial"><span class="std std-ref">Kompics Tutorial</span></a>.</p>
+<div class="section" id="maven-setup">
+<h2>Maven Setup<a class="headerlink" href="#maven-setup" title="Permalink to this headline">¶</a></h2>
+<p>Set up a new maven project and follow the instructions in <a class="reference internal" href="../project/repositories.html#repos"><span class="std std-ref">Repositories</span></a> and <a class="reference internal" href="gettingstarted.html#gettingstarted"><span class="std std-ref">Getting Started</span></a> to include the necessary dependencies. For this simple example the <code class="docutils literal notranslate"><span class="pre">kompics-core</span></code> module will be sufficient.</p>
+<p>The resulting <a class="reference download internal" download="" href="../_downloads/19ac5587c3ded717c42654fa1f8d8344/pom.xml"><code class="xref download docutils literal notranslate"><span class="pre">pom.xml</span></code></a> might look something like:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>se.sics.test<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>hello-world<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;packaging&gt;</span>jar<span class="nt">&lt;/packaging&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+
+    <span class="nt">&lt;name&gt;</span>HelloWorld<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;description&gt;</span>
+        Kompics Hello World
+    <span class="nt">&lt;/description&gt;</span>
+        
+    <span class="nt">&lt;properties&gt;</span>
+        <span class="nt">&lt;java.compiler.version&gt;</span>1.7<span class="nt">&lt;/java.compiler.version&gt;</span>
+        <span class="nt">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class="nt">&lt;/project.build.sourceEncoding&gt;</span>
+        <span class="nt">&lt;kompics.version&gt;</span>1.0.0<span class="nt">&lt;/kompics.version&gt;</span>
+    <span class="nt">&lt;/properties&gt;</span>
+
+    <span class="nt">&lt;dependencies&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>se.sics.kompics<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>kompics-core<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>${kompics.version}<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;scope&gt;</span>compile<span class="nt">&lt;/scope&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>ch.qos.logback<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>logback-classic<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>1.2.3<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;scope&gt;</span>compile<span class="nt">&lt;/scope&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+    <span class="nt">&lt;/dependencies&gt;</span>
+
+    <span class="nt">&lt;build&gt;</span>
+        <span class="nt">&lt;plugins&gt;</span>
+            <span class="nt">&lt;plugin&gt;</span>
+                <span class="nt">&lt;inherited&gt;</span>true<span class="nt">&lt;/inherited&gt;</span>
+                <span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;version&gt;</span>3.1<span class="nt">&lt;/version&gt;</span>
+                <span class="nt">&lt;configuration&gt;</span>
+                    <span class="nt">&lt;encoding&gt;</span>${project.build.sourceEncoding}<span class="nt">&lt;/encoding&gt;</span>
+                    <span class="nt">&lt;source&gt;</span>${java.compiler.version}<span class="nt">&lt;/source&gt;</span>
+                    <span class="nt">&lt;target&gt;</span>${java.compiler.version}<span class="nt">&lt;/target&gt;</span>
+                    <span class="nt">&lt;debug&gt;</span>true<span class="nt">&lt;/debug&gt;</span>
+                    <span class="nt">&lt;optimize&gt;</span>true<span class="nt">&lt;/optimize&gt;</span>
+                    <span class="nt">&lt;showDeprecations&gt;</span>true<span class="nt">&lt;/showDeprecations&gt;</span>
+                <span class="nt">&lt;/configuration&gt;</span>
+            <span class="nt">&lt;/plugin&gt;</span>
+            
+        <span class="nt">&lt;/plugins&gt;</span>
+    <span class="nt">&lt;/build&gt;</span>
+
+    <span class="nt">&lt;repositories&gt;</span>
+        <span class="nt">&lt;repository&gt;</span>
+            <span class="nt">&lt;snapshots&gt;</span>
+                <span class="nt">&lt;enabled&gt;</span>false
+            <span class="nt">&lt;/enabled&gt;</span>
+            <span class="nt">&lt;/snapshots&gt;</span>
+            <span class="nt">&lt;id&gt;</span>bintray-kompics-Maven
+          <span class="nt">&lt;/id&gt;</span>
+            <span class="nt">&lt;name&gt;</span>bintray
+          <span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;url&gt;</span>https://dl.bintray.com/kompics/Maven
+          <span class="nt">&lt;/url&gt;</span>
+        <span class="nt">&lt;/repository&gt;</span>
+    <span class="nt">&lt;/repositories&gt;</span>
+<span class="nt">&lt;/project&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="hello-world-component">
+<h2>Hello World Component<a class="headerlink" href="#hello-world-component" title="Permalink to this headline">¶</a></h2>
+<p>This very simple component contains but a single handler, which is executed when a <code class="docutils literal notranslate"><span class="pre">Start</span></code> event is triggered on the <code class="docutils literal notranslate"><span class="pre">control</span></code> port. <code class="docutils literal notranslate"><span class="pre">Start</span></code> events are part of Kompic’s component lifecycle and always need to be triggered on a component exactly once to get it to handle events. A component that is never started is considered paused and will queue up events on its ports, but never execute them.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">se.sics.kompics.ComponentDefinition</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Handler</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Start</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Kompics</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloComponent</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+	<span class="o">{</span>
+		<span class="n">Handler</span><span class="o">&lt;</span><span class="n">Start</span><span class="o">&gt;</span> <span class="n">startHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Handler</span><span class="o">&lt;</span><span class="n">Start</span><span class="o">&gt;()</span> <span class="o">{</span>
+			<span class="nd">@Override</span>
+			<span class="kd">public</span> <span class="kt">void</span> <span class="nf">handle</span><span class="o">(</span><span class="n">Start</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+				<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hello World!&quot;</span><span class="o">);</span>
+				<span class="n">Kompics</span><span class="o">.</span><span class="na">asyncShutdown</span><span class="o">();</span>
+			<span class="o">}</span>
+		<span class="o">};</span>
+		<span class="n">subscribe</span><span class="o">(</span><span class="n">startHandler</span><span class="o">,</span> <span class="n">control</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Do not forget to subscribe Kompics handlers to ports! It is the most common mistake, and it is very easy to overlook when debugging.</p>
+</div>
+</div>
+<div class="section" id="main">
+<h2>Main<a class="headerlink" href="#main" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="file docutils literal notranslate"><span class="pre">Main.java</span></code> is very simple and only starts the Kompics framework by calling <code class="docutils literal notranslate"><span class="pre">Kompics.createAndStart</span></code> with the class of the root component. It also automatically sends a <code class="docutils literal notranslate"><span class="pre">Start</span></code> event to the component once the constructor has finished.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Kompics</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">InterruptedException</span> <span class="o">{</span>
+		<span class="n">Kompics</span><span class="o">.</span><span class="na">createAndStart</span><span class="o">(</span><span class="n">HelloComponent</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+		<span class="n">Kompics</span><span class="o">.</span><span class="na">waitForTermination</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="compiling-and-running">
+<h2>Compiling and Running<a class="headerlink" href="#compiling-and-running" title="Permalink to this headline">¶</a></h2>
+<p>To compile the source code use:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">mvn</span> <span class="n">clean</span> <span class="n">compile</span>
+</pre></div>
+</div>
+<p>To run the project from within maven:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">mvn</span> <span class="n">exec</span><span class="o">:</span><span class="n">java</span> <span class="o">-</span><span class="n">Dexec</span><span class="o">.</span><span class="na">mainClass</span><span class="o">=</span><span class="s">&quot;se.sics.test.Main&quot;</span>
+</pre></div>
+</div>
+<p>This is all. Say hello to Kompics ;)</p>
+</div>
+<div class="section" id="logging">
+<h2>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h2>
+<p>Kompics has built-in logging support, which adds context information to the logging output, such as what state the component is in and what its unique id is. You can access the provided <a class="reference external" href="https://www.slf4j.org/">SLF4J</a> logger via the <code class="docutils literal notranslate"><span class="pre">logger</span></code> field.</p>
+<p>In order to make use of these features, a mapped diagnostic context (MDC) capable logging backend is required, such as <a class="reference external" href="https://logback.qos.ch/manual/mdc.html">Logback Classic</a>, for example, which is imported in the <a class="reference download internal" download="" href="../_downloads/19ac5587c3ded717c42654fa1f8d8344/pom.xml"><code class="xref download docutils literal notranslate"><span class="pre">pom.xml</span></code></a> file.</p>
+<p>Logback requires a configuration file to work. Adding a simple <code class="file docutils literal notranslate"><span class="pre">src/main/resources/logback.xml</span></code> file to the project will configure the logging system, in this case such that all MDC information is printed:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">configuration</span><span class="o">&gt;</span>
+
+  <span class="o">&lt;</span><span class="n">appender</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;STDOUT&quot;</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;ch.qos.logback.core.ConsoleAppender&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;!--</span> <span class="n">encoders</span> <span class="n">are</span> <span class="n">assigned</span> <span class="n">the</span> <span class="n">type</span>
+         <span class="n">ch</span><span class="o">.</span><span class="na">qos</span><span class="o">.</span><span class="na">logback</span><span class="o">.</span><span class="na">classic</span><span class="o">.</span><span class="na">encoder</span><span class="o">.</span><span class="na">PatternLayoutEncoder</span> <span class="n">by</span> <span class="k">default</span> <span class="o">--&gt;</span>
+    <span class="o">&lt;</span><span class="n">encoder</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">pattern</span><span class="o">&gt;%</span><span class="n">d</span><span class="o">{</span><span class="n">HH</span><span class="o">:</span><span class="n">mm</span><span class="o">:</span><span class="n">ss</span><span class="o">.</span><span class="na">SSS</span><span class="o">}</span> <span class="o">%</span><span class="n">highlight</span><span class="o">(%-</span><span class="mi">5l</span><span class="n">evel</span><span class="o">)</span> <span class="o">%</span><span class="n">logger</span><span class="o">{</span><span class="mi">1</span><span class="o">}</span> <span class="o">[%</span><span class="n">thread</span><span class="o">]</span> <span class="o">%</span><span class="n">X</span> <span class="o">%</span><span class="n">n</span>    <span class="o">-</span> <span class="o">%</span><span class="n">msg</span><span class="o">%</span><span class="n">n</span><span class="o">&lt;/</span><span class="n">pattern</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">encoder</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">appender</span><span class="o">&gt;</span>
+
+  <span class="o">&lt;</span><span class="n">root</span> <span class="n">level</span><span class="o">=</span><span class="s">&quot;debug&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">appender</span><span class="o">-</span><span class="n">ref</span> <span class="n">ref</span><span class="o">=</span><span class="s">&quot;STDOUT&quot;</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;/</span><span class="n">root</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">configuration</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>It is also possible to add custom context information to a particular component, by using either <a class="reference internal" href="../javadoc/core/se/sics/kompics/ComponentDefinition.html#se.sics.kompics.ComponentDefinition.loggingCtxPut(String, String)" title="se.sics.kompics.ComponentDefinition.loggingCtxPut(String, String)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ComponentDefinition.loggingCtxPut(String,</span> <span class="pre">String)</span></code></a> for potentially transient values, or <a class="reference internal" href="../javadoc/core/se/sics/kompics/ComponentDefinition.html#se.sics.kompics.ComponentDefinition.loggingCtxPutAlways(String, String)" title="se.sics.kompics.ComponentDefinition.loggingCtxPutAlways(String, String)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ComponentDefinition.loggingCtxPutAlways(String,</span> <span class="pre">String)</span></code></a> for context values that definitely span the life-time of the component.</p>
+</div>
+<div class="section" id="download">
+<h2>Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h2>
+<p>You can download the whole maven project <a class="reference download internal" download="" href="../_downloads/5271e01b51e099b2b57e9b375b5e8510/helloworld.zip"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tutorial/index.html" class="btn btn-neutral float-right" title="Kompics Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="gettingstarted.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,283 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; Kompics 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Hello World in Kompics" href="helloworld.html" />
+    <link rel="prev" title="What is Kompics?" href="whatiskompics.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Introduction</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="whatiskompics.html">What is Kompics?</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#including-kompics">Including Kompics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modules">Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ide-support">IDE Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-from-sources">Build from Sources</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="helloworld.html">Hello World in Kompics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Kompics Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scala/index.html">Kompics Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internals/index.html">Kompics Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/index.html">Project Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javadoc/modules.html">Javadoc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Introduction</a> &raquo;</li>
+        
+      <li>Getting Started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/introduction/gettingstarted.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<span id="gettingstarted"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>Kompics requires that you have Java on your machine.</p>
+<p>For Kompics versions before <code class="code docutils literal notranslate"><span class="pre">0.8.2</span></code> only Java 6 is required. Newer versions require Java 7.</p>
+<p>There also exists some Java 8 code in Kompics that is currently commented out for backwards compatibility reasons, but will be reintroduced in a different branch in the (near) future.</p>
+</div>
+<div class="section" id="including-kompics">
+<h2>Including Kompics<a class="headerlink" href="#including-kompics" title="Permalink to this headline">¶</a></h2>
+<p>The best way to include Kompics is to use a build tool like maven and add the required Kompics modules as a dependency.</p>
+<p>See <a class="reference internal" href="../project/repositories.html#repos"><span class="std std-ref">Repositories</span></a> for information on the maven dependencies.</p>
+</div>
+<div class="section" id="modules">
+<span id="gs-modules"></span><h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
+<p>Kompics is very modular and consists of several JAR-files containing different features, ports, and components.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">kompics-core</span></code> – Contains the runtime and the basic definitions. This is the minimum requirement.</li>
+<li><code class="docutils literal notranslate"><span class="pre">kompics-port-timer</span></code> and <code class="docutils literal notranslate"><span class="pre">kompics-component-java-timer</span></code> – Provide the definition and the implementation for a component that handles scheduled timeouts</li>
+<li><code class="docutils literal notranslate"><span class="pre">kompics-port-network</span></code> and <code class="docutils literal notranslate"><span class="pre">kompics-component-netty-network</span></code> – Provide the definition and a Netty based implementation for networking using TCP, UDP, and UDT.</li>
+<li><code class="docutils literal notranslate"><span class="pre">kompics-port-virtual-network</span></code> – Adds a few definitions to the network port to allow for usage of virtual nodes within the same Kompics instance.</li>
+<li><code class="docutils literal notranslate"><span class="pre">kompics-simulator</span></code> – Contains a DSL to describe experiment/test scenarios and a scheduler and base components to run them.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Implementations always depend on the modules defining the port types they implement. Thus it is sufficient to add the implementation as a dependency. The separation is meant to allow different implementations for the same port type.</p>
+</div>
+</div>
+<div class="section" id="ide-support">
+<h2>IDE Support<a class="headerlink" href="#ide-support" title="Permalink to this headline">¶</a></h2>
+<p>Kompics can be used with any IDE that supports Java and preferably maven.</p>
+<p>For the brave of heart there is also an experimental Eclipse plugin that adds some shortcuts for components and handlers. However, it is not in active development at the moment. The source can be found at <a class="reference external" href="https://github.com/Bathtor/KompicsIDE">https://github.com/Bathtor/KompicsIDE</a>.</p>
+</div>
+<div class="section" id="build-from-sources">
+<h2>Build from Sources<a class="headerlink" href="#build-from-sources" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../project/repositories.html#repos"><span class="std std-ref">Repositories</span></a> for information on how to acquire the source code.</p>
+<p>To clone the sources you need <a class="reference external" href="http://git-scm.com/">Git</a> installed on your machine.</p>
+<p>For example:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="o">:</span><span class="c1">//github.com/kompics/kompics.git</span>
+</pre></div>
+</div>
+<p>If you have already cloned the repository previously then you can update the code with git pull:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span> <span class="n">origin</span> <span class="n">master</span>
+</pre></div>
+</div>
+<p>Change into the <code class="file docutils literal notranslate"><span class="pre">kompics</span></code> root directory and execute the following command to build and install a local Kompics version:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">mvn</span> <span class="n">clean</span> <span class="n">install</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Some of the tests take a very long time to execute and open a lot of file-descriptors. Depending on the rights on your machine, they might in fact fail for you. Either increase the number of concurrent open file-handles allowed for your user, or simply skip the tests with <code class="code docutils literal notranslate"><span class="pre">-DskipTests</span></code>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="helloworld.html" class="btn btn-neutral float-right" title="Hello World in Kompics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="whatiskompics.html" class="btn btn-neutral float-left" title="What is Kompics?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

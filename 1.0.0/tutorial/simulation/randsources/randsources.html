@@ -1,0 +1,288 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sources of Randomness &mdash; Kompics 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Simulation Scenarios Reference" href="../scenarios/scenarios.html" />
+    <link rel="prev" title="Introduction to Simulation" href="../pingpong/pingpong.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../../../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Kompics Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basics/basics.html">Kompics Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../timers/timers.html">Timers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../networking/index.html">Networking</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Simulation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pingpong/pingpong.html">Introduction to Simulation</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Sources of Randomness</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#system-time">System time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#random-generators">Random Generators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thread-creation">Thread creation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#network">Network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#input-output-sources">Input/Output sources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#instrumentation-exceptions">Instrumentation Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../scenarios/scenarios.html">Simulation Scenarios Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../testing/index.html">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scala/index.html">Kompics Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../internals/index.html">Kompics Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../project/index.html">Project Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../javadoc/modules.html">Javadoc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Kompics Tutorial</a> &raquo;</li>
+        
+          <li><a href="../index.html">Simulation</a> &raquo;</li>
+        
+      <li>Sources of Randomness</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/tutorial/simulation/randsources/randsources.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sources-of-randomness">
+<span id="randsources"></span><h1>Sources of Randomness<a class="headerlink" href="#sources-of-randomness" title="Permalink to this headline">¶</a></h1>
+<p>In order to circumvent nondeterministic execution, when running in simulation mode, the Java bytecode of the system is instrumented using the <a class="reference external" href="http://jboss-javassist.github.io/javassist/">Javaassist</a> toolkit to intercept a number of method calls and replace them with code that exhibits similar, but deterministic behaviour.</p>
+<p>The advantage of using bytecode instrumentation for whole-system simulation is that in order to execute a system in simulation there is no need to change any of its source code. The implication of this fact is that we can simulate not only the code of the system under development, but also any third-party libraries that it might use. The only limitation of this approach is when a third-party library invokes native code. Allowing the execution to “escape” the managed environment of the <abbr title="Java Virtual Machine">JVM</abbr> into native code means we loose the guarantee of deterministic execution.</p>
+<p>As stated before, the sources of randomness that we consider in simulation include:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>system time</li>
+<li>random generators</li>
+<li>thread creation/execution</li>
+<li>network e.g. latency, packet loss</li>
+<li>input/output sources</li>
+</ol>
+</div></blockquote>
+<div class="section" id="system-time">
+<h2>System time<a class="headerlink" href="#system-time" title="Permalink to this headline">¶</a></h2>
+<p>The two sources of system time that we considered are the java System calls: <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/System.html#currentTimeMillis--" title="java.lang.System.currentTimeMillis()"><code class="xref java java-ref docutils literal notranslate"><span class="pre">java.lang.System.currentTimeMillis()</span></code></a> and <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/System.html#nanoTime--" title="java.lang.System.nanoTime()"><code class="xref java java-ref docutils literal notranslate"><span class="pre">java.lang.System.nanoTime()</span></code></a>.</p>
+<p>These two methods will be instrumented to point to the virtual simulation time. Since the simulation time granularity is ms, the <code class="docutils literal notranslate"><span class="pre">nanoTime()</span></code> is a simple <code class="docutils literal notranslate"><span class="pre">currentTimeMillis()</span></code><span class="math notranslate nohighlight">\(\cdot 10^6\)</span></p>
+</div>
+<div class="section" id="random-generators">
+<h2>Random Generators<a class="headerlink" href="#random-generators" title="Permalink to this headline">¶</a></h2>
+<p>The random generators we considered are: <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/Random.html" title="java.util.Random"><code class="xref java java-ref docutils literal notranslate"><span class="pre">java.util.Random</span></code></a>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html" title="java.security.SecureRandom"><code class="xref java java-ref docutils literal notranslate"><span class="pre">java.security.SecureRandom</span></code></a> and <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/UUID.html" title="java.util.UUID"><code class="xref java java-ref docutils literal notranslate"><span class="pre">java.util.UUID</span></code></a>.</p>
+<p>Currently, <code class="docutils literal notranslate"><span class="pre">SecureRandom</span></code> type generators are not allowed in simulations.</p>
+<p>When using <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Random()</span></code> (no argument constructor), the call is instrumented to <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Random(0)</span></code>.</p>
+<p>When using <code class="docutils literal notranslate"><span class="pre">UUID.randomUUID()</span></code> the call is instrumented as two calls to the <code class="docutils literal notranslate"><span class="pre">Random</span> <span class="pre">nextLong()</span></code> method on the simulation global random generator.</p>
+</div>
+<div class="section" id="thread-creation">
+<h2>Thread creation<a class="headerlink" href="#thread-creation" title="Permalink to this headline">¶</a></h2>
+<p>Thread interleaving creates nondeterminism, which we want to avoid during simulation and thus, we instrument calls to <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html#start--" title="java.lang.Thread.start()"><code class="xref java java-ref docutils literal notranslate"><span class="pre">java.lang.Thread.start()</span></code></a> <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html#sleep--" title="java.lang.Thread.sleep()"><code class="xref java java-ref docutils literal notranslate"><span class="pre">java.lang.Thread.sleep()</span></code></a>. Attempts to create threads are intercepted and the simulation halts with an error informing the user that deterministic execution cannot be guaranteed. Kompics protocol components are typically reactive and don’t spawn threads of their own, so they lend themselves well to simulation.</p>
+<p>In some cases, especially third party libraries, threads are created, but they might not interact with component logic. If this is the case, we can add that class to the exception list (see section <a class="reference internal" href="#instrexcps"><span class="std std-ref">Instrumentation Exceptions</span></a>)and thus it will not get instrumented.</p>
+</div>
+<div class="section" id="network">
+<h2>Network<a class="headerlink" href="#network" title="Permalink to this headline">¶</a></h2>
+<p>Randomness induced by network parameters, like latency and network loss are modeled using the SimulationScenario and NetworkModel abstraction.</p>
+</div>
+<div class="section" id="input-output-sources">
+<h2>Input/Output sources<a class="headerlink" href="#input-output-sources" title="Permalink to this headline">¶</a></h2>
+<p>Currently there is no warning/error for using <abbr title="input/output">I/O</abbr> Sources, but it should be kept in mind that these might introduce uncertainty into the simulation.</p>
+</div>
+<div class="section" id="instrumentation-exceptions">
+<span id="instrexcps"></span><h2>Instrumentation Exceptions<a class="headerlink" href="#instrumentation-exceptions" title="Permalink to this headline">¶</a></h2>
+<p>You can add classes to the instrumentation exception list by adding the following lines to your configuration file:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>instrumentation.exceptions = [
+        &quot;a.b.c.MyClass&quot;,
+        &quot;d.e.f.MyOtherClass&quot;
+]
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../scenarios/scenarios.html" class="btn btn-neutral float-right" title="Simulation Scenarios Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../pingpong/pingpong.html" class="btn btn-neutral float-left" title="Introduction to Simulation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

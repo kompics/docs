@@ -1,0 +1,302 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Simulation Scenarios Reference &mdash; Kompics 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Testing" href="../../testing/index.html" />
+    <link rel="prev" title="Sources of Randomness" href="../randsources/randsources.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../../../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Kompics Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basics/basics.html">Kompics Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../timers/timers.html">Timers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../networking/index.html">Networking</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Simulation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pingpong/pingpong.html">Introduction to Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../randsources/randsources.html">Sources of Randomness</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Simulation Scenarios Reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#simulation-events">Simulation Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#distributions">Distributions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#operations">Operations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stochasticprocesses">StochasticProcesses</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../testing/index.html">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scala/index.html">Kompics Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../internals/index.html">Kompics Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../project/index.html">Project Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../javadoc/modules.html">Javadoc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Kompics Tutorial</a> &raquo;</li>
+        
+          <li><a href="../index.html">Simulation</a> &raquo;</li>
+        
+      <li>Simulation Scenarios Reference</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/tutorial/simulation/scenarios/scenarios.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="simulation-scenarios-reference">
+<span id="scenarios"></span><h1>Simulation Scenarios Reference<a class="headerlink" href="#simulation-scenarios-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="simulation-events">
+<h2>Simulation Events<a class="headerlink" href="#simulation-events" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ol class="arabic simple">
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/events/system/SetupEvent.html#se.sics.kompics.simulator.events.system.SetupEvent" title="se.sics.kompics.simulator.events.system.SetupEvent"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.events.system.SetupEvent</span></code></a></li>
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/events/system/StartNodeEvent.html#se.sics.kompics.simulator.events.system.StartNodeEvent" title="se.sics.kompics.simulator.events.system.StartNodeEvent"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.events.system.StartNodeEvent</span></code></a></li>
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/events/system/KillNodeEvent.html#se.sics.kompics.simulator.events.system.KillNodeEvent" title="se.sics.kompics.simulator.events.system.KillNodeEvent"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.events.system.KillNodeEvent</span></code></a></li>
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/events/system/ChangeNetworkModelEvent.html#se.sics.kompics.simulator.events.system.ChangeNetworkModelEvent" title="se.sics.kompics.simulator.events.system.ChangeNetworkModelEvent"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.events.system.ChangeNetworkModelEvent</span></code></a></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="distributions">
+<h2>Distributions<a class="headerlink" href="#distributions" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>The main class in this package is <a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.distributions.Distribution</span></code></a>. There are a number of distributions defined in the simulator module:</p>
+<ol class="arabic simple">
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/adaptor/distributions/ConstantDistribution.html#se.sics.kompics.simulator.adaptor.distributions.ConstantDistribution" title="se.sics.kompics.simulator.adaptor.distributions.ConstantDistribution"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.distributions.ConstantDistribution</span></code></a></li>
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/adaptor/distributions/IntegerUniformDistribution.html#se.sics.kompics.simulator.adaptor.distributions.IntegerUniformDistribution" title="se.sics.kompics.simulator.adaptor.distributions.IntegerUniformDistribution"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.distributions.IntegerUniformDistribution</span></code></a></li>
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/adaptor/distributions/DoubleUniformDistribution.html#se.sics.kompics.simulator.adaptor.distributions.DoubleUniformDistribution" title="se.sics.kompics.simulator.adaptor.distributions.DoubleUniformDistribution"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.distributions.DoubleUniformDistribution</span></code></a></li>
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/adaptor/distributions/LongUniformDistribution.html#se.sics.kompics.simulator.adaptor.distributions.LongUniformDistribution" title="se.sics.kompics.simulator.adaptor.distributions.LongUniformDistribution"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.distributions.LongUniformDistribution</span></code></a></li>
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/adaptor/distributions/BigIntegerUniformDistribution.html#se.sics.kompics.simulator.adaptor.distributions.BigIntegerUniformDistribution" title="se.sics.kompics.simulator.adaptor.distributions.BigIntegerUniformDistribution"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.distributions.BigIntegerUniformDistribution</span></code></a></li>
+<li><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.distributions.IntegerNormalDistribution</span></code></li>
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/adaptor/distributions/DoubleNormalDistribution.html#se.sics.kompics.simulator.adaptor.distributions.DoubleNormalDistribution" title="se.sics.kompics.simulator.adaptor.distributions.DoubleNormalDistribution"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.distributions.DoubleNormalDistribution</span></code></a></li>
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/adaptor/distributions/LongNormalDistribution.html#se.sics.kompics.simulator.adaptor.distributions.LongNormalDistribution" title="se.sics.kompics.simulator.adaptor.distributions.LongNormalDistribution"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.distributions.LongNormalDistribution</span></code></a></li>
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/adaptor/distributions/BigIntegerNormalDistribution.html#se.sics.kompics.simulator.adaptor.distributions.BigIntegerNormalDistribution" title="se.sics.kompics.simulator.adaptor.distributions.BigIntegerNormalDistribution"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.distributions.BigIntegerNormalDistribution</span></code></a></li>
+<li><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.distributions.IntegerExponentialDistribution</span></code></li>
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/adaptor/distributions/DoubleExponentialDistribution.html#se.sics.kompics.simulator.adaptor.distributions.DoubleExponentialDistribution" title="se.sics.kompics.simulator.adaptor.distributions.DoubleExponentialDistribution"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.distributions.DoubleExponentialDistribution</span></code></a></li>
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/adaptor/distributions/LongExponentialDistribution.html#se.sics.kompics.simulator.adaptor.distributions.LongExponentialDistribution" title="se.sics.kompics.simulator.adaptor.distributions.LongExponentialDistribution"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.distributions.LongExponentialDistribution</span></code></a></li>
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/adaptor/distributions/BigIntegerExponentialDistribution.html#se.sics.kompics.simulator.adaptor.distributions.BigIntegerExponentialDistribution" title="se.sics.kompics.simulator.adaptor.distributions.BigIntegerExponentialDistribution"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.distributions.BigIntegerExponentialDistribution</span></code></a></li>
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/adaptor/distributions/extra/BasicIntSequentialDistribution.html#se.sics.kompics.simulator.adaptor.distributions.extra.BasicIntSequentialDistribution" title="se.sics.kompics.simulator.adaptor.distributions.extra.BasicIntSequentialDistribution"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.distributions.extra.BasicIntSequentialDistribution</span></code></a></li>
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/adaptor/distributions/extra/GenIntSequentialDistribution.html#se.sics.kompics.simulator.adaptor.distributions.extra.GenIntSequentialDistribution" title="se.sics.kompics.simulator.adaptor.distributions.extra.GenIntSequentialDistribution"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.distributions.extra.GenIntSequentialDistribution</span></code></a></li>
+</ol>
+</div></blockquote>
+<p>The <code class="docutils literal notranslate"><span class="pre">ConstantDistribution</span></code>, as the name suggests is used when we want to pass a custom parameter to the event, but this custom parameter is fixed for all events.</p>
+<p>Distributions between 2 and 13 will generate uniform/normal/exponential distribution random numbers.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">SequentialDistributions</span></code> are similar to the <code class="docutils literal notranslate"><span class="pre">ConstantDistribution</span></code> as they do not generate random numbers, but a predefined sequence. The <code class="docutils literal notranslate"><span class="pre">BasicIntSequentialDistribution</span></code> generates integers from the starting point provided in the constructor. For the <code class="docutils literal notranslate"><span class="pre">GenIntSequentialDistribution</span></code>, the whole sequence is provided in the constructor. Make sure you do not try to raise more events than the size of this sequence, as once all the numbers in the sequence have been drawn, <em>null</em> values will be returned.</p>
+<p>In case these distributions to not fit your needs, you can define your own by extending the <code class="docutils literal notranslate"><span class="pre">Distribution</span></code> class</p>
+</div>
+<div class="section" id="operations">
+<h2>Operations<a class="headerlink" href="#operations" title="Permalink to this headline">¶</a></h2>
+<p>Depending on the amount of customization you need for the simulation events, there are 6 types of operations allowing from 0 to 5 generated parameters. The parameters are generated using a distribution. You can choose among the distributions presented above or create your own parameter distribution that fits your needs better.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/adaptor/Operation.html#se.sics.kompics.simulator.adaptor.Operation" title="se.sics.kompics.simulator.adaptor.Operation"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.Operation</span></code></a></li>
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/adaptor/Operation1.html#se.sics.kompics.simulator.adaptor.Operation1" title="se.sics.kompics.simulator.adaptor.Operation1"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.Operation1</span></code></a></li>
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/adaptor/Operation2.html#se.sics.kompics.simulator.adaptor.Operation2" title="se.sics.kompics.simulator.adaptor.Operation2"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.Operation2</span></code></a></li>
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/adaptor/Operation3.html#se.sics.kompics.simulator.adaptor.Operation3" title="se.sics.kompics.simulator.adaptor.Operation3"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.Operation3</span></code></a></li>
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/adaptor/Operation4.html#se.sics.kompics.simulator.adaptor.Operation4" title="se.sics.kompics.simulator.adaptor.Operation4"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.Operation4</span></code></a></li>
+<li><a class="reference internal" href="../../../javadoc/simulator/se/sics/kompics/simulator/adaptor/Operation5.html#se.sics.kompics.simulator.adaptor.Operation5" title="se.sics.kompics.simulator.adaptor.Operation5"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.adaptor.Operation5</span></code></a></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="stochasticprocesses">
+<h2>StochasticProcesses<a class="headerlink" href="#stochasticprocesses" title="Permalink to this headline">¶</a></h2>
+<p>Event generation related methods:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.SimulationScenario.StochasticProcess.eventInterArrivalTime</span></code></li>
+<li><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.simulator.SimulationScenario.StochasticProcess.raise</span></code></li>
+</ol>
+</div></blockquote>
+<p>Process order related methods <code class="docutils literal notranslate"><span class="pre">start..</span></code>, <code class="docutils literal notranslate"><span class="pre">terminate</span></code></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../testing/index.html" class="btn btn-neutral float-right" title="Testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../randsources/randsources.html" class="btn btn-neutral float-left" title="Sources of Randomness" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

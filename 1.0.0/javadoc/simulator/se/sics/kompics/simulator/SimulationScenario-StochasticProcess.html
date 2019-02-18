@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SimulationScenario.StochasticProcess &mdash; Kompics 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../../" src="../../../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+    <link rel="next" title="se.sics.kompics.simulator.adaptor" href="adaptor/package-index.html" />
+    <link rel="prev" title="SimulationScenario.Snapshot" href="SimulationScenario-Snapshot.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../../../../../../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../tutorial/index.html">Kompics Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../scala/index.html">Kompics Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../internals/index.html">Kompics Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../project/index.html">Project Information</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../modules.html">Javadoc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../../core/packages.html">Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../port-timer/packages.html">Timer Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../port-network/packages.html">Network Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../port-virtual-network/packages.html">Virtual Network Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../component-java-timer/packages.html">Java Timer Component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../component-netty-network/packages.html">Netty Network</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../packages.html">Simulator</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="package-index.html">se.sics.kompics.simulator</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="SimulationScenario.html">SimulationScenario</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimulationScenario-Snapshot.html">SimulationScenario.Snapshot</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">SimulationScenario.StochasticProcess</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="adaptor/package-index.html">se.sics.kompics.simulator.adaptor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adaptor/distributions/package-index.html">se.sics.kompics.simulator.adaptor.distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adaptor/distributions/extra/package-index.html">se.sics.kompics.simulator.adaptor.distributions.extra</a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/package-index.html">se.sics.kompics.simulator.core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/impl/package-index.html">se.sics.kompics.simulator.core.impl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="events/package-index.html">se.sics.kompics.simulator.events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="events/system/package-index.html">se.sics.kompics.simulator.events.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/basic/package-index.html">se.sics.kompics.simulator.examples.basic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/basic/sim/package-index.html">se.sics.kompics.simulator.examples.basic.sim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/config/package-index.html">se.sics.kompics.simulator.examples.config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/config/sim/package-index.html">se.sics.kompics.simulator.examples.config.sim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/util/package-index.html">se.sics.kompics.simulator.examples.util</a></li>
+<li class="toctree-l3"><a class="reference internal" href="instrumentation/package-index.html">se.sics.kompics.simulator.instrumentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="network/package-index.html">se.sics.kompics.simulator.network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="network/identifier/package-index.html">se.sics.kompics.simulator.network.identifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="network/identifier/impl/package-index.html">se.sics.kompics.simulator.network.identifier.impl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="network/impl/package-index.html">se.sics.kompics.simulator.network.impl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="result/package-index.html">se.sics.kompics.simulator.result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run/package-index.html">se.sics.kompics.simulator.run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scheduler/package-index.html">se.sics.kompics.simulator.scheduler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stochastic/events/package-index.html">se.sics.kompics.simulator.stochastic.events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="util/package-index.html">se.sics.kompics.simulator.util</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../../modules.html">Javadoc</a> &raquo;</li>
+        
+          <li><a href="../../../../packages.html">Simulator</a> &raquo;</li>
+        
+          <li><a href="package-index.html">se.sics.kompics.simulator</a> &raquo;</li>
+        
+      <li>SimulationScenario.StochasticProcess</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../../../_sources/javadoc/simulator/se/sics/kompics/simulator/SimulationScenario-StochasticProcess.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="simulationscenario-stochasticprocess">
+<h1>SimulationScenario.StochasticProcess<a class="headerlink" href="#simulationscenario-stochasticprocess" title="Permalink to this headline">¶</a></h1>
+<dl class="type">
+<dt id="se.sics.kompics.simulator.SimulationScenario.StochasticProcess">
+protected abstract class <code class="descname">StochasticProcess</code> implements <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html" title="java.io.Serializable">Serializable</a><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.StochasticProcess" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="generators">
+<h3>generators<a class="headerlink" href="#generators" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.simulator.SimulationScenario.StochasticProcess.generators">
+protected final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html" title="java.util.LinkedList">LinkedList</a>&lt;<a class="reference internal" href="adaptor/OperationGenerator.html#se.sics.kompics.simulator.adaptor.OperationGenerator" title="se.sics.kompics.simulator.adaptor.OperationGenerator">OperationGenerator</a>&gt; <code class="descname">generators</code><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.StochasticProcess.generators" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="stochasticprocess">
+<h3>StochasticProcess<a class="headerlink" href="#stochasticprocess" title="Permalink to this headline">¶</a></h3>
+<dl class="constructor">
+<dt id="se.sics.kompics.simulator.SimulationScenario.StochasticProcess.StochasticProcess(String)">
+protected <code class="descname">StochasticProcess</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> name</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.StochasticProcess.StochasticProcess(String)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id1">
+<h3>StochasticProcess<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<dl class="constructor">
+<dt id="se.sics.kompics.simulator.SimulationScenario.StochasticProcess.StochasticProcess()">
+protected <code class="descname">StochasticProcess</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.StochasticProcess.StochasticProcess()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="eventinterarrivaltime">
+<h3>eventInterArrivalTime<a class="headerlink" href="#eventinterarrivaltime" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.StochasticProcess.eventInterArrivalTime(Distribution)">
+protected final void <code class="descname">eventInterArrivalTime</code><span class="sig-paren">(</span><a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;<a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Long.html" title="java.lang.Long">Long</a>&gt;<em> interArrivalTime</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.StochasticProcess.eventInterArrivalTime(Distribution)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="raise">
+<h3>raise<a class="headerlink" href="#raise" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.StochasticProcess.raise(int, Operation)">
+protected final &lt;E extends KompicsEvent&gt; void <code class="descname">raise</code><span class="sig-paren">(</span>int<em> count</em>, <a class="reference internal" href="adaptor/Operation.html#se.sics.kompics.simulator.adaptor.Operation" title="se.sics.kompics.simulator.adaptor.Operation">Operation</a>&lt;E&gt;<em> op</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.StochasticProcess.raise(int, Operation)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h3>raise<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.StochasticProcess.raise(int, Operation1, Distribution)">
+protected final &lt;E extends KompicsEvent, P1 extends Number&gt; void <code class="descname">raise</code><span class="sig-paren">(</span>int<em> count</em>, <a class="reference internal" href="adaptor/Operation1.html#se.sics.kompics.simulator.adaptor.Operation1" title="se.sics.kompics.simulator.adaptor.Operation1">Operation1</a>&lt;E, P1&gt;<em> op1</em>, <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;P1&gt;<em> d1</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.StochasticProcess.raise(int, Operation1, Distribution)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h3>raise<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.StochasticProcess.raise(int, Operation2, Distribution, Distribution)">
+protected final &lt;E extends KompicsEvent, P1 extends Number, P2 extends Number&gt; void <code class="descname">raise</code><span class="sig-paren">(</span>int<em> count</em>, <a class="reference internal" href="adaptor/Operation2.html#se.sics.kompics.simulator.adaptor.Operation2" title="se.sics.kompics.simulator.adaptor.Operation2">Operation2</a>&lt;E, P1, P2&gt;<em> op2</em>, <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;P1&gt;<em> d1</em>, <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;P2&gt;<em> d2</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.StochasticProcess.raise(int, Operation2, Distribution, Distribution)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id4">
+<h3>raise<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.StochasticProcess.raise(int, Operation3, Distribution, Distribution, Distribution)">
+protected final &lt;E extends KompicsEvent, P1 extends Number, P2 extends Number, P3 extends Number&gt; void <code class="descname">raise</code><span class="sig-paren">(</span>int<em> count</em>, <a class="reference internal" href="adaptor/Operation3.html#se.sics.kompics.simulator.adaptor.Operation3" title="se.sics.kompics.simulator.adaptor.Operation3">Operation3</a>&lt;E, P1, P2, P3&gt;<em> op3</em>, <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;P1&gt;<em> d1</em>, <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;P2&gt;<em> d2</em>, <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;P3&gt;<em> d3</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.StochasticProcess.raise(int, Operation3, Distribution, Distribution, Distribution)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id5">
+<h3>raise<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.StochasticProcess.raise(int, Operation4, Distribution, Distribution, Distribution, Distribution)">
+protected final &lt;E extends KompicsEvent, P1 extends Number, P2 extends Number, P3 extends Number, P4 extends Number, P5 extends Number&gt; void <code class="descname">raise</code><span class="sig-paren">(</span>int<em> count</em>, <a class="reference internal" href="adaptor/Operation4.html#se.sics.kompics.simulator.adaptor.Operation4" title="se.sics.kompics.simulator.adaptor.Operation4">Operation4</a>&lt;E, P1, P2, P3, P4&gt;<em> op4</em>, <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;P1&gt;<em> d1</em>, <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;P2&gt;<em> d2</em>, <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;P3&gt;<em> d3</em>, <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;P4&gt;<em> d4</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.StochasticProcess.raise(int, Operation4, Distribution, Distribution, Distribution, Distribution)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id6">
+<h3>raise<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.StochasticProcess.raise(int, Operation5, Distribution, Distribution, Distribution, Distribution, Distribution)">
+protected final &lt;E extends KompicsEvent, P1 extends Number, P2 extends Number, P3 extends Number, P4 extends Number, P5 extends Number&gt; void <code class="descname">raise</code><span class="sig-paren">(</span>int<em> count</em>, <a class="reference internal" href="adaptor/Operation5.html#se.sics.kompics.simulator.adaptor.Operation5" title="se.sics.kompics.simulator.adaptor.Operation5">Operation5</a>&lt;E, P1, P2, P3, P4, P5&gt;<em> op5</em>, <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;P1&gt;<em> d1</em>, <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;P2&gt;<em> d2</em>, <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;P3&gt;<em> d3</em>, <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;P4&gt;<em> d4</em>, <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;P5&gt;<em> d5</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.StochasticProcess.raise(int, Operation5, Distribution, Distribution, Distribution, Distribution, Distribution)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="start">
+<h3>start<a class="headerlink" href="#start" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.StochasticProcess.start()">
+public final void <code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.StochasticProcess.start()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="startafterstartof">
+<h3>startAfterStartOf<a class="headerlink" href="#startafterstartof" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.StochasticProcess.startAfterStartOf(long, StochasticProcess)">
+public final void <code class="descname">startAfterStartOf</code><span class="sig-paren">(</span>long<em> delay</em>, <a class="reference internal" href="#se.sics.kompics.simulator.SimulationScenario.StochasticProcess" title="se.sics.kompics.simulator.SimulationScenario.StochasticProcess">StochasticProcess</a><em> process</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.StochasticProcess.startAfterStartOf(long, StochasticProcess)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="startafterterminationof">
+<h3>startAfterTerminationOf<a class="headerlink" href="#startafterterminationof" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.StochasticProcess.startAfterTerminationOf(long, StochasticProcess)">
+public final void <code class="descname">startAfterTerminationOf</code><span class="sig-paren">(</span>long<em> delay</em>, <a class="reference internal" href="#se.sics.kompics.simulator.SimulationScenario.StochasticProcess" title="se.sics.kompics.simulator.SimulationScenario.StochasticProcess">StochasticProcess</a>...<em> process</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.StochasticProcess.startAfterTerminationOf(long, StochasticProcess)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="startat">
+<h3>startAt<a class="headerlink" href="#startat" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.StochasticProcess.startAt(long)">
+public final void <code class="descname">startAt</code><span class="sig-paren">(</span>long<em> time</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.StochasticProcess.startAt(long)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="startatsametimewith">
+<h3>startAtSameTimeWith<a class="headerlink" href="#startatsametimewith" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.StochasticProcess.startAtSameTimeWith(StochasticProcess)">
+public final void <code class="descname">startAtSameTimeWith</code><span class="sig-paren">(</span><a class="reference internal" href="#se.sics.kompics.simulator.SimulationScenario.StochasticProcess" title="se.sics.kompics.simulator.SimulationScenario.StochasticProcess">StochasticProcess</a><em> process</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.StochasticProcess.startAtSameTimeWith(StochasticProcess)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="adaptor/package-index.html" class="btn btn-neutral float-right" title="se.sics.kompics.simulator.adaptor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="SimulationScenario-Snapshot.html" class="btn btn-neutral float-left" title="SimulationScenario.Snapshot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

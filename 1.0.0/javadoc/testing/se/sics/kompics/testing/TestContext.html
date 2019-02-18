@@ -1,0 +1,1194 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>TestContext &mdash; Kompics 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../../" src="../../../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../../../../../../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../tutorial/index.html">Kompics Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../scala/index.html">Kompics Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../internals/index.html">Kompics Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../project/index.html">Project Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html">Javadoc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>TestContext</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../../../_sources/javadoc/testing/se/sics/kompics/testing/TestContext.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="testcontext">
+<h1>TestContext<a class="headerlink" href="#testcontext" title="Permalink to this headline">¶</a></h1>
+<dl class="type">
+<dt id="se.sics.kompics.testing.TestContext">
+public class <code class="descname">TestContext</code>&lt;T extends ComponentDefinition&gt;<a class="headerlink" href="#se.sics.kompics.testing.TestContext" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body"><p class="first">Ifeanyi Ubah</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>&lt;T&gt;</strong> – the ComponentDefinition to test</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="logger">
+<h3>logger<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.testing.TestContext.logger">
+static final Logger <code class="descname">logger</code><a class="headerlink" href="#se.sics.kompics.testing.TestContext.logger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="timeout">
+<h3>timeout<a class="headerlink" href="#timeout" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.testing.TestContext.timeout">
+public static final long <code class="descname">timeout</code><a class="headerlink" href="#se.sics.kompics.testing.TestContext.timeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Timeout value in milliseconds - Default 400ms</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="allow">
+<h3>allow<a class="headerlink" href="#allow" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.allow(KompicsEvent, Port, Direction)">
+public &lt;P extends PortType&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">allow</code><span class="sig-paren">(</span><a class="reference internal" href="../../../../../core/se/sics/kompics/KompicsEvent.html#se.sics.kompics.KompicsEvent" title="se.sics.kompics.KompicsEvent">KompicsEvent</a><em> event</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;P&gt;<em> port</em>, <a class="reference internal" href="Direction.html#se.sics.kompics.testing.Direction" title="se.sics.kompics.testing.Direction">Direction</a><em> direction</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.allow(KompicsEvent, Port, Direction)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whitelist the specified event within the current block. This means that if an event matching the specified one occurs at any position within the block then that event is handled normally. However such events are not necessary for a successful testcase.</p>
+<p>Modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.HEADER" title="se.sics.kompics.testing.MODE.HEADER"><code class="xref java java-ref docutils literal notranslate"><span class="pre">HEADER</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>event</strong> – event to be matched against.</li>
+<li><strong>port</strong> – port on which the matched event should occur.</li>
+<li><strong>direction</strong> – Direction IN or OUT of the event.</li>
+<li><strong>&lt;P&gt;</strong> – port type.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id1">
+<h3>allow<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.allow(Class, Predicate, Port, Direction)">
+public &lt;E extends KompicsEvent, P extends PortType&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">allow</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;E&gt;<em> eventType</em>, Predicate&lt;E&gt;<em> predicate</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;P&gt;<em> port</em>, <a class="reference internal" href="Direction.html#se.sics.kompics.testing.Direction" title="se.sics.kompics.testing.Direction">Direction</a><em> direction</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.allow(Class, Predicate, Port, Direction)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to <a class="reference internal" href="#se.sics.kompics.testing.TestContext.allow(Class, Port, Direction)" title="se.sics.kompics.testing.TestContext.allow(Class, Port, Direction)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">allow(KompicsEvent,Port,Direction)</span></code></a>. Matches events only if predicate returns true instead.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h3>allow<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.allow(Class, Port, Direction)">
+public &lt;E extends KompicsEvent, P extends PortType&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">allow</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;E&gt;<em> eventType</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;P&gt;<em> port</em>, <a class="reference internal" href="Direction.html#se.sics.kompics.testing.Direction" title="se.sics.kompics.testing.Direction">Direction</a><em> direction</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.allow(Class, Port, Direction)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to <a class="reference internal" href="#se.sics.kompics.testing.TestContext.allow(Class, Port, Direction)" title="se.sics.kompics.testing.TestContext.allow(Class, Port, Direction)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">allow(KompicsEvent,Port,Direction)</span></code></a>. Matches events by class instead.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="answerrequest">
+<h3>answerRequest<a class="headerlink" href="#answerrequest" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.answerRequest(Class, Port, Function, Port)">
+public &lt;RQ extends KompicsEvent, RS extends KompicsEvent&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">answerRequest</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;RQ&gt;<em> requestType</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;? extends <a class="reference internal" href="../../../../../core/se/sics/kompics/PortType.html#se.sics.kompics.PortType" title="se.sics.kompics.PortType">PortType</a>&gt;<em> requestPort</em>, Function&lt;RQ, RS&gt;<em> mapper</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;? extends <a class="reference internal" href="../../../../../core/se/sics/kompics/PortType.html#se.sics.kompics.PortType" title="se.sics.kompics.PortType">PortType</a>&gt;<em> responsePort</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.answerRequest(Class, Port, Function, Port)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Match an outgoing message on the specified requestPort as a request message by calling the provided mapper function with it as an argument. If mapper returns null, then the match fails otherwise the returned message is treated as a response and triggered on responsePort.</p>
+<p>Modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.BODY" title="se.sics.kompics.testing.MODE.BODY"><code class="xref java java-ref docutils literal notranslate"><span class="pre">BODY</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.CONDITIONAL" title="se.sics.kompics.testing.MODE.CONDITIONAL"><code class="xref java java-ref docutils literal notranslate"><span class="pre">CONDITIONAL</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.UNORDERED" title="se.sics.kompics.testing.MODE.UNORDERED"><code class="xref java java-ref docutils literal notranslate"><span class="pre">UNORDERED</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.ANSWER_REQUEST" title="se.sics.kompics.testing.MODE.ANSWER_REQUEST"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ANSWER_REQUEST</span></code></a>.</p>
+<p>If used in <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.ANSWER_REQUEST" title="se.sics.kompics.testing.MODE.ANSWER_REQUEST"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ANSWER_REQUEST</span></code></a> mode then the responses are triggered only when all requests have been matched. If in <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.UNORDERED" title="se.sics.kompics.testing.MODE.UNORDERED"><code class="xref java java-ref docutils literal notranslate"><span class="pre">UNORDERED</span></code></a> this can be <a class="reference internal" href="#se.sics.kompics.testing.TestContext.unordered(boolean)" title="se.sics.kompics.testing.TestContext.unordered(boolean)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">configured</span></code></a>. Otherwise responses are triggered immediately.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>requestType</strong> – events of this class are treated as requests.</li>
+<li><strong>requestPort</strong> – port on which to expect request events.</li>
+<li><strong>mapper</strong> – mapper function from a matched request message to a response message otherwise null.</li>
+<li><strong>responsePort</strong> – port on which to trigger a response message.</li>
+<li><strong>&lt;RQ&gt;</strong> – request type.</li>
+<li><strong>&lt;RS&gt;</strong> – response type.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h3>answerRequest<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.answerRequest(Class, Port, Future)">
+public &lt;RQ extends KompicsEvent, RS extends KompicsEvent&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">answerRequest</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;RQ&gt;<em> requestType</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;? extends <a class="reference internal" href="../../../../../core/se/sics/kompics/PortType.html#se.sics.kompics.PortType" title="se.sics.kompics.PortType">PortType</a>&gt;<em> requestPort</em>, <a class="reference internal" href="Future.html#se.sics.kompics.testing.Future" title="se.sics.kompics.testing.Future">Future</a>&lt;RQ, RS&gt;<em> future</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.answerRequest(Class, Port, Future)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Match an outgoing message on the specified requestPort as a request message by calling the provided <a class="reference internal" href="Future.html#se.sics.kompics.testing.Future.set(RQ)" title="se.sics.kompics.testing.Future.set(RQ)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Future.set(KompicsEvent)</span></code></a> method of future with an observed event as an argument. If future returns true, then the match succeeded and a response should have been generated such that a subsequent call to <a class="reference internal" href="Future.html#se.sics.kompics.testing.Future.get()" title="se.sics.kompics.testing.Future.get()"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Future.get()</span></code></a> returns it instead of null. This response can later be used in a call to <a class="reference internal" href="#se.sics.kompics.testing.TestContext.trigger(Future, Port)" title="se.sics.kompics.testing.TestContext.trigger(Future, Port)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">trigger(Future,Port)</span></code></a>.</p>
+<p>Modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.BODY" title="se.sics.kompics.testing.MODE.BODY"><code class="xref java java-ref docutils literal notranslate"><span class="pre">BODY</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.CONDITIONAL" title="se.sics.kompics.testing.MODE.CONDITIONAL"><code class="xref java java-ref docutils literal notranslate"><span class="pre">CONDITIONAL</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.UNORDERED" title="se.sics.kompics.testing.MODE.UNORDERED"><code class="xref java java-ref docutils literal notranslate"><span class="pre">UNORDERED</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.ANSWER_REQUEST" title="se.sics.kompics.testing.MODE.ANSWER_REQUEST"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ANSWER_REQUEST</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>requestType</strong> – events of this class are treated as requests.</li>
+<li><strong>requestPort</strong> – port on which to expect request events.</li>
+<li><strong>future</strong> – future to match a request and set a response.</li>
+<li><strong>&lt;RQ&gt;</strong> – request type.</li>
+<li><strong>&lt;RS&gt;</strong> – response type.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="answerrequests">
+<h3>answerRequests<a class="headerlink" href="#answerrequests" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.answerRequests()">
+public <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">answerRequests</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.answerRequests()" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enters <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.ANSWER_REQUEST" title="se.sics.kompics.testing.MODE.ANSWER_REQUEST"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ANSWER_REQUEST</span></code></a> mode. In this mode, only method <a class="reference internal" href="#se.sics.kompics.testing.TestContext.answerRequest(Class, Port, Future)" title="se.sics.kompics.testing.TestContext.answerRequest(Class, Port, Future)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">answerRequest(Class,Port,Function,Port)</span></code></a> can be used. Responses are triggered in their received order, only when all requests have been received.</p>
+<p>Allowed modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.BODY" title="se.sics.kompics.testing.MODE.BODY"><code class="xref java java-ref docutils literal notranslate"><span class="pre">BODY</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.CONDITIONAL" title="se.sics.kompics.testing.MODE.CONDITIONAL"><code class="xref java java-ref docutils literal notranslate"><span class="pre">CONDITIONAL</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="blockexpect">
+<h3>blockExpect<a class="headerlink" href="#blockexpect" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.blockExpect(KompicsEvent, Port, Direction)">
+public &lt;P extends PortType&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">blockExpect</code><span class="sig-paren">(</span><a class="reference internal" href="../../../../../core/se/sics/kompics/KompicsEvent.html#se.sics.kompics.KompicsEvent" title="se.sics.kompics.KompicsEvent">KompicsEvent</a><em> event</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;P&gt;<em> port</em>, <a class="reference internal" href="Direction.html#se.sics.kompics.testing.Direction" title="se.sics.kompics.testing.Direction">Direction</a><em> direction</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.blockExpect(KompicsEvent, Port, Direction)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Match the occurrence of the specified event at any position within the sequence of the current block. If the specified event does not occur after executing the last statement of the block, the test case fails on timeout.</p>
+<p>Modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.HEADER" title="se.sics.kompics.testing.MODE.HEADER"><code class="xref java java-ref docutils literal notranslate"><span class="pre">HEADER</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>event</strong> – expected event to match</li>
+<li><strong>port</strong> – port on which event should occur.</li>
+<li><strong>direction</strong> – Direction IN or OUT.</li>
+<li><strong>&lt;P&gt;</strong> – port type.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id4">
+<h3>blockExpect<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.blockExpect(Class, Predicate, Port, Direction)">
+public &lt;P extends PortType, E extends KompicsEvent&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">blockExpect</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;E&gt;<em> eventType</em>, Predicate&lt;E&gt;<em> pred</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;P&gt;<em> port</em>, <a class="reference internal" href="Direction.html#se.sics.kompics.testing.Direction" title="se.sics.kompics.testing.Direction">Direction</a><em> direction</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.blockExpect(Class, Predicate, Port, Direction)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to <a class="reference internal" href="#se.sics.kompics.testing.TestContext.blockExpect(Class, Port, Direction)" title="se.sics.kompics.testing.TestContext.blockExpect(Class, Port, Direction)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">blockExpect(KompicsEvent,Port,Direction)</span></code></a>. Matches the expected event with the specified predicate.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id5">
+<h3>blockExpect<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.blockExpect(Class, Port, Direction)">
+public &lt;P extends PortType, E extends KompicsEvent&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">blockExpect</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;E&gt;<em> eventType</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;P&gt;<em> port</em>, <a class="reference internal" href="Direction.html#se.sics.kompics.testing.Direction" title="se.sics.kompics.testing.Direction">Direction</a><em> direction</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.blockExpect(Class, Port, Direction)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to <a class="reference internal" href="#se.sics.kompics.testing.TestContext.blockExpect(Class, Port, Direction)" title="se.sics.kompics.testing.TestContext.blockExpect(Class, Port, Direction)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">blockExpect(KompicsEvent,Port,Direction)</span></code></a>. Event of the specified class is matched.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="body">
+<h3>body<a class="headerlink" href="#body" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.body()">
+public <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">body</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.body()" title="Permalink to this definition">¶</a></dt>
+<dd><p>Begin the body of a block.</p>
+<p>Modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.HEADER" title="se.sics.kompics.testing.MODE.HEADER"><code class="xref java java-ref docutils literal notranslate"><span class="pre">HEADER</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="check">
+<h3>check<a class="headerlink" href="#check" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.check()">
+public boolean <code class="descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.check()" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the specified testcase</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">true if observed event sequence conforms to testcase otherwise false.</td>
+</tr>
+</tbody>
+</table>
+<p>Allowed modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.BODY" title="se.sics.kompics.testing.MODE.BODY"><code class="xref java java-ref docutils literal notranslate"><span class="pre">BODY</span></code></a>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="connect">
+<h3>connect<a class="headerlink" href="#connect" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.connect(Negative, Positive)">
+public &lt;P extends PortType&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">connect</code><span class="sig-paren">(</span><a class="reference internal" href="../../../../../core/se/sics/kompics/Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a>&lt;P&gt;<em> negative</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Positive.html#se.sics.kompics.Positive" title="se.sics.kompics.Positive">Positive</a>&lt;P&gt;<em> positive</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.connect(Negative, Positive)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equivalent to connect(negative, positive, <a class="reference internal" href="../../../../../core/se/sics/kompics/Channel.html#se.sics.kompics.Channel.TWO_WAY" title="se.sics.kompics.Channel.TWO_WAY"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Channel.TWO_WAY</span></code></a>).</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id6">
+<h3>connect<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.connect(Positive, Negative)">
+public &lt;P extends PortType&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">connect</code><span class="sig-paren">(</span><a class="reference internal" href="../../../../../core/se/sics/kompics/Positive.html#se.sics.kompics.Positive" title="se.sics.kompics.Positive">Positive</a>&lt;P&gt;<em> positive</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a>&lt;P&gt;<em> negative</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.connect(Positive, Negative)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equivalent to connect(positive, negative, <a class="reference internal" href="../../../../../core/se/sics/kompics/Channel.html#se.sics.kompics.Channel.TWO_WAY" title="se.sics.kompics.Channel.TWO_WAY"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Channel.TWO_WAY</span></code></a>).</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id7">
+<h3>connect<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.connect(Negative, Positive, ChannelFactory)">
+public &lt;P extends PortType&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">connect</code><span class="sig-paren">(</span><a class="reference internal" href="../../../../../core/se/sics/kompics/Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a>&lt;P&gt;<em> negative</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Positive.html#se.sics.kompics.Positive" title="se.sics.kompics.Positive">Positive</a>&lt;P&gt;<em> positive</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/ChannelFactory.html#se.sics.kompics.ChannelFactory" title="se.sics.kompics.ChannelFactory">ChannelFactory</a><em> factory</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.connect(Negative, Positive, ChannelFactory)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equivalent to connect(positive, negative, factory).</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id8">
+<h3>connect<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.connect(Positive, Negative, ChannelFactory)">
+public &lt;P extends PortType&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">connect</code><span class="sig-paren">(</span><a class="reference internal" href="../../../../../core/se/sics/kompics/Positive.html#se.sics.kompics.Positive" title="se.sics.kompics.Positive">Positive</a>&lt;P&gt;<em> positive</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a>&lt;P&gt;<em> negative</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/ChannelFactory.html#se.sics.kompics.ChannelFactory" title="se.sics.kompics.ChannelFactory">ChannelFactory</a><em> factory</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.connect(Positive, Negative, ChannelFactory)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connects two ports with the specified <a class="reference internal" href="../../../../../core/se/sics/kompics/ChannelFactory.html#se.sics.kompics.ChannelFactory" title="se.sics.kompics.ChannelFactory"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ChannelFactory</span></code></a>.</p>
+<p>Modes - setup <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.HEADER" title="se.sics.kompics.testing.MODE.HEADER"><code class="xref java java-ref docutils literal notranslate"><span class="pre">HEADER</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>negative</strong> – <a class="reference internal" href="../../../../../core/se/sics/kompics/Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Negative</span></code></a> port.</li>
+<li><strong>positive</strong> – <a class="reference internal" href="../../../../../core/se/sics/kompics/Positive.html#se.sics.kompics.Positive" title="se.sics.kompics.Positive"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Positive</span></code></a> port.</li>
+<li><strong>factory</strong> – <a class="reference internal" href="../../../../../core/se/sics/kompics/ChannelFactory.html#se.sics.kompics.ChannelFactory" title="se.sics.kompics.ChannelFactory"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ChannelFactory</span></code></a> to connect ports.</li>
+<li><strong>&lt;P&gt;</strong> – <a class="reference internal" href="../../../../../core/se/sics/kompics/PortType.html#se.sics.kompics.PortType" title="se.sics.kompics.PortType"><code class="xref java java-ref docutils literal notranslate"><span class="pre">PortType</span></code></a>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="create">
+<h3>create<a class="headerlink" href="#create" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.create(Class, Init)">
+public &lt;T extends ComponentDefinition&gt; <a class="reference internal" href="../../../../../core/se/sics/kompics/Component.html#se.sics.kompics.Component" title="se.sics.kompics.Component">Component</a> <code class="descname">create</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;T&gt;<em> componentDefinition</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Init.html#se.sics.kompics.Init" title="se.sics.kompics.Init">Init</a>&lt;T&gt;<em> init</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.create(Class, Init)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new component as a dependency.</p>
+<p>Modes - setup <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.HEADER" title="se.sics.kompics.testing.MODE.HEADER"><code class="xref java java-ref docutils literal notranslate"><span class="pre">HEADER</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>componentDefinition</strong> – <a class="reference internal" href="../../../../../core/se/sics/kompics/ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ComponentDefinition</span></code></a> class of dependency.</li>
+<li><strong>init</strong> – <a class="reference internal" href="../../../../../core/se/sics/kompics/Init.html#se.sics.kompics.Init" title="se.sics.kompics.Init"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Init</span></code></a> to instantiate componentDefinition</li>
+<li><strong>&lt;T&gt;</strong> – <a class="reference internal" href="../../../../../core/se/sics/kompics/ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ComponentDefinition</span></code></a> type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">created <a class="reference internal" href="../../../../../core/se/sics/kompics/Component.html#se.sics.kompics.Component" title="se.sics.kompics.Component"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Component</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id9">
+<h3>create<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.create(Class)">
+public &lt;T extends ComponentDefinition&gt; <a class="reference internal" href="../../../../../core/se/sics/kompics/Component.html#se.sics.kompics.Component" title="se.sics.kompics.Component">Component</a> <code class="descname">create</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;T&gt;<em> componentDefinition</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.create(Class)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equivalent to create(componentDefinition, Init.NONE)</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id10">
+<h3>create<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.create(Class, Init.None)">
+public &lt;T extends ComponentDefinition&gt; <a class="reference internal" href="../../../../../core/se/sics/kompics/Component.html#se.sics.kompics.Component" title="se.sics.kompics.Component">Component</a> <code class="descname">create</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;T&gt;<em> componentDefinition</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Init.html#se.sics.kompics.Init" title="se.sics.kompics.Init">Init</a>.<a class="reference internal" href="../../../../../core/se/sics/kompics/Init-None.html#se.sics.kompics.Init.None" title="se.sics.kompics.Init.None">None</a><em> init</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.create(Class, Init.None)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new component as a dependency.</p>
+<p>Modes - setup <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.HEADER" title="se.sics.kompics.testing.MODE.HEADER"><code class="xref java java-ref docutils literal notranslate"><span class="pre">HEADER</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>componentDefinition</strong> – <a class="reference internal" href="../../../../../core/se/sics/kompics/ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ComponentDefinition</span></code></a> class of dependency.</li>
+<li><strong>init</strong> – <a class="reference internal" href="../../../../../core/se/sics/kompics/Init.html#se.sics.kompics.Init" title="se.sics.kompics.Init"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Init</span></code></a> to instantiate componentDefinition</li>
+<li><strong>&lt;T&gt;</strong> – <a class="reference internal" href="../../../../../core/se/sics/kompics/ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ComponentDefinition</span></code></a> type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">created <a class="reference internal" href="../../../../../core/se/sics/kompics/Component.html#se.sics.kompics.Component" title="se.sics.kompics.Component"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Component</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="disallow">
+<h3>disallow<a class="headerlink" href="#disallow" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.disallow(KompicsEvent, Port, Direction)">
+public &lt;P extends PortType&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">disallow</code><span class="sig-paren">(</span><a class="reference internal" href="../../../../../core/se/sics/kompics/KompicsEvent.html#se.sics.kompics.KompicsEvent" title="se.sics.kompics.KompicsEvent">KompicsEvent</a><em> event</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;P&gt;<em> port</em>, <a class="reference internal" href="Direction.html#se.sics.kompics.testing.Direction" title="se.sics.kompics.testing.Direction">Direction</a><em> direction</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.disallow(KompicsEvent, Port, Direction)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Blacklist the specified event within the current block. This means that if an event matching the specified one occurs at any position within the block then the test case fails.</p>
+<p>Modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.HEADER" title="se.sics.kompics.testing.MODE.HEADER"><code class="xref java java-ref docutils literal notranslate"><span class="pre">HEADER</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>event</strong> – event to be matched against.</li>
+<li><strong>port</strong> – port on which the matched event should occur.</li>
+<li><strong>direction</strong> – Direction IN or OUT of the event.</li>
+<li><strong>&lt;P&gt;</strong> – port type.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id11">
+<h3>disallow<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.disallow(Class, Predicate, Port, Direction)">
+public &lt;E extends KompicsEvent, P extends PortType&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">disallow</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;E&gt;<em> eventType</em>, Predicate&lt;E&gt;<em> predicate</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;P&gt;<em> port</em>, <a class="reference internal" href="Direction.html#se.sics.kompics.testing.Direction" title="se.sics.kompics.testing.Direction">Direction</a><em> direction</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.disallow(Class, Predicate, Port, Direction)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to <a class="reference internal" href="#se.sics.kompics.testing.TestContext.disallow(Class, Port, Direction)" title="se.sics.kompics.testing.TestContext.disallow(Class, Port, Direction)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">disallow(KompicsEvent,Port,Direction)</span></code></a>. Matches events only if predicate returns true instead.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id12">
+<h3>disallow<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.disallow(Class, Port, Direction)">
+public &lt;E extends KompicsEvent, P extends PortType&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">disallow</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;E&gt;<em> eventType</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;P&gt;<em> port</em>, <a class="reference internal" href="Direction.html#se.sics.kompics.testing.Direction" title="se.sics.kompics.testing.Direction">Direction</a><em> direction</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.disallow(Class, Port, Direction)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to <a class="reference internal" href="#se.sics.kompics.testing.TestContext.disallow(Class, Port, Direction)" title="se.sics.kompics.testing.TestContext.disallow(Class, Port, Direction)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">disallow(KompicsEvent,Port,Direction)</span></code></a>. Matches event by class instead.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="drop">
+<h3>drop<a class="headerlink" href="#drop" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.drop(KompicsEvent, Port, Direction)">
+public &lt;P extends PortType&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">drop</code><span class="sig-paren">(</span><a class="reference internal" href="../../../../../core/se/sics/kompics/KompicsEvent.html#se.sics.kompics.KompicsEvent" title="se.sics.kompics.KompicsEvent">KompicsEvent</a><em> event</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;P&gt;<em> port</em>, <a class="reference internal" href="Direction.html#se.sics.kompics.testing.Direction" title="se.sics.kompics.testing.Direction">Direction</a><em> direction</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.drop(KompicsEvent, Port, Direction)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Drops the specified event within the current block. This means that if an event matching the specified one occurs at any position within the block then that message of that event is not forwarded to the recipient(s).</p>
+<p>Modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.HEADER" title="se.sics.kompics.testing.MODE.HEADER"><code class="xref java java-ref docutils literal notranslate"><span class="pre">HEADER</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>event</strong> – event to be matched against.</li>
+<li><strong>port</strong> – port on which the matched event should occur.</li>
+<li><strong>direction</strong> – Direction IN or OUT of the event.</li>
+<li><strong>&lt;P&gt;</strong> – port type.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id13">
+<h3>drop<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.drop(Class, Predicate, Port, Direction)">
+public &lt;E extends KompicsEvent, P extends PortType&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">drop</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;E&gt;<em> eventType</em>, Predicate&lt;E&gt;<em> predicate</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;P&gt;<em> port</em>, <a class="reference internal" href="Direction.html#se.sics.kompics.testing.Direction" title="se.sics.kompics.testing.Direction">Direction</a><em> direction</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.drop(Class, Predicate, Port, Direction)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to <a class="reference internal" href="#se.sics.kompics.testing.TestContext.drop(Class, Port, Direction)" title="se.sics.kompics.testing.TestContext.drop(Class, Port, Direction)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">drop(KompicsEvent,Port,Direction)</span></code></a>. Matches events only if predicate returns true instead.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id14">
+<h3>drop<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.drop(Class, Port, Direction)">
+public &lt;E extends KompicsEvent, P extends PortType&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">drop</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;E&gt;<em> eventType</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;P&gt;<em> port</em>, <a class="reference internal" href="Direction.html#se.sics.kompics.testing.Direction" title="se.sics.kompics.testing.Direction">Direction</a><em> direction</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.drop(Class, Port, Direction)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to <a class="reference internal" href="#se.sics.kompics.testing.TestContext.drop(Class, Port, Direction)" title="se.sics.kompics.testing.TestContext.drop(Class, Port, Direction)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">drop(KompicsEvent,Port,Direction)</span></code></a>. Matches events by class instead.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="either">
+<h3>either<a class="headerlink" href="#either" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.either()">
+public <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">either</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.either()" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enters a <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.CONDITIONAL" title="se.sics.kompics.testing.MODE.CONDITIONAL"><code class="xref java java-ref docutils literal notranslate"><span class="pre">CONDITIONAL</span></code></a> mode, and begins creating a new conditional. A conditional consists of <code class="docutils literal notranslate"><span class="pre">either()</span> <span class="pre">A</span> <span class="pre">or()</span> <span class="pre">B</span> <span class="pre">end()</span></code> of which only one of sequences of statements A or B is executed at runtime depending on the observed events. Conditionals can be nested. e.g <code class="docutils literal notranslate"><span class="pre">either()</span> <span class="pre">A</span> <span class="pre">either()</span> <span class="pre">C</span> <span class="pre">or()</span> <span class="pre">D</span> <span class="pre">end()</span> <span class="pre">or()</span> <span class="pre">B</span> <span class="pre">end()</span></code> is similar to the regular expression A(C|D)|B while <code class="docutils literal notranslate"><span class="pre">either()</span> <span class="pre">A</span> <span class="pre">or</span> <span class="pre">either()</span> <span class="pre">C</span> <span class="pre">or()</span> <span class="pre">D</span> <span class="pre">end</span> <span class="pre">()</span> <span class="pre">B</span> <span class="pre">end()</span></code> is similar to A | (C|D)B.</p>
+<p>Modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.BODY" title="se.sics.kompics.testing.MODE.BODY"><code class="xref java java-ref docutils literal notranslate"><span class="pre">BODY</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.CONDITIONAL" title="se.sics.kompics.testing.MODE.CONDITIONAL"><code class="xref java java-ref docutils literal notranslate"><span class="pre">CONDITIONAL</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="end">
+<h3>end<a class="headerlink" href="#end" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.end()">
+public <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">end</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.end()" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mark the end of a a <a class="reference internal" href="#se.sics.kompics.testing.TestContext.repeat()" title="se.sics.kompics.testing.TestContext.repeat()"><code class="xref java java-ref docutils literal notranslate"><span class="pre">repeat()</span></code></a>, <a class="reference internal" href="#se.sics.kompics.testing.TestContext.either()" title="se.sics.kompics.testing.TestContext.either()"><code class="xref java java-ref docutils literal notranslate"><span class="pre">either()</span></code></a>, <a class="reference internal" href="#se.sics.kompics.testing.TestContext.unordered()" title="se.sics.kompics.testing.TestContext.unordered()"><code class="xref java java-ref docutils literal notranslate"><span class="pre">unordered()</span></code></a>, <a class="reference internal" href="#se.sics.kompics.testing.TestContext.answerRequests()" title="se.sics.kompics.testing.TestContext.answerRequests()"><code class="xref java java-ref docutils literal notranslate"><span class="pre">answerRequests()</span></code></a>. Exits the current mode and restores the previous one.</p>
+<p>Modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.BODY" title="se.sics.kompics.testing.MODE.BODY"><code class="xref java java-ref docutils literal notranslate"><span class="pre">BODY</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.UNORDERED" title="se.sics.kompics.testing.MODE.UNORDERED"><code class="xref java java-ref docutils literal notranslate"><span class="pre">UNORDERED</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.ANSWER_REQUEST" title="se.sics.kompics.testing.MODE.ANSWER_REQUEST"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ANSWER_REQUEST</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.CONDITIONAL" title="se.sics.kompics.testing.MODE.CONDITIONAL"><code class="xref java java-ref docutils literal notranslate"><span class="pre">CONDITIONAL</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="expect">
+<h3>expect<a class="headerlink" href="#expect" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.expect(KompicsEvent, Port, Direction)">
+public &lt;P extends PortType&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">expect</code><span class="sig-paren">(</span><a class="reference internal" href="../../../../../core/se/sics/kompics/KompicsEvent.html#se.sics.kompics.KompicsEvent" title="se.sics.kompics.KompicsEvent">KompicsEvent</a><em> event</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;P&gt;<em> port</em>, <a class="reference internal" href="Direction.html#se.sics.kompics.testing.Direction" title="se.sics.kompics.testing.Direction">Direction</a><em> direction</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.expect(KompicsEvent, Port, Direction)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Match the occurrence of a single event going in or out of the component under test. Event equivalence is determined using a comparator provided via method <a class="reference internal" href="#se.sics.kompics.testing.TestContext.setComparator(Class, Comparator)" title="se.sics.kompics.testing.TestContext.setComparator(Class, Comparator)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">setComparator(Class,Comparator)</span></code></a>, otherwise it defaults to the <code class="xref java java-ref docutils literal notranslate"><span class="pre">Object.equals(Object)</span></code> method of event.</p>
+<p>Modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.BODY" title="se.sics.kompics.testing.MODE.BODY"><code class="xref java java-ref docutils literal notranslate"><span class="pre">BODY</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.UNORDERED" title="se.sics.kompics.testing.MODE.UNORDERED"><code class="xref java java-ref docutils literal notranslate"><span class="pre">UNORDERED</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.CONDITIONAL" title="se.sics.kompics.testing.MODE.CONDITIONAL"><code class="xref java java-ref docutils literal notranslate"><span class="pre">CONDITIONAL</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>event</strong> – Event message to be matched.</li>
+<li><strong>port</strong> – Port on which event should occur.</li>
+<li><strong>direction</strong> – Direction IN or OUT of expected event.</li>
+<li><strong>&lt;P&gt;</strong> – Port type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id15">
+<h3>expect<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.expect(Class, Predicate, Port, Direction)">
+public &lt;P extends PortType, E extends KompicsEvent&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">expect</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;E&gt;<em> eventType</em>, Predicate&lt;E&gt;<em> predicate</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;P&gt;<em> port</em>, <a class="reference internal" href="Direction.html#se.sics.kompics.testing.Direction" title="se.sics.kompics.testing.Direction">Direction</a><em> direction</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.expect(Class, Predicate, Port, Direction)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Match the occurrence of a single event going in or out of the component under test. The predicate returns true iff a specified event argument is expected.</p>
+<p>Modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.BODY" title="se.sics.kompics.testing.MODE.BODY"><code class="xref java java-ref docutils literal notranslate"><span class="pre">BODY</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.UNORDERED" title="se.sics.kompics.testing.MODE.UNORDERED"><code class="xref java java-ref docutils literal notranslate"><span class="pre">UNORDERED</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.CONDITIONAL" title="se.sics.kompics.testing.MODE.CONDITIONAL"><code class="xref java java-ref docutils literal notranslate"><span class="pre">CONDITIONAL</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>eventType</strong> – Class of expected event.</li>
+<li><strong>predicate</strong> – predicate that determines a matched event message.</li>
+<li><strong>port</strong> – port on which event should occur.</li>
+<li><strong>direction</strong> – Direction IN or OUT of expected event.</li>
+<li><strong>&lt;P&gt;</strong> – port type</li>
+<li><strong>&lt;E&gt;</strong> – Event type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id16">
+<h3>expect<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.expect(Class, Port, Direction)">
+public &lt;P extends PortType, E extends KompicsEvent&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">expect</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;E&gt;<em> eventType</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;P&gt;<em> port</em>, <a class="reference internal" href="Direction.html#se.sics.kompics.testing.Direction" title="se.sics.kompics.testing.Direction">Direction</a><em> direction</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.expect(Class, Port, Direction)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Match the occurrence of a single event of the specified class, going in or out of the component under test.</p>
+<p>Modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.BODY" title="se.sics.kompics.testing.MODE.BODY"><code class="xref java java-ref docutils literal notranslate"><span class="pre">BODY</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.UNORDERED" title="se.sics.kompics.testing.MODE.UNORDERED"><code class="xref java java-ref docutils literal notranslate"><span class="pre">UNORDERED</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.CONDITIONAL" title="se.sics.kompics.testing.MODE.CONDITIONAL"><code class="xref java java-ref docutils literal notranslate"><span class="pre">CONDITIONAL</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>eventType</strong> – Class of expected event.</li>
+<li><strong>port</strong> – port on which event should occur.</li>
+<li><strong>direction</strong> – Direction IN or OUT of expected event.</li>
+<li><strong>&lt;P&gt;</strong> – port type.</li>
+<li><strong>&lt;E&gt;</strong> – event type.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="expectfault">
+<h3>expectFault<a class="headerlink" href="#expectfault" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.expectFault(Class)">
+public <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">expectFault</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;? extends <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html" title="java.lang.Throwable">Throwable</a>&gt;<em> exceptionType</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.expectFault(Class)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verifies that an exception is thrown at the current position in execution. If no exception is thrown the test case fails.</p>
+<p>Modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.BODY" title="se.sics.kompics.testing.MODE.BODY"><code class="xref java java-ref docutils literal notranslate"><span class="pre">BODY</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.CONDITIONAL" title="se.sics.kompics.testing.MODE.CONDITIONAL"><code class="xref java java-ref docutils literal notranslate"><span class="pre">CONDITIONAL</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>exceptionType</strong> – class (or superclass) of expected exception</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id17">
+<h3>expectFault<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.expectFault(Predicate)">
+public <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">expectFault</code><span class="sig-paren">(</span>Predicate&lt;<a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html" title="java.lang.Throwable">Throwable</a>&gt;<em> exceptionPredicate</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.expectFault(Predicate)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to <a class="reference internal" href="#se.sics.kompics.testing.TestContext.expectFault(Class)" title="se.sics.kompics.testing.TestContext.expectFault(Class)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">expectFault(Class)</span></code></a>. Matches thrown exception by specified predicate.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getcomponentundertest">
+<h3>getComponentUnderTest<a class="headerlink" href="#getcomponentundertest" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.getComponentUnderTest()">
+public <a class="reference internal" href="../../../../../core/se/sics/kompics/Component.html#se.sics.kompics.Component" title="se.sics.kompics.Component">Component</a> <code class="descname">getComponentUnderTest</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.getComponentUnderTest()" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the created component under test.</p>
+<p>Modes - All.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">component under test.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="inspect">
+<h3>inspect<a class="headerlink" href="#inspect" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.inspect(Predicate)">
+public <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">inspect</code><span class="sig-paren">(</span>Predicate&lt;T&gt;<em> predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.inspect(Predicate)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inspect the internal state of a component. predicate is called by the framework with the <a class="reference internal" href="../../../../../core/se/sics/kompics/ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ComponentDefinition</span></code></a> as an argument. If the predicate returns false, the test case fails immediately.</p>
+<p>Modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.BODY" title="se.sics.kompics.testing.MODE.BODY"><code class="xref java java-ref docutils literal notranslate"><span class="pre">BODY</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.CONDITIONAL" title="se.sics.kompics.testing.MODE.CONDITIONAL"><code class="xref java java-ref docutils literal notranslate"><span class="pre">CONDITIONAL</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>predicate</strong> – inspect predicate</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="newinstance">
+<h3>newInstance<a class="headerlink" href="#newinstance" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.newInstance(Class, Init)">
+public static &lt;T extends ComponentDefinition&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">newInstance</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;T&gt;<em> componentDefinition</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Init.html#se.sics.kompics.Init" title="se.sics.kompics.Init">Init</a>&lt;T&gt;<em> init</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.newInstance(Class, Init)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a> for the specified <a class="reference internal" href="../../../../../core/se/sics/kompics/ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ComponentDefinition</span></code></a>. The init is used to instantiate <code class="docutils literal notranslate"><span class="pre">componentDefinition</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>componentDefinition</strong> – <a class="reference internal" href="../../../../../core/se/sics/kompics/ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ComponentDefinition</span></code></a> class</li>
+<li><strong>init</strong> – <a class="reference internal" href="../../../../../core/se/sics/kompics/Init.html#se.sics.kompics.Init" title="se.sics.kompics.Init"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Init</span></code></a> to instantiate componentDefinition</li>
+<li><strong>&lt;T&gt;</strong> – <code class="docutils literal notranslate"><span class="pre">componentDefinition</span></code> type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a new <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a> for the specified <a class="reference internal" href="../../../../../core/se/sics/kompics/ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ComponentDefinition</span></code></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id18">
+<h3>newInstance<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.newInstance(Class)">
+public static &lt;T extends ComponentDefinition&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">newInstance</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;T&gt;<em> componentDefinition</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.newInstance(Class)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equivalent to newInstance(componentDefinition, Init.NONE).</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id19">
+<h3>newInstance<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.newInstance(Class, Init.None)">
+public static &lt;T extends ComponentDefinition&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">newInstance</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;T&gt;<em> componentDefinition</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Init.html#se.sics.kompics.Init" title="se.sics.kompics.Init">Init</a>.<a class="reference internal" href="../../../../../core/se/sics/kompics/Init-None.html#se.sics.kompics.Init.None" title="se.sics.kompics.Init.None">None</a><em> init</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.newInstance(Class, Init.None)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a> for the specified <a class="reference internal" href="../../../../../core/se/sics/kompics/ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ComponentDefinition</span></code></a>. The init is used to instantiate <code class="docutils literal notranslate"><span class="pre">componentDefinition</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>componentDefinition</strong> – <a class="reference internal" href="../../../../../core/se/sics/kompics/ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ComponentDefinition</span></code></a> class</li>
+<li><strong>init</strong> – <a class="reference internal" href="../../../../../core/se/sics/kompics/Init-None.html#se.sics.kompics.Init.None" title="se.sics.kompics.Init.None"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.Init.None</span></code></a> to instantiate componentDefinition</li>
+<li><strong>&lt;T&gt;</strong> – <code class="docutils literal notranslate"><span class="pre">componentDefinition</span></code> type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a new <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a> for the specified <a class="reference internal" href="../../../../../core/se/sics/kompics/ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition"><code class="xref java java-ref docutils literal notranslate"><span class="pre">ComponentDefinition</span></code></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="or">
+<h3>or<a class="headerlink" href="#or" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.or()">
+public <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">or</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.or()" title="Permalink to this definition">¶</a></dt>
+<dd><p>Begins the ‘or’ sequence of a <a class="reference internal" href="#se.sics.kompics.testing.TestContext.either()" title="se.sics.kompics.testing.TestContext.either()"><code class="xref java java-ref docutils literal notranslate"><span class="pre">conditional</span> <span class="pre">statment</span></code></a>. Must be called exactly once for the current conditional statement.</p>
+<p>Modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.CONDITIONAL" title="se.sics.kompics.testing.MODE.CONDITIONAL"><code class="xref java java-ref docutils literal notranslate"><span class="pre">CONDITIONAL</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="repeat">
+<h3>repeat<a class="headerlink" href="#repeat" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.repeat(int)">
+public <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">repeat</code><span class="sig-paren">(</span>int<em> times</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.repeat(int)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enters <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.HEADER" title="se.sics.kompics.testing.MODE.HEADER"><code class="xref java java-ref docutils literal notranslate"><span class="pre">HEADER</span></code></a> mode and begins creating a block. The block matches a sequence the specified number of times.</p>
+<p>Modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.BODY" title="se.sics.kompics.testing.MODE.BODY"><code class="xref java java-ref docutils literal notranslate"><span class="pre">BODY</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.CONDITIONAL" title="se.sics.kompics.testing.MODE.CONDITIONAL"><code class="xref java java-ref docutils literal notranslate"><span class="pre">CONDITIONAL</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>times</strong> – number of times to match a sequence.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id20">
+<h3>repeat<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.repeat()">
+public <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">repeat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.repeat()" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enters <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.HEADER" title="se.sics.kompics.testing.MODE.HEADER"><code class="xref java java-ref docutils literal notranslate"><span class="pre">HEADER</span></code></a> mode and begins creating a block. The block matches a sequence zero or more times.</p>
+<p>Modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.BODY" title="se.sics.kompics.testing.MODE.BODY"><code class="xref java java-ref docutils literal notranslate"><span class="pre">BODY</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.CONDITIONAL" title="se.sics.kompics.testing.MODE.CONDITIONAL"><code class="xref java java-ref docutils literal notranslate"><span class="pre">CONDITIONAL</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id21">
+<h3>repeat<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.repeat(int, EntryFunction)">
+public <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">repeat</code><span class="sig-paren">(</span>int<em> times</em>, <a class="reference internal" href="EntryFunction.html#se.sics.kompics.testing.EntryFunction" title="se.sics.kompics.testing.EntryFunction">EntryFunction</a><em> entryFunction</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.repeat(int, EntryFunction)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enters <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.HEADER" title="se.sics.kompics.testing.MODE.HEADER"><code class="xref java java-ref docutils literal notranslate"><span class="pre">HEADER</span></code></a> mode and begins creating a block. The block matches a sequence the specified number of times. The entryFunction is executed at the beginning of every iteration of the block.</p>
+<p>Modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.BODY" title="se.sics.kompics.testing.MODE.BODY"><code class="xref java java-ref docutils literal notranslate"><span class="pre">BODY</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.CONDITIONAL" title="se.sics.kompics.testing.MODE.CONDITIONAL"><code class="xref java java-ref docutils literal notranslate"><span class="pre">CONDITIONAL</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>times</strong> – number of times to match a sequence.</li>
+<li><strong>entryFunction</strong> – <a class="reference internal" href="EntryFunction.html#se.sics.kompics.testing.EntryFunction" title="se.sics.kompics.testing.EntryFunction"><code class="xref java java-ref docutils literal notranslate"><span class="pre">EntryFunction</span></code></a> implementation to be called at the beginning of each iteration of the created block.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id22">
+<h3>repeat<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.repeat(EntryFunction)">
+public <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">repeat</code><span class="sig-paren">(</span><a class="reference internal" href="EntryFunction.html#se.sics.kompics.testing.EntryFunction" title="se.sics.kompics.testing.EntryFunction">EntryFunction</a><em> entryFunction</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.repeat(EntryFunction)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enters <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.HEADER" title="se.sics.kompics.testing.MODE.HEADER"><code class="xref java java-ref docutils literal notranslate"><span class="pre">HEADER</span></code></a> mode and begins creating a block. The block matches a sequence zero or more times. The entryFunction is executed at the beginning of every iteration of the block -</p>
+<p>Allowed modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.BODY" title="se.sics.kompics.testing.MODE.BODY"><code class="xref java java-ref docutils literal notranslate"><span class="pre">BODY</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.CONDITIONAL" title="se.sics.kompics.testing.MODE.CONDITIONAL"><code class="xref java java-ref docutils literal notranslate"><span class="pre">CONDITIONAL</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>entryFunction</strong> – <a class="reference internal" href="EntryFunction.html#se.sics.kompics.testing.EntryFunction" title="se.sics.kompics.testing.EntryFunction"><code class="xref java java-ref docutils literal notranslate"><span class="pre">EntryFunction</span></code></a> instance</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="setcomparator">
+<h3>setComparator<a class="headerlink" href="#setcomparator" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.setComparator(Class, Comparator)">
+public &lt;E extends KompicsEvent&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">setComparator</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;E&gt;<em> eventType</em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html" title="java.util.Comparator">Comparator</a>&lt;E&gt;<em> comparator</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.setComparator(Class, Comparator)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a comparator for comparing events of the specified class. The comparator is used for determining the equivalence of two messages of the same class. If no comparator is provided for that class, then the <code class="xref java java-ref docutils literal notranslate"><span class="pre">Object.equals(Object)</span></code> of that class is used.</p>
+<p>Modes - setup <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.HEADER" title="se.sics.kompics.testing.MODE.HEADER"><code class="xref java java-ref docutils literal notranslate"><span class="pre">HEADER</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>eventType</strong> – class of event.</li>
+<li><strong>comparator</strong> – comparator for eventType.</li>
+<li><strong>&lt;E&gt;</strong> – eventType.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="setdefaultaction">
+<h3>setDefaultAction<a class="headerlink" href="#setdefaultaction" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.setDefaultAction(Class, Function)">
+public &lt;E extends KompicsEvent&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">setDefaultAction</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;E&gt;<em> eventType</em>, Function&lt;E, <a class="reference internal" href="Action.html#se.sics.kompics.testing.Action" title="se.sics.kompics.testing.Action">Action</a>&gt;<em> function</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.setDefaultAction(Class, Function)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set policy for handling unmatched/unexpected/unspecified events. If such an event of class eventType is observed, then function is called with it as an argument. If the return value of function is <code class="docutils literal notranslate"><span class="pre">null</span></code> then the test case fails. Otherwise, an <a class="reference internal" href="Action.html#se.sics.kompics.testing.Action" title="se.sics.kompics.testing.Action"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Action</span></code></a> is returned determining whether to drop, whitelist or blacklist M.</p>
+<p>Modes - setup <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.HEADER" title="se.sics.kompics.testing.MODE.HEADER"><code class="xref java java-ref docutils literal notranslate"><span class="pre">HEADER</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>eventType</strong> – classes (and subclasses) of events to handle with function.</li>
+<li><strong>function</strong> – function to specify the taken action for an event.</li>
+<li><strong>&lt;E&gt;</strong> – eventType.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="settimeout">
+<h3>setTimeout<a class="headerlink" href="#settimeout" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.setTimeout(long)">
+public <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">setTimeout</code><span class="sig-paren">(</span>long<em> timeoutMS</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.setTimeout(long)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify timeout value to wait for an event to occur.</p>
+<p>Modes - first (initial) <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.HEADER" title="se.sics.kompics.testing.MODE.HEADER"><code class="xref java java-ref docutils literal notranslate"><span class="pre">HEADER</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>timeoutMS</strong> – timeout in milliseconds</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="trigger">
+<h3>trigger<a class="headerlink" href="#trigger" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.trigger(KompicsEvent, Port)">
+public &lt;P extends PortType&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">trigger</code><span class="sig-paren">(</span><a class="reference internal" href="../../../../../core/se/sics/kompics/KompicsEvent.html#se.sics.kompics.KompicsEvent" title="se.sics.kompics.KompicsEvent">KompicsEvent</a><em> event</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;P&gt;<em> port</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.trigger(KompicsEvent, Port)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trigger an event on the specified port.</p>
+<p>Modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.BODY" title="se.sics.kompics.testing.MODE.BODY"><code class="xref java java-ref docutils literal notranslate"><span class="pre">BODY</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.CONDITIONAL" title="se.sics.kompics.testing.MODE.CONDITIONAL"><code class="xref java java-ref docutils literal notranslate"><span class="pre">CONDITIONAL</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>event</strong> – event to be triggered.</li>
+<li><strong>port</strong> – port on which to trigger event.</li>
+<li><strong>&lt;P&gt;</strong> – port type.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id23">
+<h3>trigger<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.trigger(Future, Port)">
+public &lt;RQ extends KompicsEvent, RS extends KompicsEvent, P extends PortType&gt; <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">trigger</code><span class="sig-paren">(</span><a class="reference internal" href="Future.html#se.sics.kompics.testing.Future" title="se.sics.kompics.testing.Future">Future</a>&lt;RQ, RS&gt;<em> future</em>, <a class="reference internal" href="../../../../../core/se/sics/kompics/Port.html#se.sics.kompics.Port" title="se.sics.kompics.Port">Port</a>&lt;P&gt;<em> responsePort</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.trigger(Future, Port)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trigger the event provided by future as a response on specified port. The future must have been <a class="reference internal" href="Future.html#se.sics.kompics.testing.Future.set(RQ)" title="se.sics.kompics.testing.Future.set(RQ)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">set</span></code></a>in a previous call to <a class="reference internal" href="#se.sics.kompics.testing.TestContext.answerRequest(Class, Port, Future)" title="se.sics.kompics.testing.TestContext.answerRequest(Class, Port, Future)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">answerRequest(Class,Port,Future)</span></code></a>. The <a class="reference internal" href="Future.html#se.sics.kompics.testing.Future.get()" title="se.sics.kompics.testing.Future.get()"><code class="xref java java-ref docutils literal notranslate"><span class="pre">Future.get()</span></code></a> method is called to retrieve the triggered event.</p>
+<p>Modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.BODY" title="se.sics.kompics.testing.MODE.BODY"><code class="xref java java-ref docutils literal notranslate"><span class="pre">BODY</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.CONDITIONAL" title="se.sics.kompics.testing.MODE.CONDITIONAL"><code class="xref java java-ref docutils literal notranslate"><span class="pre">CONDITIONAL</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>responsePort</strong> – port on which event is triggered.</li>
+<li><strong>future</strong> – future providing event to be triggered.</li>
+<li><strong>&lt;RQ&gt;</strong> – request event type.</li>
+<li><strong>&lt;RS&gt;</strong> – response event type.</li>
+<li><strong>&lt;P&gt;</strong> – port type.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="unordered">
+<h3>unordered<a class="headerlink" href="#unordered" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.unordered()">
+public <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">unordered</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.unordered()" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equivalent to unordered(true).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id24">
+<h3>unordered<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.testing.TestContext.unordered(boolean)">
+public <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext">TestContext</a>&lt;T&gt; <code class="descname">unordered</code><span class="sig-paren">(</span>boolean<em> immediateResponse</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.testing.TestContext.unordered(boolean)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enters <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.UNORDERED" title="se.sics.kompics.testing.MODE.UNORDERED"><code class="xref java java-ref docutils literal notranslate"><span class="pre">MODE.UNORDERED</span></code></a>. Allowed method calls in this mode are:</p>
+<p><a class="reference internal" href="#se.sics.kompics.testing.TestContext.expect(Class, Port, Direction)" title="se.sics.kompics.testing.TestContext.expect(Class, Port, Direction)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">expect(KompicsEvent,Port,Direction)</span></code></a><a class="reference internal" href="#se.sics.kompics.testing.TestContext.expect(Class, Port, Direction)" title="se.sics.kompics.testing.TestContext.expect(Class, Port, Direction)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">expect(Class,Port,Direction)</span></code></a><a class="reference internal" href="#se.sics.kompics.testing.TestContext.expect(Class, Port, Direction)" title="se.sics.kompics.testing.TestContext.expect(Class, Port, Direction)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">expect(Class,Predicate,Port,Direction)</span></code></a><a class="reference internal" href="#se.sics.kompics.testing.TestContext.answerRequest(Class, Port, Future)" title="se.sics.kompics.testing.TestContext.answerRequest(Class, Port, Future)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">answerRequest(Class,Port,Future)</span></code></a><a class="reference internal" href="#se.sics.kompics.testing.TestContext.answerRequest(Class, Port, Future)" title="se.sics.kompics.testing.TestContext.answerRequest(Class, Port, Future)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">answerRequest(Class,Port,Function,Port)</span></code></a></p>
+<p>Match events in the order that they occur at runtime as opposed to their sequential specified order. When answering requests in this mode, setting immediateResponse to true causes each response event to be triggered as soon the request is matched, otherwise it is triggered when all requests have been matched. The immediateResponse flag has no effect when using <a class="reference internal" href="#se.sics.kompics.testing.TestContext.answerRequest(Class, Port, Future)" title="se.sics.kompics.testing.TestContext.answerRequest(Class, Port, Future)"><code class="xref java java-ref docutils literal notranslate"><span class="pre">answerRequest(Class,Port,Future)</span></code></a>.</p>
+<p>Modes - <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.BODY" title="se.sics.kompics.testing.MODE.BODY"><code class="xref java java-ref docutils literal notranslate"><span class="pre">BODY</span></code></a>, <a class="reference internal" href="MODE.html#se.sics.kompics.testing.MODE.CONDITIONAL" title="se.sics.kompics.testing.MODE.CONDITIONAL"><code class="xref java java-ref docutils literal notranslate"><span class="pre">CONDITIONAL</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>immediateResponse</strong> – <ul>
+<li>where applicable, respond to requests immediately(true) or when all events have been received(false).</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">current <a class="reference internal" href="#se.sics.kompics.testing.TestContext" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">TestContext</span></code></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,393 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DirectRequestResponseTest.Ponger &mdash; Kompics 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="DirectRequestResponseTest.Starver" href="DirectRequestResponseTest-Starver.html" />
+    <link rel="prev" title="DirectRequestResponseTest.Pinger" href="DirectRequestResponseTest-Pinger.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../../../../../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tutorial/index.html">Kompics Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../scala/index.html">Kompics Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../internals/index.html">Kompics Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../project/index.html">Project Information</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../modules.html">Javadoc</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../packages.html">Core</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="package-index.html">se.sics.kompics</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="BiDirectionalChannel.html">BiDirectionalChannel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BiDirectionalChannel-Factory.html">BiDirectionalChannel.Factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Channel.html">Channel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelCore.html">ChannelCore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelFactory.html">ChannelFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelRequestResponseTest.html">ChannelRequestResponseTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelRequestResponseTest-TestComponent1.html">ChannelRequestResponseTest.TestComponent1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelRequestResponseTest-TestComponent2.html">ChannelRequestResponseTest.TestComponent2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelRequestResponseTest-TestPort.html">ChannelRequestResponseTest.TestPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelRequestResponseTest-TestRequest.html">ChannelRequestResponseTest.TestRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelRequestResponseTest-TestResponse.html">ChannelRequestResponseTest.TestResponse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelRequestResponseTest-TestRoot1.html">ChannelRequestResponseTest.TestRoot1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelSelector.html">ChannelSelector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ChannelSelectorSet.html">ChannelSelectorSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ClassMatchedHandler.html">ClassMatchedHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest.html">CollectionPerformanceTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest-PerformanceTest.html">CollectionPerformanceTest.PerformanceTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest-TestEvent.html">CollectionPerformanceTest.TestEvent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest-TestEvent2.html">CollectionPerformanceTest.TestEvent2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest-TestEvent3.html">CollectionPerformanceTest.TestEvent3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest-TestEvent4.html">CollectionPerformanceTest.TestEvent4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest-TestEvent5.html">CollectionPerformanceTest.TestEvent5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionPerformanceTest-TimedTest.html">CollectionPerformanceTest.TimedTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Component.html">Component</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Component-State.html">Component.State</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ComponentCore.html">ComponentCore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ComponentDefinition.html">ComponentDefinition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ComponentProxy.html">ComponentProxy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConfigUpdateTest.html">ConfigUpdateTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConfigUpdateTest-Child.html">ConfigUpdateTest.Child</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConfigUpdateTest-Parent.html">ConfigUpdateTest.Parent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConfigUpdateTest-Updater.html">ConfigUpdateTest.Updater</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConfigurationException.html">ConfigurationException</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlPort.html">ControlPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CreateAndStartTest.html">CreateAndStartTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Direct.html">Direct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Direct-Request.html">Direct.Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Direct-Response.html">Direct.Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest.html">DirectRequestResponseTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest-Down.html">DirectRequestResponseTest.Down</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest-PPPort.html">DirectRequestResponseTest.PPPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest-Parent.html">DirectRequestResponseTest.Parent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest-Pinger.html">DirectRequestResponseTest.Pinger</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">DirectRequestResponseTest.Ponger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest-Starver.html">DirectRequestResponseTest.Starver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DirectRequestResponseTest-Up.html">DirectRequestResponseTest.Up</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Event.html">Event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Fault.html">Fault</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Fault-ResolveAction.html">Fault.ResolveAction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultHandler.html">FaultHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest.html">FaultTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest-ChildComponent.html">FaultTest.ChildComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest-FailingParent.html">FaultTest.FailingParent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest-GrandChildComponent.html">FaultTest.GrandChildComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest-ParentComponent.html">FaultTest.ParentComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest-TestError.html">FaultTest.TestError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest-TestEvent.html">FaultTest.TestEvent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FaultTest-TestPort.html">FaultTest.TestPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Handler.html">Handler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerRequestResponseTest.html">HandlerRequestResponseTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerRequestResponseTest-TestComponent1.html">HandlerRequestResponseTest.TestComponent1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerRequestResponseTest-TestComponent2.html">HandlerRequestResponseTest.TestComponent2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerRequestResponseTest-TestPort.html">HandlerRequestResponseTest.TestPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerRequestResponseTest-TestRequest.html">HandlerRequestResponseTest.TestRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerRequestResponseTest-TestResponse.html">HandlerRequestResponseTest.TestResponse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerRequestResponseTest-TestRoot1.html">HandlerRequestResponseTest.TestRoot1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerStore.html">HandlerStore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerStore-HandlerList.html">HandlerStore.HandlerList</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HandlerStore-MatchedHandlerList.html">HandlerStore.MatchedHandlerList</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Init.html">Init</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Init-None.html">Init.None</a></li>
+<li class="toctree-l4"><a class="reference internal" href="JavaComponent.html">JavaComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="JavaPort.html">JavaPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Kill.html">Kill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Killed.html">Killed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Kompics.html">Kompics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="KompicsEvent.html">KompicsEvent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="KompicsException.html">KompicsException</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoggingTest.html">LoggingTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoggingTest-LoggingComponent.html">LoggingTest.LoggingComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoopbackPort.html">LoopbackPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoopbackTest.html">LoopbackTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoopbackTest-TestComponent.html">LoopbackTest.TestComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoopbackTest-TestEvent.html">LoopbackTest.TestEvent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoopbackTest-TestPort.html">LoopbackTest.TestPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatchedHandler.html">MatchedHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest.html">MatcherTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest-CData.html">MatcherTest.CData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest-Data.html">MatcherTest.Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest-DataChild.html">MatcherTest.DataChild</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest-DataContainer.html">MatcherTest.DataContainer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest-DataParent.html">MatcherTest.DataParent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest-DataPort.html">MatcherTest.DataPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MatcherTest-FData.html">MatcherTest.FData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Negative.html">Negative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PatternExtractor.html">PatternExtractor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Port.html">Port</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PortCore.html">PortCore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PortType.html">PortType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Positive.html">Positive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Request.html">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RequestPathElement.html">RequestPathElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Response.html">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Scheduler.html">Scheduler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimpleChannel.html">SimpleChannel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SpinlockQueue.html">SpinlockQueue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Start.html">Start</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StartStopTest.html">StartStopTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StartStopTest-ForwarderComponent.html">StartStopTest.ForwarderComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StartStopTest-ResponderComponent.html">StartStopTest.ResponderComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StartStopTest-RootComponent.html">StartStopTest.RootComponent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StartStopTest-TestPort.html">StartStopTest.TestPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StartStopTest-TestReply.html">StartStopTest.TestReply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StartStopTest-TestRequest.html">StartStopTest.TestRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Started.html">Started</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Stop.html">Stop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Stopped.html">Stopped</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SubscribeTest.html">SubscribeTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SubscribeTest-TestEvent.html">SubscribeTest.TestEvent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SubscribeTest-TestPort.html">SubscribeTest.TestPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UniDirectionalChannel.html">UniDirectionalChannel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UniDirectionalChannel-Direction.html">UniDirectionalChannel.Direction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UniDirectionalChannel-Factory.html">UniDirectionalChannel.Factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Unsafe.html">Unsafe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Update.html">Update</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UpdateAction.html">UpdateAction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UpdateAction-Builder.html">UpdateAction.Builder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UpdateAction-Mapper.html">UpdateAction.Mapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UpdateAction-Propagation.html">UpdateAction.Propagation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="config/package-index.html">se.sics.kompics.config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scheduler/package-index.html">se.sics.kompics.scheduler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="util/package-index.html">se.sics.kompics.util</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../port-timer/packages.html">Timer Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../port-network/packages.html">Network Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../port-virtual-network/packages.html">Virtual Network Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../component-java-timer/packages.html">Java Timer Component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../component-netty-network/packages.html">Netty Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../simulator/packages.html">Simulator</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../modules.html">Javadoc</a> &raquo;</li>
+        
+          <li><a href="../../../packages.html">Core</a> &raquo;</li>
+        
+          <li><a href="package-index.html">se.sics.kompics</a> &raquo;</li>
+        
+      <li>DirectRequestResponseTest.Ponger</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../../_sources/javadoc/core/se/sics/kompics/DirectRequestResponseTest-Ponger.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="directrequestresponsetest-ponger">
+<h1>DirectRequestResponseTest.Ponger<a class="headerlink" href="#directrequestresponsetest-ponger" title="Permalink to this headline">¶</a></h1>
+<dl class="type">
+<dt id="se.sics.kompics.DirectRequestResponseTest.Ponger">
+public static class <code class="descname">Ponger</code> extends <a class="reference internal" href="ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition">ComponentDefinition</a><a class="headerlink" href="#se.sics.kompics.DirectRequestResponseTest.Ponger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="downhandler">
+<h3>downHandler<a class="headerlink" href="#downhandler" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.DirectRequestResponseTest.Ponger.downHandler">
+ <a class="reference internal" href="Handler.html#se.sics.kompics.Handler" title="se.sics.kompics.Handler">Handler</a>&lt;<a class="reference internal" href="DirectRequestResponseTest-Down.html#se.sics.kompics.DirectRequestResponseTest.Down" title="se.sics.kompics.DirectRequestResponseTest.Down">Down</a>&gt; <code class="descname">downHandler</code><a class="headerlink" href="#se.sics.kompics.DirectRequestResponseTest.Ponger.downHandler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="p">
+<h3>p<a class="headerlink" href="#p" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.DirectRequestResponseTest.Ponger.p">
+ <a class="reference internal" href="Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative">Negative</a>&lt;<a class="reference internal" href="DirectRequestResponseTest-PPPort.html#se.sics.kompics.DirectRequestResponseTest.PPPort" title="se.sics.kompics.DirectRequestResponseTest.PPPort">PPPort</a>&gt; <code class="descname">p</code><a class="headerlink" href="#se.sics.kompics.DirectRequestResponseTest.Ponger.p" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="DirectRequestResponseTest-Starver.html" class="btn btn-neutral float-right" title="DirectRequestResponseTest.Starver" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="DirectRequestResponseTest-Pinger.html" class="btn btn-neutral float-left" title="DirectRequestResponseTest.Pinger" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
