@@ -1,0 +1,411 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Core &mdash; Kompics 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="se.sics.kompics" href="se/sics/kompics/package-index.html" />
+    <link rel="prev" title="Javadoc" href="../modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Kompics Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scala/index.html">Kompics Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../internals/index.html">Kompics Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project/index.html">Project Information</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../modules.html">Javadoc</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Core</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="se/sics/kompics/package-index.html">se.sics.kompics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="se/sics/kompics/config/package-index.html">se.sics.kompics.config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="se/sics/kompics/scheduler/package-index.html">se.sics.kompics.scheduler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="se/sics/kompics/util/package-index.html">se.sics.kompics.util</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../port-timer/packages.html">Timer Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../port-network/packages.html">Network Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../port-virtual-network/packages.html">Virtual Network Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../component-java-timer/packages.html">Java Timer Component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../component-netty-network/packages.html">Netty Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simulator/packages.html">Simulator</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../modules.html">Javadoc</a> &raquo;</li>
+        
+      <li>Core</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/javadoc/core/packages.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="core">
+<h1>Core<a class="headerlink" href="#core" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="se/sics/kompics/package-index.html">se.sics.kompics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/BiDirectionalChannel.html">BiDirectionalChannel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/BiDirectionalChannel-Factory.html">BiDirectionalChannel.Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Channel.html">Channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/ChannelCore.html">ChannelCore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/ChannelFactory.html">ChannelFactory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/ChannelRequestResponseTest.html">ChannelRequestResponseTest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/ChannelRequestResponseTest-TestComponent1.html">ChannelRequestResponseTest.TestComponent1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/ChannelRequestResponseTest-TestComponent2.html">ChannelRequestResponseTest.TestComponent2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/ChannelRequestResponseTest-TestPort.html">ChannelRequestResponseTest.TestPort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/ChannelRequestResponseTest-TestRequest.html">ChannelRequestResponseTest.TestRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/ChannelRequestResponseTest-TestResponse.html">ChannelRequestResponseTest.TestResponse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/ChannelRequestResponseTest-TestRoot1.html">ChannelRequestResponseTest.TestRoot1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/ChannelSelector.html">ChannelSelector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/ChannelSelectorSet.html">ChannelSelectorSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/ClassMatchedHandler.html">ClassMatchedHandler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/CollectionPerformanceTest.html">CollectionPerformanceTest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/CollectionPerformanceTest-PerformanceTest.html">CollectionPerformanceTest.PerformanceTest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/CollectionPerformanceTest-TestEvent.html">CollectionPerformanceTest.TestEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/CollectionPerformanceTest-TestEvent2.html">CollectionPerformanceTest.TestEvent2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/CollectionPerformanceTest-TestEvent3.html">CollectionPerformanceTest.TestEvent3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/CollectionPerformanceTest-TestEvent4.html">CollectionPerformanceTest.TestEvent4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/CollectionPerformanceTest-TestEvent5.html">CollectionPerformanceTest.TestEvent5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/CollectionPerformanceTest-TimedTest.html">CollectionPerformanceTest.TimedTest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Component.html">Component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Component-State.html">Component.State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/ComponentCore.html">ComponentCore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/ComponentDefinition.html">ComponentDefinition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/ComponentProxy.html">ComponentProxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/ConfigUpdateTest.html">ConfigUpdateTest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/ConfigUpdateTest-Child.html">ConfigUpdateTest.Child</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/ConfigUpdateTest-Parent.html">ConfigUpdateTest.Parent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/ConfigUpdateTest-Updater.html">ConfigUpdateTest.Updater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/ConfigurationException.html">ConfigurationException</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/ControlPort.html">ControlPort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/CreateAndStartTest.html">CreateAndStartTest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Direct.html">Direct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Direct-Request.html">Direct.Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Direct-Response.html">Direct.Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/DirectRequestResponseTest.html">DirectRequestResponseTest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/DirectRequestResponseTest-Down.html">DirectRequestResponseTest.Down</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/DirectRequestResponseTest-PPPort.html">DirectRequestResponseTest.PPPort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/DirectRequestResponseTest-Parent.html">DirectRequestResponseTest.Parent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/DirectRequestResponseTest-Pinger.html">DirectRequestResponseTest.Pinger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/DirectRequestResponseTest-Ponger.html">DirectRequestResponseTest.Ponger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/DirectRequestResponseTest-Starver.html">DirectRequestResponseTest.Starver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/DirectRequestResponseTest-Up.html">DirectRequestResponseTest.Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Event.html">Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Fault.html">Fault</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Fault-ResolveAction.html">Fault.ResolveAction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/FaultHandler.html">FaultHandler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/FaultTest.html">FaultTest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/FaultTest-ChildComponent.html">FaultTest.ChildComponent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/FaultTest-FailingParent.html">FaultTest.FailingParent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/FaultTest-GrandChildComponent.html">FaultTest.GrandChildComponent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/FaultTest-ParentComponent.html">FaultTest.ParentComponent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/FaultTest-TestError.html">FaultTest.TestError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/FaultTest-TestEvent.html">FaultTest.TestEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/FaultTest-TestPort.html">FaultTest.TestPort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Handler.html">Handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/HandlerRequestResponseTest.html">HandlerRequestResponseTest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/HandlerRequestResponseTest-TestComponent1.html">HandlerRequestResponseTest.TestComponent1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/HandlerRequestResponseTest-TestComponent2.html">HandlerRequestResponseTest.TestComponent2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/HandlerRequestResponseTest-TestPort.html">HandlerRequestResponseTest.TestPort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/HandlerRequestResponseTest-TestRequest.html">HandlerRequestResponseTest.TestRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/HandlerRequestResponseTest-TestResponse.html">HandlerRequestResponseTest.TestResponse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/HandlerRequestResponseTest-TestRoot1.html">HandlerRequestResponseTest.TestRoot1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/HandlerStore.html">HandlerStore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/HandlerStore-HandlerList.html">HandlerStore.HandlerList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/HandlerStore-MatchedHandlerList.html">HandlerStore.MatchedHandlerList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Init.html">Init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Init-None.html">Init.None</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/JavaComponent.html">JavaComponent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/JavaPort.html">JavaPort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Kill.html">Kill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Killed.html">Killed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Kompics.html">Kompics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/KompicsEvent.html">KompicsEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/KompicsException.html">KompicsException</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/LoggingTest.html">LoggingTest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/LoggingTest-LoggingComponent.html">LoggingTest.LoggingComponent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/LoopbackPort.html">LoopbackPort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/LoopbackTest.html">LoopbackTest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/LoopbackTest-TestComponent.html">LoopbackTest.TestComponent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/LoopbackTest-TestEvent.html">LoopbackTest.TestEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/LoopbackTest-TestPort.html">LoopbackTest.TestPort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/MatchedHandler.html">MatchedHandler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/MatcherTest.html">MatcherTest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/MatcherTest-CData.html">MatcherTest.CData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/MatcherTest-Data.html">MatcherTest.Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/MatcherTest-DataChild.html">MatcherTest.DataChild</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/MatcherTest-DataContainer.html">MatcherTest.DataContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/MatcherTest-DataParent.html">MatcherTest.DataParent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/MatcherTest-DataPort.html">MatcherTest.DataPort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/MatcherTest-FData.html">MatcherTest.FData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Negative.html">Negative</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/PatternExtractor.html">PatternExtractor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Port.html">Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/PortCore.html">PortCore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/PortType.html">PortType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Positive.html">Positive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Request.html">Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/RequestPathElement.html">RequestPathElement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Response.html">Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Scheduler.html">Scheduler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/SimpleChannel.html">SimpleChannel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/SpinlockQueue.html">SpinlockQueue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Start.html">Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/StartStopTest.html">StartStopTest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/StartStopTest-ForwarderComponent.html">StartStopTest.ForwarderComponent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/StartStopTest-ResponderComponent.html">StartStopTest.ResponderComponent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/StartStopTest-RootComponent.html">StartStopTest.RootComponent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/StartStopTest-TestPort.html">StartStopTest.TestPort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/StartStopTest-TestReply.html">StartStopTest.TestReply</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/StartStopTest-TestRequest.html">StartStopTest.TestRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Started.html">Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Stop.html">Stop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Stopped.html">Stopped</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/SubscribeTest.html">SubscribeTest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/SubscribeTest-TestEvent.html">SubscribeTest.TestEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/SubscribeTest-TestPort.html">SubscribeTest.TestPort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/UniDirectionalChannel.html">UniDirectionalChannel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/UniDirectionalChannel-Direction.html">UniDirectionalChannel.Direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/UniDirectionalChannel-Factory.html">UniDirectionalChannel.Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Unsafe.html">Unsafe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/Update.html">Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/UpdateAction.html">UpdateAction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/UpdateAction-Builder.html">UpdateAction.Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/UpdateAction-Mapper.html">UpdateAction.Mapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/UpdateAction-Propagation.html">UpdateAction.Propagation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="se/sics/kompics/config/package-index.html">se.sics.kompics.config</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/config/BaselineConfig.html">BaselineConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/config/Cloner.html">Cloner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/config/Config.html">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/config/Config-Builder.html">Config.Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/config/Config-Builder-CVFactory.html">Config.Builder.CVFactory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/config/Config-Factory.html">Config.Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/config/Config-Impl.html">Config.Impl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/config/ConfigException.html">ConfigException</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/config/ConfigTest.html">ConfigTest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/config/ConfigUpdate.html">ConfigUpdate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/config/ConfigUpdate-Factory.html">ConfigUpdate.Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/config/ConfigUpdateFactory.html">ConfigUpdateFactory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/config/ConfigValue.html">ConfigValue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/config/ConfigValueException.html">ConfigValueException</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/config/ConfigValueFactory.html">ConfigValueFactory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/config/Conversions.html">Conversions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/config/Converter.html">Converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/config/TypesafeConfig.html">TypesafeConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/config/ValueMerger.html">ValueMerger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/config/ValueOptions.html">ValueOptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/config/ValueOptions-Copy.html">ValueOptions.Copy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="se/sics/kompics/scheduler/package-index.html">se.sics.kompics.scheduler</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/scheduler/ForkJoinScheduler.html">ForkJoinScheduler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/scheduler/ForkJoinScheduler-KompicsThreadFactory.html">ForkJoinScheduler.KompicsThreadFactory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/scheduler/ForkJoinScheduler-KompicsUncaughtExceptionHandler.html">ForkJoinScheduler.KompicsUncaughtExceptionHandler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/scheduler/ThreadPoolScheduler.html">ThreadPoolScheduler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/scheduler/ThreadPoolScheduler-KompicsThreadFactory.html">ThreadPoolScheduler.KompicsThreadFactory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/scheduler/WorkStealingScheduler.html">WorkStealingScheduler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/scheduler/Worker.html">Worker</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="se/sics/kompics/util/package-index.html">se.sics.kompics.util</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/util/ByteIdentifier.html">ByteIdentifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/util/Identifiable.html">Identifiable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/util/Identifier.html">Identifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se/sics/kompics/util/PatternExtractorHelper.html">PatternExtractorHelper</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="se/sics/kompics/package-index.html" class="btn btn-neutral float-right" title="se.sics.kompics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../modules.html" class="btn btn-neutral float-left" title="Javadoc" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

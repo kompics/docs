@@ -1,0 +1,472 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Kompics Basics &mdash; Kompics 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Timers" href="../timers/timers.html" />
+    <link rel="prev" title="Kompics Tutorial" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Kompics Tutorial</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Kompics Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#components">Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ports-and-events">Ports and Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#event-handlers">Event Handlers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#channels">Channels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kompics-runtime">Kompics Runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#component-state">Component State</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../timers/timers.html">Timers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking/index.html">Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simulation/index.html">Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scala/index.html">Kompics Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../internals/index.html">Kompics Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project/index.html">Project Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javadoc/modules.html">Javadoc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Kompics Tutorial</a> &raquo;</li>
+        
+      <li>Kompics Basics</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorial/basics/basics.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="kompics-basics">
+<span id="basics"></span><h1>Kompics Basics<a class="headerlink" href="#kompics-basics" title="Permalink to this headline">¶</a></h1>
+<p>This section of the tutorial will properly introduce the basic concepts in Kompics, namely <em>components</em>, <em>ports</em>, <em>handlers</em>, and <em>channels</em>.</p>
+<p>The example application is a simple <em>PingPong</em> application, with two components that send messages back and forth between them.</p>
+<div class="section" id="components">
+<h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
+<p>A <em>component</em> in Kompics is a stateful object that can be scheduled and can access its own state without need for synchronisation. Typically components encapsulate some kind of functionality, providing certain services and possibly requiring others. Components can also have <em>child</em> components <em>created</em> within and these <em>parent</em>-<em>child</em> relations form a supervision hierarchy tree.</p>
+<p>In Java terms, a component is a class that extends <a class="reference internal" href="../../javadoc/core/se/sics/kompics/ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.ComponentDefinition</span></code></a>. If a component needs any additional parameters upon creation, a constructor that takes an implementation of <a class="reference internal" href="../../javadoc/core/se/sics/kompics/Init.html#se.sics.kompics.Init" title="se.sics.kompics.Init"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.Init</span></code></a> can be used and the instance passed on creation. Otherwise simply pass <code class="docutils literal notranslate"><span class="pre">Init.NONE</span></code>.</p>
+<p>For this example we need three components, two to do the work, and a parent that handles setup:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pinger</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ponger</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Parent</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+        <span class="n">Component</span> <span class="n">pinger</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">Pinger</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Init</span><span class="o">.</span><span class="na">NONE</span><span class="o">);</span>
+        <span class="n">Component</span> <span class="n">ponger</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">Ponger</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Init</span><span class="o">.</span><span class="na">NONE</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ports-and-events">
+<h2>Ports and Events<a class="headerlink" href="#ports-and-events" title="Permalink to this headline">¶</a></h2>
+<p>A <em>port type</em> in Kompics is a bit like a service interface. It defines what kind of <em>events</em> (you may think of <em>messages</em>, although in Kompics we typically reserve that term for events that are addressable via the network) may pass through the port and in which direction. Events may be declared in a port type in either <em>indication</em> (<em>positive</em>) or <em>request</em> (<em>negative</em>) direction. In a similar fashion a component either <em>requires</em> or <em>provides</em> a <em>port</em> (think port type instance).</p>
+<p>The closest analogy to the Kompics terminology in this respect might be electric charge carriers and electrodes in some kind of conductive medium. Think of the events as charge carriers (indications carry positive charge, and requests carry negative charge). Every port has both an anode and a cathode side. If a component requires port <em>A</em> then inside the component you have access to <em>A</em>’s positive (cathode) side where indications (positive charge carriers) come out of, and outside the component you have access to <em>A</em> negative (anode) side where requests (negative charge carriers) come out of. Conversely if a component provides <em>A</em> then inside the component the negative (anode) side spits out requests (negative charge carriers) and the outside is positive (cathode) and indications (positive charge carriers) come out this way. In both cases the charge that isn’t going out is the one that’s going in.</p>
+<p>An alternativ analogy that is a bit more limited but usually easier to keep in mind is that of service providers and consumers. Consider a port <em>A</em> to be a service contract. A component that provides service <em>A</em> handles events that are specified as requests in <em>A</em> and sends out events that are specified as indications in <em>A</em>. Conversely a component that requires service <em>A</em> sends out events that are specified as requests in <em>A</em> and handles events that are specified as indications in <em>A</em> (thus are in a sense replies to its own requests).</p>
+<p>In Java terms an event is a class that implements <a class="reference internal" href="../../javadoc/core/se/sics/kompics/KompicsEvent.html#se.sics.kompics.KompicsEvent" title="se.sics.kompics.KompicsEvent"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.KompicsEvent</span></code></a> (which is only a marker interface with no required methods) and a port type is a singleton that extends <a class="reference internal" href="../../javadoc/core/se/sics/kompics/PortType.html#se.sics.kompics.PortType" title="se.sics.kompics.PortType"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.PortType</span></code></a> and registers its types on load. All port types are automatically instantiated when their classes get loaded. Port instances fall in the two categeories: Those that implement <a class="reference internal" href="../../javadoc/core/se/sics/kompics/Positive.html#se.sics.kompics.Positive" title="se.sics.kompics.Positive"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.Positive</span></code></a> of the port type (the result of a call to <code class="docutils literal notranslate"><span class="pre">requires</span></code>) and those that implement <a class="reference internal" href="../../javadoc/core/se/sics/kompics/Negative.html#se.sics.kompics.Negative" title="se.sics.kompics.Negative"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.Negative</span></code></a> of the port type (the result of a call to <code class="docutils literal notranslate"><span class="pre">provides</span></code>). Internally ports are binary linked with both a positive and a negative side.</p>
+<p>For this example we need two events and one port type:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ping</span> <span class="kd">implements</span> <span class="n">KompicsEvent</span> <span class="o">{</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pong</span> <span class="kd">implements</span> <span class="n">KompicsEvent</span> <span class="o">{</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PingPongPort</span> <span class="kd">extends</span> <span class="n">PortType</span> <span class="o">{{</span>
+        <span class="n">request</span><span class="o">(</span><span class="n">Ping</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+        <span class="n">indication</span><span class="o">(</span><span class="n">Pong</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+<span class="o">}}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is highly recommended to only write completely immutable events. Since Kompics will deliver the same event instance to all subscribed handlers in all connected components, writing mutable events can lead to some nasty and difficult to find bugs.
+For encapsulating collections in a safe manner, the reader is referred Google’s excellent <a class="reference external" href="https://github.com/google/guava/wiki">Guava</a> library (which is already a dependency of Kompics core anyway) and its immutable collection types.</p>
+</div>
+<p>We also want to add the ports to the two components such that <code class="docutils literal notranslate"><span class="pre">Pinger</span></code> sends <code class="docutils literal notranslate"><span class="pre">Ping</span></code>s and <code class="docutils literal notranslate"><span class="pre">Ponger</span></code> sends <code class="docutils literal notranslate"><span class="pre">Pong</span></code>s, which is hopefully somewhat intuitive:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pinger</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+        <span class="n">Positive</span><span class="o">&lt;</span><span class="n">PingPongPort</span><span class="o">&gt;</span> <span class="n">ppp</span> <span class="o">=</span> <span class="n">requires</span><span class="o">(</span><span class="n">PingPongPort</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ponger</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+        <span class="n">Negative</span><span class="o">&lt;</span><span class="n">PingPongPort</span><span class="o">&gt;</span> <span class="n">ppp</span> <span class="o">=</span> <span class="n">provides</span><span class="o">(</span><span class="n">PingPongPort</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="event-handlers">
+<span id="id1"></span><h2>Event Handlers<a class="headerlink" href="#event-handlers" title="Permalink to this headline">¶</a></h2>
+<p>In order for components to actually get scheduled and process events, a <em>handler</em> for a specific event type must be <em>subscribed</em> to a port that spits out that kind of event. If an event arrives at a component’s port and no handler is subscribed for its type, then the event is simply silently dropped.</p>
+<p>In Java terms the most common way of working with handlers is to assign an anonymous class that extends <a class="reference internal" href="../../javadoc/core/se/sics/kompics/Handler.html#se.sics.kompics.Handler" title="se.sics.kompics.Handler"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.Handler</span></code></a> of the desired event type to either a class field or a block variable and then call <code class="docutils literal notranslate"><span class="pre">subscribe</span></code> with that variable and the target port.</p>
+<p>In our example we want the <code class="docutils literal notranslate"><span class="pre">Pinger</span></code> to send the first <code class="docutils literal notranslate"><span class="pre">Ping</span></code> when it received the <code class="docutils literal notranslate"><span class="pre">Start</span></code> event (which we saw in the <a class="reference internal" href="../../introduction/helloworld.html#helloworld"><span class="std std-ref">Hello World in Kompics</span></a> example already), and then reply to every <code class="docutils literal notranslate"><span class="pre">Pong</span></code> event it receives with a new <code class="docutils literal notranslate"><span class="pre">Ping</span></code>. The <code class="docutils literal notranslate"><span class="pre">Ponger</span></code> simply waits for a <code class="docutils literal notranslate"><span class="pre">Ping</span></code> and replies with a <code class="docutils literal notranslate"><span class="pre">Pong</span></code>.
+We also print something so we can see it working on the console.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pinger</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+        <span class="n">Positive</span><span class="o">&lt;</span><span class="n">PingPongPort</span><span class="o">&gt;</span> <span class="n">ppp</span> <span class="o">=</span> <span class="n">requires</span><span class="o">(</span><span class="n">PingPongPort</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+        <span class="n">Handler</span><span class="o">&lt;</span><span class="n">Start</span><span class="o">&gt;</span> <span class="n">startHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Handler</span><span class="o">&lt;</span><span class="n">Start</span><span class="o">&gt;(){</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handle</span><span class="o">(</span><span class="n">Start</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">trigger</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(),</span> <span class="n">ppp</span><span class="o">);</span>
+                <span class="o">}</span>
+        <span class="o">};</span>
+        <span class="n">Handler</span><span class="o">&lt;</span><span class="n">Pong</span><span class="o">&gt;</span> <span class="n">pongHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Handler</span><span class="o">&lt;</span><span class="n">Pong</span><span class="o">&gt;(){</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handle</span><span class="o">(</span><span class="n">Pong</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Got a Pong!&quot;</span><span class="o">);</span>
+                        <span class="n">trigger</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(),</span> <span class="n">ppp</span><span class="o">);</span>
+                <span class="o">}</span>
+        <span class="o">};</span>
+        <span class="o">{</span>
+                <span class="n">subscribe</span><span class="o">(</span><span class="n">startHandler</span><span class="o">,</span> <span class="n">control</span><span class="o">);</span>
+                <span class="n">subscribe</span><span class="o">(</span><span class="n">pongHandler</span><span class="o">,</span> <span class="n">ppp</span><span class="o">);</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ponger</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+        <span class="n">Negative</span><span class="o">&lt;</span><span class="n">PingPongPort</span><span class="o">&gt;</span> <span class="n">ppp</span> <span class="o">=</span> <span class="n">provides</span><span class="o">(</span><span class="n">PingPongPort</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+        <span class="n">Handler</span><span class="o">&lt;</span><span class="n">Ping</span><span class="o">&gt;</span> <span class="n">pingHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Handler</span><span class="o">&lt;</span><span class="n">Ping</span><span class="o">&gt;(){</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handle</span><span class="o">(</span><span class="n">Ping</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Got a Ping!&quot;</span><span class="o">);</span>
+                        <span class="n">trigger</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(),</span> <span class="n">ppp</span><span class="o">);</span>
+                <span class="o">}</span>
+        <span class="o">};</span>
+        <span class="o">{</span>
+                <span class="n">subscribe</span><span class="o">(</span><span class="n">pingHandler</span><span class="o">,</span> <span class="n">ppp</span><span class="o">);</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="channels">
+<h2>Channels<a class="headerlink" href="#channels" title="Permalink to this headline">¶</a></h2>
+<p>Since normal events in Kompics are not addressed, we need to tell the system somehow where a triggered event is supposed to go. The method for this is by connecting <em>channels</em>. A single channel connects exactly two ports of opposite polarity (or direction, if you prefer). You can connect both ports that are inside and outside of a component. The normal way is to connect the outside of a required port of a component <em>A</em> to the outside of a required port of another component <em>B</em>. In this setup <em>B</em> provides the port’s service to <em>A</em>, so to speak. The alternative setup is to connect the inside of required port of <em>A</em> to the outside of a required port of <em>B</em> (remember that insides and outsides are of opposite types, so this actually works). This setup is called <em>chaining</em> and it has both <em>A</em> and <em>B</em> share the service of whatever component connects to the outside of <em>A</em>s port. Alternatively, <em>A</em> (or its parent) could pass on the outside of the port that <em>A</em> is connected to directly to <em>B</em>. This has the same effect, but is a bit more efficient (fewer method invocations while travelling along channel chains). However, it might also break abstraction in some cases. The decision of which method is appropriate under certain conditions is left up to the programmer.</p>
+<p>In Java channels are created with the <code class="docutils literal notranslate"><span class="pre">connect</span></code> method.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Parent</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+        <span class="n">Component</span> <span class="n">pinger</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">Pinger</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Init</span><span class="o">.</span><span class="na">NONE</span><span class="o">);</span>
+        <span class="n">Component</span> <span class="n">ponger</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">Ponger</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Init</span><span class="o">.</span><span class="na">NONE</span><span class="o">);</span>
+
+        <span class="o">{</span>
+                <span class="n">connect</span><span class="o">(</span><span class="n">pinger</span><span class="o">.</span><span class="na">getNegative</span><span class="o">(</span><span class="n">PingPongPort</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">ponger</span><span class="o">.</span><span class="na">getPositive</span><span class="o">(</span><span class="n">PingPongPort</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="kompics-runtime">
+<h2>Kompics Runtime<a class="headerlink" href="#kompics-runtime" title="Permalink to this headline">¶</a></h2>
+<p>The runtime itself is responsible for starting and stopping the scheduler and initialising the component hierarchy. The entry point to start Kompics is <code class="docutils literal notranslate"><span class="pre">Kompics.createAndStart</span></code> which comes in several variants for tuning and parameters. The most basic one simply takes the top-level component’s class.</p>
+<p>For our example we want to start Kompics with the <code class="docutils literal notranslate"><span class="pre">Parent</span></code> top-level component and since it would ping-pong forever on its own, we also want to stop it again after waiting for some time, say ten seconds:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">Kompics</span><span class="o">.</span><span class="na">createAndStart</span><span class="o">(</span><span class="n">Parent</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+                <span class="k">try</span> <span class="o">{</span>
+                        <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">10000</span><span class="o">);</span>
+                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="n">Kompics</span><span class="o">.</span><span class="na">shutdown</span><span class="o">();</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Now finally compile with:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">mvn</span> <span class="n">clean</span> <span class="n">compile</span>
+</pre></div>
+</div>
+<p>To run the project from within maven:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">mvn</span> <span class="n">exec</span><span class="o">:</span><span class="n">java</span> <span class="o">-</span><span class="n">Dexec</span><span class="o">.</span><span class="na">mainClass</span><span class="o">=</span><span class="s">&quot;se.sics.test.Main&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="component-state">
+<h2>Component State<a class="headerlink" href="#component-state" title="Permalink to this headline">¶</a></h2>
+<p>So far the Kompics components we used haven’t really used any state. To show a simple example we are going to introduce a <code class="docutils literal notranslate"><span class="pre">counter</span></code> variable in both <code class="docutils literal notranslate"><span class="pre">Pinger</span></code> and <code class="docutils literal notranslate"><span class="pre">Pinger</span></code> and print the sequence number of the current <code class="docutils literal notranslate"><span class="pre">Ping</span></code> or <code class="docutils literal notranslate"><span class="pre">Pong</span></code> to console. To show that this works correctly even in multi-threaded execution we’ll also add a second thread to the Kompics runtime. And since using <code class="docutils literal notranslate"><span class="pre">System.out.println</span></code> is not the nicest way, we’ll introduce <code class="docutils literal notranslate"><span class="pre">slf4j</span></code> loggers into both components.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Kompics</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">Kompics</span><span class="o">.</span><span class="na">createAndStart</span><span class="o">(</span><span class="n">Parent</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
+		<span class="k">try</span> <span class="o">{</span>
+			<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">10000</span><span class="o">);</span>
+		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+		<span class="o">}</span>
+		<span class="n">Kompics</span><span class="o">.</span><span class="na">shutdown</span><span class="o">();</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">se.sics.kompics.ComponentDefinition</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Positive</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Handler</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Start</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pinger</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+
+		<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">Pinger</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+		<span class="n">Positive</span><span class="o">&lt;</span><span class="n">PingPongPort</span><span class="o">&gt;</span> <span class="n">ppp</span> <span class="o">=</span> <span class="n">requires</span><span class="o">(</span><span class="n">PingPongPort</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+		<span class="kd">private</span> <span class="kt">long</span> <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+		<span class="n">Handler</span><span class="o">&lt;</span><span class="n">Start</span><span class="o">&gt;</span> <span class="n">startHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Handler</span><span class="o">&lt;</span><span class="n">Start</span><span class="o">&gt;(){</span>
+			<span class="kd">public</span> <span class="kt">void</span> <span class="nf">handle</span><span class="o">(</span><span class="n">Start</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+				<span class="n">trigger</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(),</span> <span class="n">ppp</span><span class="o">);</span>
+			<span class="o">}</span>
+		<span class="o">};</span>
+		<span class="n">Handler</span><span class="o">&lt;</span><span class="n">Pong</span><span class="o">&gt;</span> <span class="n">pongHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Handler</span><span class="o">&lt;</span><span class="n">Pong</span><span class="o">&gt;(){</span>
+			<span class="kd">public</span> <span class="kt">void</span> <span class="nf">handle</span><span class="o">(</span><span class="n">Pong</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+				<span class="n">counter</span><span class="o">++;</span>
+				<span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&quot;Got Pong #{}!&quot;</span><span class="o">,</span> <span class="n">counter</span><span class="o">);</span>
+				<span class="n">trigger</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(),</span> <span class="n">ppp</span><span class="o">);</span>
+			<span class="o">}</span>
+		<span class="o">};</span>
+		<span class="o">{</span>
+			<span class="n">subscribe</span><span class="o">(</span><span class="n">startHandler</span><span class="o">,</span> <span class="n">control</span><span class="o">);</span>
+			<span class="n">subscribe</span><span class="o">(</span><span class="n">pongHandler</span><span class="o">,</span> <span class="n">ppp</span><span class="o">);</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">se.sics.kompics.ComponentDefinition</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Negative</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Handler</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ponger</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+
+	<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">Ponger</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+	<span class="n">Negative</span><span class="o">&lt;</span><span class="n">PingPongPort</span><span class="o">&gt;</span> <span class="n">ppp</span> <span class="o">=</span> <span class="n">provides</span><span class="o">(</span><span class="n">PingPongPort</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+	<span class="kd">private</span> <span class="kt">long</span> <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+	<span class="n">Handler</span><span class="o">&lt;</span><span class="n">Ping</span><span class="o">&gt;</span> <span class="n">pingHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Handler</span><span class="o">&lt;</span><span class="n">Ping</span><span class="o">&gt;(){</span>
+		<span class="kd">public</span> <span class="kt">void</span> <span class="nf">handle</span><span class="o">(</span><span class="n">Ping</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">counter</span><span class="o">++;</span>
+			<span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&quot;Got Ping #{}!&quot;</span><span class="o">,</span> <span class="n">counter</span><span class="o">);</span>
+			<span class="n">trigger</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(),</span> <span class="n">ppp</span><span class="o">);</span>
+		<span class="o">}</span>
+	<span class="o">};</span>
+	<span class="o">{</span>
+		<span class="n">subscribe</span><span class="o">(</span><span class="n">pingHandler</span><span class="o">,</span> <span class="n">ppp</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Compile and run in the same way as before.</p>
+<p>The whole example project can be downloaded <a class="reference download internal" download="" href="../../_downloads/b671ad780f57482d6346ffc28e048fbc/pingpong.zip"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../timers/timers.html" class="btn btn-neutral float-right" title="Timers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="Kompics Tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,446 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ListeningStatus &mdash; Kompics 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../../" src="../../../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+    <link rel="next" title="ListeningStatus.Request" href="ListeningStatus-Request.html" />
+    <link rel="prev" title="Header" href="Header.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../../../../../../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../tutorial/index.html">Kompics Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../scala/index.html">Kompics Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../internals/index.html">Kompics Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../project/index.html">Project Information</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../modules.html">Javadoc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../../core/packages.html">Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../port-timer/packages.html">Timer Port</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../packages.html">Network Port</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="package-index.html">se.sics.kompics.network</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Address.html">Address</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConnectionStatus.html">ConnectionStatus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConnectionStatus-Dropped.html">ConnectionStatus.Dropped</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConnectionStatus-Established.html">ConnectionStatus.Established</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConnectionStatus-Requested.html">ConnectionStatus.Requested</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Header.html">Header</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ListeningStatus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ListeningStatus-Request.html">ListeningStatus.Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ListeningStatus-Response.html">ListeningStatus.Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MessageNotify.html">MessageNotify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MessageNotify-Req.html">MessageNotify.Req</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MessageNotify-Resp.html">MessageNotify.Resp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MessageNotify-State.html">MessageNotify.State</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Msg.html">Msg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Network.html">Network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NetworkControl.html">NetworkControl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NetworkException.html">NetworkException</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Transport.html">Transport</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="test/package-index.html">se.sics.kompics.network.test</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../port-virtual-network/packages.html">Virtual Network Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../component-java-timer/packages.html">Java Timer Component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../component-netty-network/packages.html">Netty Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../simulator/packages.html">Simulator</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../../modules.html">Javadoc</a> &raquo;</li>
+        
+          <li><a href="../../../../packages.html">Network Port</a> &raquo;</li>
+        
+          <li><a href="package-index.html">se.sics.kompics.network</a> &raquo;</li>
+        
+      <li>ListeningStatus</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../../../_sources/javadoc/port-network/se/sics/kompics/network/ListeningStatus.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="listeningstatus">
+<h1>ListeningStatus<a class="headerlink" href="#listeningstatus" title="Permalink to this headline">¶</a></h1>
+<dl class="type">
+<dt id="se.sics.kompics.network.ListeningStatus">
+public class <code class="descname">ListeningStatus</code> implements <a class="reference internal" href="../../../../../core/se/sics/kompics/KompicsEvent.html#se.sics.kompics.KompicsEvent" title="se.sics.kompics.KompicsEvent">KompicsEvent</a><a class="headerlink" href="#se.sics.kompics.network.ListeningStatus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indicates a status change or report of the listening sockets.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Lars Kroll &lt;<a class="reference external" href="mailto:lkroll&#37;&#52;&#48;kth&#46;se">lkroll<span>&#64;</span>kth<span>&#46;</span>se</a>&gt;</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="boundinterface">
+<h3>boundInterface<a class="headerlink" href="#boundinterface" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.ListeningStatus.boundInterface">
+public final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/net/InetAddress.html" title="java.net.InetAddress">InetAddress</a> <code class="descname">boundInterface</code><a class="headerlink" href="#se.sics.kompics.network.ListeningStatus.boundInterface" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="opensockets">
+<h3>openSockets<a class="headerlink" href="#opensockets" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.ListeningStatus.openSockets">
+public final ImmutableMap&lt;<a class="reference internal" href="Transport.html#se.sics.kompics.network.Transport" title="se.sics.kompics.network.Transport">Transport</a>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html" title="java.lang.Integer">Integer</a>&gt; <code class="descname">openSockets</code><a class="headerlink" href="#se.sics.kompics.network.ListeningStatus.openSockets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="publicinterface">
+<h3>publicInterface<a class="headerlink" href="#publicinterface" title="Permalink to this headline">¶</a></h3>
+<dl class="field">
+<dt id="se.sics.kompics.network.ListeningStatus.publicInterface">
+public final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/net/InetAddress.html" title="java.net.InetAddress">InetAddress</a> <code class="descname">publicInterface</code><a class="headerlink" href="#se.sics.kompics.network.ListeningStatus.publicInterface" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>ListeningStatus<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<dl class="constructor">
+<dt id="se.sics.kompics.network.ListeningStatus.ListeningStatus(ImmutableMap, InetAddress, InetAddress)">
+public <code class="descname">ListeningStatus</code><span class="sig-paren">(</span>ImmutableMap&lt;<a class="reference internal" href="Transport.html#se.sics.kompics.network.Transport" title="se.sics.kompics.network.Transport">Transport</a>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html" title="java.lang.Integer">Integer</a>&gt;<em> openSockets</em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/net/InetAddress.html" title="java.net.InetAddress">InetAddress</a><em> boundInterface</em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/net/InetAddress.html" title="java.net.InetAddress">InetAddress</a><em> publicInterface</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.network.ListeningStatus.ListeningStatus(ImmutableMap, InetAddress, InetAddress)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h3>ListeningStatus<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<dl class="constructor">
+<dt id="se.sics.kompics.network.ListeningStatus.ListeningStatus(Map, InetAddress, InetAddress)">
+public <code class="descname">ListeningStatus</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/Map.html" title="java.util.Map">Map</a>&lt;<a class="reference internal" href="Transport.html#se.sics.kompics.network.Transport" title="se.sics.kompics.network.Transport">Transport</a>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html" title="java.lang.Integer">Integer</a>&gt;<em> openSockets</em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/net/InetAddress.html" title="java.net.InetAddress">InetAddress</a><em> boundInterface</em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/net/InetAddress.html" title="java.net.InetAddress">InetAddress</a><em> publicInterface</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.network.ListeningStatus.ListeningStatus(Map, InetAddress, InetAddress)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="address">
+<h3>address<a class="headerlink" href="#address" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.network.ListeningStatus.address(Transport, Function)">
+public &lt;A extends Address&gt; <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/Optional.html" title="java.util.Optional">Optional</a>&lt;A&gt; <code class="descname">address</code><span class="sig-paren">(</span><a class="reference internal" href="Transport.html#se.sics.kompics.network.Transport" title="se.sics.kompics.network.Transport">Transport</a><em> proto</em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html" title="java.util.function.Function">Function</a>&lt;<a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/net/InetSocketAddress.html" title="java.net.InetSocketAddress">InetSocketAddress</a>, A&gt;<em> f</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.network.ListeningStatus.address(Transport, Function)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an address for the public interface and the given transport protocol.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>&lt;A&gt;</strong> – the address type to use</li>
+<li><strong>proto</strong> – the transport to use</li>
+<li><strong>f</strong> – a function mapping an <code class="docutils literal notranslate"><span class="pre">InetSocketAddress</span></code> to an instance of <code class="docutils literal notranslate"><span class="pre">A</span></code>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the created instance of <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="asresponse">
+<h3>asResponse<a class="headerlink" href="#asresponse" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.network.ListeningStatus.asResponse()">
+public <a class="reference internal" href="ListeningStatus-Response.html#se.sics.kompics.network.ListeningStatus.Response" title="se.sics.kompics.network.ListeningStatus.Response">Response</a> <code class="descname">asResponse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.network.ListeningStatus.asResponse()" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert this into an instance of <code class="docutils literal notranslate"><span class="pre">Response</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A <code class="docutils literal notranslate"><span class="pre">Response</span></code> containing <code class="docutils literal notranslate"><span class="pre">this</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="checkport">
+<h3>checkPort<a class="headerlink" href="#checkport" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.network.ListeningStatus.checkPort(Transport)">
+public <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/Optional.html" title="java.util.Optional">Optional</a>&lt;<a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html" title="java.lang.Integer">Integer</a>&gt; <code class="descname">checkPort</code><span class="sig-paren">(</span><a class="reference internal" href="Transport.html#se.sics.kompics.network.Transport" title="se.sics.kompics.network.Transport">Transport</a><em> proto</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.network.ListeningStatus.checkPort(Transport)" title="Permalink to this definition">¶</a></dt>
+<dd><p>The port where the current listening socket for the given protocol is bound, if any.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>proto</strong> – the protocol of the socket</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the current listening socket for that protocol or <code class="docutils literal notranslate"><span class="pre">Optional.absent()</span></code> if none is bound</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="getport">
+<h3>getPort<a class="headerlink" href="#getport" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.network.ListeningStatus.getPort(Transport)">
+public int <code class="descname">getPort</code><span class="sig-paren">(</span><a class="reference internal" href="Transport.html#se.sics.kompics.network.Transport" title="se.sics.kompics.network.Transport">Transport</a><em> proto</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.network.ListeningStatus.getPort(Transport)" title="Permalink to this definition">¶</a></dt>
+<dd><p>The port where the current listening socket for the given protocol is bound.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>proto</strong> – the protocol of the socket</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the current listening socket for that protocol or <code class="docutils literal notranslate"><span class="pre">null</span></code> if none is bound</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="request">
+<h3>request<a class="headerlink" href="#request" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.network.ListeningStatus.request()">
+public static <a class="reference internal" href="ListeningStatus-Request.html#se.sics.kompics.network.ListeningStatus.Request" title="se.sics.kompics.network.ListeningStatus.Request">Request</a> <code class="descname">request</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.network.ListeningStatus.request()" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a new <code class="docutils literal notranslate"><span class="pre">Request</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="socket">
+<h3>socket<a class="headerlink" href="#socket" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.network.ListeningStatus.socket(Transport)">
+public <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/Optional.html" title="java.util.Optional">Optional</a>&lt;<a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/net/InetSocketAddress.html" title="java.net.InetSocketAddress">InetSocketAddress</a>&gt; <code class="descname">socket</code><span class="sig-paren">(</span><a class="reference internal" href="Transport.html#se.sics.kompics.network.Transport" title="se.sics.kompics.network.Transport">Transport</a><em> proto</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.network.ListeningStatus.socket(Transport)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a socket address for the public interface and the given transport protocol.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>proto</strong> – the transport to use</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the socket address</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ListeningStatus-Request.html" class="btn btn-neutral float-right" title="ListeningStatus.Request" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Header.html" class="btn btn-neutral float-left" title="Header" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

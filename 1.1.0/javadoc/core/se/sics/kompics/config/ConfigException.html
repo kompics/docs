@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ConfigException &mdash; Kompics 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../../" src="../../../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+    <link rel="next" title="ConfigTest" href="ConfigTest.html" />
+    <link rel="prev" title="Config.Impl" href="Config-Impl.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../../../../../../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../tutorial/index.html">Kompics Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../scala/index.html">Kompics Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../internals/index.html">Kompics Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../project/index.html">Project Information</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../modules.html">Javadoc</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../packages.html">Core</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../package-index.html">se.sics.kompics</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="package-index.html">se.sics.kompics.config</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="BaselineConfig.html">BaselineConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Cloner.html">Cloner</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Config.html">Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Config-Builder.html">Config.Builder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Config-Builder-CVFactory.html">Config.Builder.CVFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Config-Factory.html">Config.Factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Config-Impl.html">Config.Impl</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ConfigException</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConfigTest.html">ConfigTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConfigUpdate.html">ConfigUpdate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConfigUpdate-Factory.html">ConfigUpdate.Factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConfigUpdateFactory.html">ConfigUpdateFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConfigValue.html">ConfigValue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConfigValueException.html">ConfigValueException</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConfigValueFactory.html">ConfigValueFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Conversions.html">Conversions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Converter.html">Converter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TypesafeConfig.html">TypesafeConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ValueMerger.html">ValueMerger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ValueOptions.html">ValueOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ValueOptions-Copy.html">ValueOptions.Copy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../scheduler/package-index.html">se.sics.kompics.scheduler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../util/package-index.html">se.sics.kompics.util</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../port-timer/packages.html">Timer Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../port-network/packages.html">Network Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../port-virtual-network/packages.html">Virtual Network Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../component-java-timer/packages.html">Java Timer Component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../component-netty-network/packages.html">Netty Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../simulator/packages.html">Simulator</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../../modules.html">Javadoc</a> &raquo;</li>
+        
+          <li><a href="../../../../packages.html">Core</a> &raquo;</li>
+        
+          <li><a href="package-index.html">se.sics.kompics.config</a> &raquo;</li>
+        
+      <li>ConfigException</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../../../_sources/javadoc/core/se/sics/kompics/config/ConfigException.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="configexception">
+<h1>ConfigException<a class="headerlink" href="#configexception" title="Permalink to this headline">¶</a></h1>
+<dl class="type">
+<dt id="se.sics.kompics.config.ConfigException">
+public class <code class="descname">ConfigException</code> extends <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/RuntimeException.html" title="java.lang.RuntimeException">RuntimeException</a><a class="headerlink" href="#se.sics.kompics.config.ConfigException" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Lars Kroll &lt;<a class="reference external" href="mailto:lkroll&#37;&#52;&#48;kth&#46;se">lkroll<span>&#64;</span>kth<span>&#46;</span>se</a>&gt;</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="section" id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>ConfigException<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<dl class="constructor">
+<dt id="se.sics.kompics.config.ConfigException.ConfigException(String)">
+ <code class="descname">ConfigException</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> msg</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.config.ConfigException.ConfigException(String)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ConfigTest.html" class="btn btn-neutral float-right" title="ConfigTest" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Config-Impl.html" class="btn btn-neutral float-left" title="Config.Impl" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,476 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SimulationScenario &mdash; Kompics 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../../" src="../../../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+    <link rel="next" title="SimulationScenario.Snapshot" href="SimulationScenario-Snapshot.html" />
+    <link rel="prev" title="se.sics.kompics.simulator" href="package-index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../../../../../../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../tutorial/index.html">Kompics Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../scala/index.html">Kompics Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../internals/index.html">Kompics Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../project/index.html">Project Information</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../modules.html">Javadoc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../../core/packages.html">Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../port-timer/packages.html">Timer Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../port-network/packages.html">Network Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../port-virtual-network/packages.html">Virtual Network Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../component-java-timer/packages.html">Java Timer Component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../component-netty-network/packages.html">Netty Network</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../packages.html">Simulator</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="package-index.html">se.sics.kompics.simulator</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">SimulationScenario</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimulationScenario-Snapshot.html">SimulationScenario.Snapshot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimulationScenario-StochasticProcess.html">SimulationScenario.StochasticProcess</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="adaptor/package-index.html">se.sics.kompics.simulator.adaptor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adaptor/distributions/package-index.html">se.sics.kompics.simulator.adaptor.distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adaptor/distributions/extra/package-index.html">se.sics.kompics.simulator.adaptor.distributions.extra</a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/package-index.html">se.sics.kompics.simulator.core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/impl/package-index.html">se.sics.kompics.simulator.core.impl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="events/package-index.html">se.sics.kompics.simulator.events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="events/system/package-index.html">se.sics.kompics.simulator.events.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/basic/package-index.html">se.sics.kompics.simulator.examples.basic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/basic/sim/package-index.html">se.sics.kompics.simulator.examples.basic.sim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/config/package-index.html">se.sics.kompics.simulator.examples.config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/config/sim/package-index.html">se.sics.kompics.simulator.examples.config.sim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/networkModel/package-index.html">se.sics.kompics.simulator.examples.networkModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/networkModel/sim/package-index.html">se.sics.kompics.simulator.examples.networkModel.sim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/util/package-index.html">se.sics.kompics.simulator.examples.util</a></li>
+<li class="toctree-l3"><a class="reference internal" href="instrumentation/package-index.html">se.sics.kompics.simulator.instrumentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="network/package-index.html">se.sics.kompics.simulator.network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="network/identifier/package-index.html">se.sics.kompics.simulator.network.identifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="network/identifier/impl/package-index.html">se.sics.kompics.simulator.network.identifier.impl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="network/impl/package-index.html">se.sics.kompics.simulator.network.impl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="result/package-index.html">se.sics.kompics.simulator.result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run/package-index.html">se.sics.kompics.simulator.run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scheduler/package-index.html">se.sics.kompics.simulator.scheduler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stochastic/events/package-index.html">se.sics.kompics.simulator.stochastic.events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="util/package-index.html">se.sics.kompics.simulator.util</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../../modules.html">Javadoc</a> &raquo;</li>
+        
+          <li><a href="../../../../packages.html">Simulator</a> &raquo;</li>
+        
+          <li><a href="package-index.html">se.sics.kompics.simulator</a> &raquo;</li>
+        
+      <li>SimulationScenario</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../../../_sources/javadoc/simulator/se/sics/kompics/simulator/SimulationScenario.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="simulationscenario">
+<h1>SimulationScenario<a class="headerlink" href="#simulationscenario" title="Permalink to this headline">¶</a></h1>
+<dl class="type">
+<dt id="se.sics.kompics.simulator.SimulationScenario">
+public abstract class <code class="descname">SimulationScenario</code> implements <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html" title="java.io.Serializable">Serializable</a><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">SimulationScenario</span></code> class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Cosmin Arad</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="section" id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>SimulationScenario<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<dl class="constructor">
+<dt id="se.sics.kompics.simulator.SimulationScenario.SimulationScenario()">
+public <code class="descname">SimulationScenario</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.SimulationScenario()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="constant">
+<h3>constant<a class="headerlink" href="#constant" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.constant(double)">
+protected final <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;<a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Double.html" title="java.lang.Double">Double</a>&gt; <code class="descname">constant</code><span class="sig-paren">(</span>double<em> value</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.constant(double)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h3>constant<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.constant(long)">
+protected final <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;<a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Long.html" title="java.lang.Long">Long</a>&gt; <code class="descname">constant</code><span class="sig-paren">(</span>long<em> value</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.constant(long)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h3>constant<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.constant(BigInteger)">
+protected final <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;<a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html" title="java.math.BigInteger">BigInteger</a>&gt; <code class="descname">constant</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html" title="java.math.BigInteger">BigInteger</a><em> value</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.constant(BigInteger)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="exponential">
+<h3>exponential<a class="headerlink" href="#exponential" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.exponential(double)">
+protected final <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;<a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Double.html" title="java.lang.Double">Double</a>&gt; <code class="descname">exponential</code><span class="sig-paren">(</span>double<em> mean</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.exponential(double)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id4">
+<h3>exponential<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.exponential(long)">
+protected final <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;<a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Long.html" title="java.lang.Long">Long</a>&gt; <code class="descname">exponential</code><span class="sig-paren">(</span>long<em> mean</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.exponential(long)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id5">
+<h3>exponential<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.exponential(BigInteger)">
+protected final <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;<a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html" title="java.math.BigInteger">BigInteger</a>&gt; <code class="descname">exponential</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html" title="java.math.BigInteger">BigInteger</a><em> mean</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.exponential(BigInteger)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="generateeventlist">
+<h3>generateEventList<a class="headerlink" href="#generateeventlist" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.generateEventList()">
+public final <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html" title="java.util.LinkedList">LinkedList</a>&lt;<a class="reference internal" href="stochastic/events/StochasticSimulatorEvent.html#se.sics.kompics.simulator.stochastic.events.StochasticSimulatorEvent" title="se.sics.kompics.simulator.stochastic.events.StochasticSimulatorEvent">StochasticSimulatorEvent</a>&gt; <code class="descname">generateEventList</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.generateEventList()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="getrandom">
+<h3>getRandom<a class="headerlink" href="#getrandom" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.getRandom()">
+public static <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/Random.html" title="java.util.Random">Random</a> <code class="descname">getRandom</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.getRandom()" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="load">
+<h3>load<a class="headerlink" href="#load" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.load(String)">
+public static <a class="reference internal" href="#se.sics.kompics.simulator.SimulationScenario" title="se.sics.kompics.simulator.SimulationScenario">SimulationScenario</a> <code class="descname">load</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html" title="java.lang.String">String</a><em> scenarioFile</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.load(String)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="normal">
+<h3>normal<a class="headerlink" href="#normal" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.normal(double, double)">
+protected final <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;<a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Double.html" title="java.lang.Double">Double</a>&gt; <code class="descname">normal</code><span class="sig-paren">(</span>double<em> mean</em>, double<em> variance</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.normal(double, double)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id6">
+<h3>normal<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.normal(long, long)">
+protected final <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;<a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Long.html" title="java.lang.Long">Long</a>&gt; <code class="descname">normal</code><span class="sig-paren">(</span>long<em> mean</em>, long<em> variance</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.normal(long, long)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id7">
+<h3>normal<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.normal(BigInteger, BigInteger)">
+protected final <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;<a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html" title="java.math.BigInteger">BigInteger</a>&gt; <code class="descname">normal</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html" title="java.math.BigInteger">BigInteger</a><em> mean</em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html" title="java.math.BigInteger">BigInteger</a><em> variance</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.normal(BigInteger, BigInteger)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="setseed">
+<h3>setSeed<a class="headerlink" href="#setseed" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.setSeed(long)">
+public static void <code class="descname">setSeed</code><span class="sig-paren">(</span>long<em> seed</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.setSeed(long)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="simulate">
+<h3>simulate<a class="headerlink" href="#simulate" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.simulate(Class)">
+public final void <code class="descname">simulate</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;? extends <a class="reference internal" href="../../../../../core/se/sics/kompics/ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition">ComponentDefinition</a>&gt;<em> main</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.simulate(Class)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id8">
+<h3>simulate<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.simulate(Class, boolean)">
+public final void <code class="descname">simulate</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;? extends <a class="reference internal" href="../../../../../core/se/sics/kompics/ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition">ComponentDefinition</a>&gt;<em> main</em>, boolean<em> allowThreads</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.simulate(Class, boolean)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id9">
+<h3>simulate<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.simulate(Class, Translator)">
+public final void <code class="descname">simulate</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" title="java.lang.Class">Class</a>&lt;? extends <a class="reference internal" href="../../../../../core/se/sics/kompics/ComponentDefinition.html#se.sics.kompics.ComponentDefinition" title="se.sics.kompics.ComponentDefinition">ComponentDefinition</a>&gt;<em> main</em>, Translator<em> t</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.simulate(Class, Translator)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="snapshot">
+<h3>snapshot<a class="headerlink" href="#snapshot" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.snapshot(TakeSnapshot)">
+protected final <a class="reference internal" href="SimulationScenario-Snapshot.html#se.sics.kompics.simulator.SimulationScenario.Snapshot" title="se.sics.kompics.simulator.SimulationScenario.Snapshot">Snapshot</a> <code class="descname">snapshot</code><span class="sig-paren">(</span><a class="reference internal" href="events/TakeSnapshot.html#se.sics.kompics.simulator.events.TakeSnapshot" title="se.sics.kompics.simulator.events.TakeSnapshot">TakeSnapshot</a><em> takeSnapshotEvent</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.snapshot(TakeSnapshot)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="terminateafterterminationof">
+<h3>terminateAfterTerminationOf<a class="headerlink" href="#terminateafterterminationof" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.terminateAfterTerminationOf(long, StochasticProcess)">
+protected final void <code class="descname">terminateAfterTerminationOf</code><span class="sig-paren">(</span>long<em> delay</em>, <a class="reference internal" href="SimulationScenario-StochasticProcess.html#se.sics.kompics.simulator.SimulationScenario.StochasticProcess" title="se.sics.kompics.simulator.SimulationScenario.StochasticProcess">StochasticProcess</a>...<em> process</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.terminateAfterTerminationOf(long, StochasticProcess)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="terminateat">
+<h3>terminateAt<a class="headerlink" href="#terminateat" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.terminateAt(long)">
+protected final void <code class="descname">terminateAt</code><span class="sig-paren">(</span>long<em> time</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.terminateAt(long)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="uniform">
+<h3>uniform<a class="headerlink" href="#uniform" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.uniform(double, double)">
+protected final <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;<a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Double.html" title="java.lang.Double">Double</a>&gt; <code class="descname">uniform</code><span class="sig-paren">(</span>double<em> min</em>, double<em> max</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.uniform(double, double)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id10">
+<h3>uniform<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.uniform(long, long)">
+protected final <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;<a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Long.html" title="java.lang.Long">Long</a>&gt; <code class="descname">uniform</code><span class="sig-paren">(</span>long<em> min</em>, long<em> max</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.uniform(long, long)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id11">
+<h3>uniform<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.uniform(BigInteger, BigInteger)">
+protected final <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;<a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html" title="java.math.BigInteger">BigInteger</a>&gt; <code class="descname">uniform</code><span class="sig-paren">(</span><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html" title="java.math.BigInteger">BigInteger</a><em> min</em>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html" title="java.math.BigInteger">BigInteger</a><em> max</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.uniform(BigInteger, BigInteger)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id12">
+<h3>uniform<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="se.sics.kompics.simulator.SimulationScenario.uniform(int)">
+protected final <a class="reference internal" href="adaptor/distributions/Distribution.html#se.sics.kompics.simulator.adaptor.distributions.Distribution" title="se.sics.kompics.simulator.adaptor.distributions.Distribution">Distribution</a>&lt;<a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html" title="java.math.BigInteger">BigInteger</a>&gt; <code class="descname">uniform</code><span class="sig-paren">(</span>int<em> numBits</em><span class="sig-paren">)</span><a class="headerlink" href="#se.sics.kompics.simulator.SimulationScenario.uniform(int)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="SimulationScenario-Snapshot.html" class="btn btn-neutral float-right" title="SimulationScenario.Snapshot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="package-index.html" class="btn btn-neutral float-left" title="se.sics.kompics.simulator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,402 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Answering Requests &mdash; Kompics 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Kompics Scala" href="../../../scala/index.html" />
+    <link rel="prev" title="Testing Basics" href="../basics/basics.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../../../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Kompics Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basics/basics.html">Kompics Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../timers/timers.html">Timers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../networking/index.html">Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../simulation/index.html">Simulation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Testing</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../basics/basics.html">Testing Basics</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Answering Requests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#answering-requests-immediately">Answering Requests Immediately</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#answering-requests-after-a-while">Answering Requests After a While</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#answering-requests-in-any-order">Answering Requests In any Order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#answering-requests-in-the-future">Answering Requests In the Future</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scala/index.html">Kompics Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../internals/index.html">Kompics Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../project/index.html">Project Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../javadoc/modules.html">Javadoc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Kompics Tutorial</a> &raquo;</li>
+        
+          <li><a href="../index.html">Testing</a> &raquo;</li>
+        
+      <li>Answering Requests</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/tutorial/testing/answering_requests/answering_requests.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="answering-requests">
+<span id="id1"></span><h1>Answering Requests<a class="headerlink" href="#answering-requests" title="Permalink to this headline">¶</a></h1>
+<p>So far in our examples, we have used some form of a request-response pattern where we verify that the <code class="docutils literal notranslate"><span class="pre">Pinger</span></code> sends a <code class="docutils literal notranslate"><span class="pre">Ping</span></code> request with some <code class="docutils literal notranslate"><span class="pre">ìd</span></code> and the <code class="docutils literal notranslate"><span class="pre">Ponger</span></code> responds with a <code class="docutils literal notranslate"><span class="pre">Pong</span></code> of the same <code class="docutils literal notranslate"><span class="pre">id</span></code>.
+Since we know the value of <code class="docutils literal notranslate"><span class="pre">id</span></code> that each ping-pong exchange should agree on, we could easily specify matchings for them - e.g using the <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Ping(8)</span></code> or an equivalent <code class="docutils literal notranslate"><span class="pre">matchesPing8</span></code> predicate).
+However, in some cases, the <code class="docutils literal notranslate"><span class="pre">id</span></code> might be some randomly generated value, in which case we can not accurately specify matchings for the request and response events (we could match by class but that doesn’t tell us much).
+Kompics offers some constructs for supporting a specialized instance of such scenarios - where request events go out of the CUT and response events come into it.
+Here, instead of a dependency component, you provide a response for outgoing requests.</p>
+<p>For the examples in this section we change our <code class="docutils literal notranslate"><span class="pre">Pinger</span></code> component definition to the following. It triggers three <code class="docutils literal notranslate"><span class="pre">Ping</span></code> events with <code class="docutils literal notranslate"><span class="pre">id</span></code> s 1-3 on start.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.ComponentDefinition</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Handler</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Positive</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Start</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pinger</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">pongsReceived</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="n">Positive</span><span class="o">&lt;</span><span class="n">PingPongPort</span><span class="o">&gt;</span> <span class="n">ppp</span> <span class="o">=</span> <span class="n">requires</span><span class="o">(</span><span class="n">PingPongPort</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+        <span class="n">Handler</span><span class="o">&lt;</span><span class="n">Start</span><span class="o">&gt;</span> <span class="n">startHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Handler</span><span class="o">&lt;</span><span class="n">Start</span><span class="o">&gt;(){</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handle</span><span class="o">(</span><span class="n">Start</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+                  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+                    <span class="n">trigger</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(</span><span class="n">i</span><span class="o">),</span> <span class="n">ppp</span><span class="o">);</span>
+                  <span class="o">}</span>
+                <span class="o">}</span>
+        <span class="o">};</span>
+        <span class="n">Handler</span><span class="o">&lt;</span><span class="n">Pong</span><span class="o">&gt;</span> <span class="n">pongHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Handler</span><span class="o">&lt;</span><span class="n">Pong</span><span class="o">&gt;()</span> <span class="o">{</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handle</span><span class="o">(</span><span class="n">Pong</span> <span class="n">pong</span><span class="o">)</span> <span class="o">{</span>
+                  <span class="n">pongsReceived</span><span class="o">++;</span>
+                <span class="o">}</span>
+        <span class="o">};</span>
+        <span class="o">{</span>
+                <span class="n">subscribe</span><span class="o">(</span><span class="n">startHandler</span><span class="o">,</span> <span class="n">control</span><span class="o">);</span>
+                <span class="n">subscribe</span><span class="o">(</span><span class="n">pongHandler</span><span class="o">,</span> <span class="n">ppp</span><span class="o">);</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="section" id="answering-requests-immediately">
+<h2>Answering Requests Immediately<a class="headerlink" href="#answering-requests-immediately" title="Permalink to this headline">¶</a></h2>
+<p>The first construct is the <code class="docutils literal notranslate"><span class="pre">answerRequest</span></code> statement that matches an outgoing event of a specified class by calling a provided <code class="xref java java-ref docutils literal notranslate"><span class="pre">com.google.common.base.Function&lt;RQ,</span> <span class="pre">RS&gt;</span></code> instance (called the mapper) with an observed event as argument.
+The mapper contains your logic for verifying that the event is indeed the expected request event and returns a response event in that case otherwise <code class="docutils literal notranslate"><span class="pre">null</span></code> is returned.
+The framework immediately triggers the response event on a specified port, presumably as an incoming event to the CUT.</p>
+<p>The following example shows a test case matching the three triggered events of our new component under test <code class="docutils literal notranslate"><span class="pre">Pinger</span></code>.
+Here we treat <code class="docutils literal notranslate"><span class="pre">Ping</span></code> 1 and 3 as requests, triggering the response provided by our <code class="docutils literal notranslate"><span class="pre">pingToPongMapper</span></code> back into the response port <code class="docutils literal notranslate"><span class="pre">pingerPort</span></code> (the last argument to <code class="docutils literal notranslate"><span class="pre">answerRequest</span></code>).
+The <code class="docutils literal notranslate"><span class="pre">Ping</span></code> 2 event on the other hand is simply matched normally and in this case, thrown away since our port is not connected to any other ports.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.common.base.Function</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Component</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Negative</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.testing.Direction</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.testing.TestContext</span><span class="o">;</span>
+
+<span class="kn">import static</span> <span class="nn">org.junit.Assert.assertEquals</span><span class="o">;</span>
+<span class="kn">import static</span> <span class="nn">org.junit.Assert.assertTrue</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+  <span class="kd">static</span> <span class="n">Function</span><span class="o">&lt;</span><span class="n">Ping</span><span class="o">,</span> <span class="n">Pong</span><span class="o">&gt;</span> <span class="n">pingToPongMapper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Function</span><span class="o">&lt;</span><span class="n">Ping</span><span class="o">,</span> <span class="n">Pong</span><span class="o">&gt;</span> <span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">Pong</span> <span class="nf">apply</span><span class="o">(</span><span class="n">Ping</span> <span class="n">ping</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="n">ping</span><span class="o">.</span><span class="na">id</span><span class="o">);</span>
+    <span class="o">}</span>
+  <span class="o">};</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// answerRequestExample</span>
+    <span class="n">TestContext</span><span class="o">&lt;</span><span class="n">Pinger</span><span class="o">&gt;</span> <span class="n">tc</span> <span class="o">=</span> <span class="n">TestContext</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="n">Pinger</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="n">Component</span> <span class="n">pinger</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="na">getComponentUnderTest</span><span class="o">();</span>
+    <span class="n">Negative</span><span class="o">&lt;</span><span class="n">PingPongPort</span><span class="o">&gt;</span> <span class="n">pingerPort</span> <span class="o">=</span> <span class="n">pinger</span><span class="o">.</span><span class="na">getNegative</span><span class="o">(</span> <span class="n">PingPongPort</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="n">tc</span><span class="o">.</span><span class="na">setComparator</span><span class="o">(</span><span class="n">Ping</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Ping</span><span class="o">.</span><span class="na">comparator</span><span class="o">);</span>
+    <span class="c1">// setup done</span>
+    <span class="n">tc</span><span class="o">.</span><span class="na">body</span><span class="o">()</span>
+        <span class="c1">// treat ping(1) as a request and trigger pong(2) on the same port</span>
+        <span class="o">.</span><span class="na">answerRequest</span><span class="o">(</span><span class="n">Ping</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">pingerPort</span><span class="o">,</span> <span class="n">pingToPongMapper</span><span class="o">,</span> <span class="n">pingerPort</span><span class="o">)</span>
+        <span class="c1">// treat ping(2) as a normal event</span>
+        <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="n">Ping</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">pingerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">)</span>
+        <span class="c1">// treat ping(3) as a request and trigger pong(3) on the same port</span>
+        <span class="o">.</span><span class="na">answerRequest</span><span class="o">(</span><span class="n">Ping</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">pingerPort</span><span class="o">,</span> <span class="n">pingToPongMapper</span><span class="o">,</span> <span class="n">pingerPort</span><span class="o">)</span>
+    <span class="o">;</span>
+    <span class="n">assertTrue</span><span class="o">(</span><span class="n">tc</span><span class="o">.</span><span class="na">check</span><span class="o">());</span>
+    <span class="n">assertEquals</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">Pinger</span><span class="o">.</span><span class="na">pongsReceived</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>The entire test case can also be downloaded <a class="reference download internal" download="" href="../../../_downloads/53dc11b61f599c028518695854c34600/answering-requests.zip"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
+</div>
+<div class="section" id="answering-requests-after-a-while">
+<h2>Answering Requests After a While<a class="headerlink" href="#answering-requests-after-a-while" title="Permalink to this headline">¶</a></h2>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">answerRequest</span></code> triggers the generated response event right away on the response port but this might not always be desired.
+In some cases we might want to wait a while before triggering the responses.
+You can force the events to be triggered only after all requests have been received by using the <code class="docutils literal notranslate"><span class="pre">answerRequests</span></code> construct of the form <code class="docutils literal notranslate"><span class="pre">answerRequests()</span> <span class="pre">-</span> <span class="pre">end()</span></code>.
+Here, <code class="docutils literal notranslate"><span class="pre">-</span></code> is a sequence of <code class="docutils literal notranslate"><span class="pre">answerRequest</span></code> statements that will be answered <em>in that order</em> only after all requests have been received.
+The following example shows such a usage.
+Calling <code class="docutils literal notranslate"><span class="pre">answerRequests()</span></code> enters <code class="docutils literal notranslate"><span class="pre">ANSWER_REQUEST</span></code> mode while the matching <code class="docutils literal notranslate"><span class="pre">end()</span></code> restores the previous mode.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// answerRequestsExample</span>
+  <span class="c1">// ... setup code as in answerRequestExample ...</span>
+  <span class="c1">// setup done</span>
+  <span class="n">tc</span><span class="o">.</span><span class="na">body</span><span class="o">()</span>
+        <span class="c1">// treat all three pings as requests</span>
+        <span class="o">.</span><span class="na">answerRequests</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">answerRequest</span><span class="o">(</span><span class="n">Ping</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">pingerPort</span><span class="o">,</span> <span class="n">pingToPongMapper</span><span class="o">,</span> <span class="n">pingerPort</span><span class="o">)</span> <span class="c1">// ping 1</span>
+            <span class="o">.</span><span class="na">answerRequest</span><span class="o">(</span><span class="n">Ping</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">pingerPort</span><span class="o">,</span> <span class="n">pingToPongMapper</span><span class="o">,</span> <span class="n">pingerPort</span><span class="o">)</span> <span class="c1">// ping 2</span>
+            <span class="o">.</span><span class="na">answerRequest</span><span class="o">(</span><span class="n">Ping</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">pingerPort</span><span class="o">,</span> <span class="n">pingToPongMapper</span><span class="o">,</span> <span class="n">pingerPort</span><span class="o">)</span> <span class="c1">// ping 3</span>
+            <span class="c1">// After receiving ping 3, trigger pongs 1,2,3 in that order back on the response port &#39;pingerPort&#39;</span>
+        <span class="o">.</span><span class="na">end</span><span class="o">()</span>
+  <span class="o">;</span>
+  <span class="n">assertTrue</span><span class="o">(</span><span class="n">tc</span><span class="o">.</span><span class="na">check</span><span class="o">());</span>
+  <span class="n">assertEquals</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="n">Pinger</span><span class="o">.</span><span class="na">pongsReceived</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="answering-requests-in-any-order">
+<h2>Answering Requests In any Order<a class="headerlink" href="#answering-requests-in-any-order" title="Permalink to this headline">¶</a></h2>
+<p>To match outgoing requests in any order, you can group the <code class="docutils literal notranslate"><span class="pre">answerRequest</span></code> statements within an <code class="docutils literal notranslate"><span class="pre">unordered</span></code> statement.
+This statement also has a variant <code class="docutils literal notranslate"><span class="pre">unordered(boolean)</span></code> where supplying <code class="docutils literal notranslate"><span class="pre">true</span></code> as argument triggers each response event immediately after the request is matched and <code class="docutils literal notranslate"><span class="pre">false</span></code> triggers them in the order that they were received, after all requests have been matched.</p>
+</div>
+<div class="section" id="answering-requests-in-the-future">
+<h2>Answering Requests In the Future<a class="headerlink" href="#answering-requests-in-the-future" title="Permalink to this headline">¶</a></h2>
+<p>Using a mapper function, <code class="docutils literal notranslate"><span class="pre">answerRequest</span></code> gives limited options as to when to trigger the response events (immediately or when all requests have been received).
+If you need better control over which and when response events to requests are triggered, you can provide <a class="reference internal" href="../../../javadoc/testing/se/sics/kompics/testing/Future.html#se.sics.kompics.testing.Future" title="se.sics.kompics.testing.Future"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.testing.Future</span></code></a> instance instead of a mapper.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Future</span></code> abstract class declares a <code class="docutils literal notranslate"><span class="pre">set</span></code> and <code class="docutils literal notranslate"><span class="pre">get</span></code> method.
+The <code class="docutils literal notranslate"><span class="pre">set</span></code> method when called with an event as argument returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the event was matched and in which case, a subsequent call to <code class="docutils literal notranslate"><span class="pre">get</span></code> should provide a response event.
+However, <code class="docutils literal notranslate"><span class="pre">get</span></code> is only called if that same <code class="docutils literal notranslate"><span class="pre">Future</span></code> instance is used later on in a <code class="docutils literal notranslate"><span class="pre">trigger</span></code> statement - the framework triggers the provided response event on the specified port.
+Consequently, whether or not a response is triggered and in what order is entirely up to you.</p>
+<p>In the following example, we match our requests in any order and choose to only trigger one response back to our CUT.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">PingPongFuture</span> <span class="kd">extends</span> <span class="n">Future</span><span class="o">&lt;</span><span class="n">Ping</span><span class="o">,</span> <span class="n">Pong</span><span class="o">&gt;</span> <span class="o">{</span>
+        <span class="kd">private</span> <span class="n">Pong</span> <span class="n">pong</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="kt">int</span> <span class="n">id</span><span class="o">;</span>
+        <span class="n">PingPongFuture</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span> <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span> <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">set</span><span class="o">(</span><span class="n">Ping</span> <span class="n">ping</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">ping</span><span class="o">.</span><span class="na">id</span> <span class="o">!=</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+                <span class="o">}</span>
+                <span class="c1">// success</span>
+                <span class="n">pong</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="n">ping</span><span class="o">.</span><span class="na">id</span><span class="o">);</span>
+                <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="kd">public</span> <span class="n">Pong</span> <span class="nf">get</span><span class="o">()</span> <span class="o">{</span>
+                <span class="c1">// after a successful call to set(), get must succeed.</span>
+                <span class="k">return</span> <span class="n">pong</span><span class="o">;</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="n">PingPongFuture</span> <span class="n">future1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PingPongFuture</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+<span class="n">PingPongFuture</span> <span class="n">future2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PingPongFuture</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+<span class="n">PingPongFuture</span> <span class="n">future3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PingPongFuture</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// futureExample</span>
+  <span class="c1">// ... setup code as in answerRequestExample ...</span>
+  <span class="c1">// setup done</span>
+  <span class="n">tc</span><span class="o">.</span><span class="na">body</span><span class="o">()</span>
+        <span class="c1">// treat all three pings as requests and match them in any order</span>
+        <span class="o">.</span><span class="na">unordered</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">answerRequest</span><span class="o">(</span><span class="n">Ping</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">pingerPort</span><span class="o">,</span> <span class="n">future3</span><span class="o">)</span> <span class="c1">// ping 3</span>
+            <span class="o">.</span><span class="na">answerRequest</span><span class="o">(</span><span class="n">Ping</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">pingerPort</span><span class="o">,</span> <span class="n">future2</span><span class="o">)</span> <span class="c1">// ping 2</span>
+            <span class="o">.</span><span class="na">answerRequest</span><span class="o">(</span><span class="n">Ping</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">pingerPort</span><span class="o">,</span> <span class="n">future1</span><span class="o">)</span> <span class="c1">// ping 1</span>
+        <span class="o">.</span><span class="na">end</span><span class="o">()</span>
+        <span class="c1">// set() for all futures must have succeeded</span>
+        <span class="c1">// trigger only pong 2 back as response</span>
+
+        <span class="o">.</span><span class="na">trigger</span><span class="o">(</span><span class="n">future2</span><span class="o">,</span> <span class="n">pingerPort</span><span class="o">)</span>
+  <span class="o">;</span>
+  <span class="n">assertTrue</span><span class="o">(</span><span class="n">tc</span><span class="o">.</span><span class="na">check</span><span class="o">());</span>
+  <span class="n">assertEquals</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">Pinger</span><span class="o">.</span><span class="na">pongsReceived</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../scala/index.html" class="btn btn-neutral float-right" title="Kompics Scala" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../basics/basics.html" class="btn btn-neutral float-left" title="Testing Basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
