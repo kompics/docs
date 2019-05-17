@@ -8,7 +8,7 @@ Msg
 
 .. java:type:: public interface Msg<Adr extends Address, H extends Header<Adr>> extends KompicsEvent
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

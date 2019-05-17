@@ -22,6 +22,8 @@ ThreadPoolScheduler
 
 .. java:type:: public class ThreadPoolScheduler extends Scheduler
 
+   :author: Lars Kroll <lkroll@kth.se>
+
 Constructors
 ------------
 ThreadPoolScheduler

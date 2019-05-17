@@ -1,4 +1,4 @@
-.. java:import:: com.google.common.base Optional
+.. java:import:: java.util Optional
 
 .. java:import:: java.util ArrayList
 
@@ -30,7 +30,7 @@ Methods
 addValue
 ^^^^^^^^
 
-.. java:method:: public void addValue(String key, Object o)
+.. java:method:: @SuppressWarnings public void addValue(String key, Object o)
    :outertype: Config.Builder
 
    Adds \ ``o``\  to the collection at \ ``key``\ .
@@ -43,7 +43,7 @@ addValue
 addValues
 ^^^^^^^^^
 
-.. java:method:: public void addValues(String key, Collection<Object> os)
+.. java:method:: @SuppressWarnings public void addValues(String key, Collection<Object> os)
    :outertype: Config.Builder
 
    Adds all values in \ ``o``\  to the collection at \ ``key``\ .
@@ -74,13 +74,13 @@ getValue
 getValueOrDefault
 ^^^^^^^^^^^^^^^^^
 
-.. java:method:: @Override public <T> T getValueOrDefault(String key, T defaultValue)
+.. java:method:: @SuppressWarnings @Override public <T> T getValueOrDefault(String key, T defaultValue)
    :outertype: Config.Builder
 
 getValues
 ^^^^^^^^^
 
-.. java:method:: @Override public <T> List<T> getValues(String key)
+.. java:method:: @SuppressWarnings @Override public <T> List<T> getValues(String key)
    :outertype: Config.Builder
 
 getValues
@@ -98,7 +98,7 @@ modify
 readValue
 ^^^^^^^^^
 
-.. java:method:: @Override public <T> Optional<T> readValue(String key)
+.. java:method:: @SuppressWarnings @Override public <T> Optional<T> readValue(String key)
    :outertype: Config.Builder
 
 readValue

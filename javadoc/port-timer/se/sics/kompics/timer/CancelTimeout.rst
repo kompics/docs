@@ -1,6 +1,6 @@
 .. java:import:: java.util UUID
 
-.. java:import:: se.sics.kompics Event
+.. java:import:: se.sics.kompics KompicsEvent
 
 CancelTimeout
 =============
@@ -8,11 +8,11 @@ CancelTimeout
 .. java:package:: se.sics.kompics.timer
    :noindex:
 
-.. java:type:: public class CancelTimeout extends Event
+.. java:type:: public class CancelTimeout implements KompicsEvent
 
    The \ ``CancelTimeout``\  class.
 
-   :author: Cosmin Arad , Jim Dowling
+   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>, Lars Kroll <lkroll@kth.se>
 
 Fields
 ------

@@ -8,13 +8,11 @@
 
 .. java:import:: java.util.concurrent TimeUnit
 
-.. java:import:: org.junit Assert
-
 .. java:import:: org.slf4j Logger
 
 .. java:import:: org.slf4j LoggerFactory
 
-.. java:import:: se.sics.kompics Event
+.. java:import:: se.sics.kompics KompicsEvent
 
 TestUtil
 ========
@@ -24,7 +22,7 @@ TestUtil
 
 .. java:type:: public abstract class TestUtil
 
-   :author: Lars Kroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------
@@ -49,19 +47,19 @@ submit
 submit
 ^^^^^^
 
-.. java:method:: public static void submit(Event e)
+.. java:method:: public static void submit(KompicsEvent e)
    :outertype: TestUtil
 
 waitFor
 ^^^^^^^
 
-.. java:method:: public static void waitFor(Event e)
+.. java:method:: public static void waitFor(KompicsEvent e)
    :outertype: TestUtil
 
 waitFor
 ^^^^^^^
 
-.. java:method:: public static void waitFor(Class<? extends Event> eventType)
+.. java:method:: public static void waitFor(Class<? extends KompicsEvent> eventType)
    :outertype: TestUtil
 
 waitFor
@@ -73,13 +71,13 @@ waitFor
 waitForAll
 ^^^^^^^^^^
 
-.. java:method:: public static void waitForAll(Event... events)
+.. java:method:: public static void waitForAll(KompicsEvent... events)
    :outertype: TestUtil
 
 waitForAll
 ^^^^^^^^^^
 
-.. java:method:: public static void waitForAll(Class<? extends Event>... eventTypes)
+.. java:method:: @SafeVarargs public static void waitForAll(Class<? extends KompicsEvent>... eventTypes)
    :outertype: TestUtil
 
 waitForAll

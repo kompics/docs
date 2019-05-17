@@ -8,7 +8,7 @@ BaselineConfig
 
 .. java:type:: public interface BaselineConfig
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

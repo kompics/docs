@@ -8,7 +8,7 @@ ByteIdentifier
 
 .. java:type:: public class ByteIdentifier implements Identifier
 
-   :author: Alex Ormenisan
+   :author: Alex Ormenisan <aaor@kth.se>
 
 Fields
 ------

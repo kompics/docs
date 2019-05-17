@@ -6,7 +6,7 @@ BasicIntSequentialDistribution
 .. java:package:: se.sics.kompics.simulator.adaptor.distributions.extra
    :noindex:
 
-.. java:type:: public class BasicIntSequentialDistribution extends Distribution<Integer>
+.. java:type:: @SuppressWarnings public class BasicIntSequentialDistribution extends Distribution<Integer>
 
    :author: Alex Ormenisan
 

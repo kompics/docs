@@ -12,7 +12,7 @@ DropDelayed
 
 .. java:type:: public class DropDelayed implements KompicsEvent
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Fields
 ------

@@ -8,6 +8,8 @@ RequestPathElement
 
 .. java:type:: public final class RequestPathElement implements Comparable<RequestPathElement>
 
+   :author: Cosmin Arad <cosmin@sics.se>
+
 Constructors
 ------------
 RequestPathElement

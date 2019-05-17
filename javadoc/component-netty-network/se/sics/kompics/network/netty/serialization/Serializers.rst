@@ -1,4 +1,4 @@
-.. java:import:: com.google.common.base Optional
+.. java:import:: java.util Optional
 
 .. java:import:: com.google.common.primitives Ints
 
@@ -42,7 +42,7 @@ Serializers
 
 .. java:type:: public abstract class Serializers
 
-   :author: Lars Kroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Fields
 ------

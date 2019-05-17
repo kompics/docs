@@ -10,7 +10,7 @@ CheckChannelActive
 
 .. java:type:: public class CheckChannelActive extends DirectMessage
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Constructors
 ------------

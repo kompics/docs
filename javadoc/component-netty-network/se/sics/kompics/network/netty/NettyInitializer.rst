@@ -16,14 +16,14 @@ NettyInitializer
 
 .. java:type:: public class NettyInitializer<C extends Channel> extends ChannelInitializer<C>
 
-   :author: Lars Kroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Constructors
 ------------
 NettyInitializer
 ^^^^^^^^^^^^^^^^
 
-.. java:constructor:: public NettyInitializer(BaseHandler handler)
+.. java:constructor:: public NettyInitializer(BaseHandler<?> handler)
    :outertype: NettyInitializer
 
    :param handler:

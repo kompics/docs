@@ -1,10 +1,4 @@
-.. java:import:: org.junit Assert
-
-.. java:import:: org.junit Test
-
-.. java:import:: org.junit.runner RunWith
-
-.. java:import:: org.junit.runners JUnit4
+.. java:import:: org.junit.jupiter.api Test
 
 LoggingTest.LoggingComponent
 ============================

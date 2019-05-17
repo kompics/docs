@@ -1,6 +1,6 @@
 .. java:import:: java.util.concurrent Semaphore
 
-.. java:import:: org.junit Test
+.. java:import:: org.junit.jupiter.api Test
 
 CreateAndStartTest
 ==================
@@ -8,11 +8,11 @@ CreateAndStartTest
 .. java:package:: se.sics.kompics
    :noindex:
 
-.. java:type:: @SuppressWarnings public class CreateAndStartTest
+.. java:type:: public class CreateAndStartTest
 
    The \ ``CreateAndStartTest``\  class tests component creation and start.
 
-   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>
+   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>, Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

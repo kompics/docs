@@ -1,5 +1,3 @@
-.. java:import:: org.junit Assert
-
 TestMain
 ========
 

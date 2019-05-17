@@ -6,7 +6,7 @@ ValueOptions
 
 .. java:type:: public class ValueOptions
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Fields
 ------

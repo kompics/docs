@@ -32,7 +32,7 @@ MessageQueueManager
 
 .. java:type::  class MessageQueueManager
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Constructors
 ------------
@@ -71,7 +71,7 @@ retry
 send
 ^^^^
 
-.. java:method::  void send(Msg msg)
+.. java:method::  void send(Msg<?, ?> msg)
    :outertype: MessageQueueManager
 
 send

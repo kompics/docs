@@ -6,7 +6,7 @@ Converter
 
 .. java:type:: public interface Converter<T>
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

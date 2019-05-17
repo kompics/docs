@@ -1,6 +1,6 @@
 .. java:import:: java.util.concurrent Semaphore
 
-.. java:import:: org.junit Test
+.. java:import:: org.junit.jupiter.api Test
 
 HandlerRequestResponseTest
 ==========================
@@ -8,7 +8,9 @@ HandlerRequestResponseTest
 .. java:package:: se.sics.kompics
    :noindex:
 
-.. java:type:: public class HandlerRequestResponseTest
+.. java:type:: @SuppressWarnings public class HandlerRequestResponseTest
+
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

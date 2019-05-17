@@ -1,4 +1,4 @@
-.. java:import:: com.google.common.base Optional
+.. java:import:: java.util Optional
 
 .. java:import:: com.google.common.io Closer
 
@@ -79,25 +79,25 @@ identifier
 register
 ^^^^^^^^
 
-.. java:method:: public static synchronized void register(int id, Class type) throws KeyExistsException, InvalidKeyException
+.. java:method:: public static synchronized void register(int id, Class<?> type) throws KeyExistsException, InvalidKeyException
    :outertype: AvroSerializer
 
 register
 ^^^^^^^^
 
-.. java:method:: public static synchronized void register(int id, Class type, boolean force) throws KeyExistsException, InvalidKeyException
+.. java:method:: public static synchronized void register(int id, Class<?> type, boolean force) throws KeyExistsException, InvalidKeyException
    :outertype: AvroSerializer
 
 register
 ^^^^^^^^
 
-.. java:method:: public static synchronized void register(int id, Class type, Schema schema) throws KeyExistsException, InvalidKeyException
+.. java:method:: public static synchronized void register(int id, Class<?> type, Schema schema) throws KeyExistsException, InvalidKeyException
    :outertype: AvroSerializer
 
 register
 ^^^^^^^^
 
-.. java:method:: public static synchronized void register(int id, Class type, Schema schema, boolean force) throws KeyExistsException, InvalidKeyException
+.. java:method:: public static synchronized void register(int id, Class<?> type, Schema schema, boolean force) throws KeyExistsException, InvalidKeyException
    :outertype: AvroSerializer
 
 toBinary

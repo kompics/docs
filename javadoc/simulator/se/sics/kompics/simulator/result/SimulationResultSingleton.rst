@@ -29,7 +29,7 @@ Methods
 get
 ^^^
 
-.. java:method:: @Override public <T> T get(String key, Class<T> tpe)
+.. java:method:: @SuppressWarnings @Override public <T> T get(String key, Class<T> tpe)
    :outertype: SimulationResultSingleton
 
 getInstance

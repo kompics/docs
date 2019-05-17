@@ -6,7 +6,7 @@ ConfigValueFactory
 
 .. java:type:: public interface ConfigValueFactory
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

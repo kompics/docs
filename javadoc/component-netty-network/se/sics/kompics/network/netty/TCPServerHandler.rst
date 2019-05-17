@@ -18,7 +18,7 @@ TCPServerHandler
 
 .. java:type:: @ChannelHandler.Sharable public class TCPServerHandler extends StreamHandler
 
-   :author: Lars Kroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Constructors
 ------------
@@ -36,9 +36,9 @@ channelActive
 .. java:method:: @Override public void channelActive(ChannelHandlerContext ctx)
    :outertype: TCPServerHandler
 
-messageReceived
-^^^^^^^^^^^^^^^
+channelRead0
+^^^^^^^^^^^^
 
-.. java:method:: @Override protected void messageReceived(ChannelHandlerContext ctx, Msg msg) throws Exception
+.. java:method:: @Override protected void channelRead0(ChannelHandlerContext ctx, Msg<?, ?> msg) throws Exception
    :outertype: TCPServerHandler
 

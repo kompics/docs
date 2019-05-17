@@ -14,7 +14,7 @@ NettyInit
 
 .. java:type:: public class NettyInit extends Init<NettyNetwork>
 
-   :author: Lars Kroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Fields
 ------

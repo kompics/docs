@@ -1,5 +1,3 @@
-.. java:import:: se.sics.kompics.network Address
-
 .. java:import:: se.sics.kompics.network Msg
 
 .. java:import:: se.sics.kompics.simulator.network NetworkModel
@@ -25,7 +23,7 @@ Constructors
 PartitionedNetworkModel
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-.. java:constructor:: public PartitionedNetworkModel(IdentifierExtractor idE, NetworkModel netModel, PartitionMapper mapper)
+.. java:constructor:: public PartitionedNetworkModel(IdentifierExtractor idE, NetworkModel netModel, PartitionMapper<Identifier> mapper)
    :outertype: PartitionedNetworkModel
 
 Methods
@@ -33,6 +31,6 @@ Methods
 getLatencyMs
 ^^^^^^^^^^^^
 
-.. java:method:: @Override public long getLatencyMs(Msg message)
+.. java:method:: @SuppressWarnings @Override public long getLatencyMs(Msg message)
    :outertype: PartitionedNetworkModel
 

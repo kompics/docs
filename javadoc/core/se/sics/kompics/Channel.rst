@@ -8,7 +8,7 @@ Channel
 
    The \ ``Channel``\  class.
 
-   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>
+   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>, Lars Kroll <lkroll@kth.se>
 
 Fields
 ------
@@ -18,17 +18,23 @@ ONE_WAY_NEG
 .. java:field:: public static ChannelFactory ONE_WAY_NEG
    :outertype: Channel
 
+   Factory for unidirectional channels from positive to negative.
+
 ONE_WAY_POS
 ^^^^^^^^^^^
 
 .. java:field:: public static ChannelFactory ONE_WAY_POS
    :outertype: Channel
 
+   Factory for unidirectional channels from negative to positive.
+
 TWO_WAY
 ^^^^^^^
 
 .. java:field:: public static ChannelFactory TWO_WAY
    :outertype: Channel
+
+   Factory for bidirectional channels.
 
 Methods
 -------

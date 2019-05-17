@@ -10,7 +10,7 @@ DatagramSerializer
 
 .. java:type:: public interface DatagramSerializer extends Serializer
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

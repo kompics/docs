@@ -12,7 +12,7 @@ NotifyAck
 
 .. java:type:: public class NotifyAck extends DirectMessage
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Fields
 ------

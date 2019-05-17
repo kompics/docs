@@ -14,8 +14,6 @@
 
 .. java:import:: javassist Translator
 
-.. java:import:: org.slf4j Logger
-
 .. java:import:: se.sics.kompics.simulator.core SimulatorSystem
 
 CodeInterceptor

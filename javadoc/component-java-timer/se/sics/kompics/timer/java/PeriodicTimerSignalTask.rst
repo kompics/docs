@@ -12,7 +12,7 @@ PeriodicTimerSignalTask
 
    The \ ``PeriodicTimerSignalTask``\  class.
 
-   :author: Cosmin Arad , Jim Dowling
+   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>
 
 Fields
 ------

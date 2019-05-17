@@ -2,9 +2,7 @@
 
 .. java:import:: java.util.concurrent Semaphore
 
-.. java:import:: org.junit Assert
-
-.. java:import:: org.junit Test
+.. java:import:: org.junit.jupiter.api Test
 
 .. java:import:: se.sics.kompics Fault.ResolveAction
 
@@ -14,11 +12,11 @@ SubscribeTest
 .. java:package:: se.sics.kompics
    :noindex:
 
-.. java:type:: @SuppressWarnings public class SubscribeTest
+.. java:type:: public class SubscribeTest
 
    The \ ``SubscribeTest``\  class tests dynamic subscriptions.
 
-   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>
+   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>, Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

@@ -52,7 +52,9 @@ VirtualNetworkChannel
 
 .. java:type:: public class VirtualNetworkChannel implements ChannelCore<Network>
 
-   :author: Lars Kroll
+   A network channel that allows switching on a virtual node id.
+
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

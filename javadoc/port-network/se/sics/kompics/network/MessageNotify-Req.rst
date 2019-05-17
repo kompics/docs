@@ -16,7 +16,7 @@ Fields
 msg
 ^^^
 
-.. java:field:: public final Msg msg
+.. java:field:: public final Msg<?, ?> msg
    :outertype: MessageNotify.Req
 
 notifyOfDelivery
@@ -30,13 +30,13 @@ Constructors
 Req
 ^^^
 
-.. java:constructor:: public Req(Msg msg)
+.. java:constructor:: public Req(Msg<?, ?> msg)
    :outertype: MessageNotify.Req
 
 Req
 ^^^
 
-.. java:constructor:: public Req(Msg msg, boolean notifyOfDelivery)
+.. java:constructor:: public Req(Msg<?, ?> msg, boolean notifyOfDelivery)
    :outertype: MessageNotify.Req
 
 Methods

@@ -6,11 +6,11 @@ SchedulePeriodicTimeout
 .. java:package:: se.sics.kompics.timer
    :noindex:
 
-.. java:type:: public final class SchedulePeriodicTimeout extends Request
+.. java:type:: @SuppressWarnings public final class SchedulePeriodicTimeout extends Request
 
    The \ ``SchedulePeriodicTimeout``\  class.
 
-   :author: Cosmin Arad , Jim Dowling
+   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>
 
 Constructors
 ------------

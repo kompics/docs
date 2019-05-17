@@ -8,20 +8,20 @@ ComponentProxy
 
 .. java:type:: public interface ComponentProxy
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------
 answer
 ^^^^^^
 
-.. java:method:: public <P extends PortType> void answer(Direct.Request event)
+.. java:method:: public <P extends PortType> void answer(Direct.Request<?> event)
    :outertype: ComponentProxy
 
 answer
 ^^^^^^
 
-.. java:method:: public <P extends PortType> void answer(Direct.Request req, Direct.Response resp)
+.. java:method:: public <P extends PortType> void answer(Direct.Request<?> req, Direct.Response resp)
    :outertype: ComponentProxy
 
 connect
@@ -141,7 +141,7 @@ subscribe
 subscribe
 ^^^^^^^^^
 
-.. java:method:: public void subscribe(MatchedHandler handler, Port port)
+.. java:method:: public void subscribe(MatchedHandler<?, ?, ?> handler, Port<?> port)
    :outertype: ComponentProxy
 
 trigger
@@ -153,7 +153,7 @@ trigger
 unsubscribe
 ^^^^^^^^^^^
 
-.. java:method:: public void unsubscribe(MatchedHandler handler, Port port)
+.. java:method:: public void unsubscribe(MatchedHandler<?, ?, ?> handler, Port<?> port)
    :outertype: ComponentProxy
 
 unsubscribe

@@ -56,17 +56,15 @@
 
 .. java:import:: se.sics.kompics.network Transport
 
-.. java:import:: sun.reflect.generics.reflectiveObjects NotImplementedException
-
 ChannelManager
 ==============
 
 .. java:package:: se.sics.kompics.network.netty
    :noindex:
 
-.. java:type::  class ChannelManager
+.. java:type:: @SuppressWarnings  class ChannelManager
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Constructors
 ------------
@@ -105,13 +103,13 @@ checkActive
 checkTCPChannel
 ^^^^^^^^^^^^^^^
 
-.. java:method::  void checkTCPChannel(Msg msg, SocketChannel c)
+.. java:method::  void checkTCPChannel(Msg<?, ?> msg, SocketChannel c)
    :outertype: ChannelManager
 
 checkUDTChannel
 ^^^^^^^^^^^^^^^
 
-.. java:method::  void checkUDTChannel(Msg msg, UdtChannel c)
+.. java:method::  void checkUDTChannel(Msg<?, ?> msg, UdtChannel c)
    :outertype: ChannelManager
 
 clearConnections

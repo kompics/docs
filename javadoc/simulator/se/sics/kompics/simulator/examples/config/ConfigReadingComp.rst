@@ -27,7 +27,7 @@ Fields
 handleStart
 ^^^^^^^^^^^
 
-.. java:field::  Handler handleStart
+.. java:field::  Handler<Start> handleStart
    :outertype: ConfigReadingComp
 
 Constructors

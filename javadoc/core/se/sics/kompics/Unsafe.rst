@@ -10,6 +10,8 @@ Unsafe
 
 .. java:type:: public abstract class Unsafe
 
+   :author: Lars Kroll <lkroll@kth.se>
+
 Methods
 -------
 createJavaPort
@@ -33,7 +35,7 @@ getNegativePorts
 getOrigin
 ^^^^^^^^^
 
-.. java:method:: public static Port getOrigin(Direct.Request<? extends Direct.Response> request)
+.. java:method:: public static Port<?> getOrigin(Direct.Request<? extends Direct.Response> request)
    :outertype: Unsafe
 
 getPositiveEvents
@@ -51,6 +53,6 @@ getPositivePorts
 setOrigin
 ^^^^^^^^^
 
-.. java:method:: public static void setOrigin(Direct.Request<? extends Direct.Response> request, Port origin)
+.. java:method:: public static void setOrigin(Direct.Request<? extends Direct.Response> request, Port<?> origin)
    :outertype: Unsafe
 

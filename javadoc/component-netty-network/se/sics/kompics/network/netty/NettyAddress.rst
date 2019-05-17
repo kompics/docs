@@ -12,7 +12,7 @@ NettyAddress
 
 .. java:type:: public class NettyAddress implements Address
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Constructors
 ------------

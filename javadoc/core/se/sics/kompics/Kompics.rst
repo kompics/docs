@@ -30,7 +30,7 @@ Kompics
 
    The \ ``Kompics``\  class.
 
-   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>
+   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>, Lars Kroll <lkroll@kth.se>
 
 Fields
 ------
@@ -43,13 +43,13 @@ SHUTDOWN_TIMEOUT
 logger
 ^^^^^^
 
-.. java:field:: public static Logger logger
+.. java:field:: public static final Logger logger
    :outertype: Kompics
 
 maxNumOfExecutedEvents
 ^^^^^^^^^^^^^^^^^^^^^^
 
-.. java:field:: public static AtomicInteger maxNumOfExecutedEvents
+.. java:field:: public static final AtomicInteger maxNumOfExecutedEvents
    :outertype: Kompics
 
 Methods
@@ -63,7 +63,7 @@ asyncShutdown
 createAndStart
 ^^^^^^^^^^^^^^
 
-.. java:method:: public static void createAndStart(Class<? extends ComponentDefinition> main)
+.. java:method:: @SuppressWarnings public static <C extends ComponentDefinition> void createAndStart(Class<C> main)
    :outertype: Kompics
 
    Creates the and start.
@@ -73,13 +73,13 @@ createAndStart
 createAndStart
 ^^^^^^^^^^^^^^
 
-.. java:method:: public static void createAndStart(Class<? extends ComponentDefinition> main, Init initEvent)
+.. java:method:: public static <C extends ComponentDefinition> void createAndStart(Class<C> main, Init<C> initEvent)
    :outertype: Kompics
 
 createAndStart
 ^^^^^^^^^^^^^^
 
-.. java:method:: public static void createAndStart(Class<? extends ComponentDefinition> main, int workers)
+.. java:method:: @SuppressWarnings public static <C extends ComponentDefinition> void createAndStart(Class<C> main, int workers)
    :outertype: Kompics
 
    Creates the and start.
@@ -90,19 +90,19 @@ createAndStart
 createAndStart
 ^^^^^^^^^^^^^^
 
-.. java:method:: public static void createAndStart(Class<? extends ComponentDefinition> main, Init initEvent, int workers)
+.. java:method:: public static <C extends ComponentDefinition> void createAndStart(Class<C> main, Init<C> initEvent, int workers)
    :outertype: Kompics
 
 createAndStart
 ^^^^^^^^^^^^^^
 
-.. java:method:: public static void createAndStart(Class<? extends ComponentDefinition> main, int workers, int maxEventExecuteNumber)
+.. java:method:: @SuppressWarnings public static <C extends ComponentDefinition> void createAndStart(Class<C> main, int workers, int maxEventExecuteNumber)
    :outertype: Kompics
 
 createAndStart
 ^^^^^^^^^^^^^^
 
-.. java:method:: public static <T extends ComponentDefinition> void createAndStart(Class<T> main, Init initEvent, int workers, int maxEventExecuteNumber)
+.. java:method:: public static <C extends ComponentDefinition> void createAndStart(Class<C> main, Init<C> initEvent, int workers, int maxEventExecuteNumber)
    :outertype: Kompics
 
    Creates the main component and starts it.

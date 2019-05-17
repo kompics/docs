@@ -6,11 +6,11 @@ ScheduleTimeout
 .. java:package:: se.sics.kompics.timer
    :noindex:
 
-.. java:type:: public final class ScheduleTimeout extends Request
+.. java:type:: @SuppressWarnings public final class ScheduleTimeout extends Request
 
    The \ ``ScheduleTimeout``\  class.
 
-   :author: Cosmin Arad , Jim Dowling
+   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>
 
 Constructors
 ------------

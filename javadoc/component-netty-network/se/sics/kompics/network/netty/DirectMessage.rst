@@ -1,7 +1,5 @@
 .. java:import:: se.sics.kompics.network Address
 
-.. java:import:: se.sics.kompics.network Header
-
 .. java:import:: se.sics.kompics.network Msg
 
 .. java:import:: se.sics.kompics.network Transport
@@ -12,9 +10,9 @@ DirectMessage
 .. java:package:: se.sics.kompics.network.netty
    :noindex:
 
-.. java:type:: public abstract class DirectMessage implements Msg
+.. java:type:: public abstract class DirectMessage implements Msg<Address, DirectHeader>
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Fields
 ------
@@ -43,7 +41,7 @@ getDestination
 getHeader
 ^^^^^^^^^
 
-.. java:method:: @Override public Header getHeader()
+.. java:method:: @Override public DirectHeader getHeader()
    :outertype: DirectMessage
 
 getProtocol

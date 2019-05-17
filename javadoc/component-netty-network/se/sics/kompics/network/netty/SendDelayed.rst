@@ -14,7 +14,7 @@ SendDelayed
 
    Just a notification event
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Fields
 ------

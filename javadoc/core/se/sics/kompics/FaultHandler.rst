@@ -8,7 +8,7 @@ FaultHandler
 
 .. java:type:: public interface FaultHandler
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

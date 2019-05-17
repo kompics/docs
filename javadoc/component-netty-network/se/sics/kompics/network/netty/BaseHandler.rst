@@ -1,5 +1,3 @@
-.. java:import:: com.google.common.base Optional
-
 .. java:import:: io.netty.channel Channel
 
 .. java:import:: io.netty.channel ChannelHandler
@@ -28,7 +26,7 @@ BaseHandler
 
 .. java:type:: @ChannelHandler.Sharable public abstract class BaseHandler<M> extends SimpleChannelInboundHandler<M>
 
-   :author: Lars Kroll
+   :author: Lars Kroll <lkroll@kth.se>
    :param <M>:
 
 Fields

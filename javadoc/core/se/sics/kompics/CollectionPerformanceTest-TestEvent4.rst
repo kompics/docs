@@ -18,7 +18,7 @@
 
 .. java:import:: java.util TreeSet
 
-.. java:import:: org.junit Test
+.. java:import:: org.junit.jupiter.api Test
 
 CollectionPerformanceTest.TestEvent4
 ====================================

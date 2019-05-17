@@ -1,4 +1,4 @@
-.. java:import:: com.google.common.base Optional
+.. java:import:: java.util Optional
 
 .. java:import:: com.google.common.primitives Ints
 
@@ -26,7 +26,7 @@ NettySerializer
 
 .. java:type:: public class NettySerializer implements DatagramSerializer
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

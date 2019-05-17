@@ -1,4 +1,4 @@
-.. java:import:: com.google.common.base Optional
+.. java:import:: java.util Optional
 
 .. java:import:: se.sics.kompics.network MessageNotify
 
@@ -12,14 +12,14 @@ MessageWrapper
 
 .. java:type::  class MessageWrapper
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Fields
 ------
 msg
 ^^^
 
-.. java:field:: public final Msg msg
+.. java:field:: public final Msg<?, ?> msg
    :outertype: MessageWrapper
 
 notify
@@ -39,7 +39,7 @@ MessageWrapper
 MessageWrapper
 ^^^^^^^^^^^^^^
 
-.. java:constructor::  MessageWrapper(Msg msg)
+.. java:constructor::  MessageWrapper(Msg<?, ?> msg)
    :outertype: MessageWrapper
 
 Methods

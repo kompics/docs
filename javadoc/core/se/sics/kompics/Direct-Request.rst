@@ -12,7 +12,7 @@ Fields
 origin
 ^^^^^^
 
-.. java:field::  Port origin
+.. java:field::  Port<?> origin
    :outertype: Direct.Request
 
 Methods
@@ -20,7 +20,7 @@ Methods
 getOrigin
 ^^^^^^^^^
 
-.. java:method::  Port getOrigin()
+.. java:method::  Port<?> getOrigin()
    :outertype: Direct.Request
 
 getResponse
@@ -38,7 +38,7 @@ hasResponse
 setOrigin
 ^^^^^^^^^
 
-.. java:method::  void setOrigin(Port origin)
+.. java:method::  void setOrigin(Port<?> origin)
    :outertype: Direct.Request
 
 setResponse

@@ -1,4 +1,4 @@
-.. java:import:: com.google.common.base Optional
+.. java:import:: java.util Optional
 
 .. java:import:: java.util ArrayList
 
@@ -12,7 +12,7 @@ ValueMerger
 
 .. java:type:: public interface ValueMerger
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Fields
 ------

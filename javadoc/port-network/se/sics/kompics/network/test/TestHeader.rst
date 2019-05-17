@@ -12,7 +12,7 @@ TestHeader
 
 .. java:type:: public class TestHeader implements Header<TestAddress>, Serializable
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Fields
 ------

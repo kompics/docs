@@ -1,4 +1,4 @@
-.. java:import:: com.google.common.base Optional
+.. java:import:: java.util Optional
 
 .. java:import:: io.netty.buffer ByteBuf
 
@@ -20,7 +20,7 @@ MessageDecoder
 
 .. java:type:: public class MessageDecoder extends LengthFieldBasedFrameDecoder
 
-   :author: Lars Kroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Constructors
 ------------

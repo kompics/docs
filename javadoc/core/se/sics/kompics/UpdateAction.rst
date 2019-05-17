@@ -1,4 +1,4 @@
-.. java:import:: com.google.common.base Optional
+.. java:import:: java.util Optional
 
 .. java:import:: se.sics.kompics.config ConfigUpdate
 
@@ -14,7 +14,7 @@ UpdateAction
 
 .. java:type:: public class UpdateAction
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Fields
 ------

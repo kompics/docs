@@ -6,7 +6,7 @@ MatchedHandler
 
 .. java:type:: public abstract class MatchedHandler<P, V, E extends PatternExtractor<P, ? super V>>
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
    :param <P>: The type of the pattern to match against
    :param <V>: The type of the content value
    :param <E>: The type of context event

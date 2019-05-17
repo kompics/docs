@@ -12,9 +12,9 @@ StreamHandler
 .. java:package:: se.sics.kompics.network.netty
    :noindex:
 
-.. java:type:: @Sharable public class StreamHandler extends BaseHandler<Msg>
+.. java:type:: @Sharable public class StreamHandler extends BaseHandler<Msg<?, ?>>
 
-   :author: Lars Kroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Constructors
 ------------
@@ -32,9 +32,9 @@ channelInactive
 .. java:method:: @Override public void channelInactive(ChannelHandlerContext ctx) throws Exception
    :outertype: StreamHandler
 
-messageReceived
-^^^^^^^^^^^^^^^
+channelRead0
+^^^^^^^^^^^^
 
-.. java:method:: @Override protected void messageReceived(ChannelHandlerContext ctx, Msg msg) throws Exception
+.. java:method:: @Override protected void channelRead0(ChannelHandlerContext ctx, Msg<?, ?> msg) throws Exception
    :outertype: StreamHandler
 

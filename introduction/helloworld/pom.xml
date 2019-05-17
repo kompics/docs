@@ -12,9 +12,9 @@
     </description>
         
     <properties>
-        <java.compiler.version>1.7</java.compiler.version>
+        <java.compiler.version>1.8</java.compiler.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kompics.version>1.0.0</kompics.version>
+        <kompics.version>1.1.0</kompics.version>
     </properties>
 
     <dependencies>

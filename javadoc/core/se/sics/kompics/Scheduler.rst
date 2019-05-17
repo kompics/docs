@@ -6,6 +6,8 @@ Scheduler
 
 .. java:type:: public abstract class Scheduler
 
+   :author: Cosmin Arad <cosmin@sics.se>
+
 Methods
 -------
 asyncShutdown

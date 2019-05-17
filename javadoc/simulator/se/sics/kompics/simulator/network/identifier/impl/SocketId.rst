@@ -12,7 +12,7 @@ SocketId
 .. java:package:: se.sics.kompics.simulator.network.identifier.impl
    :noindex:
 
-.. java:type:: public class SocketId implements Identifier
+.. java:type:: @SuppressWarnings public class SocketId implements Identifier
 
    :author: Alex Ormenisan
 

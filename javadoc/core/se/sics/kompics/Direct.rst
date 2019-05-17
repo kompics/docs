@@ -6,5 +6,5 @@ Direct
 
 .. java:type:: public class Direct
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 

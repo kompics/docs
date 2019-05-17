@@ -14,7 +14,7 @@ ConfigUpdate
 
 .. java:type:: public class ConfigUpdate implements Iterable<Entry<String, ConfigValue>>
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Fields
 ------

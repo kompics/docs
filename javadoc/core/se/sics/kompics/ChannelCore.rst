@@ -8,7 +8,7 @@ ChannelCore
 
    The \ ``ChannelCore``\  class.
 
-   :author: Lars Kroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

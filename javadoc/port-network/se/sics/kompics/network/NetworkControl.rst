@@ -10,5 +10,5 @@ NetworkControl
 
    The \ ``NetworkControl``\  class.
 
-   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling
+   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling , Lars Kroll <lkroll@kth.se>
 

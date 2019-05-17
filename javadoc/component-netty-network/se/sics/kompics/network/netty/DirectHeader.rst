@@ -12,7 +12,7 @@ DirectHeader
 
 .. java:type:: public class DirectHeader implements Header<Address>
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Fields
 ------

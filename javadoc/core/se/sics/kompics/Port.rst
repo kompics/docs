@@ -8,7 +8,7 @@ Port
 
    The \ ``Port``\  class.
 
-   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>
+   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>, Lars Kroll <lkroll@kth.se>
 
 Methods
 -------
@@ -33,7 +33,7 @@ doSubscribe
 doSubscribe
 ^^^^^^^^^^^
 
-.. java:method:: public void doSubscribe(MatchedHandler handler)
+.. java:method:: public void doSubscribe(MatchedHandler<?, ?, ?> handler)
    :outertype: Port
 
 doTrigger

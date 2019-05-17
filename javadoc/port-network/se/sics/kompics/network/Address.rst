@@ -10,7 +10,7 @@ Address
 
 .. java:type:: public interface Address
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

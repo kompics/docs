@@ -1,12 +1,8 @@
 .. java:import:: java.util HashMap
 
-.. java:import:: java.util HashSet
-
 .. java:import:: java.util Map
 
 .. java:import:: java.util Random
-
-.. java:import:: java.util Set
 
 .. java:import:: se.sics.kompics.network Address
 
@@ -55,7 +51,7 @@ getRand
 getValue
 ^^^^^^^^
 
-.. java:method:: @Override public <T> T getValue(String key, Class<T> type) throws ClassCastException
+.. java:method:: @SuppressWarnings @Override public <T> T getValue(String key, Class<T> type) throws ClassCastException
    :outertype: GlobalViewImpl
 
 killNode

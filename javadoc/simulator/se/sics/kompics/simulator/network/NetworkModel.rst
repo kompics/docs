@@ -17,6 +17,6 @@ Methods
 getLatencyMs
 ^^^^^^^^^^^^
 
-.. java:method:: public long getLatencyMs(Msg message)
+.. java:method:: public long getLatencyMs(Msg<?, ?> message)
    :outertype: NetworkModel
 

@@ -18,7 +18,7 @@
 
 .. java:import:: java.util TreeSet
 
-.. java:import:: org.junit Test
+.. java:import:: org.junit.jupiter.api Test
 
 CollectionPerformanceTest.TimedTest
 ===================================
@@ -40,7 +40,7 @@ fixEventType
 reflectEventType
 ^^^^^^^^^^^^^^^^
 
-.. java:method:: @SuppressWarnings protected <E extends KompicsEvent> Class<E> reflectEventType(Class handlerC)
+.. java:method:: @SuppressWarnings protected <E extends KompicsEvent> Class<E> reflectEventType(Class<?> handlerC)
    :outertype: CollectionPerformanceTest.TimedTest
 
 run

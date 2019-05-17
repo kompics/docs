@@ -6,7 +6,7 @@ Header
 
 .. java:type:: public interface Header<Adr extends Address>
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

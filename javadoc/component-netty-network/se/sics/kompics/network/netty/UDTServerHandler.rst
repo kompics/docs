@@ -18,7 +18,7 @@ UDTServerHandler
 
 .. java:type:: @ChannelHandler.Sharable public class UDTServerHandler extends StreamHandler
 
-   :author: Lars Kroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Constructors
 ------------
@@ -33,12 +33,12 @@ Methods
 channelActive
 ^^^^^^^^^^^^^
 
-.. java:method:: @Override public void channelActive(ChannelHandlerContext ctx)
+.. java:method:: @SuppressWarnings @Override public void channelActive(ChannelHandlerContext ctx)
    :outertype: UDTServerHandler
 
-messageReceived
-^^^^^^^^^^^^^^^
+channelRead0
+^^^^^^^^^^^^
 
-.. java:method:: @Override protected void messageReceived(ChannelHandlerContext ctx, Msg msg) throws Exception
+.. java:method:: @SuppressWarnings @Override protected void channelRead0(ChannelHandlerContext ctx, Msg<?, ?> msg) throws Exception
    :outertype: UDTServerHandler
 

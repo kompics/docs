@@ -8,9 +8,7 @@
 
 .. java:import:: javassist LoaderClassPath
 
-.. java:import:: junit.framework Assert
-
-.. java:import:: org.junit Test
+.. java:import:: org.junit.jupiter.api Test
 
 .. java:import:: se.sics.kompics.simulator.instrumentation CodeInterceptor
 

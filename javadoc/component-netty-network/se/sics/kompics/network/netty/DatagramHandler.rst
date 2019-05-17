@@ -24,7 +24,7 @@ DatagramHandler
 
 .. java:type:: @ChannelHandler.Sharable public class DatagramHandler extends BaseHandler<DatagramPacket>
 
-   :author: Lars Kroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Constructors
 ------------
@@ -36,9 +36,9 @@ DatagramHandler
 
 Methods
 -------
-messageReceived
-^^^^^^^^^^^^^^^
+channelRead0
+^^^^^^^^^^^^
 
-.. java:method:: @Override protected void messageReceived(ChannelHandlerContext ctx, DatagramPacket msg) throws Exception
+.. java:method:: @Override protected void channelRead0(ChannelHandlerContext ctx, DatagramPacket msg) throws Exception
    :outertype: DatagramHandler
 

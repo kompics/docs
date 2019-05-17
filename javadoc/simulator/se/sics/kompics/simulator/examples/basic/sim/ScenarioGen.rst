@@ -25,7 +25,7 @@ Fields
 startNodeOp
 ^^^^^^^^^^^
 
-.. java:field:: static Operation1<StartNodeEvent, Integer> startNodeOp
+.. java:field:: @SuppressWarnings static Operation1<StartNodeEvent, Integer> startNodeOp
    :outertype: ScenarioGen
 
 Methods

@@ -14,8 +14,6 @@
 
 .. java:import:: se.sics.kompics.config ConfigUpdate
 
-.. java:import:: se.sics.kompics.network Msg
-
 .. java:import:: se.sics.kompics.network Network
 
 .. java:import:: se.sics.kompics.simulator SimulationScenario

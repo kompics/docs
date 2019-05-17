@@ -18,7 +18,7 @@
 
 .. java:import:: java.util TreeSet
 
-.. java:import:: org.junit Test
+.. java:import:: org.junit.jupiter.api Test
 
 CollectionPerformanceTest
 =========================
@@ -28,7 +28,7 @@ CollectionPerformanceTest
 
 .. java:type:: public class CollectionPerformanceTest
 
-   :author: Lars Kroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Fields
 ------

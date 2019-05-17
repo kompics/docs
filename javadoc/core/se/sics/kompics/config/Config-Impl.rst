@@ -1,4 +1,4 @@
-.. java:import:: com.google.common.base Optional
+.. java:import:: java.util Optional
 
 .. java:import:: java.util ArrayList
 
@@ -56,19 +56,19 @@ getValue
 getValueOrDefault
 ^^^^^^^^^^^^^^^^^
 
-.. java:method:: @Override public <T extends Object> T getValueOrDefault(String key, T defaultValue)
+.. java:method:: @SuppressWarnings @Override public <T extends Object> T getValueOrDefault(String key, T defaultValue)
    :outertype: Config.Impl
 
 getValues
 ^^^^^^^^^
 
-.. java:method:: @Override public <T> List<T> getValues(String key)
+.. java:method:: @SuppressWarnings @Override public <T> List<T> getValues(String key)
    :outertype: Config.Impl
 
 getValues
 ^^^^^^^^^
 
-.. java:method:: @Override public <T> List<T> getValues(String key, Class<T> type)
+.. java:method:: @SuppressWarnings @Override public <T> List<T> getValues(String key, Class<T> type)
    :outertype: Config.Impl
 
 modify
@@ -80,7 +80,7 @@ modify
 readValue
 ^^^^^^^^^
 
-.. java:method:: @Override public <T> Optional<T> readValue(String key)
+.. java:method:: @SuppressWarnings @Override public <T> Optional<T> readValue(String key)
    :outertype: Config.Impl
 
 readValue

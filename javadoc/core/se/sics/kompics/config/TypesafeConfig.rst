@@ -16,7 +16,7 @@ TypesafeConfig
 
 .. java:type:: public class TypesafeConfig implements BaselineConfig
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

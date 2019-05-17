@@ -12,7 +12,7 @@ Message
 
 .. java:type:: public class Message implements Msg<TestAddress, TestHeader>, Serializable
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Fields
 ------

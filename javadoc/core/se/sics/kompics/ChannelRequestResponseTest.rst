@@ -1,6 +1,6 @@
 .. java:import:: java.util.concurrent Semaphore
 
-.. java:import:: org.junit Test
+.. java:import:: org.junit.jupiter.api Test
 
 ChannelRequestResponseTest
 ==========================
@@ -8,7 +8,7 @@ ChannelRequestResponseTest
 .. java:package:: se.sics.kompics
    :noindex:
 
-.. java:type:: public class ChannelRequestResponseTest
+.. java:type:: @SuppressWarnings public class ChannelRequestResponseTest
 
 Methods
 -------

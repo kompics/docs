@@ -6,7 +6,7 @@ UniDirectionalChannel
 
 .. java:type:: public class UniDirectionalChannel<PT extends PortType> extends SimpleChannel<PT>
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

@@ -6,8 +6,8 @@ Header
 
 .. java:type:: public interface Header<Adr extends Address> extends se.sics.kompics.network.Header<Adr>
 
-   :author: lkroll
-   :param <Adr>:
+   :author: Lars Kroll <lkroll@kth.se>
+   :param <Adr>: The address type used by the header
 
 Methods
 -------

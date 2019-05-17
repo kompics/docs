@@ -4,9 +4,9 @@ ConfigValueException
 .. java:package:: se.sics.kompics.config
    :noindex:
 
-.. java:type::  class ConfigValueException extends RuntimeException
+.. java:type:: @SuppressWarnings  class ConfigValueException extends RuntimeException
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Constructors
 ------------

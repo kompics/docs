@@ -22,7 +22,7 @@ ForkJoinScheduler
 
 .. java:type:: public class ForkJoinScheduler extends Scheduler
 
-   :author: Lars Kroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Constructors
 ------------
@@ -49,7 +49,7 @@ proceed
 schedule
 ^^^^^^^^
 
-.. java:method:: @Override public void schedule(Component c, int w)
+.. java:method:: @SuppressWarnings @Override public void schedule(Component c, int w)
    :outertype: ForkJoinScheduler
 
 shutdown

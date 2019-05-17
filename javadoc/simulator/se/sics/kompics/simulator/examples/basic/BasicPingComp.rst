@@ -45,13 +45,13 @@ Fields
 handlePing
 ^^^^^^^^^^
 
-.. java:field::  ClassMatchedHandler handlePing
+.. java:field::  ClassMatchedHandler<Ping, BasicContentMsg<Address, BasicHeader<Address>, Ping>> handlePing
    :outertype: BasicPingComp
 
 handlePong
 ^^^^^^^^^^
 
-.. java:field::  ClassMatchedHandler handlePong
+.. java:field::  ClassMatchedHandler<Pong, BasicContentMsg<Address, BasicHeader<Address>, Pong>> handlePong
    :outertype: BasicPingComp
 
 Constructors

@@ -4,9 +4,9 @@ KompicsException
 .. java:package:: se.sics.kompics
    :noindex:
 
-.. java:type:: public class KompicsException extends RuntimeException
+.. java:type:: @SuppressWarnings public class KompicsException extends RuntimeException
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Constructors
 ------------

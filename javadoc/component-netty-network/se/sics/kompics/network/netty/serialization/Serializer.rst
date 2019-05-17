@@ -1,4 +1,4 @@
-.. java:import:: com.google.common.base Optional
+.. java:import:: java.util Optional
 
 .. java:import:: io.netty.buffer ByteBuf
 
@@ -10,7 +10,7 @@ Serializer
 
 .. java:type:: public interface Serializer
 
-   :author: Lars Kroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

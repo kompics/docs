@@ -8,7 +8,7 @@ DestinationHostSelector
 .. java:package:: se.sics.kompics.simulator.network.identifier
    :noindex:
 
-.. java:type:: public class DestinationHostSelector extends ChannelSelector<Msg, Identifier>
+.. java:type:: @SuppressWarnings public class DestinationHostSelector extends ChannelSelector<Msg, Identifier>
 
    :author: Alex Ormenisan
 

@@ -1,4 +1,4 @@
-.. java:import:: org.junit Test
+.. java:import:: org.junit.jupiter.api Test
 
 .. java:import:: se.sics.kompics.simulator SimulationScenario
 

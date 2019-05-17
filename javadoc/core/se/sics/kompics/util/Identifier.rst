@@ -6,7 +6,7 @@ Identifier
 
 .. java:type:: public interface Identifier extends Comparable<Identifier>
 
-   :author: Alex Ormenisan
+   :author: Alex Ormenisan <aaor@kth.se>
 
 Methods
 -------

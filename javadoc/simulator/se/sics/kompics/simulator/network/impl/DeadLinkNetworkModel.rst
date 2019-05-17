@@ -2,8 +2,6 @@
 
 .. java:import:: org.javatuples Pair
 
-.. java:import:: se.sics.kompics.network Address
-
 .. java:import:: se.sics.kompics.network Msg
 
 .. java:import:: se.sics.kompics.simulator.network NetworkModel
@@ -38,6 +36,6 @@ Methods
 getLatencyMs
 ^^^^^^^^^^^^
 
-.. java:method:: @Override public long getLatencyMs(Msg message)
+.. java:method:: @SuppressWarnings @Override public long getLatencyMs(Msg message)
    :outertype: DeadLinkNetworkModel
 

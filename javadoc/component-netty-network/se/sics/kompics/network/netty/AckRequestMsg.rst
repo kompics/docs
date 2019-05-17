@@ -14,16 +14,16 @@ AckRequestMsg
 .. java:package:: se.sics.kompics.network.netty
    :noindex:
 
-.. java:type:: public class AckRequestMsg implements Msg
+.. java:type:: public class AckRequestMsg implements Msg<Address, Header<Address>>
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Fields
 ------
 content
 ^^^^^^^
 
-.. java:field:: public final Msg content
+.. java:field:: public final Msg<Address, Header<Address>> content
    :outertype: AckRequestMsg
 
 id
@@ -37,7 +37,7 @@ Constructors
 AckRequestMsg
 ^^^^^^^^^^^^^
 
-.. java:constructor:: public AckRequestMsg(Msg msg, UUID id)
+.. java:constructor:: @SuppressWarnings public AckRequestMsg(Msg<?, ?> msg, UUID id)
    :outertype: AckRequestMsg
 
 Methods
@@ -51,7 +51,7 @@ getDestination
 getHeader
 ^^^^^^^^^
 
-.. java:method:: @Override public Header getHeader()
+.. java:method:: @Override public Header<Address> getHeader()
    :outertype: AckRequestMsg
 
 getProtocol

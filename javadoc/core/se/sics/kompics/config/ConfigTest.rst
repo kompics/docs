@@ -1,14 +1,10 @@
-.. java:import:: com.google.common.base Optional
+.. java:import:: java.util Optional
 
 .. java:import:: java.util List
 
 .. java:import:: java.util UUID
 
-.. java:import:: org.junit Test
-
-.. java:import:: org.junit.runner RunWith
-
-.. java:import:: org.junit.runners JUnit4
+.. java:import:: org.junit.jupiter.api Test
 
 ConfigTest
 ==========
@@ -16,9 +12,9 @@ ConfigTest
 .. java:package:: se.sics.kompics.config
    :noindex:
 
-.. java:type:: @RunWith public class ConfigTest
+.. java:type:: public class ConfigTest
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

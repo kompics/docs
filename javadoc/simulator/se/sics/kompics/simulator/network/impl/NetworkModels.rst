@@ -79,7 +79,7 @@ withLoss
 withPartitionedModel
 ^^^^^^^^^^^^^^^^^^^^
 
-.. java:method:: public static PartitionedNetworkModel withPartitionedModel(IdentifierExtractor extractor, NetworkModel model, PartitionMapper mapper)
+.. java:method:: public static PartitionedNetworkModel withPartitionedModel(IdentifierExtractor extractor, NetworkModel model, PartitionMapper<Identifier> mapper)
    :outertype: NetworkModels
 
 withSelectiveModel

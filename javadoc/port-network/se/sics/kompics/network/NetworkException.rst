@@ -1,5 +1,3 @@
-.. java:import:: com.google.common.base Optional
-
 .. java:import:: se.sics.kompics KompicsEvent
 
 NetworkException
@@ -8,7 +6,7 @@ NetworkException
 .. java:package:: se.sics.kompics.network
    :noindex:
 
-.. java:type:: public final class NetworkException implements KompicsEvent
+.. java:type:: @SuppressWarnings public final class NetworkException extends Exception implements KompicsEvent
 
    The \ ``NetworkException``\  class.
 
@@ -16,12 +14,6 @@ NetworkException
 
 Fields
 ------
-cause
-^^^^^
-
-.. java:field:: public final Optional<Throwable> cause
-   :outertype: NetworkException
-
 message
 ^^^^^^^
 
@@ -51,6 +43,6 @@ NetworkException
 NetworkException
 ^^^^^^^^^^^^^^^^
 
-.. java:constructor:: public NetworkException(String message, Address peer, Transport protocol, Optional<Throwable> cause)
+.. java:constructor:: public NetworkException(String message, Address peer, Transport protocol, Throwable cause)
    :outertype: NetworkException
 

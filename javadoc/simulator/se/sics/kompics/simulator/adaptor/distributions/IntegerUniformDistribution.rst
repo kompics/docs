@@ -6,7 +6,7 @@ IntegerUniformDistribution
 .. java:package:: se.sics.kompics.simulator.adaptor.distributions
    :noindex:
 
-.. java:type:: public class IntegerUniformDistribution extends Distribution<Integer>
+.. java:type:: @SuppressWarnings public class IntegerUniformDistribution extends Distribution<Integer>
 
    :author: Alex Ormenisan
 

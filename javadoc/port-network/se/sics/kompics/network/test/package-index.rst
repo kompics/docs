@@ -12,10 +12,15 @@ se.sics.kompics.network.test
    NetworkTest
    NetworkTest-Ack
    NetworkTest-Acker
+   NetworkTest-AckerInit
+   NetworkTest-DCComponent
+   NetworkTest-DCInit
+   NetworkTest-DCLauncher
    NetworkTest-FRComponent
    NetworkTest-FRInit
    NetworkTest-FRLauncher
    NetworkTest-LauncherComponent
+   NetworkTest-PBLauncher
    NetworkTest-Recover
    NetworkTest-ScenarioComponent
    NetworkTest-ScenarioInit

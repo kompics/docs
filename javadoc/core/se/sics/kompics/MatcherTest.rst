@@ -4,13 +4,7 @@
 
 .. java:import:: java.util.concurrent TimeUnit
 
-.. java:import:: org.junit Assert
-
-.. java:import:: org.junit Test
-
-.. java:import:: org.junit.runner RunWith
-
-.. java:import:: org.junit.runners JUnit4
+.. java:import:: org.junit.jupiter.api Test
 
 .. java:import:: org.slf4j Logger
 
@@ -22,9 +16,9 @@ MatcherTest
 .. java:package:: se.sics.kompics
    :noindex:
 
-.. java:type:: @RunWith public class MatcherTest
+.. java:type:: public class MatcherTest
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

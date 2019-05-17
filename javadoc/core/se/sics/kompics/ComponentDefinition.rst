@@ -1,4 +1,4 @@
-.. java:import:: com.google.common.base Optional
+.. java:import:: java.util Optional
 
 .. java:import:: java.lang.reflect Constructor
 
@@ -32,7 +32,7 @@ ComponentDefinition
 
    The \ ``ComponentDefinition``\  class.
 
-   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>
+   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>, Lars Kroll <lkroll@kth.se>
 
 Fields
 ------
@@ -103,7 +103,7 @@ ComponentDefinition
 ComponentDefinition
 ^^^^^^^^^^^^^^^^^^^
 
-.. java:constructor:: protected ComponentDefinition(Class<? extends ComponentCore> coreClass)
+.. java:constructor:: @SuppressWarnings protected ComponentDefinition(Class<? extends ComponentCore> coreClass)
    :outertype: ComponentDefinition
 
 Methods
@@ -111,13 +111,13 @@ Methods
 answer
 ^^^^^^
 
-.. java:method:: protected final <P extends PortType> void answer(Direct.Request event)
+.. java:method:: protected final <P extends PortType> void answer(Direct.Request<?> event)
    :outertype: ComponentDefinition
 
 answer
 ^^^^^^
 
-.. java:method:: protected final <P extends PortType> void answer(Direct.Request req, Direct.Response resp)
+.. java:method:: protected final <P extends PortType> void answer(Direct.Request<?> req, Direct.Response resp)
    :outertype: ComponentDefinition
 
 config
@@ -459,7 +459,7 @@ subscribe
 subscribe
 ^^^^^^^^^
 
-.. java:method:: protected final void subscribe(MatchedHandler<?, ?, ?> handler, Port port)
+.. java:method:: protected final void subscribe(MatchedHandler<?, ?, ?> handler, Port<?> port)
    :outertype: ComponentDefinition
 
 suicide
@@ -490,7 +490,7 @@ trigger
 unsubscribe
 ^^^^^^^^^^^
 
-.. java:method:: protected final void unsubscribe(MatchedHandler<?, ?, ?> handler, Port port)
+.. java:method:: protected final void unsubscribe(MatchedHandler<?, ?, ?> handler, Port<?> port)
    :outertype: ComponentDefinition
 
 unsubscribe

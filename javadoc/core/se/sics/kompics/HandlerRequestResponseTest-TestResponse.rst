@@ -1,6 +1,6 @@
 .. java:import:: java.util.concurrent Semaphore
 
-.. java:import:: org.junit Test
+.. java:import:: org.junit.jupiter.api Test
 
 HandlerRequestResponseTest.TestResponse
 =======================================

@@ -43,6 +43,6 @@ Methods
 getLatencyMs
 ^^^^^^^^^^^^
 
-.. java:method:: @Override public long getLatencyMs(Msg message)
+.. java:method:: @SuppressWarnings @Override public long getLatencyMs(Msg message)
    :outertype: KingLatencyModel
 

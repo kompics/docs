@@ -4,13 +4,7 @@
 
 .. java:import:: java.util.concurrent TimeUnit
 
-.. java:import:: org.junit Assert
-
-.. java:import:: org.junit Test
-
-.. java:import:: org.junit.runner RunWith
-
-.. java:import:: org.junit.runners JUnit4
+.. java:import:: org.junit.jupiter.api Test
 
 .. java:import:: org.slf4j Logger
 
@@ -22,7 +16,7 @@ DirectRequestResponseTest.Down
 .. java:package:: se.sics.kompics
    :noindex:
 
-.. java:type:: public static class Down extends Direct.Request
+.. java:type:: public static class Down extends Direct.Request<Up>
    :outertype: DirectRequestResponseTest
 
 Fields

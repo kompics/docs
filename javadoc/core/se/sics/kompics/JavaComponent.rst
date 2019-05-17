@@ -1,4 +1,4 @@
-.. java:import:: com.google.common.base Optional
+.. java:import:: java.util Optional
 
 .. java:import:: java.lang.reflect Constructor
 
@@ -36,11 +36,11 @@ JavaComponent
 .. java:package:: se.sics.kompics
    :noindex:
 
-.. java:type:: public class JavaComponent extends ComponentCore
+.. java:type:: @SuppressWarnings public class JavaComponent extends ComponentCore
 
    The \ ``ComponentCore``\  class.
 
-   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>, Lars Kroll
+   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>, Lars Kroll <lkroll@kth.se>
 
 Fields
 ------

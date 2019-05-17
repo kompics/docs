@@ -10,25 +10,25 @@ PatternExtractorHelper
 
 .. java:type:: public class PatternExtractorHelper
 
-   :author: Alex Ormenisan
+   :author: Alex Ormenisan <aaor@kth.se>
 
 Methods
 -------
 peelAllLayers
 ^^^^^^^^^^^^^
 
-.. java:method:: public static Object peelAllLayers(PatternExtractor obj)
+.. java:method:: public static Object peelAllLayers(PatternExtractor<?, ?> obj)
    :outertype: PatternExtractorHelper
 
 peelOneLayer
 ^^^^^^^^^^^^
 
-.. java:method:: public static Object peelOneLayer(PatternExtractor obj)
+.. java:method:: public static Object peelOneLayer(PatternExtractor<?, ?> obj)
    :outertype: PatternExtractorHelper
 
 peelToLayer
 ^^^^^^^^^^^
 
-.. java:method:: public static Optional<PatternExtractor> peelToLayer(PatternExtractor obj, Object patternType)
+.. java:method:: @SuppressWarnings public static Optional<PatternExtractor> peelToLayer(PatternExtractor obj, Object patternType)
    :outertype: PatternExtractorHelper
 

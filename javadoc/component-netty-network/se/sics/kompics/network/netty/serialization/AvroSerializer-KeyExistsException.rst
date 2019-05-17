@@ -1,4 +1,4 @@
-.. java:import:: com.google.common.base Optional
+.. java:import:: java.util Optional
 
 .. java:import:: com.google.common.io Closer
 
@@ -58,7 +58,7 @@ AvroSerializer.KeyExistsException
 .. java:package:: se.sics.kompics.network.netty.serialization
    :noindex:
 
-.. java:type:: public static class KeyExistsException extends Exception
+.. java:type:: @SuppressWarnings public static class KeyExistsException extends Exception
    :outertype: AvroSerializer
 
 Constructors

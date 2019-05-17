@@ -8,11 +8,11 @@ Timeout
 .. java:package:: se.sics.kompics.timer
    :noindex:
 
-.. java:type:: public abstract class Timeout extends Response implements Cloneable
+.. java:type:: @SuppressWarnings public abstract class Timeout extends Response implements Cloneable
 
    The \ ``Timeout``\  class.
 
-   :author: Cosmin Arad , Jim Dowling
+   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>
 
 Constructors
 ------------

@@ -1,6 +1,8 @@
 se.sics.kompics
 ===============
 
+Provides the Java implementation of the Kompics component model runtime system.
+
 .. java:package:: se.sics.kompics
 
 .. toctree::

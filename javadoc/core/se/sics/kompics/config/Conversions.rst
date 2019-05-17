@@ -12,7 +12,7 @@ Conversions
 
 .. java:type:: public abstract class Conversions
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------
@@ -25,12 +25,12 @@ asString
 convert
 ^^^^^^^
 
-.. java:method:: public static <T> T convert(Object o, Class<T> type)
+.. java:method:: @SuppressWarnings public static <T> T convert(Object o, Class<T> type)
    :outertype: Conversions
 
 register
 ^^^^^^^^
 
-.. java:method:: public static void register(Converter c)
+.. java:method:: public static void register(Converter<?> c)
    :outertype: Conversions
 

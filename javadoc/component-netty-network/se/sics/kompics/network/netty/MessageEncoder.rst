@@ -22,7 +22,7 @@ MessageEncoder
 
 .. java:type:: public class MessageEncoder extends MessageToMessageEncoder<MessageWrapper>
 
-   :author: Lars Kroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Constructors
 ------------

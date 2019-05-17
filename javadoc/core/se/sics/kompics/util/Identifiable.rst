@@ -6,7 +6,7 @@ Identifiable
 
 .. java:type:: public interface Identifiable<I extends Identifier>
 
-   :author: Alex Ormenisan
+   :author: Alex Ormenisan <aaor@kth.se>
 
 Methods
 -------

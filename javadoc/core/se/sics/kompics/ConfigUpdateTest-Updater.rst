@@ -6,13 +6,7 @@
 
 .. java:import:: java.util.concurrent TimeUnit
 
-.. java:import:: org.junit Assert
-
-.. java:import:: org.junit Test
-
-.. java:import:: org.junit.runner RunWith
-
-.. java:import:: org.junit.runners JUnit4
+.. java:import:: org.junit.jupiter.api Test
 
 .. java:import:: org.slf4j Logger
 
@@ -32,6 +26,14 @@ ConfigUpdateTest.Updater
 
 .. java:type:: public static class Updater extends ComponentDefinition
    :outertype: ConfigUpdateTest
+
+Fields
+------
+child
+^^^^^
+
+.. java:field::  Component child
+   :outertype: ConfigUpdateTest.Updater
 
 Methods
 -------

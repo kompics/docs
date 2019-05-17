@@ -6,7 +6,7 @@ ChannelFactory
 
 .. java:type:: public interface ChannelFactory
 
-   :author: lkroll
+   Lars Kroll <lkroll@kth.se>
 
 Methods
 -------
@@ -19,6 +19,6 @@ connect
 connect
 ^^^^^^^
 
-.. java:method:: public <P extends PortType> Channel<P> connect(PortCore<P> positivePort, PortCore<P> negativePort, ChannelSelector selector)
+.. java:method:: public <P extends PortType, E extends KompicsEvent, F> Channel<P> connect(PortCore<P> positivePort, PortCore<P> negativePort, ChannelSelector<E, F> selector)
    :outertype: ChannelFactory
 

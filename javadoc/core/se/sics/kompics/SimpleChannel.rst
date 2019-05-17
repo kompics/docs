@@ -6,7 +6,7 @@ SimpleChannel
 
 .. java:type:: public abstract class SimpleChannel<PT extends PortType> implements ChannelCore<PT>
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Fields
 ------

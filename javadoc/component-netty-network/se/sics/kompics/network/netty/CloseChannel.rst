@@ -10,7 +10,7 @@ CloseChannel
 
 .. java:type:: public class CloseChannel extends DirectMessage
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Constructors
 ------------

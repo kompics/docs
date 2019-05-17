@@ -6,7 +6,7 @@ Kill
 
 .. java:type:: public class Kill implements KompicsEvent
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Fields
 ------

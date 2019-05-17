@@ -10,7 +10,7 @@ Update
 
 .. java:type:: public class Update implements KompicsEvent
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Fields
 ------

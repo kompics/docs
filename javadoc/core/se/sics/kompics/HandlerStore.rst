@@ -6,7 +6,7 @@ HandlerStore
 .. java:package:: se.sics.kompics
    :noindex:
 
-.. java:type::  class HandlerStore
+.. java:type:: @SuppressWarnings  class HandlerStore
 
    :author: Lars Kroll
 

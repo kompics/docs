@@ -14,7 +14,7 @@ TestAddress
 
 .. java:type:: public class TestAddress implements Address, Serializable
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Constructors
 ------------

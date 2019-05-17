@@ -6,7 +6,7 @@
 
 .. java:import:: se.sics.kompics ControlPort
 
-.. java:import:: se.sics.kompics Event
+.. java:import:: se.sics.kompics KompicsEvent
 
 .. java:import:: se.sics.kompics Init
 
@@ -26,7 +26,7 @@ ComponentProxy
 
 .. java:type:: public interface ComponentProxy
 
-   :author: Lars Kroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------
@@ -81,6 +81,6 @@ getControlPort
 trigger
 ^^^^^^^
 
-.. java:method:: public <P extends PortType> void trigger(Event e, Port<P> p)
+.. java:method:: public <P extends PortType> void trigger(KompicsEvent e, Port<P> p)
    :outertype: ComponentProxy
 

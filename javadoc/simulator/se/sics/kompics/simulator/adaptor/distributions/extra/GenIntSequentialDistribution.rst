@@ -6,7 +6,7 @@ GenIntSequentialDistribution
 .. java:package:: se.sics.kompics.simulator.adaptor.distributions.extra
    :noindex:
 
-.. java:type:: public class GenIntSequentialDistribution extends Distribution<Integer>
+.. java:type:: @SuppressWarnings public class GenIntSequentialDistribution extends Distribution<Integer>
 
    :author: Alex Ormenisan
 

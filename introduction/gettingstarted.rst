@@ -7,9 +7,9 @@ Prerequisites
 -------------
 Kompics requires that you have Java on your machine.
 
-For Kompics versions before :code:`0.8.2` only Java 6 is required. Newer versions require Java 7.
-
-There also exists some Java 8 code in Kompics that is currently commented out for backwards compatibility reasons, but will be reintroduced in a different branch in the (near) future.
+For Kompics versions before :code:`0.8.2` only Java 6 is required.
+For Kompics versions before :code:`1.1.0` only Java 7 is required.
+Newer versions require Java 8.
 
 Including Kompics
 -----------------

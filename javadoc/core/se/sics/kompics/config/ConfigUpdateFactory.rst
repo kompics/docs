@@ -6,7 +6,7 @@ ConfigUpdateFactory
 
 .. java:type:: public interface ConfigUpdateFactory
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

@@ -6,7 +6,7 @@ ConfigValue
 
 .. java:type:: public interface ConfigValue
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

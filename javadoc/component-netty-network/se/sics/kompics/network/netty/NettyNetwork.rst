@@ -1,4 +1,6 @@
-.. java:import:: com.google.common.base Optional
+.. java:import:: java.util Optional
+
+.. java:import:: com.google.common.collect ImmutableMap
 
 .. java:import:: io.netty.bootstrap Bootstrap
 
@@ -72,6 +74,12 @@
 
 .. java:import:: se.sics.kompics.network ConnectionStatus
 
+.. java:import:: se.sics.kompics.network Header
+
+.. java:import:: se.sics.kompics.network ListeningStatus
+
+.. java:import:: se.sics.kompics.network ListeningStatus.Request
+
 .. java:import:: se.sics.kompics.network MessageNotify
 
 .. java:import:: se.sics.kompics.network Msg
@@ -94,7 +102,7 @@ NettyNetwork
 
 .. java:type:: public class NettyNetwork extends ComponentDefinition
 
-   :author: Lars Kroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Fields
 ------
@@ -197,7 +205,7 @@ messages
 msgHandler
 ^^^^^^^^^^
 
-.. java:field::  Handler<Msg> msgHandler
+.. java:field::  Handler<Msg<?, ?>> msgHandler
    :outertype: NettyNetwork
 
 net
@@ -230,6 +238,12 @@ startHandler
 .. java:field::  Handler<Start> startHandler
    :outertype: NettyNetwork
 
+statusHandler
+^^^^^^^^^^^^^
+
+.. java:field::  Handler<ListeningStatus.Request> statusHandler
+   :outertype: NettyNetwork
+
 stopHandler
 ^^^^^^^^^^^
 
@@ -253,7 +267,7 @@ Constructors
 NettyNetwork
 ^^^^^^^^^^^^
 
-.. java:constructor:: public NettyNetwork(NettyInit init)
+.. java:constructor:: @SuppressWarnings public NettyNetwork(NettyInit init)
    :outertype: NettyNetwork
 
 Methods
@@ -261,7 +275,7 @@ Methods
 deliverMessage
 ^^^^^^^^^^^^^^
 
-.. java:method:: protected void deliverMessage(Msg message, Channel c)
+.. java:method:: protected void deliverMessage(Msg<?, ?> message, Channel c)
    :outertype: NettyNetwork
 
 networkException

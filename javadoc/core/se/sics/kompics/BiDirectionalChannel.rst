@@ -6,7 +6,7 @@ BiDirectionalChannel
 
 .. java:type:: public class BiDirectionalChannel<PT extends PortType> extends SimpleChannel<PT>
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

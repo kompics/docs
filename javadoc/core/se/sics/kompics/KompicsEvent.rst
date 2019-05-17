@@ -8,5 +8,5 @@ KompicsEvent
 
    Marks an event as a KompicsEvent, i.e. being trigger-able on a Port.
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 

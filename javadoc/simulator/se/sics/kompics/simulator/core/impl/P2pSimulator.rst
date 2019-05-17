@@ -95,67 +95,67 @@ Fields
 handleCPT
 ^^^^^^^^^
 
-.. java:field::  Handler handleCPT
+.. java:field::  Handler<CancelPeriodicTimeout> handleCPT
    :outertype: P2pSimulator
 
 handleCT
 ^^^^^^^^
 
-.. java:field::  Handler handleCT
+.. java:field::  Handler<CancelTimeout> handleCT
    :outertype: P2pSimulator
 
 handleMsg
 ^^^^^^^^^
 
-.. java:field::  Handler handleMsg
+.. java:field::  Handler<Msg<?, ?>> handleMsg
    :outertype: P2pSimulator
 
 handleSPT
 ^^^^^^^^^
 
-.. java:field::  Handler handleSPT
+.. java:field::  Handler<SchedulePeriodicTimeout> handleSPT
    :outertype: P2pSimulator
 
 handleST
 ^^^^^^^^
 
-.. java:field::  Handler handleST
+.. java:field::  Handler<ScheduleTimeout> handleST
    :outertype: P2pSimulator
 
 handleStart
 ^^^^^^^^^^^
 
-.. java:field::  Handler handleStart
+.. java:field::  Handler<Start> handleStart
    :outertype: P2pSimulator
 
 handleTerminate
 ^^^^^^^^^^^^^^^
 
-.. java:field::  Handler handleTerminate
+.. java:field::  Handler<TerminateExperiment> handleTerminate
    :outertype: P2pSimulator
 
 network
 ^^^^^^^
 
-.. java:field::  Negative network
+.. java:field::  Negative<Network> network
    :outertype: P2pSimulator
 
 simControlPort
 ^^^^^^^^^^^^^^
 
-.. java:field::  Negative simControlPort
+.. java:field::  Negative<SimulatorControlPort> simControlPort
    :outertype: P2pSimulator
 
 simPort
 ^^^^^^^
 
-.. java:field::  Negative simPort
+.. java:field::  Negative<SimulatorPort> simPort
    :outertype: P2pSimulator
 
 timer
 ^^^^^
 
-.. java:field::  Negative timer
+.. java:field::  Negative<Timer> timer
    :outertype: P2pSimulator
 
 Constructors

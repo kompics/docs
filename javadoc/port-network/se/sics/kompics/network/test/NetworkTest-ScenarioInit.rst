@@ -8,25 +8,9 @@
 
 .. java:import:: java.net UnknownHostException
 
-.. java:import:: java.util Arrays
-
-.. java:import:: java.util LinkedList
-
-.. java:import:: java.util List
-
-.. java:import:: java.util Map
-
 .. java:import:: java.util Map.Entry
 
-.. java:import:: java.util Random
-
-.. java:import:: java.util Set
-
-.. java:import:: java.util TreeMap
-
-.. java:import:: java.util TreeSet
-
-.. java:import:: java.util UUID
+.. java:import:: java.util.concurrent ConcurrentHashMap
 
 .. java:import:: java.util.concurrent ConcurrentSkipListMap
 
@@ -43,8 +27,6 @@
 .. java:import:: se.sics.kompics ComponentDefinition
 
 .. java:import:: se.sics.kompics ControlPort
-
-.. java:import:: se.sics.kompics Event
 
 .. java:import:: se.sics.kompics Fault
 
@@ -69,14 +51,6 @@
 .. java:import:: se.sics.kompics Positive
 
 .. java:import:: se.sics.kompics Start
-
-.. java:import:: se.sics.kompics.network Address
-
-.. java:import:: se.sics.kompics.network MessageNotify
-
-.. java:import:: se.sics.kompics.network Network
-
-.. java:import:: se.sics.kompics.network Transport
 
 NetworkTest.ScenarioInit
 ========================

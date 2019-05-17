@@ -6,7 +6,7 @@ Cloner
 
 .. java:type:: public interface Cloner
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

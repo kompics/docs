@@ -10,7 +10,7 @@ DisambiguateConnection
 
 .. java:type:: public class DisambiguateConnection extends DirectMessage
 
-   :author: Lars Kroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Fields
 ------

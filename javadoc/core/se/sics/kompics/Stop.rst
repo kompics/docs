@@ -15,7 +15,7 @@ Fields
 event
 ^^^^^
 
-.. java:field:: public static Stop event
+.. java:field:: public static final Stop event
    :outertype: Stop
 
 Constructors

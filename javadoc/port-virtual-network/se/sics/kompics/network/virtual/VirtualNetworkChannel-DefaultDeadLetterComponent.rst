@@ -58,7 +58,7 @@ Fields
 msgHandler
 ^^^^^^^^^^
 
-.. java:field::  Handler<Msg> msgHandler
+.. java:field::  Handler<Msg<?, ?>> msgHandler
    :outertype: VirtualNetworkChannel.DefaultDeadLetterComponent
 
 net

@@ -20,11 +20,11 @@ JavaPort
 .. java:package:: se.sics.kompics
    :noindex:
 
-.. java:type:: public class JavaPort<P extends PortType> extends PortCore<P>
+.. java:type:: @SuppressWarnings public class JavaPort<P extends PortType> extends PortCore<P>
 
    The \ ``PortCore``\  class.
 
-   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>, Lars Kroll
+   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>, Lars Kroll <lkroll@kth.se>
 
 Constructors
 ------------
@@ -81,7 +81,7 @@ doSubscribe
 doSubscribe
 ^^^^^^^^^^^
 
-.. java:method:: @Override public void doSubscribe(MatchedHandler handler)
+.. java:method:: @Override public void doSubscribe(MatchedHandler<?, ?, ?> handler)
    :outertype: JavaPort
 
 doTrigger
@@ -105,7 +105,7 @@ doUnsubscribe
 doUnsubscribe
 ^^^^^^^^^^^^^
 
-.. java:method::  void doUnsubscribe(MatchedHandler handler)
+.. java:method::  void doUnsubscribe(MatchedHandler<?, ?, ?> handler)
    :outertype: JavaPort
 
 enqueue

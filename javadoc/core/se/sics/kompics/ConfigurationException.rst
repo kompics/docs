@@ -4,9 +4,9 @@ ConfigurationException
 .. java:package:: se.sics.kompics
    :noindex:
 
-.. java:type:: public class ConfigurationException extends RuntimeException
+.. java:type:: @SuppressWarnings public class ConfigurationException extends RuntimeException
 
-   :author: sario
+   :author: Lars Kroll <lkroll@kth.se>
 
 Constructors
 ------------

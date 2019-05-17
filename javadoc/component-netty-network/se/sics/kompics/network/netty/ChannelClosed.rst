@@ -10,7 +10,7 @@ ChannelClosed
 
 .. java:type:: public class ChannelClosed extends DirectMessage
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Constructors
 ------------

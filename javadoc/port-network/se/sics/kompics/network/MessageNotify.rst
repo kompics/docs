@@ -10,19 +10,19 @@ MessageNotify
 
 .. java:type:: public class MessageNotify
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------
 create
 ^^^^^^
 
-.. java:method:: public static Req create(Msg msg)
+.. java:method:: public static Req create(Msg<?, ?> msg)
    :outertype: MessageNotify
 
 createWithDeliveryNotification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. java:method:: public static Req createWithDeliveryNotification(Msg msg)
+.. java:method:: public static Req createWithDeliveryNotification(Msg<?, ?> msg)
    :outertype: MessageNotify
 

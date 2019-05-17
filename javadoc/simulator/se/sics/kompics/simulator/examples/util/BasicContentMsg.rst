@@ -29,13 +29,13 @@ Methods
 answer
 ^^^^^^
 
-.. java:method:: public <C2 extends Object> BasicContentMsg<A, H, C2> answer(C2 newContent)
+.. java:method:: @SuppressWarnings public <C2 extends Object> BasicContentMsg<A, H, C2> answer(C2 newContent)
    :outertype: BasicContentMsg
 
 extractPattern
 ^^^^^^^^^^^^^^
 
-.. java:method:: @Override public Class<Object> extractPattern()
+.. java:method:: @SuppressWarnings @Override public Class<Object> extractPattern()
    :outertype: BasicContentMsg
 
 extractValue

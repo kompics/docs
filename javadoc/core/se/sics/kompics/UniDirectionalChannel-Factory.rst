@@ -26,6 +26,6 @@ connect
 connect
 ^^^^^^^
 
-.. java:method:: @Override public <P extends PortType> Channel<P> connect(PortCore<P> positivePort, PortCore<P> negativePort, ChannelSelector selector)
+.. java:method:: @Override public <P extends PortType, E extends KompicsEvent, F> Channel<P> connect(PortCore<P> positivePort, PortCore<P> negativePort, ChannelSelector<E, F> selector)
    :outertype: UniDirectionalChannel.Factory
 

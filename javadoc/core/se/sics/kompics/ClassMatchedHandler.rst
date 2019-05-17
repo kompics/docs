@@ -6,7 +6,7 @@ ClassMatchedHandler
 
 .. java:type:: public abstract class ClassMatchedHandler<V, E extends KompicsEvent & PatternExtractor<Class<Object>, ? super V>> extends MatchedHandler<Class<Object>, V, E>
 
-   :author: lkroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Constructors
 ------------
@@ -19,13 +19,13 @@ ClassMatchedHandler
 ClassMatchedHandler
 ^^^^^^^^^^^^^^^^^^^
 
-.. java:constructor:: protected ClassMatchedHandler(Class<?> matchType)
+.. java:constructor:: @SuppressWarnings protected ClassMatchedHandler(Class<?> matchType)
    :outertype: ClassMatchedHandler
 
 ClassMatchedHandler
 ^^^^^^^^^^^^^^^^^^^
 
-.. java:constructor:: protected ClassMatchedHandler(Class<E> cxtType, Class matchType)
+.. java:constructor:: @SuppressWarnings protected ClassMatchedHandler(Class<E> cxtType, Class<?> matchType)
    :outertype: ClassMatchedHandler
 
 Methods

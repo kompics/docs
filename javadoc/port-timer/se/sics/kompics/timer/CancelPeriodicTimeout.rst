@@ -1,6 +1,6 @@
 .. java:import:: java.util UUID
 
-.. java:import:: se.sics.kompics Event
+.. java:import:: se.sics.kompics KompicsEvent
 
 CancelPeriodicTimeout
 =====================
@@ -8,11 +8,11 @@ CancelPeriodicTimeout
 .. java:package:: se.sics.kompics.timer
    :noindex:
 
-.. java:type:: public final class CancelPeriodicTimeout extends Event
+.. java:type:: public final class CancelPeriodicTimeout implements KompicsEvent
 
    The \ ``CancelPeriodicTimeout``\  class.
 
-   :author: Cosmin Arad , Jim Dowling
+   :author: Cosmin Arad <cosmin@sics.se>, Jim Dowling <jdowling@sics.se>, Lars Kroll <lkroll@kth.se>
 
 Constructors
 ------------

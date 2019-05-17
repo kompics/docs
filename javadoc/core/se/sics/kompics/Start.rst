@@ -15,7 +15,7 @@ Fields
 event
 ^^^^^
 
-.. java:field:: public static Start event
+.. java:field:: public static final Start event
    :outertype: Start
 
 Constructors

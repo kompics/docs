@@ -1,10 +1,4 @@
-.. java:import:: org.junit Assert
-
-.. java:import:: org.junit Test
-
-.. java:import:: org.junit.runner RunWith
-
-.. java:import:: org.junit.runners JUnit4
+.. java:import:: org.junit.jupiter.api Test
 
 LoggingTest
 ===========
@@ -12,9 +6,9 @@ LoggingTest
 .. java:package:: se.sics.kompics
    :noindex:
 
-.. java:type:: @RunWith public class LoggingTest
+.. java:type:: public class LoggingTest
 
-   :author: Lars Kroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Constructors
 ------------

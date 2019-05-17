@@ -1,4 +1,4 @@
-.. java:import:: com.google.common.base Optional
+.. java:import:: java.util Optional
 
 .. java:import:: java.util LinkedList
 
@@ -24,7 +24,7 @@ ComponentCore
 .. java:package:: se.sics.kompics
    :noindex:
 
-.. java:type:: public abstract class ComponentCore extends ForkJoinTask<Void> implements Component
+.. java:type:: @SuppressWarnings public abstract class ComponentCore extends ForkJoinTask<Void> implements Component
 
    The \ ``ComponentCore``\  class.
 

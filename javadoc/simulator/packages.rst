@@ -16,6 +16,8 @@ Simulator
    se/sics/kompics/simulator/examples/basic/sim/package-index
    se/sics/kompics/simulator/examples/config/package-index
    se/sics/kompics/simulator/examples/config/sim/package-index
+   se/sics/kompics/simulator/examples/networkModel/package-index
+   se/sics/kompics/simulator/examples/networkModel/sim/package-index
    se/sics/kompics/simulator/examples/util/package-index
    se/sics/kompics/simulator/instrumentation/package-index
    se/sics/kompics/simulator/network/package-index

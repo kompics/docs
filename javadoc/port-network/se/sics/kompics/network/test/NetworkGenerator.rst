@@ -10,7 +10,7 @@ NetworkGenerator
 
 .. java:type:: public interface NetworkGenerator
 
-   :author: Lars Kroll
+   :author: Lars Kroll <lkroll@kth.se>
 
 Methods
 -------

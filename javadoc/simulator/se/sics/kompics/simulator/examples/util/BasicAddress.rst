@@ -6,8 +6,6 @@
 
 .. java:import:: se.sics.kompics.network Address
 
-.. java:import:: se.sics.kompics.util Identifier
-
 BasicAddress
 ============
 
