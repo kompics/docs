@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Timers &mdash; Kompics 1.0.0 documentation</title>
+  <title>Timers &mdash; Kompics 1.1.0 documentation</title>
   
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                1.0
+                1.1
               </div>
             
           
@@ -177,7 +177,7 @@
   <div class="section" id="timers">
 <span id="id1"></span><h1>Timers<a class="headerlink" href="#timers" title="Permalink to this headline">¶</a></h1>
 <p>In distributed systems it is quite common to have certain events happen after some time has passed, or in a regular schedule. And while globally synchronised clocks are rarely available, local clock drift is typically small enough that algorithms can rely on local <em>time differences</em> (or <em>intervals</em>).</p>
-<p>There are number of timer facilities for Java ranging from the simple tree based <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/Timer.html" title="java.util.Timer"><code class="xref java java-ref docutils literal notranslate"><span class="pre">java.util.Timer</span></code></a> to the significantly more advanced <a class="reference external" href="http://netty.io/5.0/api/io/netty/util/HashedWheelTimer.html" title="io.netty.util.HashedWheelTimer"><code class="xref java java-ref docutils literal notranslate"><span class="pre">io.netty.util.HashedWheelTimer</span></code></a>.</p>
+<p>There are number of timer facilities for Java ranging from the simple tree based <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/Timer.html" title="java.util.Timer"><code class="xref java java-ref docutils literal notranslate"><span class="pre">java.util.Timer</span></code></a> to the significantly more advanced <a class="reference external" href="https://netty.io/4.1/api/io/netty/util/HashedWheelTimer.html" title="io.netty.util.HashedWheelTimer"><code class="xref java java-ref docutils literal notranslate"><span class="pre">io.netty.util.HashedWheelTimer</span></code></a>.</p>
 <p>However, Kompics provides its own abstraction for scheduled or periodic events. It is very important that your code only relies on this abstraction as described in this section of the tutorial, if you want to use the Kompics Simulation framework described in section <a class="reference internal" href="../simulation/index.html#simulation"><span class="std std-ref">Simulation</span></a>. The reasons for this restriction will be described in the simulation part of the tutorial.</p>
 <p>This section introduces the default Kompics timer facilities and the concept of request-response-type events.</p>
 <div class="section" id="request-response-events">
