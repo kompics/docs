@@ -1,0 +1,741 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Testing Basics &mdash; Kompics 1.2.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Answering Requests" href="../answering_requests/answering_requests.html" />
+    <link rel="prev" title="Testing" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../../../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Kompics Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basics/basics.html">Kompics Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../timers/timers.html">Timers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../networking/index.html">Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../simulation/index.html">Simulation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Testing</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Testing Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modes">Modes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#conditionals">Conditionals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#blocks">Blocks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ambiguous-testcases">Ambiguous Testcases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#specifying-nondeterministic-testcases">Specifying Nondeterministic Testcases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#matching-events">Matching Events</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../answering_requests/answering_requests.html">Answering Requests</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scala/index.html">Kompics Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../internals/index.html">Kompics Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../project/index.html">Project Information</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://javadoc.io/doc/se.sics.kompics/kompics-core/latest/index.html">Javadoc</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://kompics.github.io/kompics-scala/api/se/sics/kompics/sl/index.html">Scaladoc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Kompics Tutorial</a> &raquo;</li>
+        
+          <li><a href="../index.html">Testing</a> &raquo;</li>
+        
+      <li>Testing Basics</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/tutorial/testing/basics/basics.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="testing-basics">
+<span id="id1"></span><h1>Testing Basics<a class="headerlink" href="#testing-basics" title="Permalink to this headline">¶</a></h1>
+<p>A test case when testing in Kompics is a method describing the expected behavior of the component under test (CUT) for a given scenario.
+This behavior is specified in terms of the expected sequence of events that go in and out of the component.
+You can think of a <em>behavior</em> simply as a sequence of events while a test case describes a set of behaviors, any of which the CUT’s runtime execution must match in order for a test case to be a successful.
+The framework executes an instance of the CUT, observing the events that actually occur at runtime and matching them against the next expected event according to the test case.
+If a match is unsuccessful then the test case fails immediately.
+Kompics allows you to test your component either in a realistic environment, complete isolation and anywhere in between.
+A test case may also inject events into the environment.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">TestContext</span></code> class implements the DSL for writing test cases in this manner.</p>
+<p>In this part of the tutorial we add an <code class="docutils literal notranslate"><span class="pre">id</span></code> field to identify our <code class="docutils literal notranslate"><span class="pre">Ping</span></code> and <code class="docutils literal notranslate"><span class="pre">Pong</span></code> events using <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html" title="java.util.Comparator"><code class="xref java java-ref docutils literal notranslate"><span class="pre">java.util.Comparator</span></code></a> instances. We also create two components <code class="docutils literal notranslate"><span class="pre">Pinger</span></code> and <code class="docutils literal notranslate"><span class="pre">Ponger</span></code>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.KompicsEvent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Comparator</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ping</span> <span class="kd">implements</span> <span class="n">KompicsEvent</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="n">id</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="nf">Ping</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Ping</span><span class="o">&gt;</span> <span class="n">comparator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Ping</span><span class="o">&gt;()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compare</span><span class="o">(</span><span class="n">Ping</span> <span class="n">p1</span><span class="o">,</span> <span class="n">Ping</span> <span class="n">p2</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">p1</span><span class="o">.</span><span class="na">id</span> <span class="o">-</span> <span class="n">p2</span><span class="o">.</span><span class="na">id</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="o">};</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.KompicsEvent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Comparator</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pong</span> <span class="kd">implements</span> <span class="n">KompicsEvent</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="n">id</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="nf">Pong</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Pong</span><span class="o">&gt;</span> <span class="n">comparator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Pong</span><span class="o">&gt;()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compare</span><span class="o">(</span><span class="n">Pong</span> <span class="n">p1</span><span class="o">,</span> <span class="n">Pong</span> <span class="n">p2</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">p1</span><span class="o">.</span><span class="na">id</span> <span class="o">-</span> <span class="n">p2</span><span class="o">.</span><span class="na">id</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="o">};</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.PortType</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PingPongPort</span> <span class="kd">extends</span> <span class="n">PortType</span> <span class="o">{{</span>
+  <span class="n">request</span><span class="o">(</span><span class="n">Ping</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+  <span class="n">indication</span><span class="o">(</span><span class="n">Pong</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+<span class="o">}}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.ComponentDefinition</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Handler</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Positive</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Start</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pinger</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">pongsReceived</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+  <span class="n">Positive</span><span class="o">&lt;</span><span class="n">PingPongPort</span><span class="o">&gt;</span> <span class="n">ppp</span> <span class="o">=</span> <span class="n">requires</span><span class="o">(</span><span class="n">PingPongPort</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+  <span class="n">Handler</span><span class="o">&lt;</span><span class="n">Start</span><span class="o">&gt;</span> <span class="n">startHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Handler</span><span class="o">&lt;</span><span class="n">Start</span><span class="o">&gt;(){</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handle</span><span class="o">(</span><span class="n">Start</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">trigger</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(</span><span class="mi">8</span><span class="o">),</span> <span class="n">ppp</span><span class="o">);</span>
+    <span class="o">}</span>
+  <span class="o">};</span>
+  <span class="n">Handler</span><span class="o">&lt;</span><span class="n">Pong</span><span class="o">&gt;</span> <span class="n">pongHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Handler</span><span class="o">&lt;</span><span class="n">Pong</span><span class="o">&gt;()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handle</span><span class="o">(</span><span class="n">Pong</span> <span class="n">pong</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">pongsReceived</span><span class="o">++;</span>
+    <span class="o">}</span>
+  <span class="o">};</span>
+  <span class="o">{</span>
+    <span class="n">subscribe</span><span class="o">(</span><span class="n">startHandler</span><span class="o">,</span> <span class="n">control</span><span class="o">);</span>
+    <span class="n">subscribe</span><span class="o">(</span><span class="n">pongHandler</span><span class="o">,</span> <span class="n">ppp</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.ComponentDefinition</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Handler</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Negative</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ponger</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">pingsReceived</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+  <span class="n">Negative</span><span class="o">&lt;</span><span class="n">PingPongPort</span><span class="o">&gt;</span> <span class="n">ppp</span> <span class="o">=</span> <span class="n">provides</span><span class="o">(</span><span class="n">PingPongPort</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+  <span class="n">Handler</span><span class="o">&lt;</span><span class="n">Ping</span><span class="o">&gt;</span> <span class="n">pingHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Handler</span><span class="o">&lt;</span><span class="n">Ping</span><span class="o">&gt;()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handle</span><span class="o">(</span><span class="n">Ping</span> <span class="n">ping</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">pingsReceived</span><span class="o">++;</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">ping</span><span class="o">.</span><span class="na">id</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">trigger</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="n">ppp</span><span class="o">);</span>
+        <span class="n">trigger</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">2</span><span class="o">),</span> <span class="n">ppp</span><span class="o">);</span>
+      <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="c1">// echo the id</span>
+        <span class="n">trigger</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="n">ping</span><span class="o">.</span><span class="na">id</span><span class="o">),</span> <span class="n">ppp</span><span class="o">);</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+  <span class="o">};</span>
+  <span class="o">{</span>
+    <span class="n">subscribe</span><span class="o">(</span><span class="n">pingHandler</span><span class="o">,</span> <span class="n">ppp</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>The behavior of <code class="docutils literal notranslate"><span class="pre">Pinger</span></code> is straightforward - it triggers a single <code class="docutils literal notranslate"><span class="pre">Ping</span></code> (with <code class="docutils literal notranslate"><span class="pre">id</span></code> 8) event when started.
+On the other hand, <code class="docutils literal notranslate"><span class="pre">Ponger</span></code> listens for incoming <code class="docutils literal notranslate"><span class="pre">Ping</span></code> s and responds with a <code class="docutils literal notranslate"><span class="pre">Pong</span></code> of the same <code class="docutils literal notranslate"><span class="pre">id</span></code> unless the <code class="docutils literal notranslate"><span class="pre">id</span></code> happens to be 0 in which case it responds with two <code class="docutils literal notranslate"><span class="pre">Pongs</span></code> of <code class="docutils literal notranslate"><span class="pre">id</span></code> s 1, 2 in that order.</p>
+<p id="basicsexample">The following example shows a test case for this behavior of <code class="docutils literal notranslate"><span class="pre">Ponger</span></code>.
+The entire test case can also be downloaded <a class="reference download internal" download="" href="../../../_downloads/b55dd20e1b9bbe92a81cc131f3e9b3e4/pingpong-testing.zip"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Component</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Positive</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.testing.Direction</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.testing.TestContext</span><span class="o">;</span>
+<span class="kn">import static</span> <span class="nn">org.junit.Assert.assertTrue</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// basicsExample</span>
+    <span class="n">TestContext</span><span class="o">&lt;</span><span class="n">Ponger</span><span class="o">&gt;</span> <span class="n">tc</span> <span class="o">=</span> <span class="n">TestContext</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="n">Ponger</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="n">Component</span> <span class="n">ponger</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="na">getComponentUnderTest</span><span class="o">();</span>
+    <span class="n">Component</span> <span class="n">pinger</span> <span class="o">=</span> <span class="n">tc</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">Pinger</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="n">Positive</span><span class="o">&lt;</span><span class="n">PingPongPort</span><span class="o">&gt;</span> <span class="n">pongerPort</span> <span class="o">=</span> <span class="n">ponger</span><span class="o">.</span><span class="na">getPositive</span><span class="o">(</span> <span class="n">PingPongPort</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="n">tc</span><span class="o">.</span><span class="na">connect</span><span class="o">(</span><span class="n">pongerPort</span><span class="o">,</span> <span class="n">pinger</span><span class="o">.</span><span class="na">getNegative</span><span class="o">(</span><span class="n">PingPongPort</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
+    <span class="n">tc</span><span class="o">.</span><span class="na">setComparator</span><span class="o">(</span><span class="n">Ping</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Ping</span><span class="o">.</span><span class="na">comparator</span><span class="o">);</span>
+    <span class="n">tc</span><span class="o">.</span><span class="na">setComparator</span><span class="o">(</span><span class="n">Pong</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Pong</span><span class="o">.</span><span class="na">comparator</span><span class="o">);</span>
+    <span class="c1">// setup done</span>
+    <span class="n">tc</span><span class="o">.</span><span class="na">body</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(</span><span class="mi">8</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">IN</span><span class="o">)</span>          <span class="c1">// a</span>
+        <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">8</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">)</span>         <span class="c1">// b</span>
+        <span class="o">.</span><span class="na">trigger</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">either</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">)</span>     <span class="c1">// c</span>
+            <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">2</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">)</span>     <span class="c1">// d</span>
+        <span class="o">.</span><span class="na">or</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">3</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">)</span>     <span class="c1">// e</span>
+            <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">4</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">)</span>     <span class="c1">// f</span>
+        <span class="o">.</span><span class="na">end</span><span class="o">();</span>
+    <span class="n">assertTrue</span><span class="o">(</span><span class="n">tc</span><span class="o">.</span><span class="na">check</span><span class="o">());</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">newInstance</span></code> method creates a new <code class="docutils literal notranslate"><span class="pre">TestContext</span></code> specifically for our <code class="docutils literal notranslate"><span class="pre">Ponger</span></code> component - an instance of which is retrieved by calling <code class="docutils literal notranslate"><span class="pre">getComponentUnderTest</span></code>.
+The framework begins observing and matching events only when the <code class="docutils literal notranslate"><span class="pre">check</span></code> method is called. As such, this method should only be called finally when the test case has been specified.</p>
+<p>Method calls in the body of the test case form statements that instruct the framework to perform specified actions.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">expect</span></code> method causes the framework to observe a single event and match it against the specified arguments - failing the test case if no event is observed or the match is not successful.
+The body of our test case says that first, we expect a <code class="docutils literal notranslate"><span class="pre">Ping</span></code> event, with an <code class="docutils literal notranslate"><span class="pre">id</span></code> 8, going into the <code class="docutils literal notranslate"><span class="pre">Ponger</span></code>’s port (as sent by our connected <code class="docutils literal notranslate"><span class="pre">Pinger</span></code> component).
+This should then be followed by a <code class="docutils literal notranslate"><span class="pre">Pong</span></code> response with the same <code class="docutils literal notranslate"><span class="pre">id</span></code> coming out of it.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">trigger</span></code> method causes the framework to trigger an event on the specified port. In our example we next trigger an event on the <code class="docutils literal notranslate"><span class="pre">Ponger</span></code>’s port. In a sense, we mock the behavior of <code class="docutils literal notranslate"><span class="pre">Pinger</span></code> by providing stimuli (a <code class="docutils literal notranslate"><span class="pre">Ping</span></code> with <code class="docutils literal notranslate"><span class="pre">id</span></code> 0) to our CUT just as if it were sent by <code class="docutils literal notranslate"><span class="pre">Pinger</span></code>.</p>
+<p>Next, using a <a class="reference internal" href="#conditionals"><span class="std std-ref">conditional statement</span></a>, our test case says that the framework should expect <em>either</em> a <code class="docutils literal notranslate"><span class="pre">Pong</span></code> of <code class="docutils literal notranslate"><span class="pre">id</span></code> 1 followed by another with <code class="docutils literal notranslate"><span class="pre">id</span></code> 2 <em>or</em> a <code class="docutils literal notranslate"><span class="pre">Pong</span></code> 3 followed by another with <code class="docutils literal notranslate"><span class="pre">id</span></code> 4.
+Depending on what events actually show up at runtime, the framework chooses which branch of the statement to match.
+So if event <code class="docutils literal notranslate"><span class="pre">Pong</span></code> 1 occurs then it is matched successfully and the rest of the <code class="docutils literal notranslate"><span class="pre">either</span></code> branch is executed (the framework tries to observe and match an equivalent event to <code class="docutils literal notranslate"><span class="pre">Pong</span></code> 2).
+Here, we know that this will be the case and that the test case should pass.
+Have <code class="docutils literal notranslate"><span class="pre">Ponger</span></code> send different <code class="docutils literal notranslate"><span class="pre">id</span></code> s in response to a <code class="docutils literal notranslate"><span class="pre">Ping</span></code> 0 or change the expected events and see that the test case fails instead.</p>
+<p>If we assign each event a symbol, like in our example the letters a-f as shown using comments, then the set of behaviors that our test case describes is {abcd, abef} so that the test cases passes if either of these sequences are observed and no other events occur.
+An equivalent notation to describe this set is the <a class="reference external" href="https://en.wikipedia.org/wiki/Regular_expression#Basic_concepts">regular expression</a> <code class="docutils literal notranslate"><span class="pre">ab(cd|ef)</span></code>, where the <code class="docutils literal notranslate"><span class="pre">either-or</span></code> conditional statement is used as the boolean <cite>or</cite> operator <code class="docutils literal notranslate"><span class="pre">|</span></code>.
+The DSL also explicitly <a class="reference internal" href="#blocks"><span class="std std-ref">supports constructs</span></a> for the quantification operators of regular expressions <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">{n}</span></code> for matching any number of occurrences of a sequence.
+This might be helpful when thinking of concise ways to write test cases.</p>
+<div class="section" id="setup">
+<span id="id2"></span><h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>As shown in the <a class="reference internal" href="#basicsexample"><span class="std std-ref">previous example</span></a>, we might need to set up our test environment before we begin matching events.
+Any setup activites must be carried out before calling <code class="docutils literal notranslate"><span class="pre">body</span></code> for the first time - signalling that we would now like to start describing the expected behaviors of our component.
+We refer to this part of the test case (before the <code class="docutils literal notranslate"><span class="pre">body</span></code> is called) as the <em>setup header</em> of the test case.</p>
+<p>Within the setup header, the following methods can be called:</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">create</span></code></dt>
+<dd>Create instances of other components that may communicate with the CUT.</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">connect</span></code></dt>
+<dd>Connect any two ports.</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">setComparator</span></code></dt>
+<dd>Register a <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html" title="java.util.Comparator"><code class="xref java java-ref docutils literal notranslate"><span class="pre">java.util.Comparator</span></code></a> instance for an event class to be used when <a class="reference internal" href="#matching-events"><span class="std std-ref">matching events</span></a> of that type.</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">setDefaultAction</span></code></dt>
+<dd>By default unmatched events cause the test case to fail. This method <a class="reference internal" href="#defaultactions"><span class="std std-ref">overrides this behavior</span></a> for desired events by registering a <code class="docutils literal notranslate"><span class="pre">Function</span></code>.</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">setTimeout</span></code></dt>
+<dd>To ensure test case termination and correctness, the framework needs to know how long to wait for an event to occur before making a decision.
+This method overrides the default timeout.</dd>
+</dl>
+</div>
+<div class="section" id="modes">
+<h2>Modes<a class="headerlink" href="#modes" title="Permalink to this headline">¶</a></h2>
+<p>Using method calls to write our test cases necessarily mean that the order in which the methods are called matter.
+But more importantly, some combinations of methods calls are simply not legal.
+The DSL uses the concept of modes to enforce the legality of test cases by assigning each method a set of valid modes in which they can be used.
+Additionally, calling certain method calls change the current mode of the test case and calling a method in an illegal mode always throws an exception.
+The possible modes can be found here <a class="reference external" href="https://javadoc.io/doc/se.sics.kompics/kompics-core/latest/se/sics/kompics/testing/MODE.html" title="se.sics.kompics.testing.MODE"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.testing.MODE</span></code></a>.
+Please refer to the javadoc <a class="reference external" href="https://javadoc.io/doc/se.sics.kompics/kompics-core/latest/se/sics/kompics/testing/TestContext.html" title="se.sics.kompics.testing.TestContext"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.testing.TestContext</span></code></a> for a list of all methods and their valid modes.</p>
+</div>
+<div class="section" id="conditionals">
+<span id="id3"></span><h2>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this headline">¶</a></h2>
+<p>A conditional is a compound statement of the form <code class="docutils literal notranslate"><span class="pre">either()</span> <span class="pre">-</span> <span class="pre">or()</span> <span class="pre">-</span> <span class="pre">end()</span></code> where <code class="docutils literal notranslate"><span class="pre">-</span></code> represents the <code class="docutils literal notranslate"><span class="pre">either</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code> branches of the conditional and may contain other statements that would normally appear in the body of a test case, including other conditionals.
+When <code class="docutils literal notranslate"><span class="pre">either()</span></code> is called, it changes the current mode <code class="docutils literal notranslate"><span class="pre">X</span></code> of the test case to <code class="docutils literal notranslate"><span class="pre">CONDITIONAL</span></code> and when the matching <code class="docutils literal notranslate"><span class="pre">end()</span></code> is called, the current mode is restored to <code class="docutils literal notranslate"><span class="pre">X</span></code>.</p>
+<p>In a typical conditional statement like the if-then(-else) constructs of most programming languages, the necessary condition for executing the <code class="docutils literal notranslate"><span class="pre">if</span></code> or <code class="docutils literal notranslate"><span class="pre">else</span></code> branch is always clear - If the boolean condition is true then the <code class="docutils literal notranslate"><span class="pre">if</span></code> branch is executed otherwise the <code class="docutils literal notranslate"><span class="pre">else</span></code> branch is  executed.
+In our <code class="docutils literal notranslate"><span class="pre">either-or</span></code> construct the condition for matching the branches is inferred from the actual events that are observed at runtime.
+If an observed event <code class="docutils literal notranslate"><span class="pre">e</span></code> is matched by the first statement in the <code class="docutils literal notranslate"><span class="pre">either</span></code> branch then the framework continues to execute statements in that branch and the same goes for the <code class="docutils literal notranslate"><span class="pre">or</span></code> branch.
+If the first statements in both branches match <code class="docutils literal notranslate"><span class="pre">e</span></code> the framework proceeds to execute the next statements of both branches and so on until there is a divergence (a branch’s statement fails to match an observed event).</p>
+</div>
+<div class="section" id="blocks">
+<span id="id4"></span><h2>Blocks<a class="headerlink" href="#blocks" title="Permalink to this headline">¶</a></h2>
+<p>The DSL uses the concepts of blocks as a way to split the statements in a test case into partitions that make up a block.
+By doing so we may specify instructions to the framework like executing the statements of a block a particular number of times, whitelisting or blacklisting events that can occur while the framework is executing statements within a block etc.</p>
+<p>The following code snippet shows an example of a block.</p>
+<div class="highlight-java notranslate" id="examplerepeatwithoutblock"><div class="highlight"><pre><span></span><span class="n">tc</span><span class="o">.</span><span class="na">repeat</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span>
+     <span class="c1">// block header</span>
+  <span class="o">.</span><span class="na">body</span><span class="o">()</span>
+     <span class="c1">// block body</span>
+    <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="n">pingerPort</span><span class="o">,</span> <span class="n">IN</span><span class="o">)</span> <span class="c1">// a</span>
+    <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(</span><span class="mi">2</span><span class="o">),</span> <span class="n">pingerPort</span><span class="o">,</span> <span class="n">IN</span><span class="o">)</span> <span class="c1">// b</span>
+  <span class="o">.</span><span class="na">end</span><span class="o">();</span>
+</pre></div>
+</div>
+<p>A block is of the form <code class="docutils literal notranslate"><span class="pre">repeat()</span> <span class="pre">A</span> <span class="pre">body()</span> <span class="pre">B</span> <span class="pre">end()</span></code> where <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> are the <em>header</em> and <em>body</em> respectively of the block.
+The statements in a block body is executed sequentially by the framework while those at the header are used to filter out events that may occur while the framework is executing the statements in the body.
+Once <code class="docutils literal notranslate"><span class="pre">repeat</span></code> is called, the test case enters <code class="docutils literal notranslate"><span class="pre">HEADER</span></code> mode from some previous mode <code class="docutils literal notranslate"><span class="pre">X</span></code> and statements allowed in the block header can be called (these statements are optional as a block header may be empty). Calling <code class="docutils literal notranslate"><span class="pre">body()</span></code> moves the test case into <code class="docutils literal notranslate"><span class="pre">BODY</span></code> mode and finally calling the matching <code class="docutils literal notranslate"><span class="pre">end()</span></code> restores the current mode back to <code class="docutils literal notranslate"><span class="pre">X</span></code>.</p>
+<p>In our example, the <code class="docutils literal notranslate"><span class="pre">repeat(5)</span></code> instructs the framework to execute the statements in the block body exactly 5 times in succession.
+As a single execution of the block body matches the sequence <code class="docutils literal notranslate"><span class="pre">ab</span></code>, the entire block matches the sequence <code class="docutils literal notranslate"><span class="pre">ababababab</span></code> - that is 5 occurrences of <code class="docutils literal notranslate"><span class="pre">ab</span></code> similar to the regular expression <code class="docutils literal notranslate"><span class="pre">(ab){5}</span></code>.</p>
+<div class="section" id="block-headers">
+<span id="blockheader"></span><h3>Block Headers<a class="headerlink" href="#block-headers" title="Permalink to this headline">¶</a></h3>
+<p>Within a block, some events may be <em>disallowed</em> by the test case - the occurrence of such events at any point in the block’s execution is undesirable so that the test case should fail if observed.
+In some other cases, some events may occur but they are not required for a successful test case - that is, they are <em>allowed</em> if they do occur.
+Finally, some events may be <em>dropped</em> if they do occur - if incoming then they are not delivered to the CUT and if outgoing they are not forwarded to any other components in the environment.
+For these three cases Kompics offers the respective statements <code class="docutils literal notranslate"><span class="pre">disallow</span></code>, <code class="docutils literal notranslate"><span class="pre">allow</span></code> and <code class="docutils literal notranslate"><span class="pre">drop</span></code> that can be called within the header of a block.</p>
+<p>The following code snippet shows the <a class="reference internal" href="#examplerepeatwithoutblock"><span class="std std-ref">previous example</span></a> with a single header statement.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">tc</span><span class="o">.</span><span class="na">repeat</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span>
+     <span class="c1">// block header</span>
+     <span class="o">.</span><span class="na">allow</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span> <span class="n">pingerPort</span><span class="o">,</span> <span class="n">IN</span><span class="o">)</span> <span class="c1">// c</span>
+  <span class="o">.</span><span class="na">body</span><span class="o">()</span>
+     <span class="c1">// block body</span>
+    <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="n">pingerPort</span><span class="o">,</span> <span class="n">IN</span><span class="o">)</span> <span class="c1">// a</span>
+    <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(</span><span class="mi">2</span><span class="o">),</span> <span class="n">pingerPort</span><span class="o">,</span> <span class="n">IN</span><span class="o">)</span> <span class="c1">// b</span>
+  <span class="o">.</span><span class="na">end</span><span class="o">();</span> <span class="c1">// end of block</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">allow</span></code> in this case whitelists the <code class="docutils literal notranslate"><span class="pre">Ping</span></code> 0 event within this block (the event may be observed while executing a statement within the block body).
+In terms of set of behaviors being described, since the block body already describes the sequence <code class="docutils literal notranslate"><span class="pre">ab</span></code>, this means that any number of <code class="docutils literal notranslate"><span class="pre">c</span></code> events can occur at any positions of this expected sequence.
+As such, the regular expression <code class="docutils literal notranslate"><span class="pre">(c*ac*bc*){5}</span></code> describes the same set of sequences.</p>
+<p>For a concrete example, we utilize the setup code from <a class="reference internal" href="#basicsexample"><span class="std std-ref">this example</span></a></p>
+<div class="highlight-java notranslate" id="example2"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// blocksIntroDemo</span>
+  <span class="c1">// ... setup code as in basicsExample ...</span>
+  <span class="c1">// setup done</span>
+  <span class="n">tc</span><span class="o">.</span><span class="na">body</span><span class="o">()</span>
+      <span class="o">.</span><span class="na">repeat</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span>
+          <span class="o">.</span><span class="na">allow</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(</span><span class="mi">8</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">IN</span><span class="o">)</span>
+          <span class="o">.</span><span class="na">allow</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">8</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">body</span><span class="o">()</span>
+          <span class="c1">// this is executed twice</span>
+          <span class="o">.</span><span class="na">trigger</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">)</span>
+          <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">)</span>
+          <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">2</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">end</span><span class="o">()</span>
+
+      <span class="c1">// the same scenario but this time do not forward Pong 1 events</span>
+      <span class="o">.</span><span class="na">repeat</span><span class="o">(</span><span class="mi">3</span><span class="o">)</span>
+          <span class="o">.</span><span class="na">drop</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">body</span><span class="o">()</span>
+          <span class="c1">// this is executed thrice</span>
+          <span class="o">.</span><span class="na">trigger</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">)</span>
+          <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">2</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">end</span><span class="o">()</span>
+  <span class="o">;</span>
+  <span class="n">assertTrue</span><span class="o">(</span><span class="n">tc</span><span class="o">.</span><span class="na">check</span><span class="o">());</span>
+  <span class="n">assertEquals</span><span class="o">(</span><span class="mi">6</span><span class="o">,</span> <span class="n">Ponger</span><span class="o">.</span><span class="na">pingsReceived</span><span class="o">);</span>
+  <span class="n">assertEquals</span><span class="o">(</span><span class="mi">8</span><span class="o">,</span> <span class="n">Pinger</span><span class="o">.</span><span class="na">pongsReceived</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>The test case consists of two explicit blocks.
+In the first block <code class="docutils literal notranslate"><span class="pre">repeat(2)</span></code> we <em>allow</em> the <code class="docutils literal notranslate"><span class="pre">Ping</span></code> 8 event sent by <code class="docutils literal notranslate"><span class="pre">Pinger</span></code> on start and it’s response while we execute the same scenario of triggering <code class="docutils literal notranslate"><span class="pre">Ping</span></code> 0 and expecting two <code class="docutils literal notranslate"><span class="pre">Pong</span></code> s in response.
+Within this block <code class="docutils literal notranslate"><span class="pre">Pinger</span></code> receives a total of 5 <code class="docutils literal notranslate"><span class="pre">Pong</span></code> events while <code class="docutils literal notranslate"><span class="pre">Ponger</span></code> receives 3 <code class="docutils literal notranslate"><span class="pre">Ping</span></code> events.
+In the second block we replay the same scenario three times while <em>dropping</em> outgoing <code class="docutils literal notranslate"><span class="pre">Pong</span></code> 1 events.
+Consequently, <code class="docutils literal notranslate"><span class="pre">Pinger</span></code> receives only the three <code class="docutils literal notranslate"><span class="pre">Pong</span></code> 2 events that are actually forwarded, bringing its total to 8.</p>
+<p>Note that in this example we assumed that the <code class="docutils literal notranslate"><span class="pre">Ping</span></code> 8 event would be sent at some point within the first block.
+Our assumption is not entirely correct since we haven’t taken into consideration any possible delays.
+For example, execution of the start handler of <code class="docutils literal notranslate"><span class="pre">Pinger</span></code> could be delayed so that the event actually arrives at <code class="docutils literal notranslate"><span class="pre">Ponger</span></code> later on when the framework executes statements in the <code class="docutils literal notranslate"><span class="pre">repeat(3)</span></code> block.
+This would cause our test case to fail since we have not explicitly <em>allowed</em> the <code class="docutils literal notranslate"><span class="pre">Ping</span></code> event (or its response) there.
+For the purpose of this illustration we erred on the side of naiveté, but to be sure one would have to include the same <code class="docutils literal notranslate"><span class="pre">allow</span></code> statements in the second block as well.</p>
+</div>
+<div class="section" id="nesting-blocks">
+<h3>Nesting Blocks<a class="headerlink" href="#nesting-blocks" title="Permalink to this headline">¶</a></h3>
+<p>A block <code class="docutils literal notranslate"><span class="pre">N</span></code> may be nested within the body of another block <code class="docutils literal notranslate"><span class="pre">B</span></code>.
+Header statements of block <code class="docutils literal notranslate"><span class="pre">B</span></code> are in scope while the framework executes statements within <code class="docutils literal notranslate"><span class="pre">B</span></code> as well as those of it’s nested blocks such as <code class="docutils literal notranslate"><span class="pre">N</span></code>.
+In the case that some event is specified in the header of a block, the same event may be also be specified in the header of nested blocks, in which case the original specification of that event (e.g <code class="docutils literal notranslate"><span class="pre">allow</span></code>) is shadowed while the nested block is in scope (its statements are being executed).</p>
+<p>The following example utilizes nested blocks and shadows headers.</p>
+<div class="highlight-java notranslate" id="shadowing"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// nestedBlockExample</span>
+  <span class="c1">// ... setup code as in basicsExample ...</span>
+  <span class="c1">// setup done</span>
+  <span class="n">tc</span><span class="o">.</span><span class="na">body</span><span class="o">()</span>
+      <span class="c1">// first, handle event from pinger</span>
+      <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(</span><span class="mi">8</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">IN</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">8</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">)</span>
+
+      <span class="o">.</span><span class="na">repeat</span><span class="o">(</span><span class="mi">4</span><span class="o">).</span><span class="na">body</span><span class="o">()</span>
+          <span class="o">.</span><span class="na">trigger</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">end</span><span class="o">()</span>
+
+      <span class="c1">// after triggering four Ping 0s, ponger should respond with four Pong 1,2 sequences</span>
+      <span class="o">.</span><span class="na">repeat</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span>
+          <span class="c1">// drop Pong 1 events</span>
+          <span class="o">.</span><span class="na">drop</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">body</span><span class="o">()</span>
+          <span class="o">.</span><span class="na">repeat</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="c1">// nested block</span>
+              <span class="c1">// here, handle Pong 1 events (previous drop is shadowed!)</span>
+              <span class="o">.</span><span class="na">allow</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">)</span>
+          <span class="o">.</span><span class="na">body</span><span class="o">()</span>
+              <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">2</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">)</span> <span class="c1">// preceeding Pong 1 is handled</span>
+          <span class="o">.</span><span class="na">end</span><span class="o">()</span>
+          <span class="c1">// drop(...) is back in scope</span>
+          <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">2</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">)</span> <span class="c1">// preceeding Pong 1 is dropped</span>
+      <span class="o">.</span><span class="na">end</span><span class="o">();</span>
+  <span class="n">assertTrue</span><span class="o">(</span><span class="n">tc</span><span class="o">.</span><span class="na">check</span><span class="o">());</span>
+  <span class="n">assertEquals</span><span class="o">(</span><span class="mi">7</span><span class="o">,</span> <span class="n">Pinger</span><span class="o">.</span><span class="na">pongsReceived</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In addition to shadowing headers within nested blocks, you may also specify multiple header statements within the same block that end up matching the same event at runtime. The framework’s uses a last-statement-wins policy for such cases - choosing the matching statement that was declared last in that block’s specification.</p>
+</div>
+<p>Finally, each statement must belong to some block.
+The <code class="docutils literal notranslate"><span class="pre">TestContext</span></code> instance is created with an implicit block <code class="docutils literal notranslate"><span class="pre">repeat(1)</span></code> within which all statements and explicitly created blocks are nested and the entire test case is run.
+The calls to <code class="docutils literal notranslate"><span class="pre">repeat</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code> for this block are handled by the framework itself. However the <code class="docutils literal notranslate"><span class="pre">body()</span></code> must be called to denote its body.
+This is the reason for calling <code class="docutils literal notranslate"><span class="pre">body()</span></code> before any sequence can be described - the <a class="reference internal" href="#setup"><span class="std std-ref">setup header</span></a> is in fact the header of this implicit block and as such can be treated as any normal header.</p>
+</div>
+<div class="section" id="kleene-blocks">
+<span id="kleeneblocks"></span><h3>Kleene Blocks<a class="headerlink" href="#kleene-blocks" title="Permalink to this headline">¶</a></h3>
+<p>Omitting an integer argument when creating a block (e.g calling <code class="docutils literal notranslate"><span class="pre">repeat()</span></code>) instead executes the statements of the block zero or more times.
+The next statement of the block is executed as long as the previous one was successful (e.g a successful match using <code class="docutils literal notranslate"><span class="pre">expect</span></code> or a <code class="docutils literal notranslate"><span class="pre">trigger</span></code> that always succeeds).</p>
+<p>As an example, the following code snippet matches any number of outgoing <code class="docutils literal notranslate"><span class="pre">Pong</span></code> 0 events followed by a <code class="docutils literal notranslate"><span class="pre">Pong</span></code> 1 event.
+This construct provides a variant of the Kleene star operator <code class="docutils literal notranslate"><span class="pre">*</span></code>. In this case, the described set is <code class="docutils literal notranslate"><span class="pre">a*b</span></code>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">tc</span><span class="o">.</span><span class="na">repeat</span><span class="o">().</span><span class="na">body</span><span class="o">()</span>
+      <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">OUT</span><span class="o">)</span>   <span class="c1">// a</span>
+  <span class="o">.</span><span class="na">end</span><span class="o">()</span>
+ <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">OUT</span><span class="o">)</span>        <span class="c1">// b</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="block-entry-functions">
+<h3>Block Entry Functions<a class="headerlink" href="#block-entry-functions" title="Permalink to this headline">¶</a></h3>
+<p>An instance of the <a class="reference external" href="https://javadoc.io/doc/se.sics.kompics/kompics-core/latest/se/sics/kompics/testing/EntryFunction.html" title="se.sics.kompics.testing.EntryFunction"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.testing.EntryFunction</span></code></a> interface may be provided as an argument when creating a block.
+This interface declares a single <code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">run()</span></code> method that is called on entering the block and might be useful if some desired code needs to be run upon executing statements within that block.</p>
+<p>The following code snippet shows a minimal usage of an <code class="docutils literal notranslate"><span class="pre">EntryFunction</span></code> instance to increment a counter.
+Although the body is empty, the framework calls <code class="docutils literal notranslate"><span class="pre">run</span></code> for each iteration.</p>
+<div class="highlight-java notranslate" id="blockinit"><div class="highlight"><pre><span></span><span class="n">EntryFunction</span> <span class="n">increment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EntryFunction</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+            <span class="n">myCounter</span><span class="o">.</span><span class="na">increment</span><span class="o">();</span>
+        <span class="o">}</span>
+<span class="o">};</span>
+<span class="n">tc</span><span class="o">.</span><span class="na">repeat</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="n">increment</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">body</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">end</span><span class="o">();</span>
+<span class="c1">//...</span>
+<span class="k">assert</span> <span class="n">myCounter</span><span class="o">.</span><span class="na">count</span> <span class="o">==</span> <span class="mi">5</span><span class="o">;</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Be careful when using entry functions.
+If the first statement of a block’s body can be successfully executed, its entry function is called whether or not the rest of the statements of the block is executed successfully.
+This might not be the intended behavior but it might be best is to avoid writing such test cases.</p>
+</div>
+</div>
+</div>
+<div class="section" id="ambiguous-testcases">
+<h2>Ambiguous Testcases<a class="headerlink" href="#ambiguous-testcases" title="Permalink to this headline">¶</a></h2>
+<p>In order to correctly verify the behavior of a component, the provided test case should be unambiguous.
+Unfortunately, the addition of some constructs like <a class="reference internal" href="#kleeneblocks"><span class="std std-ref">Kleene blocks</span></a> and <a class="reference internal" href="#conditionals"><span class="std std-ref">Conditionals</span></a>, while powerful, make it possible to write test cases whose intention can not be accurately inferred by the framework.</p>
+<p>Consider a scenario where a <code class="docutils literal notranslate"><span class="pre">trigger</span></code> is the first statement of a <a class="reference internal" href="#kleeneblocks"><span class="std std-ref">Kleene block</span></a>.
+The following code snippet shows a minimal example.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">tc</span><span class="o">.</span><span class="na">repeat</span><span class="o">().</span><span class="na">body</span>
+        <span class="o">.</span><span class="na">trigger</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">end</span><span class="o">();</span>
+</pre></div>
+</div>
+<p>It is not possible to infer how many times the <code class="docutils literal notranslate"><span class="pre">trigger</span></code> statement should be executed - since such a statement always succeeds, the framework would not know when to exit the block.</p>
+<p>The second scenario uses the <code class="docutils literal notranslate"><span class="pre">trigger</span></code> statement as the first statement in both branches of a <a class="reference internal" href="#conditionals"><span class="std std-ref">conditional</span></a> as shown in the following example.
+Again, it is unclear which of the <code class="docutils literal notranslate"><span class="pre">Ping</span></code> events to trigger since the choice of what branch to execute depends on successfully matching events but none of the branches here expect to match an event.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">tc</span><span class="o">.</span><span class="na">either</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">trigger</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">)</span>
+        <span class="c1">//...</span>
+  <span class="o">.</span><span class="na">or</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">trigger</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">)</span>
+        <span class="c1">//...</span>
+  <span class="o">.</span><span class="na">end</span><span class="o">();</span>
+</pre></div>
+</div>
+<p>Test cases containing statements of these forms are deemed ambiguous and the behavior of the framework is left unspecified. As such they should be avoided entirely.</p>
+</div>
+<div class="section" id="specifying-nondeterministic-testcases">
+<h2>Specifying Nondeterministic Testcases<a class="headerlink" href="#specifying-nondeterministic-testcases" title="Permalink to this headline">¶</a></h2>
+<p>The DSL offers two explicit constructs for expressing cases where we are not exactly sure of the ordering of events at certain points even though we know that the events will occur.</p>
+<div class="section" id="unordered">
+<span id="id5"></span><h3>Unordered<a class="headerlink" href="#unordered" title="Permalink to this headline">¶</a></h3>
+<p>The first is the <code class="docutils literal notranslate"><span class="pre">unordered</span></code> statement of the form <code class="docutils literal notranslate"><span class="pre">unordered()</span> <span class="pre">-</span> <span class="pre">end()</span></code> where <code class="docutils literal notranslate"><span class="pre">-</span></code> represents a sequence of <code class="docutils literal notranslate"><span class="pre">expect</span></code> statements which are executed by the framework in any order such that they are successful.
+That is, the events described by the statements are matched in the order that they actually occur at runtime as opposed to the normal sequence of <code class="docutils literal notranslate"><span class="pre">expect</span></code> statements whose events must be matched in sequential order.
+Calling <code class="docutils literal notranslate"><span class="pre">unordered()</span></code> switches the current mode to <code class="docutils literal notranslate"><span class="pre">UNORDERED</span></code> while calling the matching <code class="docutils literal notranslate"><span class="pre">end()</span></code> restores the previous mode.
+The following example verifies the initial ping-pong exchange initiated by <code class="docutils literal notranslate"><span class="pre">Pinger</span></code> in its start handler, then using <code class="docutils literal notranslate"><span class="pre">unordered</span></code>, we verify the <code class="docutils literal notranslate"><span class="pre">Ping</span></code> 0 behavior of our CUT - the <code class="docutils literal notranslate"><span class="pre">expect</span></code> statements are matched in the order that the events occur.
+Comment out the call to <code class="docutils literal notranslate"><span class="pre">unordered()</span></code> and its matching <code class="docutils literal notranslate"><span class="pre">end()</span></code> and verify that the test case now fails since we would then be expecting <code class="docutils literal notranslate"><span class="pre">d</span></code> to happen before <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p>
+<div class="highlight-java notranslate" id="unorderedexample"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// unorderedExample</span>
+  <span class="c1">// ... setup code as in basicsExample ...</span>
+  <span class="c1">// setup done</span>
+  <span class="n">tc</span><span class="o">.</span><span class="na">body</span><span class="o">()</span>
+      <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(</span><span class="mi">8</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">IN</span><span class="o">)</span>          <span class="c1">// a</span>
+      <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">8</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">)</span>         <span class="c1">// b</span>
+      <span class="o">.</span><span class="na">trigger</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">unordered</span><span class="o">()</span>
+          <span class="c1">// the specified order of statements does not matter here</span>
+          <span class="c1">// since &#39;c&#39; will actually happen before &#39;d&#39;, it will be executed first</span>
+          <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">2</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">)</span>     <span class="c1">// d</span>
+          <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">)</span>     <span class="c1">// c</span>
+      <span class="o">.</span><span class="na">end</span><span class="o">();</span>
+  <span class="n">assertTrue</span><span class="o">(</span><span class="n">tc</span><span class="o">.</span><span class="na">check</span><span class="o">());</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="block-expect">
+<h3>Block Expect<a class="headerlink" href="#block-expect" title="Permalink to this headline">¶</a></h3>
+<p>This range of nondeterministic scenarios that can be expressed with <code class="docutils literal notranslate"><span class="pre">unordered</span></code> are limited since the ordering of events are still specified relative to others within the block.
+The second construct is the <a class="reference internal" href="#blockheader"><span class="std std-ref">header statement</span></a> <code class="docutils literal notranslate"><span class="pre">blockExpect</span></code>, specifying that an event must occur at any point within the block.
+Since we are able to group any statements into a single block and use <code class="docutils literal notranslate"><span class="pre">blockExpect</span></code> statements to interleave our nondeterministic events with those matched by the block body, we can express an even wider range of scenarios.
+The following shows a variant of the <a class="reference internal" href="#unorderedexample"><span class="std std-ref">previous example</span></a> using this construct.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">()</span> <span class="o">{</span> <span class="c1">// blockExpectExample</span>
+  <span class="c1">// ... setup code as in basicsExample ...</span>
+  <span class="c1">// setup done</span>
+  <span class="n">tc</span><span class="o">.</span><span class="na">body</span><span class="o">()</span>
+      <span class="o">.</span><span class="na">repeat</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+          <span class="o">.</span><span class="na">blockExpect</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(</span><span class="mi">8</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">IN</span><span class="o">)</span>          <span class="c1">// a</span>
+          <span class="o">.</span><span class="na">blockExpect</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">8</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">)</span>         <span class="c1">// b</span>
+      <span class="o">.</span><span class="na">body</span><span class="o">()</span>
+          <span class="c1">// &#39;a&#39; and &#39;b&#39; can interleave the execution of any of these three statements</span>
+          <span class="o">.</span><span class="na">trigger</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">)</span>
+          <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">)</span>     <span class="c1">// c</span>
+          <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">2</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">)</span>     <span class="c1">// d</span>
+      <span class="o">.</span><span class="na">end</span><span class="o">();</span>
+  <span class="n">assertTrue</span><span class="o">(</span><span class="n">tc</span><span class="o">.</span><span class="na">check</span><span class="o">());</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="expecting-exceptions">
+<h3>Expecting Exceptions<a class="headerlink" href="#expecting-exceptions" title="Permalink to this headline">¶</a></h3>
+<p>If you want to test that the component throws an exception while handling an event, the <code class="docutils literal notranslate"><span class="pre">expectFault</span></code> statements are available.
+Place this statement right after the event whose handling causes the exception otherwise the framework treats the thrown exception unexpectedly and fails the test case.
+The following code snippet matches an exception of class <code class="docutils literal notranslate"><span class="pre">IllegalStateException</span></code> on handling the triggered <code class="docutils literal notranslate"><span class="pre">Ping</span></code> event.
+An instance of <code class="xref java java-ref docutils literal notranslate"><span class="pre">com.google.common.base.Predicate&lt;Throwable&gt;</span></code> may also be provided to match the actual expected event if desired.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">tc</span><span class="o">.</span><span class="na">trigger</span><span class="o">(</span><span class="k">new</span> <span class="n">Ping</span><span class="o">(-</span><span class="mi">1</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">)</span> <span class="c1">// handling this event throws an exception</span>
+  <span class="o">.</span><span class="na">expectFault</span><span class="o">(</span><span class="n">IllegalStateException</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="c1">//... continue execution normally</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="specifying-default-actions">
+<span id="defaultactions"></span><h3>Specifying Default Actions<a class="headerlink" href="#specifying-default-actions" title="Permalink to this headline">¶</a></h3>
+<p>Events that are not explicitly matched by any (header) statements in scope cause the test case to fail.
+However, you can override this behavior for particular events using the <code class="docutils literal notranslate"><span class="pre">setDefaultAction</span></code> statement.
+It specifies a <code class="xref java java-ref docutils literal notranslate"><span class="pre">com.google.common.base.Function&lt;?</span> <span class="pre">extends</span> <span class="pre">KompicsEvent,</span> <span class="pre">Action&gt;</span></code> instance which will be called with an unmatched event of the specified class (or subclass) and returns an <a class="reference external" href="https://javadoc.io/doc/se.sics.kompics/kompics-core/latest/se/sics/kompics/testing/Action.html" title="se.sics.kompics.testing.Action"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.testing.Action</span></code></a>, telling the framework whether to <code class="docutils literal notranslate"><span class="pre">DROP</span></code> or <code class="docutils literal notranslate"><span class="pre">HANDLE</span></code> the event or <code class="docutils literal notranslate"><span class="pre">FAIL</span></code> the test case.
+This is shown in the following example where we only explicitly match the outgoin <code class="docutils literal notranslate"><span class="pre">Pong</span></code> 8 in response to the <code class="docutils literal notranslate"><span class="pre">Pinger</span></code>.
+However, since we provide a default action to handle the <code class="docutils literal notranslate"><span class="pre">Ping</span> <span class="pre">8</span></code> event, the test case succeeds.
+Change the implementation of handlePing8 (e.g so that the event is dropped) and verify that the test case does in fact fail.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Function</span><span class="o">&lt;</span><span class="n">Ping</span><span class="o">,</span> <span class="n">Action</span><span class="o">&gt;</span> <span class="n">handlePing8</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Function</span><span class="o">&lt;</span><span class="n">Ping</span><span class="o">,</span> <span class="n">Action</span><span class="o">&gt;</span> <span class="o">()</span> <span class="o">{</span>
+        <span class="kd">public</span> <span class="n">Action</span> <span class="nf">apply</span><span class="o">(</span><span class="n">Ping</span> <span class="n">ping</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">ping</span><span class="o">.</span><span class="na">id</span> <span class="o">==</span> <span class="mi">8</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="n">Action</span><span class="o">.</span><span class="na">HANDLE</span><span class="o">;</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="n">Action</span><span class="o">.</span><span class="na">FAIL</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+<span class="o">};</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// defaultActionExample</span>
+  <span class="c1">// ... setup code as in basicsExample ...</span>
+  <span class="n">tc</span><span class="o">.</span><span class="na">setDefaultAction</span><span class="o">(</span><span class="n">Ping</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">handlePing8</span><span class="o">);</span>
+  <span class="c1">// setup done</span>
+  <span class="n">tc</span><span class="o">.</span><span class="na">body</span><span class="o">()</span>
+          <span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">Pong</span><span class="o">(</span><span class="mi">8</span><span class="o">),</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">OUT</span><span class="o">);</span>
+  <span class="n">assertTrue</span><span class="o">(</span><span class="n">tc</span><span class="o">.</span><span class="na">check</span><span class="o">());</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="matching-events">
+<span id="id6"></span><h2>Matching Events<a class="headerlink" href="#matching-events" title="Permalink to this headline">¶</a></h2>
+<p>Statements such as <code class="docutils literal notranslate"><span class="pre">expect</span></code>, <code class="docutils literal notranslate"><span class="pre">allow</span></code>, <code class="docutils literal notranslate"><span class="pre">disallow</span></code> etc require the framework to determine whether or not an observed event matches what was specified by the statement. Besides the port and direction, they require an event description.
+This could be an equivalent instance of the desired event, the event’s class or an instance of <code class="xref java java-ref docutils literal notranslate"><span class="pre">com.google.common.base.Predicate&lt;?</span> <span class="pre">extends</span> <span class="pre">KompicsEvent&gt;</span></code> that returns true only when called with the expected event.</p>
+<p>As an example, in the statement <code class="docutils literal notranslate"><span class="pre">expect(new</span> <span class="pre">Ping(8),</span> <span class="pre">pongerPort,</span> <span class="pre">IN)</span></code> used in the <a class="reference internal" href="#basicsexample"><span class="std std-ref">basics example</span></a>, our desired event was a <code class="docutils literal notranslate"><span class="pre">Ping</span></code> with <code class="docutils literal notranslate"><span class="pre">id</span></code> 8.
+If the framework observes a <code class="docutils literal notranslate"><span class="pre">Ping</span></code> event <code class="docutils literal notranslate"><span class="pre">p</span></code> when it executes this statement, it checks if a <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html" title="java.util.Comparator"><code class="xref java java-ref docutils literal notranslate"><span class="pre">java.util.Comparator</span></code></a> instance was registered for <code class="docutils literal notranslate"><span class="pre">Ping</span></code> events or any of its subclasses using the <code class="docutils literal notranslate"><span class="pre">setComparator</span></code> method (the closest match in the class heirarchy is selected) and if found, uses the comparator to determine equivalence.
+Otherwise it defaults to the <code class="docutils literal notranslate"><span class="pre">equals(Object)</span></code> method.
+In our <a class="reference internal" href="#basicsexample"><span class="std std-ref">example</span></a> we did register <code class="docutils literal notranslate"><span class="pre">Ping.comparator</span></code> to extract and compare the <code class="docutils literal notranslate"><span class="pre">id</span></code> fields although the same logic could have been implemented by overriding the <code class="docutils literal notranslate"><span class="pre">equals</span></code> method of the <code class="docutils literal notranslate"><span class="pre">Ping</span></code> class.</p>
+<p>If we were not interested in the <code class="docutils literal notranslate"><span class="pre">id</span></code> and simply wanted to match an event of type <code class="docutils literal notranslate"><span class="pre">Ping</span></code> then the statement <code class="docutils literal notranslate"><span class="pre">expect(Ping.class,</span> <span class="pre">pongerPort,</span> <span class="pre">IN)</span></code> suffices.</p>
+<p>Finally, the following code snippet shows how one may match the same <code class="docutils literal notranslate"><span class="pre">id</span></code> using a predicate instance.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">Ping</span><span class="o">&gt;</span> <span class="n">matchesPing8</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Predicate</span><span class="o">&lt;</span><span class="n">Ping</span><span class="o">&gt;()</span> <span class="o">{</span>
+          <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">apply</span><span class="o">(</span><span class="n">Ping</span> <span class="n">ping</span><span class="o">)</span> <span class="o">{</span>
+                  <span class="k">return</span> <span class="n">ping</span><span class="o">.</span><span class="na">id</span> <span class="o">==</span> <span class="mi">8</span><span class="o">;</span>
+          <span class="o">}</span>
+<span class="o">}</span>
+<span class="n">tc</span><span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="n">Ping</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">matchesPing8</span><span class="o">,</span> <span class="n">pongerPort</span><span class="o">,</span> <span class="n">IN</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../answering_requests/answering_requests.html" class="btn btn-neutral float-right" title="Answering Requests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

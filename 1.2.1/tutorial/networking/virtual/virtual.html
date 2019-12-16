@@ -1,0 +1,470 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Virtual Networks &mdash; Kompics 1.2.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="NAT Support" href="../nat/nat.html" />
+    <link rel="prev" title="Basic Networking" href="../basic/basic.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../../../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Kompics Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basics/basics.html">Kompics Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../timers/timers.html">Timers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Networking</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../basic/basic.html">Basic Networking</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Virtual Networks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#channel-selectors">Channel Selectors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#virtual-network-channel">Virtual Network Channel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../nat/nat.html">NAT Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../simulation/index.html">Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../testing/index.html">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scala/index.html">Kompics Scala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../internals/index.html">Kompics Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../project/index.html">Project Information</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://javadoc.io/doc/se.sics.kompics/kompics-core/latest/index.html">Javadoc</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://kompics.github.io/kompics-scala/api/se/sics/kompics/sl/index.html">Scaladoc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Kompics Tutorial</a> &raquo;</li>
+        
+          <li><a href="../index.html">Networking</a> &raquo;</li>
+        
+      <li>Virtual Networks</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/tutorial/networking/virtual/virtual.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="virtual-networks">
+<span id="virtualnetwork"></span><h1>Virtual Networks<a class="headerlink" href="#virtual-networks" title="Permalink to this headline">¶</a></h1>
+<p>Quite a few distributed systems require some notion of <abbr title="virtual node">vnode</abbr>s, that is multiple instances of the same node functionality within one host machine. In a <abbr title="peer-to-peer">P2P</abbr> system you might join different overlays, in <abbr title="distributed hash table">DHT</abbr> you might need to artificially increase the number of nodes to meet the statistical requirements for a reasonable load-balancing, and so on. The are many ways of realising such <abbr title="virtual node">vnode</abbr>s. The easiest might be to simply start one <abbr title="Java Virtual Machine">JVM</abbr> for each node. This requires no change in your code whatsoever, just maybe a new startup script that keeps track of the <abbr title="process identifier">PID</abbr>s of all the started nodes and how many to start. However, <abbr title="Java Virtual Machine">JVM</abbr> instances aren’t cheap. They eat up significant resources. This approach might scale to a few tens of nodes, but certainly not to hundreds or thousands of <abbr title="virtual node">vnode</abbr>s.</p>
+<p>An alternative approach is to start all (or at least some) of the <abbr title="virtual node">vnode</abbr>s in the same <abbr title="Java Virtual Machine">JVM</abbr> instance. With Kompics this is also pretty easy: Instead of creating a new startup script, we create a new parent component that manages the different instances of the old parent component. Apart from that, we leave the whole component tree as it was before. Of course, we have to assign different ports to all the different <code class="docutils literal notranslate"><span class="pre">NettyNetwork</span></code> instances that are being started, so our config files might grow a bit bigger unless we find a programmatic way of assigning them, but nothing that can’t be overcome. This approach might scale to a few hundreds of <abbr title="virtual node">vnode</abbr>s, but after that we are probably going to have problems finding free ports for Netty to bind on, since it actually uses twice as many ports as we ask it to (one for <code class="docutils literal notranslate"><span class="pre">TCP</span></code> and <code class="docutils literal notranslate"><span class="pre">UDP</span></code> and another one for <code class="docutils literal notranslate"><span class="pre">UDT</span></code>) and most systems limit a single <abbr title="Java Virtual Machine">JVM</abbr>’s (or any process’) port usage quite drastically. Netty also creates some threads when it starts, so we might end up driving the <abbr title="Java Virtual Machine">JVM</abbr>’s thread scheduler insane.</p>
+<p>Finally, we can exploit the fact that most of our <abbr title="virtual node">vnode</abbr>’s implementations wouldn’t actually use the full capacity of their <code class="docutils literal notranslate"><span class="pre">Network</span></code> and <code class="docutils literal notranslate"><span class="pre">Timer</span></code> implementations, and instead share them among all <abbr title="virtual node">vnode</abbr>s. In fact we might try to share as much common functionality as we can manage to extract from the <abbr title="virtual node">vnode</abbr>s. For this to work, however, we need a way to send messages only along a specific channel, or we will end up with the same problem our very first version of networked <em>PingPong</em> had where the <code class="docutils literal notranslate"><span class="pre">Pong</span></code>s reached all <code class="docutils literal notranslate"><span class="pre">Pinger</span></code>s and not just the one that sent the <code class="docutils literal notranslate"><span class="pre">Ping</span></code> that caused it. Part of the solution are the <a class="reference internal" href="../../timers/timers.html#reqrespevents"><span class="std std-ref">Request-Response Events</span></a> that were introduced in the section about timers. But as already mentioned there, the request-response pattern is not enough. What if we simply want to send an event to one of the <abbr title="virtual node">vnode</abbr>s without having an outstanding request? What if a network message for that <abbr title="virtual node">vnode</abbr> comes in? The solution to this problem are <em>Channel Selectors</em>.</p>
+<div class="section" id="channel-selectors">
+<span id="channelselectors"></span><h2>Channel Selectors<a class="headerlink" href="#channel-selectors" title="Permalink to this headline">¶</a></h2>
+<p>When a <code class="docutils literal notranslate"><span class="pre">Channel</span></code> is connected it can optionally be given an instance of <a class="reference external" href="https://javadoc.io/doc/se.sics.kompics/kompics-core/latest/se/sics/kompics/ChannelSelector.html" title="se.sics.kompics.ChannelSelector"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.ChannelSelector</span></code></a> which is both a way to extract some value from an event (i.e. a specific field to use as a <em>selection key</em>) and also define a specific value for which this event should travel along this <code class="docutils literal notranslate"><span class="pre">Channel</span></code>. The internal implementation of this is fairly efficient, but requires the selection value for a <code class="docutils literal notranslate"><span class="pre">Channel</span></code> to be immutable. Note that despite its previous name, a <code class="docutils literal notranslate"><span class="pre">ChannelSelector</span></code> can not be abused as a filter. It’s better to think of it like a way to create a routing table (which is in fact pretty much what happens internally). If you want to compare it to the handler pattern matching described earlier (see <a class="reference internal" href="../basic/basic.html#netcleanup"><span class="std std-ref">Cleanup: Config files, ClassMatchers, and Assembly</span></a>) you can think of a <code class="docutils literal notranslate"><span class="pre">ChannelSelector</span></code> to be both the <code class="docutils literal notranslate"><span class="pre">PatternExtractor</span></code> and the <code class="docutils literal notranslate"><span class="pre">MatchedHandler</span></code>.</p>
+<p>We will update our <em>PingPong</em> example such that we start a configurable number of <code class="docutils literal notranslate"><span class="pre">Pinger</span></code>s per host. We stick to a single <code class="docutils literal notranslate"><span class="pre">Ponger</span></code> for now, since otherwise we’d have to figure out how to load-balance across them. We shall add a <code class="docutils literal notranslate"><span class="pre">byte[]</span></code> id field to <code class="docutils literal notranslate"><span class="pre">TAddress</span></code> that we will use as a selection key. However, when creating those ids we shall be a bit lazy and simply use ascending integers in their <code class="docutils literal notranslate"><span class="pre">byte[]</span></code> representation. You will see later why we picked <code class="docutils literal notranslate"><span class="pre">byte[]</span></code> and not <code class="docutils literal notranslate"><span class="pre">int</span></code> directly. Of course, we’ll also have to update the <code class="docutils literal notranslate"><span class="pre">NetSerializer</span></code>, which we won’t show again here, since it’s pretty big by now and not quite relevant to the point.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">reference.conf</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span>pingpong {
+	self {
+		host = &quot;127.0.0.1&quot;
+		port = 34567
+	}
+	pinger {
+                num = 2
+		timeout = 1000
+		pongeraddr {
+			host = &quot;127.0.0.1&quot;
+			port = 45678
+		}
+	}
+}
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">TAddress.java</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.net.InetAddress</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.InetSocketAddress</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Objects</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.Address</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TAddress</span> <span class="kd">implements</span> <span class="n">Address</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">InetSocketAddress</span> <span class="n">isa</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">TAddress</span><span class="o">(</span><span class="n">InetAddress</span> <span class="n">addr</span><span class="o">,</span> <span class="kt">int</span> <span class="n">port</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">(</span><span class="n">addr</span><span class="o">,</span> <span class="n">port</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nf">TAddress</span><span class="o">(</span><span class="n">InetAddress</span> <span class="n">addr</span><span class="o">,</span> <span class="kt">int</span> <span class="n">port</span><span class="o">,</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">isa</span> <span class="o">=</span> <span class="k">new</span> <span class="n">InetSocketAddress</span><span class="o">(</span><span class="n">addr</span><span class="o">,</span> <span class="n">port</span><span class="o">);</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">InetAddress</span> <span class="nf">getIp</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">isa</span><span class="o">.</span><span class="na">getAddress</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getPort</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">isa</span><span class="o">.</span><span class="na">getPort</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">getId</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">id</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="n">TAddress</span> <span class="nf">withVirtual</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">TAddress</span><span class="o">(</span><span class="n">isa</span><span class="o">.</span><span class="na">getAddress</span><span class="o">(),</span> <span class="n">isa</span><span class="o">.</span><span class="na">getPort</span><span class="o">(),</span> <span class="n">id</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">InetSocketAddress</span> <span class="nf">asSocket</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">isa</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">sameHostAs</span><span class="o">(</span><span class="n">Address</span> <span class="n">other</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">isa</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">other</span><span class="o">.</span><span class="na">asSocket</span><span class="o">());</span>
+        <span class="cm">/* note that we don&#39;t include the id here, since nodes with different </span>
+<span class="cm">         * ids but the same socket are still on the same machine</span>
+<span class="cm">         */</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Not required but strongly recommended</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kd">final</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+        <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">isa</span><span class="o">.</span><span class="na">getHostString</span><span class="o">());</span>
+        <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;:&quot;</span><span class="o">);</span>
+        <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">isa</span><span class="o">.</span><span class="na">getPort</span><span class="o">());</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">id</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;:&quot;</span><span class="o">);</span>
+            <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">id</span><span class="o">));</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">Objects</span><span class="o">.</span><span class="na">hash</span><span class="o">(</span><span class="n">isa</span><span class="o">,</span> <span class="n">id</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">obj</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">obj</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">getClass</span><span class="o">()</span> <span class="o">!=</span> <span class="n">obj</span><span class="o">.</span><span class="na">getClass</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="kd">final</span> <span class="n">TAddress</span> <span class="n">other</span> <span class="o">=</span> <span class="o">(</span><span class="n">TAddress</span><span class="o">)</span> <span class="n">obj</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">Objects</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">isa</span><span class="o">,</span> <span class="n">other</span><span class="o">.</span><span class="na">isa</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">Objects</span><span class="o">.</span><span class="na">deepEquals</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">id</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">id</span><span class="o">);</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">IdChannelSelector.java</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.nio.ByteBuffer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.ChannelSelector</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IdChannelSelector</span> <span class="kd">extends</span> <span class="n">ChannelSelector</span><span class="o">&lt;</span><span class="n">TMessage</span><span class="o">,</span> <span class="n">ByteBuffer</span><span class="o">&gt;</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="nf">IdChannelSelector</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">TMessage</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">ByteBuffer</span><span class="o">.</span><span class="na">wrap</span><span class="o">(</span><span class="n">id</span><span class="o">),</span> <span class="kc">true</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">ByteBuffer</span> <span class="nf">getValue</span><span class="o">(</span><span class="n">TMessage</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">ByteBuffer</span><span class="o">.</span><span class="na">wrap</span><span class="o">(</span><span class="n">event</span><span class="o">.</span><span class="na">header</span><span class="o">.</span><span class="na">dst</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+    <span class="o">}</span>
+    
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<p>Additionally, we need to tell the <code class="docutils literal notranslate"><span class="pre">Pinger</span></code> components now what their id is, since we can’t pull that out of the configuration file, as that is global to the whole Kompics runtime. We can, however, pass a modified version of the <code class="docutils literal notranslate"><span class="pre">Config</span></code> object to child components. So we are going to pull the <code class="docutils literal notranslate"><span class="pre">TAddress</span></code> from the <code class="file docutils literal notranslate"><span class="pre">application.conf</span></code> in the <code class="docutils literal notranslate"><span class="pre">PingerParent</span></code> and use it as a base address that we pass to <code class="docutils literal notranslate"><span class="pre">NettyNetwork</span></code>. And then for each <code class="docutils literal notranslate"><span class="pre">Pinger</span></code> we create, we are going to write a virtual address with the id into the child <code class="docutils literal notranslate"><span class="pre">Config</span></code>. This way we don’t have to change any code in the <code class="docutils literal notranslate"><span class="pre">Pinger</span></code> itself.</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">PingerParent.java</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.google.common.primitives.Ints</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Channel</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Component</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.ComponentDefinition</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Init</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.config.Config</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.Network</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.netty.NettyInit</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.netty.NettyNetwork</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.timer.Timer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.timer.java.JavaTimer</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PingerParent</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="nf">PingerParent</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">TAddress</span> <span class="n">baseSelf</span> <span class="o">=</span> <span class="n">config</span><span class="o">().</span><span class="na">getValue</span><span class="o">(</span><span class="s">&quot;pingpong.self&quot;</span><span class="o">,</span> <span class="n">TAddress</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+        <span class="n">Component</span> <span class="n">timer</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">JavaTimer</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Init</span><span class="o">.</span><span class="na">NONE</span><span class="o">);</span>
+        <span class="n">Component</span> <span class="n">network</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">NettyNetwork</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="k">new</span> <span class="n">NettyInit</span><span class="o">(</span><span class="n">baseSelf</span><span class="o">));</span>
+        <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">config</span><span class="o">().</span><span class="na">getValue</span><span class="o">(</span><span class="s">&quot;pingpong.pinger.num&quot;</span><span class="o">,</span> <span class="n">Integer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="kt">byte</span><span class="o">[]</span> <span class="n">id</span> <span class="o">=</span> <span class="n">Ints</span><span class="o">.</span><span class="na">toByteArray</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+            <span class="n">Config</span><span class="o">.</span><span class="na">Builder</span> <span class="n">cbuild</span> <span class="o">=</span> <span class="n">config</span><span class="o">().</span><span class="na">modify</span><span class="o">(</span><span class="n">id</span><span class="o">());</span>
+            <span class="n">cbuild</span><span class="o">.</span><span class="na">setValue</span><span class="o">(</span><span class="s">&quot;pingpong.self&quot;</span><span class="o">,</span> <span class="n">baseSelf</span><span class="o">.</span><span class="na">withVirtual</span><span class="o">(</span><span class="n">id</span><span class="o">));</span>
+            <span class="n">Component</span> <span class="n">pinger</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">Pinger</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Init</span><span class="o">.</span><span class="na">NONE</span><span class="o">,</span> <span class="n">cbuild</span><span class="o">.</span><span class="na">finalise</span><span class="o">());</span>
+
+            <span class="n">connect</span><span class="o">(</span><span class="n">pinger</span><span class="o">.</span><span class="na">getNegative</span><span class="o">(</span><span class="n">Timer</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">timer</span><span class="o">.</span><span class="na">getPositive</span><span class="o">(</span><span class="n">Timer</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">Channel</span><span class="o">.</span><span class="na">TWO_WAY</span><span class="o">);</span>
+
+            <span class="n">connect</span><span class="o">(</span><span class="n">pinger</span><span class="o">.</span><span class="na">getNegative</span><span class="o">(</span><span class="n">Network</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">network</span><span class="o">.</span><span class="na">getPositive</span><span class="o">(</span><span class="n">Network</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> 
+                    <span class="k">new</span> <span class="n">IdChannelSelector</span><span class="o">(</span><span class="n">id</span><span class="o">),</span> <span class="n">Channel</span><span class="o">.</span><span class="na">TWO_WAY</span><span class="o">);</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<p>That’s it. Compile and package (<code class="docutils literal notranslate"><span class="pre">mvn</span> <span class="pre">clean</span> <span class="pre">package</span></code>), copy the fat <code class="docutils literal notranslate"><span class="pre">.jar</span></code> to the <code class="file docutils literal notranslate"><span class="pre">dist</span></code> folder and then distribute that folder to where you want to run from and run the <code class="docutils literal notranslate"><span class="pre">Ponger</span></code> first, then the <code class="docutils literal notranslate"><span class="pre">Pinger</span></code>. You’ll see one <code class="docutils literal notranslate"><span class="pre">Pong</span></code> for every <code class="docutils literal notranslate"><span class="pre">Ping</span></code> as expected.</p>
+<p>The full example code can be downloaded <a class="reference download internal" download="" href="../../../_downloads/d0184ff508664c548239b395936164bb/pingpong-virtual.zip"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
+</div>
+<div class="section" id="virtual-network-channel">
+<h2>Virtual Network Channel<a class="headerlink" href="#virtual-network-channel" title="Permalink to this headline">¶</a></h2>
+<p>There is another way we can realise the channel routing that we implemented with the channel selector in the previous section. We can implement a custom type of <a class="reference external" href="https://javadoc.io/doc/se.sics.kompics/kompics-core/latest/se/sics/kompics/ChannelCore.html" title="se.sics.kompics.ChannelCore"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.ChannelCore</span></code></a> implementation, that takes care of the routing internally. This is functionally relatively equivalent, but saves us quite a few object creations (just think of all those channels and selector instances if we have 1000 <abbr title="virtual node">vnode</abbr>s or more). However, <code class="docutils literal notranslate"><span class="pre">Channel</span></code> code is not quite trivial as there can be concurrency issues, the discussion of which would burst the bounds of this tutorial. Luckily, there already is an implementation of exactly the type of <code class="docutils literal notranslate"><span class="pre">byte[]</span></code> id switching network channel, that we want. All we have to do is replace the <code class="docutils literal notranslate"><span class="pre">kompics-port-network</span></code> dependency in our <code class="file docutils literal notranslate"><span class="pre">pom.xml</span></code> with <code class="docutils literal notranslate"><span class="pre">kompics-port-virtual-network</span></code>. Then change <code class="docutils literal notranslate"><span class="pre">TAddress</span></code> to implement <a class="reference external" href="https://javadoc.io/doc/se.sics.kompics.basic/kompics-port-network/latest/se/sics/kompics/network/virtual/Address.html" title="se.sics.kompics.network.virtual.Address"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.network.virtual.Address</span></code></a> and <code class="docutils literal notranslate"><span class="pre">THeader</span></code> to implement <a class="reference external" href="https://javadoc.io/doc/se.sics.kompics.basic/kompics-port-network/latest/se/sics/kompics/network/virtual/Header.html" title="se.sics.kompics.network.virtual.Header"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.network.virtual.Header</span></code></a> instead and modify our setup code in the <code class="docutils literal notranslate"><span class="pre">PingerParent</span></code> a bit to use <a class="reference external" href="https://javadoc.io/doc/se.sics.kompics.basic/kompics-port-network/latest/se/sics/kompics/network/virtual/VirtualNetworkChannel.html" title="se.sics.kompics.network.virtual.VirtualNetworkChannel"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.network.virtual.VirtualNetworkChannel</span></code></a> instead of the <code class="docutils literal notranslate"><span class="pre">IdChannelSelector</span></code> which we can delete now.</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">new PingerParent.java</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">se.sics.test</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.google.common.primitives.Ints</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Channel</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Component</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.ComponentDefinition</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.Init</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.config.Config</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.Network</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.netty.NettyInit</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.netty.NettyNetwork</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.network.virtual.VirtualNetworkChannel</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.timer.Timer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">se.sics.kompics.timer.java.JavaTimer</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PingerParent</span> <span class="kd">extends</span> <span class="n">ComponentDefinition</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="nf">PingerParent</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">TAddress</span> <span class="n">baseSelf</span> <span class="o">=</span> <span class="n">config</span><span class="o">().</span><span class="na">getValue</span><span class="o">(</span><span class="s">&quot;pingpong.self&quot;</span><span class="o">,</span> <span class="n">TAddress</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+        <span class="n">Component</span> <span class="n">timer</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">JavaTimer</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Init</span><span class="o">.</span><span class="na">NONE</span><span class="o">);</span>
+        <span class="n">Component</span> <span class="n">network</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">NettyNetwork</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="k">new</span> <span class="n">NettyInit</span><span class="o">(</span><span class="n">baseSelf</span><span class="o">));</span>
+        <span class="n">VirtualNetworkChannel</span> <span class="n">vnc</span> <span class="o">=</span> <span class="n">VirtualNetworkChannel</span><span class="o">.</span><span class="na">connect</span><span class="o">(</span><span class="n">network</span><span class="o">.</span><span class="na">getPositive</span><span class="o">(</span><span class="n">Network</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">proxy</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">config</span><span class="o">().</span><span class="na">getValue</span><span class="o">(</span><span class="s">&quot;pingpong.pinger.num&quot;</span><span class="o">,</span> <span class="n">Integer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="kt">byte</span><span class="o">[]</span> <span class="n">id</span> <span class="o">=</span> <span class="n">Ints</span><span class="o">.</span><span class="na">toByteArray</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+            <span class="n">Config</span><span class="o">.</span><span class="na">Builder</span> <span class="n">cbuild</span> <span class="o">=</span> <span class="n">config</span><span class="o">().</span><span class="na">modify</span><span class="o">(</span><span class="n">id</span><span class="o">());</span>
+            <span class="n">cbuild</span><span class="o">.</span><span class="na">setValue</span><span class="o">(</span><span class="s">&quot;pingpong.self&quot;</span><span class="o">,</span> <span class="n">baseSelf</span><span class="o">.</span><span class="na">withVirtual</span><span class="o">(</span><span class="n">id</span><span class="o">));</span>
+            <span class="n">Component</span> <span class="n">pinger</span> <span class="o">=</span> <span class="n">create</span><span class="o">(</span><span class="n">Pinger</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Init</span><span class="o">.</span><span class="na">NONE</span><span class="o">,</span> <span class="n">cbuild</span><span class="o">.</span><span class="na">finalise</span><span class="o">());</span>
+
+            <span class="n">connect</span><span class="o">(</span><span class="n">pinger</span><span class="o">.</span><span class="na">getNegative</span><span class="o">(</span><span class="n">Timer</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">timer</span><span class="o">.</span><span class="na">getPositive</span><span class="o">(</span><span class="n">Timer</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">Channel</span><span class="o">.</span><span class="na">TWO_WAY</span><span class="o">);</span>
+
+            <span class="n">vnc</span><span class="o">.</span><span class="na">addConnection</span><span class="o">(</span><span class="n">id</span><span class="o">,</span> <span class="n">pinger</span><span class="o">.</span><span class="na">getNegative</span><span class="o">(</span><span class="n">Network</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<p>Again, the full example code can be downloaded <a class="reference download internal" download="" href="../../../_downloads/55971b445d958a533fb3f9721c771c7f/pingpong-virtualnet.zip"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../nat/nat.html" class="btn btn-neutral float-right" title="NAT Support" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../basic/basic.html" class="btn btn-neutral float-left" title="Basic Networking" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

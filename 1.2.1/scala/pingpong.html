@@ -1,0 +1,750 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>A Full Example – PingPong &mdash; Kompics 1.2.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Ports and Port Types" href="ports.html" />
+    <link rel="prev" title="Hello World in Kompics Scala" href="helloworld.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Kompics Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Kompics Scala</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helloworld.html">Hello World in Kompics Scala</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">A Full Example – PingPong</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sbt-setup">SBT Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#messages">Messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#components">Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#serialization">Serialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#config-converters">Config Converters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#main-object-and-running-the-code">Main Object and Running the Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ports.html">Ports and Port Types</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../internals/index.html">Kompics Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/index.html">Project Information</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://javadoc.io/doc/se.sics.kompics/kompics-core/latest/index.html">Javadoc</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://kompics.github.io/kompics-scala/api/se/sics/kompics/sl/index.html">Scaladoc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Kompics Scala</a> &raquo;</li>
+        
+      <li>A Full Example – PingPong</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/scala/pingpong.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="a-full-example-pingpong">
+<span id="kspingpong"></span><h1>A Full Example – PingPong<a class="headerlink" href="#a-full-example-pingpong" title="Permalink to this headline">¶</a></h1>
+<p>As a proper example of the usage of Kompics Scala we are going to rewrite the Distributed Ping Pong example from section <a class="reference internal" href="../tutorial/networking/basic/basic.html#netcleanup"><span class="std std-ref">Cleanup: Config files, ClassMatchers, and Assembly</span></a>.</p>
+<div class="section" id="sbt-setup">
+<h2>SBT Setup<a class="headerlink" href="#sbt-setup" title="Permalink to this headline">¶</a></h2>
+<p>Set up your SBT project as follows, or simply download the whole project <a class="reference download internal" download="" href="../_downloads/aa9d58822f5387103ccbcad7626511fe/pingpong.zip"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> ls -ohn
+<span class="go">total 6</span>
+<span class="go">drwxr-xr-x  6 501   204B Apr  1 16:39 distPinger</span>
+<span class="go">drwxr-xr-x  6 501   204B Apr  1 16:39 distPonger</span>
+<span class="go">-rw-r--r--  1 501   861B Apr  1 16:40 pingpong.sbt</span>
+<span class="go">drwxr-xr-x  5 501   170B Apr  1 16:16 project</span>
+<span class="go">drwxr-xr-x  3 501   102B Mar 30 13:14 src</span>
+</pre></div>
+</div>
+<p>The two <code class="file docutils literal notranslate"><span class="pre">distPinger</span></code> and <code class="file docutils literal notranslate"><span class="pre">distPinger</span></code> folders will be used later for running the application with different config files.</p>
+<p>You need a SBT file <code class="file docutils literal notranslate"><span class="pre">pingpong.sbt</span></code> and a <code class="file docutils literal notranslate"><span class="pre">project/plugins.sbt</span></code> similar to below:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">pingpong.sbt</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-scala notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">:=</span> <span class="s">&quot;Ping Pong&quot;</span>
+
+<span class="n">organization</span> <span class="o">:=</span> <span class="s">&quot;se.sics.test&quot;</span>
+
+<span class="n">version</span> <span class="o">:=</span> <span class="s">&quot;1.1&quot;</span>
+
+<span class="n">scalaVersion</span> <span class="o">:=</span> <span class="s">&quot;2.11.12&quot;</span>
+
+<span class="k">val</span> <span class="n">kompicsVersion</span> <span class="k">=</span> <span class="s">&quot;1.0.0&quot;</span>
+<span class="k">val</span> <span class="n">kompicsScalaVersion</span> <span class="k">=</span> <span class="s">&quot;1.0.1&quot;</span>
+
+<span class="n">resolvers</span> <span class="o">+=</span> <span class="nc">Resolver</span><span class="o">.</span><span class="n">bintrayRepo</span><span class="o">(</span><span class="s">&quot;kompics&quot;</span><span class="o">,</span> <span class="s">&quot;Maven&quot;</span><span class="o">)</span>
+
+<span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">&quot;se.sics.kompics&quot;</span> <span class="o">%%</span> <span class="s">&quot;kompics-scala&quot;</span> <span class="o">%</span> <span class="n">kompicsScalaVersion</span>
+<span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">&quot;se.sics.kompics.basic&quot;</span> <span class="o">%</span> <span class="s">&quot;kompics-component-netty-network&quot;</span> <span class="o">%</span> <span class="n">kompicsVersion</span>
+<span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">&quot;se.sics.kompics.basic&quot;</span> <span class="o">%</span> <span class="s">&quot;kompics-component-java-timer&quot;</span> <span class="o">%</span> <span class="n">kompicsVersion</span>
+<span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">&quot;ch.qos.logback&quot;</span> <span class="o">%</span> <span class="s">&quot;logback-classic&quot;</span> <span class="o">%</span> <span class="s">&quot;1.2.3&quot;</span>
+<span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">&quot;org.scala-lang.modules&quot;</span> <span class="o">%%</span> <span class="s">&quot;scala-pickling&quot;</span> <span class="o">%</span> <span class="s">&quot;0.10.1&quot;</span> <span class="c1">// no Scala 2.12 version, yet</span>
+<span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">&quot;com.typesafe.scala-logging&quot;</span> <span class="o">%%</span> <span class="s">&quot;scala-logging&quot;</span> <span class="o">%</span> <span class="s">&quot;3.1.0&quot;</span>
+
+<span class="n">mainClass</span> <span class="n">in</span> <span class="n">assembly</span> <span class="o">:=</span> <span class="nc">Some</span><span class="o">(</span><span class="s">&quot;se.sics.test.Main&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">plugins.sbt</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-scala notranslate"><div class="highlight"><pre><span></span><span class="n">addSbtPlugin</span><span class="o">(</span><span class="s">&quot;com.typesafe.sbteclipse&quot;</span> <span class="o">%</span> <span class="s">&quot;sbteclipse-plugin&quot;</span> <span class="o">%</span> <span class="s">&quot;5.2.4&quot;</span><span class="o">)</span>
+
+<span class="n">addSbtPlugin</span><span class="o">(</span><span class="s">&quot;com.eed3si9n&quot;</span> <span class="o">%</span> <span class="s">&quot;sbt-assembly&quot;</span> <span class="o">%</span> <span class="s">&quot;0.14.9&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="messages">
+<h2>Messages<a class="headerlink" href="#messages" title="Permalink to this headline">¶</a></h2>
+<p>As before we’ll have to implement our own <code class="docutils literal notranslate"><span class="pre">Address</span></code>, <code class="docutils literal notranslate"><span class="pre">Header</span></code> and <code class="docutils literal notranslate"><span class="pre">Msg</span></code> types, as well as the <code class="docutils literal notranslate"><span class="pre">Ping</span></code> and <code class="docutils literal notranslate"><span class="pre">Pong</span></code> events. To allow for convenient pattern matching in our handlers later, we are going to use only case classes and case objects for these types. We are also going to make significant use of the fact that Scala allows us to define multiple types in the same file. While this makes types sometimes difficult to locate in a code base, it provides convenient grouping and locality while working and reduces the number of times one has to write the same set of imports. For convenience we also define the <code class="docutils literal notranslate"><span class="pre">Ping</span></code> and <code class="docutils literal notranslate"><span class="pre">Pong</span></code> events in the package object.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">TestNetTypes.scala</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-scala notranslate"><div class="highlight"><pre><span></span><span class="k">package</span> <span class="nn">se.sics.test</span>
+
+<span class="k">import</span> <span class="nn">java.net.InetAddress</span><span class="o">;</span>
+<span class="k">import</span> <span class="nn">java.net.InetSocketAddress</span><span class="o">;</span>
+<span class="k">import</span> <span class="nn">se.sics.kompics.network.</span><span class="o">{</span> <span class="nc">Address</span><span class="o">,</span> <span class="nc">Header</span><span class="o">,</span> <span class="nc">Msg</span><span class="o">,</span> <span class="nc">Transport</span> <span class="o">};</span>
+<span class="k">import</span> <span class="nn">se.sics.kompics.KompicsEvent</span><span class="o">;</span>
+
+<span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">TAddress</span><span class="o">(</span><span class="n">isa</span><span class="k">:</span> <span class="kt">InetSocketAddress</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Address</span> <span class="o">{</span>
+    <span class="k">override</span> <span class="k">def</span> <span class="n">asSocket</span><span class="o">()</span><span class="k">:</span> <span class="kt">InetSocketAddress</span> <span class="o">=</span> <span class="n">isa</span><span class="o">;</span>
+    <span class="k">override</span> <span class="k">def</span> <span class="n">getIp</span><span class="o">()</span><span class="k">:</span> <span class="kt">InetAddress</span> <span class="o">=</span> <span class="n">isa</span><span class="o">.</span><span class="n">getAddress</span><span class="o">;</span>
+    <span class="k">override</span> <span class="k">def</span> <span class="n">getPort</span><span class="o">()</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">isa</span><span class="o">.</span><span class="n">getPort</span><span class="o">;</span>
+    <span class="k">override</span> <span class="k">def</span> <span class="n">sameHostAs</span><span class="o">(</span><span class="n">other</span><span class="k">:</span> <span class="kt">Address</span><span class="o">)</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="n">isa</span><span class="o">.</span><span class="n">equals</span><span class="o">(</span><span class="n">other</span><span class="o">.</span><span class="n">asSocket</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">THeader</span><span class="o">(</span><span class="n">src</span><span class="k">:</span> <span class="kt">TAddress</span><span class="o">,</span> <span class="n">dst</span><span class="k">:</span> <span class="kt">TAddress</span><span class="o">,</span> <span class="n">proto</span><span class="k">:</span> <span class="kt">Transport</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Header</span><span class="o">[</span><span class="kt">TAddress</span><span class="o">]</span> <span class="o">{</span>
+    <span class="k">override</span> <span class="k">def</span> <span class="n">getDestination</span><span class="o">()</span><span class="k">:</span> <span class="kt">TAddress</span> <span class="o">=</span> <span class="n">dst</span><span class="o">;</span>
+    <span class="k">override</span> <span class="k">def</span> <span class="n">getProtocol</span><span class="o">()</span><span class="k">:</span> <span class="kt">Transport</span> <span class="o">=</span> <span class="n">proto</span><span class="o">;</span>
+    <span class="k">override</span> <span class="k">def</span> <span class="n">getSource</span><span class="o">()</span><span class="k">:</span> <span class="kt">TAddress</span> <span class="o">=</span> <span class="n">src</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">TMessage</span><span class="o">[</span><span class="kt">C</span> <span class="k">&lt;:</span> <span class="kt">KompicsEvent</span><span class="o">](</span><span class="n">header</span><span class="k">:</span> <span class="kt">THeader</span><span class="o">,</span> <span class="n">payload</span><span class="k">:</span> <span class="kt">C</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Msg</span><span class="o">[</span><span class="kt">TAddress</span>, <span class="kt">THeader</span><span class="o">]</span> <span class="o">{</span>
+    <span class="k">override</span> <span class="k">def</span> <span class="n">getDestination</span><span class="o">()</span><span class="k">:</span> <span class="kt">TAddress</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">dst</span><span class="o">;</span>
+    <span class="k">override</span> <span class="k">def</span> <span class="n">getHeader</span><span class="o">()</span><span class="k">:</span> <span class="kt">THeader</span> <span class="o">=</span> <span class="n">header</span><span class="o">;</span>
+    <span class="k">override</span> <span class="k">def</span> <span class="n">getProtocol</span><span class="o">()</span><span class="k">:</span> <span class="kt">Transport</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">proto</span><span class="o">;</span>
+    <span class="k">override</span> <span class="k">def</span> <span class="n">getSource</span><span class="o">()</span><span class="k">:</span> <span class="kt">TAddress</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">src</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<p>Note that we limited our <code class="docutils literal notranslate"><span class="pre">TMessage</span></code> class to subtypes of <code class="docutils literal notranslate"><span class="pre">KompicsEvent</span></code>, but we could just as well have allowed any kind of type that can be serialized as a payload.</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">package.scala</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-scala notranslate"><div class="highlight"><pre><span></span><span class="k">package</span> <span class="nn">se.sics</span>
+
+<span class="k">import</span> <span class="nn">se.sics.kompics.KompicsEvent</span>
+
+<span class="k">package</span> <span class="nn">object</span> <span class="n">test</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="k">object</span> <span class="nc">Ping</span> <span class="k">extends</span> <span class="nc">KompicsEvent</span>
+    <span class="k">case</span> <span class="k">object</span> <span class="nc">Pong</span> <span class="k">extends</span> <span class="nc">KompicsEvent</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="components">
+<h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have messages, we can write the components that use them.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Ponger</span></code> is rather short, and as before it simply keeps a counter, which it increments every time it received a <code class="docutils literal notranslate"><span class="pre">TMessage</span></code> with the payload <code class="docutils literal notranslate"><span class="pre">Ping</span></code>. The underscore in the pattern means that we don’t care about the <code class="docutils literal notranslate"><span class="pre">THeader</span></code> which is the first argument of <code class="docutils literal notranslate"><span class="pre">TMessage</span></code>.</p>
+<p>We also define the setup component <code class="docutils literal notranslate"><span class="pre">PongerParent</span></code> in the same file. There is no DSL call for <code class="docutils literal notranslate"><span class="pre">create</span></code>, yet, but note the new Scala signature for <code class="docutils literal notranslate"><span class="pre">connect</span></code>. The arrow here always goes from <em>positive</em> to <em>negative</em>, or from “service provider” to “service consumer”, if you like. The arrow is also used in the DSL <code class="docutils literal notranslate"><span class="pre">trigger</span></code> method, where it simply goes from event to port.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">There’s also a new public version for the APIs that are thread-safe, which is not bound to the <code class="docutils literal notranslate"><span class="pre">ComponentDefinition</span></code> context. These are defined in the <code class="docutils literal notranslate"><span class="pre">se.sics.kompics.sl</span></code> package object and imitate the <a class="reference external" href="https://github.com/kompics/kola">Kola</a> syntax somewhat: <code class="docutils literal notranslate"><span class="pre">`!trigger`</span> <span class="pre">(event</span> <span class="pre">-&gt;</span> <span class="pre">port)</span></code> and <code class="docutils literal notranslate"><span class="pre">`!connect`[PortType](positive</span> <span class="pre">-&gt;</span> <span class="pre">negative)</span></code></p>
+</div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Ponger.scala</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-scala notranslate"><div class="highlight"><pre><span></span><span class="k">package</span> <span class="nn">se.sics.test</span>
+
+<span class="k">import</span> <span class="nn">se.sics.kompics.sl._</span>
+
+<span class="k">import</span> <span class="nn">se.sics.kompics.Init</span>
+<span class="k">import</span> <span class="nn">se.sics.kompics.network.</span><span class="o">{</span><span class="nc">Network</span><span class="o">,</span> <span class="nc">Transport</span><span class="o">}</span>
+<span class="k">import</span> <span class="nn">se.sics.kompics.network.netty.</span><span class="o">{</span> <span class="nc">NettyNetwork</span><span class="o">,</span> <span class="nc">NettyInit</span> <span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">PongerParent</span> <span class="k">extends</span> <span class="nc">ComponentDefinition</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="n">self</span> <span class="k">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">getValue</span><span class="o">[</span><span class="kt">TAddress</span><span class="o">](</span><span class="s">&quot;pingpong.self&quot;</span><span class="o">);</span>
+    <span class="k">val</span> <span class="n">network</span> <span class="k">=</span> <span class="n">create</span><span class="o">(</span><span class="n">classOf</span><span class="o">[</span><span class="kt">NettyNetwork</span><span class="o">],</span> <span class="k">new</span> <span class="nc">NettyInit</span><span class="o">(</span><span class="n">self</span><span class="o">));</span>
+    <span class="k">val</span> <span class="n">ponger</span> <span class="k">=</span> <span class="n">create</span><span class="o">(</span><span class="n">classOf</span><span class="o">[</span><span class="kt">Ponger</span><span class="o">],</span> <span class="nc">Init</span><span class="o">.</span><span class="nc">NONE</span><span class="o">);</span>
+
+    <span class="n">connect</span><span class="o">[</span><span class="kt">Network</span><span class="o">](</span><span class="n">network</span> <span class="o">-&gt;</span> <span class="n">ponger</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">Ponger</span> <span class="k">extends</span> <span class="nc">ComponentDefinition</span> <span class="o">{</span>
+
+    <span class="k">val</span> <span class="n">net</span> <span class="k">=</span> <span class="k">requires</span><span class="o">[</span><span class="kt">Network</span><span class="o">];</span>
+
+    <span class="k">private</span> <span class="k">var</span> <span class="n">counter</span><span class="k">:</span> <span class="kt">Long</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="k">private</span> <span class="k">val</span> <span class="n">self</span> <span class="k">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">getValue</span><span class="o">[</span><span class="kt">TAddress</span><span class="o">](</span><span class="s">&quot;pingpong.self&quot;</span><span class="o">);</span>
+
+    <span class="n">net</span> <span class="n">uponEvent</span> <span class="o">{</span>
+        <span class="k">case</span> <span class="n">context</span><span class="nd">@TMessage</span><span class="o">(</span><span class="k">_</span><span class="o">,</span> <span class="nc">Ping</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">handle</span> <span class="o">{</span>
+            <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">;</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="o">(</span><span class="s">&quot;Got Ping #{}!&quot;</span><span class="o">,</span> <span class="n">counter</span><span class="o">);</span>
+            <span class="n">trigger</span> <span class="o">(</span><span class="nc">TMessage</span><span class="o">(</span><span class="nc">THeader</span><span class="o">(</span><span class="n">self</span><span class="o">,</span> <span class="n">context</span><span class="o">.</span><span class="n">getSource</span><span class="o">,</span> <span class="nc">Transport</span><span class="o">.</span><span class="nc">TCP</span><span class="o">),</span> <span class="nc">Pong</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">net</span><span class="o">)</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The method <code class="docutils literal notranslate"><span class="pre">cfg</span></code> returns a memoized Scala wrapper for Kompics’ <code class="docutils literal notranslate"><span class="pre">config()</span></code>. You can also access the Java API as before by using the latter method. The Scala API is more condensed, as it avoids the annoying <code class="docutils literal notranslate"><span class="pre">{type}.class</span></code>/<code class="docutils literal notranslate"><span class="pre">classOf[{type}]</span></code> calls. Note that there are no <em>unchecked</em> methods in the Scala API.</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Pinger</span></code> is slightly more involved, but most of that really comes from the use of the <code class="docutils literal notranslate"><span class="pre">Timer</span></code>. As with the message types, the <code class="docutils literal notranslate"><span class="pre">Timeout</span></code> is defined as a case class to allow pattern matching in the handler. New in this section is the use of Scala DSL <code class="docutils literal notranslate"><span class="pre">Init</span></code> which allows any sequence of parameters, which can then be matched into internal fields in the component. The idea is simply to avoid the creation of a large number of init classes which act as nothing but reference carriers and are then discarded. Classes with such minimal reusability are in some way an abuse of the object-oriented paradigm and should be avoided in general.</p>
+<p>The custom <code class="docutils literal notranslate"><span class="pre">tearDown</span></code> method, is very similar to the Java version, just using an <code class="docutils literal notranslate"><span class="pre">Option</span></code> instead of checking for <code class="docutils literal notranslate"><span class="pre">null</span></code>, which is better style.</p>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Pinger.scala</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="highlight-scala notranslate"><div class="highlight"><pre><span></span><span class="k">package</span> <span class="nn">se.sics.test</span>
+
+<span class="k">import</span> <span class="nn">se.sics.kompics.sl._</span>
+
+<span class="k">import</span> <span class="nn">se.sics.kompics.network.</span><span class="o">{</span> <span class="nc">Network</span><span class="o">,</span> <span class="nc">Transport</span> <span class="o">}</span>
+<span class="k">import</span> <span class="nn">se.sics.kompics.network.netty.</span><span class="o">{</span> <span class="nc">NettyNetwork</span><span class="o">,</span> <span class="nc">NettyInit</span> <span class="o">}</span>
+<span class="k">import</span> <span class="nn">se.sics.kompics.timer.</span><span class="o">{</span> <span class="nc">Timer</span><span class="o">,</span> <span class="nc">SchedulePeriodicTimeout</span><span class="o">,</span> <span class="nc">Timeout</span><span class="o">,</span> <span class="nc">CancelPeriodicTimeout</span> <span class="o">}</span>
+<span class="k">import</span> <span class="nn">se.sics.kompics.timer.java.JavaTimer</span>
+<span class="k">import</span> <span class="nn">se.sics.kompics.Start</span>
+
+<span class="k">import</span> <span class="nn">java.util.UUID</span>
+
+<span class="k">class</span> <span class="nc">PingerParent</span> <span class="k">extends</span> <span class="nc">ComponentDefinition</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="n">self</span> <span class="k">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">getValue</span><span class="o">[</span><span class="kt">TAddress</span><span class="o">](</span><span class="s">&quot;pingpong.self&quot;</span><span class="o">);</span>
+    <span class="k">val</span> <span class="n">ponger</span> <span class="k">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">getValue</span><span class="o">[</span><span class="kt">TAddress</span><span class="o">](</span><span class="s">&quot;pingpong.pinger.pongeraddr&quot;</span><span class="o">);</span>
+    
+    <span class="k">val</span> <span class="n">timer</span> <span class="k">=</span> <span class="n">create</span><span class="o">(</span><span class="n">classOf</span><span class="o">[</span><span class="kt">JavaTimer</span><span class="o">],</span> <span class="n">se</span><span class="o">.</span><span class="n">sics</span><span class="o">.</span><span class="n">kompics</span><span class="o">.</span><span class="nc">Init</span><span class="o">.</span><span class="nc">NONE</span><span class="o">);</span>
+    <span class="k">val</span> <span class="n">network</span> <span class="k">=</span> <span class="n">create</span><span class="o">(</span><span class="n">classOf</span><span class="o">[</span><span class="kt">NettyNetwork</span><span class="o">],</span> <span class="k">new</span> <span class="nc">NettyInit</span><span class="o">(</span><span class="n">self</span><span class="o">));</span>
+    <span class="k">val</span> <span class="n">pinger</span> <span class="k">=</span> <span class="n">create</span><span class="o">(</span><span class="n">classOf</span><span class="o">[</span><span class="kt">Pinger</span><span class="o">],</span> <span class="nc">Init</span><span class="o">[</span><span class="kt">Pinger</span><span class="o">](</span><span class="n">ponger</span><span class="o">));</span>
+
+    <span class="n">connect</span><span class="o">[</span><span class="kt">Network</span><span class="o">](</span><span class="n">network</span> <span class="o">-&gt;</span> <span class="n">pinger</span><span class="o">);</span>
+    <span class="n">connect</span><span class="o">[</span><span class="kt">Timer</span><span class="o">](</span><span class="n">timer</span> <span class="o">-&gt;</span> <span class="n">pinger</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="k">case</span> <span class="k">class</span> <span class="nc">PingTimeout</span><span class="o">(</span><span class="n">spt</span><span class="k">:</span> <span class="kt">SchedulePeriodicTimeout</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Timeout</span><span class="o">(</span><span class="n">spt</span><span class="o">)</span>
+
+<span class="k">class</span> <span class="nc">Pinger</span><span class="o">(</span><span class="n">init</span><span class="k">:</span> <span class="kt">Init</span><span class="o">[</span><span class="kt">Pinger</span><span class="o">])</span> <span class="k">extends</span> <span class="nc">ComponentDefinition</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="n">net</span> <span class="k">=</span> <span class="k">requires</span><span class="o">[</span><span class="kt">Network</span><span class="o">];</span>
+    <span class="k">val</span> <span class="n">timer</span> <span class="k">=</span> <span class="k">requires</span><span class="o">[</span><span class="kt">Timer</span><span class="o">];</span>
+
+    <span class="k">private</span> <span class="k">val</span> <span class="n">self</span> <span class="k">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">getValue</span><span class="o">[</span><span class="kt">TAddress</span><span class="o">](</span><span class="s">&quot;pingpong.self&quot;</span><span class="o">);</span>
+    <span class="k">private</span> <span class="k">val</span> <span class="n">ponger</span> <span class="k">=</span> <span class="n">init</span> <span class="k">match</span> <span class="o">{</span>
+        <span class="k">case</span> <span class="nc">Init</span><span class="o">(</span><span class="n">pongerAddr</span><span class="k">:</span> <span class="kt">TAddress</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">pongerAddr</span>
+    <span class="o">}</span>
+    <span class="k">private</span> <span class="k">var</span> <span class="n">counter</span><span class="k">:</span> <span class="kt">Long</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="k">private</span> <span class="k">var</span> <span class="n">timerId</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">UUID</span><span class="o">]</span> <span class="k">=</span> <span class="nc">None</span><span class="o">;</span>
+
+    <span class="n">ctrl</span> <span class="n">uponEvent</span> <span class="o">{</span>
+        <span class="k">case</span> <span class="k">_:</span> <span class="kt">Start</span> <span class="o">=&gt;</span> <span class="n">handle</span> <span class="o">{</span>
+            <span class="k">val</span> <span class="n">period</span> <span class="k">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">getValue</span><span class="o">[</span><span class="kt">Long</span><span class="o">](</span><span class="s">&quot;pingpong.pinger.timeout&quot;</span><span class="o">);</span>
+            <span class="k">val</span> <span class="n">spt</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">SchedulePeriodicTimeout</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">period</span><span class="o">);</span>
+            <span class="k">val</span> <span class="n">timeout</span> <span class="k">=</span> <span class="nc">PingTimeout</span><span class="o">(</span><span class="n">spt</span><span class="o">);</span>
+            <span class="n">spt</span><span class="o">.</span><span class="n">setTimeoutEvent</span><span class="o">(</span><span class="n">timeout</span><span class="o">);</span>
+            <span class="n">trigger</span><span class="o">(</span><span class="n">spt</span> <span class="o">-&gt;</span> <span class="n">timer</span><span class="o">);</span>
+            <span class="n">timerId</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="n">timeout</span><span class="o">.</span><span class="n">getTimeoutId</span><span class="o">());</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="n">net</span> <span class="n">uponEvent</span> <span class="o">{</span>
+        <span class="k">case</span> <span class="n">context</span> <span class="k">@</span> <span class="nc">TMessage</span><span class="o">(</span><span class="k">_</span><span class="o">,</span> <span class="nc">Pong</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">handle</span> <span class="o">{</span>
+            <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">;</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="o">(</span><span class="s">&quot;Got Pong #{}!&quot;</span><span class="o">,</span> <span class="n">counter</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="n">timer</span> <span class="n">uponEvent</span> <span class="o">{</span>
+        <span class="k">case</span> <span class="nc">PingTimeout</span><span class="o">(</span><span class="k">_</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">handle</span> <span class="o">{</span>
+            <span class="n">trigger</span><span class="o">(</span><span class="nc">TMessage</span><span class="o">(</span><span class="nc">THeader</span><span class="o">(</span><span class="n">self</span><span class="o">,</span> <span class="n">ponger</span><span class="o">,</span> <span class="nc">Transport</span><span class="o">.</span><span class="nc">TCP</span><span class="o">),</span> <span class="nc">Ping</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">net</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="k">override</span> <span class="k">def</span> <span class="n">tearDown</span><span class="o">()</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+        <span class="n">timerId</span> <span class="k">match</span> <span class="o">{</span>
+            <span class="k">case</span> <span class="nc">Some</span><span class="o">(</span><span class="n">id</span><span class="o">)</span> <span class="k">=&gt;</span>
+                <span class="n">trigger</span><span class="o">(</span><span class="k">new</span> <span class="nc">CancelPeriodicTimeout</span><span class="o">(</span><span class="n">id</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">timer</span><span class="o">);</span>
+            <span class="k">case</span> <span class="nc">None</span> <span class="k">=&gt;</span> <span class="c1">// nothing</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<p>Before we can get to the <code class="docutils literal notranslate"><span class="pre">Main</span></code> object, we are still missing two important things, that we had to take care of in Java as well: <em>Serialization</em> and <em>Config Converters</em>.</p>
+</div>
+<div class="section" id="serialization">
+<h2>Serialization<a class="headerlink" href="#serialization" title="Permalink to this headline">¶</a></h2>
+<p>In order to be able to send things over the network, we need to be able to serialize all our classes. In the Java version we used custom serializers for all our classes. In Scala, on the other hand, we have a very good library called <a class="reference external" href="https://github.com/scala/pickling">Scala Pickling</a> which can take care of all the case classes/objects and Scala primitives, leaving us only to deal with Java’s enums and <code class="docutils literal notranslate"><span class="pre">InetSocketAddress</span></code>.</p>
+<p>The two custom “picklers” in the following code might seem a bit arcane, but this is a tutorial on Kompics Scala and not on Scala Pickling, so feel free to gloss over the details.</p>
+<p>Note the use an object instead of a class for the <code class="docutils literal notranslate"><span class="pre">PickleSerializer</span></code>. We anyway only want a single instance of our serializers to be registered, so unless there is custom state that needs to be passed in, there is no reason to ever have more than one instance and thus use a class.</p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">PickleSerializer.scala</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="highlight-scala notranslate"><div class="highlight"><pre><span></span><span class="k">package</span> <span class="nn">se.sics.test</span>
+
+<span class="k">import</span> <span class="nn">scala.language.implicitConversions</span>
+
+<span class="k">import</span> <span class="nn">se.sics.kompics.network.netty.serialization.Serializer</span><span class="o">;</span>
+<span class="k">import</span> <span class="nn">se.sics.kompics.network.Transport</span>
+<span class="k">import</span> <span class="nn">io.netty.buffer.ByteBuf</span><span class="o">;</span>
+<span class="k">import</span> <span class="nn">com.google.common.base.Optional</span><span class="o">;</span>
+<span class="k">import</span> <span class="nn">scala.pickling._</span>
+<span class="k">import</span> <span class="nn">scala.pickling.Defaults._</span>
+<span class="k">import</span> <span class="nn">scala.pickling.binary._</span>
+<span class="c1">//import scala.pickling.json._ //alternatively JSON pickling</span>
+
+<span class="c1">// Custom Serialization for TAddress (the case class itself is fine, but the InetSocketAddress is problematic)</span>
+<span class="k">object</span> <span class="nc">TAddressPickler</span> <span class="k">extends</span> <span class="nc">Pickler</span><span class="o">[</span><span class="kt">TAddress</span><span class="o">]</span> <span class="k">with</span> <span class="nc">Unpickler</span><span class="o">[</span><span class="kt">TAddress</span><span class="o">]</span> <span class="k">with</span> <span class="n">pickler</span><span class="o">.</span><span class="nc">PrimitivePicklers</span> <span class="k">with</span> <span class="n">pickler</span><span class="o">.</span><span class="nc">PrimitiveArrayPicklers</span> <span class="o">{</span>
+    <span class="k">import</span> <span class="nn">java.net.InetSocketAddress</span>
+    <span class="k">import</span> <span class="nn">java.net.InetAddress</span>
+
+    <span class="k">override</span> <span class="k">val</span> <span class="n">tag</span> <span class="k">=</span> <span class="nc">FastTypeTag</span><span class="o">[</span><span class="kt">TAddress</span><span class="o">]</span>
+
+    <span class="k">override</span> <span class="k">def</span> <span class="n">pickle</span><span class="o">(</span><span class="n">picklee</span><span class="k">:</span> <span class="kt">TAddress</span><span class="o">,</span> <span class="n">builder</span><span class="k">:</span> <span class="kt">PBuilder</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">hintTag</span><span class="o">(</span><span class="n">tag</span><span class="o">)</span> <span class="c1">// This is always required</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">beginEntry</span><span class="o">(</span><span class="n">picklee</span><span class="o">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">putField</span><span class="o">(</span><span class="s">&quot;ip&quot;</span><span class="o">,</span> <span class="o">{</span> <span class="n">fieldBuilder</span> <span class="k">=&gt;</span>
+            <span class="n">fieldBuilder</span><span class="o">.</span><span class="n">hintTag</span><span class="o">(</span><span class="n">byteArrayPickler</span><span class="o">.</span><span class="n">tag</span><span class="o">)</span>
+            <span class="n">fieldBuilder</span><span class="o">.</span><span class="n">hintStaticallyElidedType</span><span class="o">()</span>
+            <span class="n">byteArrayPickler</span><span class="o">.</span><span class="n">pickle</span><span class="o">(</span><span class="n">picklee</span><span class="o">.</span><span class="n">isa</span><span class="o">.</span><span class="n">getAddress</span><span class="o">.</span><span class="n">getAddress</span><span class="o">,</span> <span class="n">fieldBuilder</span><span class="o">)</span>
+        <span class="o">})</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">putField</span><span class="o">(</span><span class="s">&quot;port&quot;</span><span class="o">,</span> <span class="o">{</span> <span class="n">fieldBuilder</span> <span class="k">=&gt;</span>
+            <span class="n">fieldBuilder</span><span class="o">.</span><span class="n">hintTag</span><span class="o">(</span><span class="n">intPickler</span><span class="o">.</span><span class="n">tag</span><span class="o">)</span>
+            <span class="n">fieldBuilder</span><span class="o">.</span><span class="n">hintStaticallyElidedType</span><span class="o">()</span>
+            <span class="n">intPickler</span><span class="o">.</span><span class="n">pickle</span><span class="o">(</span><span class="n">picklee</span><span class="o">.</span><span class="n">isa</span><span class="o">.</span><span class="n">getPort</span><span class="o">,</span> <span class="n">fieldBuilder</span><span class="o">)</span>
+        <span class="o">})</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">endEntry</span><span class="o">()</span>
+    <span class="o">}</span>
+
+    <span class="k">override</span> <span class="k">def</span> <span class="n">unpickle</span><span class="o">(</span><span class="n">tag</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">reader</span><span class="k">:</span> <span class="kt">PReader</span><span class="o">)</span><span class="k">:</span> <span class="kt">Any</span> <span class="o">=</span> <span class="o">{</span>
+        <span class="k">val</span> <span class="n">ipReader</span> <span class="k">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">readField</span><span class="o">(</span><span class="s">&quot;ip&quot;</span><span class="o">);</span>
+        <span class="n">ipReader</span><span class="o">.</span><span class="n">hintStaticallyElidedType</span><span class="o">();</span>
+        <span class="k">val</span> <span class="n">ip</span> <span class="k">=</span> <span class="n">byteArrayPickler</span><span class="o">.</span><span class="n">unpickleEntry</span><span class="o">(</span><span class="n">ipReader</span><span class="o">).</span><span class="n">asInstanceOf</span><span class="o">[</span><span class="kt">Array</span><span class="o">[</span><span class="kt">Byte</span><span class="o">]];</span>
+        <span class="k">val</span> <span class="n">portReader</span> <span class="k">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">readField</span><span class="o">(</span><span class="s">&quot;port&quot;</span><span class="o">);</span>
+        <span class="n">portReader</span><span class="o">.</span><span class="n">hintStaticallyElidedType</span><span class="o">();</span>
+        <span class="k">val</span> <span class="n">port</span> <span class="k">=</span> <span class="n">intPickler</span><span class="o">.</span><span class="n">unpickleEntry</span><span class="o">(</span><span class="n">portReader</span><span class="o">).</span><span class="n">asInstanceOf</span><span class="o">[</span><span class="kt">Int</span><span class="o">];</span>
+        <span class="k">new</span> <span class="nc">TAddress</span><span class="o">(</span><span class="k">new</span> <span class="nc">InetSocketAddress</span><span class="o">(</span><span class="nc">InetAddress</span><span class="o">.</span><span class="n">getByAddress</span><span class="o">(</span><span class="n">ip</span><span class="o">),</span> <span class="n">port</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Custom Serialization for Transport because enum picklers don&#39;t work properly in this version</span>
+<span class="k">object</span> <span class="nc">TransportPickler</span> <span class="k">extends</span> <span class="nc">Pickler</span><span class="o">[</span><span class="kt">Transport</span><span class="o">]</span> <span class="k">with</span> <span class="nc">Unpickler</span><span class="o">[</span><span class="kt">Transport</span><span class="o">]</span> <span class="k">with</span> <span class="n">pickler</span><span class="o">.</span><span class="nc">PrimitivePicklers</span> <span class="o">{</span>
+
+    <span class="k">override</span> <span class="k">val</span> <span class="n">tag</span> <span class="k">=</span> <span class="nc">FastTypeTag</span><span class="o">[</span><span class="kt">Transport</span><span class="o">]</span>
+
+    <span class="k">override</span> <span class="k">def</span> <span class="n">pickle</span><span class="o">(</span><span class="n">picklee</span><span class="k">:</span> <span class="kt">Transport</span><span class="o">,</span> <span class="n">builder</span><span class="k">:</span> <span class="kt">PBuilder</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">hintTag</span><span class="o">(</span><span class="n">tag</span><span class="o">)</span> <span class="c1">// This is always required</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">beginEntry</span><span class="o">(</span><span class="n">picklee</span><span class="o">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">putField</span><span class="o">(</span><span class="s">&quot;ordinal&quot;</span><span class="o">,</span> <span class="o">{</span> <span class="n">fieldBuilder</span> <span class="k">=&gt;</span>
+            <span class="n">fieldBuilder</span><span class="o">.</span><span class="n">hintTag</span><span class="o">(</span><span class="n">bytePickler</span><span class="o">.</span><span class="n">tag</span><span class="o">)</span>
+            <span class="n">fieldBuilder</span><span class="o">.</span><span class="n">hintStaticallyElidedType</span><span class="o">()</span>
+            <span class="n">bytePickler</span><span class="o">.</span><span class="n">pickle</span><span class="o">(</span><span class="n">picklee</span><span class="o">.</span><span class="n">ordinal</span><span class="o">().</span><span class="n">toByte</span><span class="o">,</span> <span class="n">fieldBuilder</span><span class="o">)</span>
+        <span class="o">})</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">endEntry</span><span class="o">()</span>
+    <span class="o">}</span>
+
+    <span class="k">override</span> <span class="k">def</span> <span class="n">unpickle</span><span class="o">(</span><span class="n">tag</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">reader</span><span class="k">:</span> <span class="kt">PReader</span><span class="o">)</span><span class="k">:</span> <span class="kt">Any</span> <span class="o">=</span> <span class="o">{</span>
+        <span class="k">val</span> <span class="n">ordinalReader</span> <span class="k">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">readField</span><span class="o">(</span><span class="s">&quot;ordinal&quot;</span><span class="o">);</span>
+        <span class="n">ordinalReader</span><span class="o">.</span><span class="n">hintStaticallyElidedType</span><span class="o">();</span>
+        <span class="k">val</span> <span class="n">ordinal</span> <span class="k">=</span> <span class="n">bytePickler</span><span class="o">.</span><span class="n">unpickleEntry</span><span class="o">(</span><span class="n">ordinalReader</span><span class="o">).</span><span class="n">asInstanceOf</span><span class="o">[</span><span class="kt">Byte</span><span class="o">].</span><span class="n">toInt</span><span class="o">;</span>
+
+        <span class="nc">Transport</span><span class="o">.</span><span class="n">values</span><span class="o">()(</span><span class="n">ordinal</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// serialize all object with Scala pickling</span>
+<span class="k">object</span> <span class="nc">PickleSerializer</span> <span class="k">extends</span> <span class="nc">Serializer</span> <span class="o">{</span>
+    <span class="k">override</span> <span class="k">def</span> <span class="n">identifier</span><span class="o">()</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="o">;</span>
+
+    <span class="c1">// register our custom picklers for use with reflection picklers</span>
+    <span class="k">implicit</span> <span class="k">val</span> <span class="n">addressPickler</span> <span class="k">=</span> <span class="nc">TAddressPickler</span>
+    <span class="n">scala</span><span class="o">.</span><span class="n">pickling</span><span class="o">.</span><span class="n">runtime</span><span class="o">.</span><span class="nc">GlobalRegistry</span><span class="o">.</span><span class="n">picklerMap</span> <span class="o">+=</span> <span class="o">(</span><span class="n">addressPickler</span><span class="o">.</span><span class="n">tag</span><span class="o">.</span><span class="n">key</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="n">addressPickler</span><span class="o">))</span>
+    <span class="n">scala</span><span class="o">.</span><span class="n">pickling</span><span class="o">.</span><span class="n">runtime</span><span class="o">.</span><span class="nc">GlobalRegistry</span><span class="o">.</span><span class="n">unpicklerMap</span> <span class="o">+=</span> <span class="o">(</span><span class="n">addressPickler</span><span class="o">.</span><span class="n">tag</span><span class="o">.</span><span class="n">key</span> <span class="o">-&gt;</span> <span class="n">addressPickler</span><span class="o">)</span>
+    <span class="k">implicit</span> <span class="k">val</span> <span class="n">transportPickler</span> <span class="k">=</span> <span class="nc">TransportPickler</span>
+    <span class="n">scala</span><span class="o">.</span><span class="n">pickling</span><span class="o">.</span><span class="n">runtime</span><span class="o">.</span><span class="nc">GlobalRegistry</span><span class="o">.</span><span class="n">picklerMap</span> <span class="o">+=</span> <span class="o">(</span><span class="n">transportPickler</span><span class="o">.</span><span class="n">tag</span><span class="o">.</span><span class="n">key</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="n">transportPickler</span><span class="o">))</span>
+    <span class="n">scala</span><span class="o">.</span><span class="n">pickling</span><span class="o">.</span><span class="n">runtime</span><span class="o">.</span><span class="nc">GlobalRegistry</span><span class="o">.</span><span class="n">unpicklerMap</span> <span class="o">+=</span> <span class="o">(</span><span class="n">transportPickler</span><span class="o">.</span><span class="n">tag</span><span class="o">.</span><span class="n">key</span> <span class="o">-&gt;</span> <span class="n">transportPickler</span><span class="o">)</span>
+
+    <span class="k">override</span> <span class="k">def</span> <span class="n">toBinary</span><span class="o">(</span><span class="n">o</span><span class="k">:</span> <span class="kt">Any</span><span class="o">,</span> <span class="n">buf</span><span class="k">:</span> <span class="kt">ByteBuf</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+        <span class="k">val</span> <span class="n">ser</span> <span class="k">=</span> <span class="n">o</span><span class="o">.</span><span class="n">pickle</span><span class="o">;</span>
+        <span class="k">val</span> <span class="n">bytes</span> <span class="k">=</span> <span class="n">ser</span><span class="o">.</span><span class="n">value</span><span class="o">;</span>
+        <span class="n">buf</span><span class="o">.</span><span class="n">writeInt</span><span class="o">(</span><span class="n">bytes</span><span class="o">.</span><span class="n">length</span><span class="o">);</span>
+        <span class="n">buf</span><span class="o">.</span><span class="n">writeBytes</span><span class="o">(</span><span class="n">bytes</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="k">override</span> <span class="k">def</span> <span class="n">fromBinary</span><span class="o">(</span><span class="n">buf</span><span class="k">:</span> <span class="kt">ByteBuf</span><span class="o">,</span> <span class="n">hint</span><span class="k">:</span> <span class="kt">Optional</span><span class="o">[</span><span class="kt">Object</span><span class="o">])</span><span class="k">:</span> <span class="kt">Object</span> <span class="o">=</span> <span class="o">{</span>
+        <span class="k">val</span> <span class="n">len</span> <span class="k">=</span> <span class="n">buf</span><span class="o">.</span><span class="n">readInt</span><span class="o">();</span>
+        <span class="k">val</span> <span class="n">ser</span> <span class="k">=</span> <span class="nc">Array</span><span class="o">.</span><span class="n">ofDim</span><span class="o">[</span><span class="kt">Byte</span><span class="o">](</span><span class="n">len</span><span class="o">);</span>
+        <span class="n">buf</span><span class="o">.</span><span class="n">readBytes</span><span class="o">(</span><span class="n">ser</span><span class="o">);</span>
+        <span class="k">val</span> <span class="n">o</span> <span class="k">=</span> <span class="n">ser</span><span class="o">.</span><span class="n">unpickle</span><span class="o">[</span><span class="kt">Any</span><span class="o">];</span>
+        <span class="n">o</span><span class="o">.</span><span class="n">asInstanceOf</span><span class="o">[</span><span class="kt">Object</span><span class="o">];</span>
+    <span class="o">}</span>
+
+    <span class="c1">// a nice implicit conversion between Guava&#39;s Optional and Scala&#39;s Option</span>
+    <span class="c1">// in case anyone wants to call our serializer manually from Scala code</span>
+    <span class="k">implicit</span> <span class="k">def</span> <span class="n">optional2Option</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">o</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span><span class="k">:</span> <span class="kt">Optional</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="k">=</span> <span class="n">o</span> <span class="k">match</span> <span class="o">{</span>
+        <span class="k">case</span> <span class="nc">Some</span><span class="o">(</span><span class="n">x</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Optional</span><span class="o">.</span><span class="n">of</span><span class="o">(</span><span class="n">x</span><span class="o">)</span>
+        <span class="k">case</span> <span class="nc">None</span>    <span class="k">=&gt;</span> <span class="nc">Optional</span><span class="o">.</span><span class="n">absent</span><span class="o">()</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="config-converters">
+<h2>Config Converters<a class="headerlink" href="#config-converters" title="Permalink to this headline">¶</a></h2>
+<p>The Kompics Scala package already adds a number of new <code class="docutils literal notranslate"><span class="pre">Converter</span></code>s for Scala primitives, but we require one more, to deal with our <code class="docutils literal notranslate"><span class="pre">TAddress</span></code> properly.</p>
+<p>There is no new Scala API for <code class="docutils literal notranslate"><span class="pre">Converter</span></code> so some of the code looks a bit Java:y. Notice especially the awkward <code class="docutils literal notranslate"><span class="pre">`type`</span></code> method, which is a workaround for the fact that <code class="docutils literal notranslate"><span class="pre">type</span></code> is a reserved keyword in Scala, but not in Java.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">&#64;unchecked</span></code> pattern simply surpresses a compiler warning that the generics of the pattern would be unchecked by the pattern matcher, as they are removed by erasure. The same thing happens in Java, just Scala is nice and tells you about it by default, and you can explicitly ignore the problem if you choose to.</p>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">TAddressConverter.scala</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="highlight-scala notranslate"><div class="highlight"><pre><span></span><span class="k">package</span> <span class="nn">se.sics.test</span>
+
+<span class="k">import</span> <span class="nn">java.net.</span><span class="o">{</span> <span class="nc">InetAddress</span><span class="o">,</span> <span class="nc">InetSocketAddress</span> <span class="o">};</span>
+<span class="k">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+<span class="k">import</span> <span class="nn">se.sics.kompics.config.Conversions</span><span class="o">;</span>
+<span class="k">import</span> <span class="nn">se.sics.kompics.config.Converter</span><span class="o">;</span>
+<span class="k">import</span> <span class="nn">com.typesafe.scalalogging.LazyLogging</span><span class="o">;</span>
+
+<span class="k">object</span> <span class="nc">TAddressConverter</span> <span class="k">extends</span> <span class="nc">Converter</span><span class="o">[</span><span class="kt">TAddress</span><span class="o">]</span> <span class="k">with</span> <span class="nc">LazyLogging</span> <span class="o">{</span>
+
+    <span class="k">override</span> <span class="k">def</span> <span class="n">convert</span><span class="o">(</span><span class="n">o</span><span class="k">:</span> <span class="kt">Object</span><span class="o">)</span><span class="k">:</span> <span class="kt">TAddress</span> <span class="o">=</span> <span class="o">{</span>
+        <span class="n">o</span> <span class="k">match</span> <span class="o">{</span>
+            <span class="k">case</span> <span class="n">m</span><span class="k">:</span> <span class="kt">Map</span><span class="o">[</span><span class="kt">String</span>, <span class="kt">Any</span><span class="o">]</span> <span class="nd">@unchecked</span> <span class="k">=&gt;</span> <span class="o">{</span>
+                <span class="k">try</span> <span class="o">{</span>
+                    <span class="k">val</span> <span class="n">hostname</span> <span class="k">=</span> <span class="nc">Conversions</span><span class="o">.</span><span class="n">convert</span><span class="o">(</span><span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="o">(</span><span class="s">&quot;host&quot;</span><span class="o">),</span> <span class="n">classOf</span><span class="o">[</span><span class="kt">String</span><span class="o">]);</span>
+                    <span class="k">val</span> <span class="n">port</span> <span class="k">=</span> <span class="nc">Conversions</span><span class="o">.</span><span class="n">convert</span><span class="o">(</span><span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="o">(</span><span class="s">&quot;port&quot;</span><span class="o">),</span> <span class="n">classOf</span><span class="o">[</span><span class="kt">Integer</span><span class="o">]);</span>
+                    <span class="k">val</span> <span class="n">ip</span> <span class="k">=</span> <span class="nc">InetAddress</span><span class="o">.</span><span class="n">getByName</span><span class="o">(</span><span class="n">hostname</span><span class="o">);</span>
+                    <span class="k">return</span> <span class="nc">TAddress</span><span class="o">(</span><span class="k">new</span> <span class="nc">InetSocketAddress</span><span class="o">(</span><span class="n">ip</span><span class="o">,</span> <span class="n">port</span><span class="o">));</span>
+                <span class="o">}</span> <span class="k">catch</span> <span class="o">{</span>
+                    <span class="k">case</span> <span class="n">ex</span><span class="k">:</span> <span class="kt">Throwable</span> <span class="o">=&gt;</span>
+                        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="o">(</span><span class="s">s&quot;Could not convert </span><span class="si">$m</span><span class="s"> to TAddress&quot;</span><span class="o">,</span> <span class="n">ex</span><span class="o">)</span>
+                        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="k">case</span> <span class="n">s</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=&gt;</span> <span class="o">{</span>
+                <span class="k">try</span> <span class="o">{</span>
+                    <span class="k">val</span> <span class="n">ipport</span> <span class="k">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="o">(</span><span class="s">&quot;:&quot;</span><span class="o">);</span>
+                    <span class="k">val</span> <span class="n">ip</span> <span class="k">=</span> <span class="nc">InetAddress</span><span class="o">.</span><span class="n">getByName</span><span class="o">(</span><span class="n">ipport</span><span class="o">(</span><span class="mi">0</span><span class="o">));</span>
+                    <span class="k">val</span> <span class="n">port</span> <span class="k">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="n">parseInt</span><span class="o">(</span><span class="n">ipport</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+                    <span class="k">return</span> <span class="nc">TAddress</span><span class="o">(</span><span class="k">new</span> <span class="nc">InetSocketAddress</span><span class="o">(</span><span class="n">ip</span><span class="o">,</span> <span class="n">port</span><span class="o">));</span>
+                <span class="o">}</span> <span class="k">catch</span> <span class="o">{</span>
+                    <span class="k">case</span> <span class="n">ex</span><span class="k">:</span> <span class="kt">Throwable</span> <span class="o">=&gt;</span>
+                        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="o">(</span><span class="s">s&quot;Could not convert &#39;</span><span class="si">$s</span><span class="s">&#39; to TAddress&quot;</span><span class="o">,</span> <span class="n">ex</span><span class="o">)</span>
+                        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="o">(</span><span class="s">s&quot;Could not convert </span><span class="si">$o</span><span class="s"> to TAddress&quot;</span><span class="o">);</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="k">override</span> <span class="k">def</span> <span class="n">`type`</span><span class="o">()</span><span class="k">:</span> <span class="kt">Class</span><span class="o">[</span><span class="kt">TAddress</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">classOf</span><span class="o">[</span><span class="kt">TAddress</span><span class="o">];</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="main-object-and-running-the-code">
+<h2>Main Object and Running the Code<a class="headerlink" href="#main-object-and-running-the-code" title="Permalink to this headline">¶</a></h2>
+<p>Now we are finally in a position to write the <code class="docutils literal notranslate"><span class="pre">Main</span></code> object. The code is nothing fancy, and is pretty much a one-to-one translation of the Java version, just with one serializer less.</p>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">Main.scala</span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
+<div class="highlight-scala notranslate"><div class="highlight"><pre><span></span><span class="k">package</span> <span class="nn">se.sics.test</span>
+
+<span class="k">import</span> <span class="nn">se.sics.kompics.network.netty.serialization.Serializers</span>
+<span class="k">import</span> <span class="nn">se.sics.kompics.config.Conversions</span>
+<span class="k">import</span> <span class="nn">se.sics.kompics.Kompics</span>
+<span class="k">import</span> <span class="nn">com.typesafe.scalalogging.StrictLogging</span>
+
+<span class="k">object</span> <span class="nc">Main</span> <span class="k">extends</span> <span class="nc">StrictLogging</span> <span class="o">{</span>
+
+    <span class="c1">// register serializer</span>
+    <span class="nc">Serializers</span><span class="o">.</span><span class="n">register</span><span class="o">(</span><span class="nc">PickleSerializer</span><span class="o">,</span> <span class="s">&quot;pickleS&quot;</span><span class="o">);</span>
+    <span class="c1">// map types to serializer</span>
+    <span class="nc">Serializers</span><span class="o">.</span><span class="n">register</span><span class="o">(</span><span class="n">classOf</span><span class="o">[</span><span class="kt">TAddress</span><span class="o">],</span> <span class="s">&quot;pickleS&quot;</span><span class="o">);</span>
+    <span class="nc">Serializers</span><span class="o">.</span><span class="n">register</span><span class="o">(</span><span class="n">classOf</span><span class="o">[</span><span class="kt">THeader</span><span class="o">],</span> <span class="s">&quot;pickleS&quot;</span><span class="o">);</span>
+    <span class="nc">Serializers</span><span class="o">.</span><span class="n">register</span><span class="o">(</span><span class="n">classOf</span><span class="o">[</span><span class="kt">TMessage</span><span class="o">[</span><span class="k">_</span><span class="o">]],</span> <span class="s">&quot;pickleS&quot;</span><span class="o">);</span>
+    <span class="c1">// conversions</span>
+    <span class="nc">Conversions</span><span class="o">.</span><span class="n">register</span><span class="o">(</span><span class="nc">TAddressConverter</span><span class="o">);</span>
+
+    <span class="k">def</span> <span class="n">main</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">args</span><span class="o">.</span><span class="n">length</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">args</span><span class="o">(</span><span class="mi">0</span><span class="o">).</span><span class="n">equalsIgnoreCase</span><span class="o">(</span><span class="s">&quot;ponger&quot;</span><span class="o">))</span> <span class="o">{</span>
+                    <span class="nc">Kompics</span><span class="o">.</span><span class="n">createAndStart</span><span class="o">(</span><span class="n">classOf</span><span class="o">[</span><span class="kt">PongerParent</span><span class="o">],</span> <span class="mi">2</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="o">(</span><span class="s">&quot;Starting Ponger&quot;</span><span class="o">);</span>
+                    <span class="nc">Kompics</span><span class="o">.</span><span class="n">waitForTermination</span><span class="o">();</span>
+                    <span class="c1">// no shutdown this time...act like a server and keep running until externally exited</span>
+                <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">args</span><span class="o">(</span><span class="mi">0</span><span class="o">).</span><span class="n">equalsIgnoreCase</span><span class="o">(</span><span class="s">&quot;pinger&quot;</span><span class="o">))</span> <span class="o">{</span>
+                    <span class="nc">Kompics</span><span class="o">.</span><span class="n">createAndStart</span><span class="o">(</span><span class="n">classOf</span><span class="o">[</span><span class="kt">PingerParent</span><span class="o">],</span> <span class="mi">2</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="o">(</span><span class="s">&quot;Starting Pinger&quot;</span><span class="o">);</span>
+                   
+                    <span class="nc">Thread</span><span class="o">.</span><span class="n">sleep</span><span class="o">(</span><span class="mi">10000</span><span class="o">);</span>
+                    
+                    <span class="nc">Kompics</span><span class="o">.</span><span class="n">shutdown</span><span class="o">();</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="n">exit</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">{</span>
+                <span class="k">case</span> <span class="n">e</span><span class="k">:</span> <span class="kt">Throwable</span> <span class="o">=&gt;</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="o">(</span><span class="s">&quot;Error while pinging!&quot;</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="n">exit</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="n">err</span><span class="o">.</span><span class="n">println</span><span class="o">(</span><span class="s">&quot;Invalid number of parameters&quot;</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="n">exit</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<p>Also include the following <code class="file docutils literal notranslate"><span class="pre">reference.conf</span></code> in <code class="file docutils literal notranslate"><span class="pre">src/main/resources</span></code> and a <code class="file docutils literal notranslate"><span class="pre">logback.xml</span></code> of your choosing (for example the one from the <a class="reference internal" href="helloworld.html#kshelloworld"><span class="std std-ref">Hello World in Kompics Scala</span></a> example) in the same folder.</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span>pingpong {
+	self {
+		host = &quot;127.0.0.1&quot;
+		port = 34567
+	}
+	pinger {
+		timeout = 1000
+		pongeraddr {
+			host = &quot;127.0.0.1&quot;
+			port = 45678
+		}
+	}
+}
+</pre></div>
+</div>
+<p>Now that we have all of that we can finally compile and assemble the project:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sbt</span>
+<span class="gp">&gt;</span> compile
+<span class="gp">&gt;</span> assembly
+</pre></div>
+</div>
+<p>The move the resulting assembled jar from the <code class="file docutils literal notranslate"><span class="pre">target/scala_2.11</span></code> folder both to <code class="file docutils literal notranslate"><span class="pre">distPinger</span></code> and <code class="file docutils literal notranslate"><span class="pre">distPonger</span></code> (or symlink it, whichever you prefer).</p>
+<p>All we need now is some quick configuration files and maybe a nice script to run each version.</p>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">distPonger/application.conf</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span>pingpong.self.host = &quot;127.0.0.1&quot;
+</pre></div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Ponger</span></code> simply uses the default port 34567.</p>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">distPinger/application.conf</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span>pingpong.self.host = &quot;127.0.0.1&quot;
+pingpong.self.port = 45678
+// pinger only
+pingpong.pinger.pongeraddr.host = &quot;127.0.0.1&quot;
+pingpong.pinger.pongeraddr.port = 34567
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">distPonger/ponger.sh</span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+java -Dconfig.file<span class="o">=</span>./application.conf -jar Ping<span class="se">\ </span>Pong-assembly-1.1.jar ponger
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text">distPinger/pinger.sh</span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+java -Dconfig.file<span class="o">=</span>./application.conf -jar Ping<span class="se">\ </span>Pong-assembly-1.1.jar pinger
+</pre></div>
+</div>
+</div>
+<p>Then simply run the <code class="docutils literal notranslate"><span class="pre">ponger.sh</span></code> first, and then the <code class="docutils literal notranslate"><span class="pre">pinger.sh</span></code>.</p>
+<p>You can download the whole project <a class="reference download internal" download="" href="../_downloads/aa9d58822f5387103ccbcad7626511fe/pingpong.zip"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ports.html" class="btn btn-neutral float-right" title="Ports and Port Types" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="helloworld.html" class="btn btn-neutral float-left" title="Hello World in Kompics Scala" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

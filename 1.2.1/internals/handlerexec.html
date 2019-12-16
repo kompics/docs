@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Handler Execution in Java and Scala &mdash; Kompics 1.2.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Project Information" href="../project/index.html" />
+    <link rel="prev" title="Kompics Lifecycle" href="lifecycle.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Kompics
+          
+
+          
+            
+            <img src="../_static/kompicslogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Kompics Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scala/index.html">Kompics Scala</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Kompics Internals</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="lifecycle.html">Kompics Lifecycle</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Handler Execution in Java and Scala</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#java-handler-execution">Java Handler Execution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scala-handler-execution">Scala Handler Execution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../project/index.html">Project Information</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://javadoc.io/doc/se.sics.kompics/kompics-core/latest/index.html">Javadoc</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://kompics.github.io/kompics-scala/api/se/sics/kompics/sl/index.html">Scaladoc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Kompics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Kompics Internals</a> &raquo;</li>
+        
+      <li>Handler Execution in Java and Scala</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/internals/handlerexec.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="handler-execution-in-java-and-scala">
+<span id="kihandlerxec"></span><h1>Handler Execution in Java and Scala<a class="headerlink" href="#handler-execution-in-java-and-scala" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="java-handler-execution">
+<h2>Java Handler Execution<a class="headerlink" href="#java-handler-execution" title="Permalink to this headline">¶</a></h2>
+<p>In the Java implementation an event that is coming in on a port is matched solely based on its type hierarchy. The event’s type and supertypes are traversed from most specific to most general until a match is found in the map containing all handlers subscribed on the port, indexed by their event type (the argument type of the <code class="docutils literal notranslate"><span class="pre">handle</span></code> method). If such a match is found, the event is then queued at the port, the port is added to a ready queue, and the component is then submitted to the scheduler for execution (if it isn’t already being scheduled). The matching time complexity in this implementation is constant (hash map lookup isn’t cheap, though) in the number of subscribed handlers and (worst case) linear in the number <span class="math notranslate nohighlight">\(s\)</span> of supertypes, so in total <span class="math notranslate nohighlight">\(O(1s)\)</span>.</p>
+<p>When the scheduler decides to execute the component, the component picks the first port with waiting events, takes the first event out of the queue and executes all handlers that match that event <a class="footnote-reference" href="#fproc" id="id1">[1]</a>. If <code class="docutils literal notranslate"><span class="pre">maxEventExecuteNumber</span></code> was set to some <span class="math notranslate nohighlight">\(n\)</span> other than 1 when starting Kompics, the component will continue in this way of picking ports and events until all the queues are empty or it has executed <span class="math notranslate nohighlight">\(n\)</span> events (but possibly more handlers).</p>
+</div>
+<div class="section" id="scala-handler-execution">
+<h2>Scala Handler Execution<a class="headerlink" href="#scala-handler-execution" title="Permalink to this headline">¶</a></h2>
+<p>In Kompics Scala, the <a class="reference external" href="https://javadoc.io/doc/se.sics.kompics/kompics-core/latest/se/sics/kompics/ComponentCore.html" title="se.sics.kompics.ComponentCore"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.ComponentCore</span></code></a> and <a class="reference external" href="https://javadoc.io/doc/se.sics.kompics/kompics-core/latest/se/sics/kompics/PortCore.html" title="se.sics.kompics.PortCore"><code class="xref java java-ref docutils literal notranslate"><span class="pre">se.sics.kompics.PortCore</span></code></a> implementations have been replaced to allow handers use Scala’s built-in pattern matching facilities instead. To this end in Scala the type <code class="docutils literal notranslate"><span class="pre">Handler</span></code> is in fact only a <a class="reference external" href="http://twitter.github.io/effectivescala/#Types%20and%20Generics-Type%20aliases">type alias</a> for <code class="docutils literal notranslate"><span class="pre">KompicsEvent</span> <span class="pre">=&gt;</span> <span class="pre">Unit</span></code> <a class="footnote-reference" href="#fpartial" id="id2">[2]</a>. From that signature is should become clear, that in Scala when an event comes in on a port, all the subscribed <code class="docutils literal notranslate"><span class="pre">Handler</span></code>s must be tested for matches, that means event matching is linear in the number of subscribed handlers <span class="math notranslate nohighlight">\(h\)</span>. The pattern matching itself also has some internal complexity <span class="math notranslate nohighlight">\(p\)</span>, which depends on the sizes of the extracted pattern and the number of cases to match against. In total the computational complexity in the Scala version is then <span class="math notranslate nohighlight">\(O(ph)\)</span>.</p>
+<p>This can be seen somewhat easier by removing some syntactic sugar from the handler definition from the <a class="reference internal" href="../scala/helloworld.html#kshelloworld"><span class="std std-ref">Hello World in Kompics Scala</span></a> example. Instead of</p>
+<div class="highlight-scala notranslate"><div class="highlight"><pre><span></span><span class="n">ctrl</span> <span class="n">uponEvent</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="k">_:</span> <span class="kt">Start</span> <span class="o">=&gt;</span> <span class="o">{</span>
+        <span class="n">println</span><span class="o">(</span><span class="s">&quot;Hello World!&quot;</span><span class="o">);</span>
+        <span class="nc">Kompics</span><span class="o">.</span><span class="n">asyncShutdown</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>we can also write:</p>
+<div class="highlight-scala notranslate"><div class="highlight"><pre><span></span><span class="k">val</span> <span class="n">startHandler</span> <span class="k">=</span> <span class="o">(</span><span class="n">e</span><span class="k">:</span> <span class="kt">KompicsEvent</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">e</span> <span class="k">match</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="k">_:</span> <span class="kt">Start</span> <span class="o">=&gt;</span> <span class="o">{</span>
+        <span class="n">println</span><span class="o">(</span><span class="s">&quot;Hello World!&quot;</span><span class="o">);</span>
+        <span class="nc">Kompics</span><span class="o">.</span><span class="n">asyncShutdown</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="n">ctrl</span> <span class="n">uponEvent</span> <span class="n">startHandler</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Finally, similar to before in Java, once the component is being executed by the scheduler a port and an event are picked and all <code class="docutils literal notranslate"><span class="pre">Handlers</span></code> for that event are run, and so on, until all the queues are empty or it has executed <span class="math notranslate nohighlight">\(n\)</span> events.</p>
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="fproc" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Here the whole matching procedure is executed a second time.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="fpartial" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>The fact that most handlers will in fact be <a class="reference external" href="http://twitter.github.io/effectivescala/#Functional%20programming-Partial%20functions">partial functions</a> is dealt with internally by Kompics by catching MatchErrors.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../project/index.html" class="btn btn-neutral float-right" title="Project Information" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lifecycle.html" class="btn btn-neutral float-left" title="Kompics Lifecycle" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SICS Swedish ICT and KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
