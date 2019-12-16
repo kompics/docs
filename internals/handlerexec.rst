@@ -13,14 +13,14 @@ When the scheduler decides to execute the component, the component picks the fir
 
 Scala Handler Execution
 -----------------------
-In Kompics Scala, the :java:ref:`se.sics.kompics.ComponentCore` and :java:ref:`se.sics.kompics.PortCore` implementations have been replaced to allow handers use Scala's built-in pattern matching facilities instead. To this end in Scala the type ``Handler`` is in fact only a `type alias <http://twitter.github.io/effectivescala/#Types%20and%20Generics-Type%20aliases>`_ for ``KompicsEvent => () => Unit`` [#fpartial]_. From that signature is should become clear, that in Scala when an event comes in on a port, all the subscribed ``Handler``\s must be tested for matches, that means event matching is linear in the number of subscribed handlers :math:`h`. The pattern matching itself also has some internal complexity :math:`p`, which depends on the sizes of the extracted pattern and the number of cases to match against. In total the computational complexity in the Scala version is then :math:`O(ph)`. However, as opposed to the Java version, this matching cost is only incurred once, as the resulting ``MatchedHandler`` (type alias for ``() => Unit``) closure is stored along with the event that it matched.
+In Kompics Scala, the :java:ref:`se.sics.kompics.ComponentCore` and :java:ref:`se.sics.kompics.PortCore` implementations have been replaced to allow handers use Scala's built-in pattern matching facilities instead. To this end in Scala the type ``Handler`` is in fact only a `type alias <http://twitter.github.io/effectivescala/#Types%20and%20Generics-Type%20aliases>`_ for ``KompicsEvent => Unit`` [#fpartial]_. From that signature is should become clear, that in Scala when an event comes in on a port, all the subscribed ``Handler``\s must be tested for matches, that means event matching is linear in the number of subscribed handlers :math:`h`. The pattern matching itself also has some internal complexity :math:`p`, which depends on the sizes of the extracted pattern and the number of cases to match against. In total the computational complexity in the Scala version is then :math:`O(ph)`.
 
 This can be seen somewhat easier by removing some syntactic sugar from the handler definition from the :ref:`kshelloworld` example. Instead of
 
 .. code-block:: scala
 
     ctrl uponEvent {
-        case _: Start => handle {
+        case _: Start => {
             println("Hello World!");
             Kompics.asyncShutdown();
         }
@@ -31,14 +31,14 @@ we can also write:
 .. code-block:: scala
 
     val startHandler = (e: KompicsEvent) => e match {
-        case _: Start => () => {
+        case _: Start => {
             println("Hello World!");
             Kompics.asyncShutdown();
         }
     }
     ctrl uponEvent startHandler;
 
-Finally, similar to before in Java, once the component is being executed by the scheduler a port and an event are picked and all stored ``MatchedHandler``\s for that event are run, and so on, until all the queues are empty or it has executed :math:`n` events.
+Finally, similar to before in Java, once the component is being executed by the scheduler a port and an event are picked and all ``Handlers`` for that event are run, and so on, until all the queues are empty or it has executed :math:`n` events.
 
 .. rubric:: Footnotes
 

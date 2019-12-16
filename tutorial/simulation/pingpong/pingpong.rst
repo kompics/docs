@@ -2,7 +2,7 @@
 
 Introduction to Simulation
 ==========================
-First, we have to include the simulator dependency in our pom file. The simulator version is the same as kompics, in this case ``0.9.1-SNAPSHOT``:
+First, we have to include the simulator dependency in our pom file. The simulator version is the same as kompics:
 
 .. code-block:: xml
 

@@ -19,7 +19,8 @@ Contents:
    scala/index
    internals/index
    project/index
-   javadoc/modules
+   javadocs
+   Scaladoc <https://kompics.github.io/kompics-scala/api/se/sics/kompics/sl/index.html>
 
 Indices and tables
 ==================
