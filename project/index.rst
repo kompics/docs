@@ -9,3 +9,4 @@ Contents:
    issuetracking
    license
    repositories
+   contact

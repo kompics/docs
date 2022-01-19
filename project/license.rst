@@ -5,8 +5,8 @@ Kompics License
 ^^^^^^^^^^^^^^^
 The Kompics component model runtime is licensed under GPLv2.
 
-|	Copyright (C) 2009 Swedish Institute of Computer Science (SICS)
-|	Copyright (C) 2009 Royal Institute of Technology (KTH)
+|	Copyright (C) 2022 Research Institute of Sweden (RISE)
+|	Copyright (C) 2022 Royal Institute of Technology (KTH)
 |
 
 Kompics is free software; you can redistribute it and/or

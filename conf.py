@@ -54,7 +54,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Kompics'
-copyright = u'2015, SICS Swedish ICT and KTH Royal Institute of Technology'
+copyright = u'2022, RISE Research Institute of Sweden and KTH Royal Institute of Technology'
 author = u'Lars Kroll, Alexadru Ormenisan'
 
 # The version info for the project you're documenting, acts as replacement for
