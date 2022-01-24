@@ -1,0 +1,6 @@
+.. _contact:
+
+Contact
+------------
+
+Any questions regarding Kompics can be sent to mmeldrum@kth.se
